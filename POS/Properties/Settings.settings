@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="POS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HeaderColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">76, 175, 80</Value>
+    </Setting>
+    <Setting Name="MenuBarColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">67, 82, 89</Value>
+    </Setting>
+    <Setting Name="ForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="OnHoverColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">69, 105, 87</Value>
+    </Setting>
+    <Setting Name="BackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">48, 62, 69</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">POS</Value>
+    </Setting>
+    <Setting Name="RegisterationNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00000</Value>
+    </Setting>
+    <Setting Name="ManagerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Usama Aziz</Value>
+    </Setting>
+    <Setting Name="VAT" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
