@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using POS.Classes;
 using POS.Forms;
-using System.Diagnostics;
 using POS.Forms.Settings;
-using POS.Classes;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace POS.UserControls
 {
@@ -47,6 +42,12 @@ namespace POS.UserControls
 				textbox.BackColor = Properties.Settings.Default.HeaderColor;
 				textbox.ForeColor = ForeGround;
 			}
+			foreach (var textbox in GetAllChildren(this).OfType<Panel>())
+			{
+				textbox.BackColor = Properties.Settings.Default.OnHoverColor;
+				textbox.ForeColor = ForeGround;
+			}
+			flowLayoutPanel1.BackColor = Color.Transparent;
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)
@@ -96,7 +97,9 @@ namespace POS.UserControls
 
 		private void btnLogout_Click(object sender, EventArgs e)
 		{
-
+			FormLogin f = new FormLogin();
+			this.ParentForm.Hide();
+			f.Show();
 		}
 
 		private void btnFactures_Click(object sender, EventArgs e)
@@ -122,6 +125,48 @@ namespace POS.UserControls
 		{
 			FormDeleteUser f = new FormDeleteUser();
 			f.ShowDialog();
+		}
+
+		private void btnCredit_Click(object sender, EventArgs e)
+		{
+			if (btnCredit.AccessibleDescription == "Collasped")
+			{
+				panel1.Size = new Size(963, 173);
+				btnCredit.AccessibleDescription = "Expanded";
+			}
+			else
+			{
+				panel1.Size = new Size(963, 34);
+				btnCredit.AccessibleDescription = "Collasped";
+			}
+		}
+
+		private void btnBankAccounts_Click(object sender, EventArgs e)
+		{
+			if (btnBankAccounts.AccessibleDescription == "Collasped")
+			{
+				panel2.Size = new Size(963, 120);
+				btnBankAccounts.AccessibleDescription = "Expanded";
+			}
+			else
+			{
+				panel2.Size = new Size(963, 34);
+				btnBankAccounts.AccessibleDescription = "Collasped";
+			}
+		}
+
+		private void btnTickets_Click(object sender, EventArgs e)
+		{
+			if (btnTickets.AccessibleDescription == "Collasped")
+			{
+				panel3.Size = new Size(963, 84);
+				btnTickets.AccessibleDescription = "Expanded";
+			}
+			else
+			{
+				panel3.Size = new Size(963, 34);
+				btnTickets.AccessibleDescription = "Collasped";
+			}
 		}
 
 		private void btnViewAllUsers_Click(object sender, EventArgs e)

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15B63494-603F-40AE-9330-6E50522A7015}</ProjectGuid>
+    <ProjectGuid>{FF4C1B27-064F-4E2A-BCAB-FE01EA02E94C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>POS</RootNamespace>
     <AssemblyName>POS</AssemblyName>
@@ -55,12 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Finances\Invoice.cs" />
-    <Compile Include="Classes\Finances\TurnOverProducts.cs" />
-    <Compile Include="Classes\Selling\Cart.cs" />
-    <Compile Include="Classes\Manager.cs" />
-    <Compile Include="Classes\Selling\CreditInvoice.cs" />
+    <Compile Include="Classes\Access.cs" />
     <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Classes\Finances\Invoice.cs" />
+    <Compile Include="Classes\Finances\Shift.cs" />
+    <Compile Include="Classes\Finances\TurnOverProducts.cs" />
+    <Compile Include="Classes\Manager.cs" />
+    <Compile Include="Classes\Products\Product.cs" />
+    <Compile Include="Classes\Selling\Cart.cs" />
+    <Compile Include="Classes\Selling\CreditInvoice.cs" />
     <Compile Include="Classes\Supplier.cs" />
     <Compile Include="Classes\Theme.cs" />
     <Compile Include="Dashboard.cs">
@@ -93,6 +96,24 @@
     <Compile Include="Forms\Customers\FormNewCustomer.Designer.cs">
       <DependentUpon>FormNewCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Products\FormDeleteProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\FormDeleteProduct.Designer.cs">
+      <DependentUpon>FormDeleteProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\FormEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\FormEditProduct.Designer.cs">
+      <DependentUpon>FormEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\FormNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\FormNewProduct.Designer.cs">
+      <DependentUpon>FormNewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Selling\FormCashPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,10 +144,10 @@
     <Compile Include="Forms\Accounts\FormNewUser.Designer.cs">
       <DependentUpon>FormNewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Settings\FormProductSettings.cs">
+    <Compile Include="Forms\Products\FormProductSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Settings\FormProductSettings.Designer.cs">
+    <Compile Include="Forms\Products\FormProductSettings.Designer.cs">
       <DependentUpon>FormProductSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Settings\FormSoftwareSettings.cs">
@@ -172,6 +193,24 @@
     </Compile>
     <Compile Include="UserControls\Finances\UC_Closing.Designer.cs">
       <DependentUpon>UC_Closing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Finances\UC_ClosingDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Finances\UC_ClosingDay.Designer.cs">
+      <DependentUpon>UC_ClosingDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Finances\UC_ClosingMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Finances\UC_ClosingMonth.Designer.cs">
+      <DependentUpon>UC_ClosingMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Finances\UC_ClosingShift.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Finances\UC_ClosingShift.Designer.cs">
+      <DependentUpon>UC_ClosingShift.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Finances\UC_Invoices.cs">
       <SubType>UserControl</SubType>
@@ -260,6 +299,15 @@
     <EmbeddedResource Include="Forms\Customers\FormNewCustomer.resx">
       <DependentUpon>FormNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\FormDeleteProduct.resx">
+      <DependentUpon>FormDeleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\FormEditProduct.resx">
+      <DependentUpon>FormEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\FormNewProduct.resx">
+      <DependentUpon>FormNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Selling\FormCashPurchase.resx">
       <DependentUpon>FormCashPurchase.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,7 +323,7 @@
     <EmbeddedResource Include="Forms\Accounts\FormNewUser.resx">
       <DependentUpon>FormNewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\FormProductSettings.resx">
+    <EmbeddedResource Include="Forms\Products\FormProductSettings.resx">
       <DependentUpon>FormProductSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\FormSoftwareSettings.resx">
@@ -308,6 +356,15 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Finances\UC_Closing.resx">
       <DependentUpon>UC_Closing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Finances\UC_ClosingDay.resx">
+      <DependentUpon>UC_ClosingDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Finances\UC_ClosingMonth.resx">
+      <DependentUpon>UC_ClosingMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Finances\UC_ClosingShift.resx">
+      <DependentUpon>UC_ClosingShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Finances\UC_Invoices.resx">
       <DependentUpon>UC_Invoices.cs</DependentUpon>
@@ -349,7 +406,9 @@
     <None Include="Properties\DataSources\POS.Classes.Cart.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Customer.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Finances.Invoice.datasource" />
+    <None Include="Properties\DataSources\POS.Classes.Finances.Shift.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Finances.TurnOverProducts.datasource" />
+    <None Include="Properties\DataSources\POS.Classes.Products.Product.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Selling.CreditInvoice.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Supplier.datasource" />
     <None Include="Properties\Settings.settings">
@@ -390,7 +449,11 @@
     <None Include="Resources\Warning.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Products\" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

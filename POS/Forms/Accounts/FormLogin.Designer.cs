@@ -28,138 +28,203 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label15 = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.tbName = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.tbRegistrationNumber = new System.Windows.Forms.TextBox();
-			this.btnOk = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
-			this.pbLogo = new System.Windows.Forms.PictureBox();
+			this.components = new System.ComponentModel.Container();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+			this.pbClose = new FontAwesome.Sharp.IconPictureBox();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.tbUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.tbPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+			this.btnLogin = new FontAwesome.Sharp.IconButton();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+			this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+			this.lblSoftwareName = new Bunifu.Framework.UI.BunifuCustomLabel();
+			this.panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label15.Location = new System.Drawing.Point(34, 160);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(70, 19);
-			this.label15.TabIndex = 124;
-			this.label15.Text = "Username";
-			// 
-			// panel1
-			// 
-			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.panel1.BackColor = System.Drawing.Color.Gray;
-			this.panel1.Location = new System.Drawing.Point(26, 387);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(250, 1);
-			this.panel1.TabIndex = 123;
-			// 
-			// tbName
-			// 
-			this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-			this.tbName.Location = new System.Drawing.Point(37, 184);
-			this.tbName.Name = "tbName";
-			this.tbName.Size = new System.Drawing.Size(226, 29);
-			this.tbName.TabIndex = 122;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label1.Location = new System.Drawing.Point(35, 220);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(69, 19);
-			this.label1.TabIndex = 126;
-			this.label1.Text = "Password";
-			// 
-			// tbRegistrationNumber
-			// 
-			this.tbRegistrationNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-			this.tbRegistrationNumber.Location = new System.Drawing.Point(38, 244);
-			this.tbRegistrationNumber.Name = "tbRegistrationNumber";
-			this.tbRegistrationNumber.Size = new System.Drawing.Size(226, 29);
-			this.tbRegistrationNumber.TabIndex = 125;
-			this.tbRegistrationNumber.UseSystemPasswordChar = true;
-			// 
-			// btnOk
-			// 
-			this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.btnOk.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnOk.Location = new System.Drawing.Point(38, 341);
-			this.btnOk.Name = "btnOk";
-			this.btnOk.Size = new System.Drawing.Size(226, 31);
-			this.btnOk.TabIndex = 127;
-			this.btnOk.Text = "Register";
-			this.btnOk.UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
-			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.button1.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(37, 304);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(227, 31);
-			this.button1.TabIndex = 128;
-			this.button1.Text = "Login";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// pbLogo
-			// 
-			this.pbLogo.BackColor = System.Drawing.Color.Transparent;
-			this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pbLogo.Image = global::POS.Properties.Resources.Daco_4579002;
-			this.pbLogo.Location = new System.Drawing.Point(77, 13);
-			this.pbLogo.Name = "pbLogo";
-			this.pbLogo.Size = new System.Drawing.Size(146, 111);
-			this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pbLogo.TabIndex = 129;
-			this.pbLogo.TabStop = false;
 			// 
 			// panel2
 			// 
-			this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.panel2.BackColor = System.Drawing.Color.Gray;
-			this.panel2.Location = new System.Drawing.Point(26, 149);
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.panel2.Controls.Add(this.pbClose);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel2.Location = new System.Drawing.Point(436, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(250, 1);
-			this.panel2.TabIndex = 124;
+			this.panel2.Size = new System.Drawing.Size(49, 266);
+			this.panel2.TabIndex = 156;
 			// 
-			// panel3
+			// pbClose
 			// 
-			this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.panel3.BackColor = System.Drawing.Color.Gray;
-			this.panel3.Location = new System.Drawing.Point(26, 288);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(250, 1);
-			this.panel3.TabIndex = 124;
+			this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pbClose.BackColor = System.Drawing.Color.Transparent;
+			this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pbClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.pbClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+			this.pbClose.IconColor = System.Drawing.Color.WhiteSmoke;
+			this.pbClose.IconSize = 24;
+			this.pbClose.Location = new System.Drawing.Point(22, 3);
+			this.pbClose.Name = "pbClose";
+			this.pbClose.Size = new System.Drawing.Size(24, 24);
+			this.pbClose.TabIndex = 138;
+			this.pbClose.TabStop = false;
+			this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(49, 266);
+			this.panel1.TabIndex = 155;
+			// 
+			// tbUsername
+			// 
+			this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.tbUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+			this.tbUsername.ForeColor = System.Drawing.Color.Black;
+			this.tbUsername.HintForeColor = System.Drawing.Color.Gray;
+			this.tbUsername.HintText = "Username";
+			this.tbUsername.isPassword = false;
+			this.tbUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.tbUsername.LineIdleColor = System.Drawing.Color.Gray;
+			this.tbUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.tbUsername.LineThickness = 3;
+			this.tbUsername.Location = new System.Drawing.Point(100, 107);
+			this.tbUsername.Margin = new System.Windows.Forms.Padding(4);
+			this.tbUsername.Name = "tbUsername";
+			this.tbUsername.Size = new System.Drawing.Size(293, 35);
+			this.tbUsername.TabIndex = 152;
+			this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			// 
+			// bunifuElipse2
+			// 
+			this.bunifuElipse2.ElipseRadius = 13;
+			this.bunifuElipse2.TargetControl = this;
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Font = new System.Drawing.Font("Sitka Small", 8F);
+			this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.linkLabel1.Location = new System.Drawing.Point(194, 241);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(110, 16);
+			this.linkLabel1.TabIndex = 157;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "Contact Developer";
+			this.toolTip1.SetToolTip(this.linkLabel1, "Having problems? Contact System Developer..\r\nPlease feel free to contact me at an" +
+        "y platform:\r\n- Whatsapp: (+92) 309 2193796\r\nOr, Email me at:\r\n- usamaaziz999@gma" +
+        "il.com\r\n\r\n");
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+			// 
+			// tbPassword
+			// 
+			this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.tbPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+			this.tbPassword.ForeColor = System.Drawing.Color.Black;
+			this.tbPassword.HintForeColor = System.Drawing.Color.Gray;
+			this.tbPassword.HintText = "Password";
+			this.tbPassword.isPassword = true;
+			this.tbPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.tbPassword.LineIdleColor = System.Drawing.Color.Gray;
+			this.tbPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.tbPassword.LineThickness = 3;
+			this.tbPassword.Location = new System.Drawing.Point(100, 147);
+			this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
+			this.tbPassword.Name = "tbPassword";
+			this.tbPassword.Size = new System.Drawing.Size(293, 31);
+			this.tbPassword.TabIndex = 153;
+			this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			// 
+			// btnLogin
+			// 
+			this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(85)))), ((int)(((byte)(136)))));
+			this.btnLogin.FlatAppearance.BorderSize = 0;
+			this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLogin.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.btnLogin.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnLogin.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.btnLogin.IconSize = 30;
+			this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnLogin.Location = new System.Drawing.Point(100, 194);
+			this.btnLogin.Name = "btnLogin";
+			this.btnLogin.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+			this.btnLogin.Rotation = 0D;
+			this.btnLogin.Size = new System.Drawing.Size(293, 35);
+			this.btnLogin.TabIndex = 154;
+			this.btnLogin.Text = "Login";
+			this.btnLogin.UseVisualStyleBackColor = false;
+			this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// bunifuDragControl3
+			// 
+			this.bunifuDragControl3.Fixed = true;
+			this.bunifuDragControl3.Horizontal = true;
+			this.bunifuDragControl3.TargetControl = this.panel1;
+			this.bunifuDragControl3.Vertical = true;
+			// 
+			// bunifuDragControl2
+			// 
+			this.bunifuDragControl2.Fixed = true;
+			this.bunifuDragControl2.Horizontal = true;
+			this.bunifuDragControl2.TargetControl = this.panel2;
+			this.bunifuDragControl2.Vertical = true;
+			// 
+			// bunifuDragControl1
+			// 
+			this.bunifuDragControl1.Fixed = true;
+			this.bunifuDragControl1.Horizontal = true;
+			this.bunifuDragControl1.TargetControl = this;
+			this.bunifuDragControl1.Vertical = true;
+			// 
+			// bunifuCustomLabel1
+			// 
+			this.bunifuCustomLabel1.AutoSize = true;
+			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(139, 69);
+			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(206, 22);
+			this.bunifuCustomLabel1.TabIndex = 159;
+			this.bunifuCustomLabel1.Text = "Management System";
+			// 
+			// lblSoftwareName
+			// 
+			this.lblSoftwareName.AutoSize = true;
+			this.lblSoftwareName.Font = new System.Drawing.Font("Sitka Small", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblSoftwareName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.lblSoftwareName.Location = new System.Drawing.Point(174, 34);
+			this.lblSoftwareName.Name = "lblSoftwareName";
+			this.lblSoftwareName.Size = new System.Drawing.Size(130, 34);
+			this.lblSoftwareName.TabIndex = 158;
+			this.lblSoftwareName.Text = "Inventory";
 			// 
 			// FormLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(310, 446);
-			this.Controls.Add(this.panel3);
+			this.ClientSize = new System.Drawing.Size(485, 266);
 			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.pbLogo);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.btnOk);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.tbRegistrationNumber);
-			this.Controls.Add(this.label15);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.tbName);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Controls.Add(this.tbUsername);
+			this.Controls.Add(this.linkLabel1);
+			this.Controls.Add(this.tbPassword);
+			this.Controls.Add(this.btnLogin);
+			this.Controls.Add(this.bunifuCustomLabel1);
+			this.Controls.Add(this.lblSoftwareName);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
-			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+			this.panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -167,15 +232,19 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox tbName;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox tbRegistrationNumber;
-		private System.Windows.Forms.Button btnOk;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.PictureBox pbLogo;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Panel panel3;
+		private FontAwesome.Sharp.IconPictureBox pbClose;
+		private System.Windows.Forms.Panel panel1;
+		private Bunifu.Framework.UI.BunifuMaterialTextbox tbUsername;
+		private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.ToolTip toolTip1;
+		private Bunifu.Framework.UI.BunifuMaterialTextbox tbPassword;
+		private FontAwesome.Sharp.IconButton btnLogin;
+		public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+		public Bunifu.Framework.UI.BunifuCustomLabel lblSoftwareName;
+		private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl3;
+		private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
+		private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
 	}
 }

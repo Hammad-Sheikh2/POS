@@ -86,7 +86,11 @@
 			this.Controls.Add(this.btnCredit);
 			this.Controls.Add(this.cbxFilter);
 			this.Controls.Add(this.tbSearch);
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(301, 180);
+			this.MinimumSize = new System.Drawing.Size(301, 180);
 			this.Name = "FormDeleteCustomer";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Delete Customer";
 			this.ResumeLayout(false);
 			this.PerformLayout();

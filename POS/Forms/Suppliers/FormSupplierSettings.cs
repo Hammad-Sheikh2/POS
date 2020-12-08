@@ -1,27 +1,16 @@
 ﻿using FontAwesome.Sharp;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POS.Forms
 {
 	public partial class FormSupplierSettings : Form
 	{
-		public FormSupplierSettings(bool Customer = false)
+		public FormSupplierSettings()
 		{
 			InitializeComponent();
 			ActivateTheme();
-			if (Customer)
-			{
-				this.Text = "Customer Settings";
-				cbxCategory.Items.Add("Company Employee");
-			}
 		}
 
 		private void ActivateTheme()
@@ -40,8 +29,6 @@ namespace POS.Forms
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Panel>())
 				textbox.BackColor = Properties.Settings.Default.ForeColor;
-			this.cbxCategory.BackColor = Properties.Settings.Default.OnHoverColor;
-			this.cbxCategory.ForeColor = Properties.Settings.Default.ForeColor;
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)

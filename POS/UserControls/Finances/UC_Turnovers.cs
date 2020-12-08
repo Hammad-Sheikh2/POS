@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using POS.UserControls.Products;
-using FontAwesome.Sharp;
+﻿using FontAwesome.Sharp;
 using POS.UserControls.Finances;
+using POS.UserControls.Products;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace POS.UserControls
 {

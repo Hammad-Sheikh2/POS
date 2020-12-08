@@ -117,13 +117,87 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="cmxEndOfPeriod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>177, 3</value>
-  </metadata>
   <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAA
+        AAD5+fl3+Pj4+vj4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj1+fn5Wfj4+Pb4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+PjV+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+fn5nvn5+Z/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+N/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+NEAAAAAAAAAAPj4+NP4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj43/j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj48ff39zz39/c9+Pj48vj4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pjf+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+N/6+voz+vr6M/r6
+        +jP6+voz+vr6M/r6+jP6+voz+vr6M/r6+jP6+voz+vr6M/r6+jP6+voz+vr6M/r6+jP6+voz+vr6M/r6
+        +jP6+voz+vr6M/r6+jP6+voz+vr6M/r6+jP6+voz+vr6M/r6+jP6+voz+vr6M/r6+jP6+voz+fn5Lfj4
+        +JH4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4
+        +Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4+Jn4+PiZ+Pj4mfj4
+        +Jn4+PiQ+Pj4z/j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+M/5+fmj+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj2+Pj43ff39+34+Pj/+Pj46/j4+N34+Pj3+Pj4//j4
+        +OH4+Pjg+Pj4//j4+P/4+Pj/+fn5ovn5+Xf4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//f392AAAAAA9/f3Hvj4+P////8SAAAAAPj4
+        +Gz4+PjCAAAAAAAAAAD4+Pi7+Pj4//j4+P/5+fl2+Pj4S/j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+fn5WAAAAADz8/MV+Pj4////
+        /wkAAAAA9/f3Y/j4+LoAAAAAAAAAAPj4+LL4+Pj/+Pj4//j4+Er39/cg+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+PjQ+Pj4iPj4
+        +LL4+Pj/+Pj4rPj4+Ij4+PjW+Pj49fj4+JL4+PiQ+Pj48/j4+P/4+Pj/9/f3H////wH4+Pjy+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +Mz4+PiZ+Pj4svj4+P/4+Pit+Pj4mfj4+NH4+Pjx+Pj4m/j4+Jr4+Pjv+Pj4//j4+PH///8BAAAAAPn5
+        +cj4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+fn5WAAAAADz8/MV+Pj4/////wkAAAAA9/f3Y/j4+LkAAAAAAAAAAPj4+LL4+Pj/+fn5xwAA
+        AAAAAAAA+Pj4nPj4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/39/diAAAAAPf39yD4+Pj/8vLyEwAAAAD4+Phu+Pj4wwAAAAAAAAAA+Pj4vPj4
+        +P/4+PibAAAAAAAAAAD4+Phw+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+Pr4+Pjd+Pj48fj4+P/4+Pjv+Pj43fj4+Pv4+Pj/+Pj45fj4
+        +OT4+Pj/+Pj4//j4+G8AAAAAAAAAAPj4+EX4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+Iz4+PhE+Pj4RPj4
+        +ET4+PhE+Pj4RPj4+Jr4+Pj/+Pj4//j4+P/4+Pj/+Pj4u/j4+ET4+PhE+Pj4RPj4+ET4+PhE+Pj4RPj4
+        +ET4+PhE+Pj4S/j4+PH4+Pj/+Pj4RAAAAAAAAAAA9vb2G/j4+P/4+Pj/+Pj4//j4+P/4+Pj/9/f3Yvr6
+        +jT4+PiI+Pj4iPj4+Ij5+fkq+fn5dvj4+P/4+Pj/+Pj4//j4+P/5+fl2AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAD///8D+Pj4+vj4+P/19fUaAAAAAAAAAAAAAAAA+Pj47vj4+P/4+Pj/+Pj4//j4
+        +P/39/di+Pj4SPj4+Lv4+Pi7+Pj4u/b29jr5+fl2+Pj4//j4+P/4+Pj/+Pj4//n5+XYAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPb29hv4+Pj/+Pj47gAAAAAAAAAAAAAAAAAAAAD4+PjB+Pj4//j4
+        +P/4+Pj/+Pj4//f392L///8H////Ef///xH///8R////Bfn5+Xb4+Pj/+Pj4//j4+P/4+Pj/+Pj4nP//
+        /xL///8R////Ef///xH///8R////Ef///xH///8R9/f3Zfj4+P/4+PjAAAAAAAAAAAAAAAAAAAAAAPj4
+        +JX4+Pj/+Pj4//j4+P/4+Pj/9/f3Yvf392L4+Pj/+Pj4//j4+P/5+flP+fn5dvj4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+JMAAAAAAAAAAAAA
+        AAAAAAAA+Pj4Sfj4+P/4+Pj/+Pj4//j4+P/39/di8vLyFPr6+jP6+voz+vr6M////xD5+fl2+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj+9/f3PAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA9/f3Pvb29nH4+Pj/+Pj4//f392L29vY7+Pj4mfj4+Jn4+PiZ+vr6L/n5
+        +Xb4+Pj/+Pj4//j4+Gb4+Phm+Pj4Zvj4+Gb4+Phm+Pj4Zvj4+Gb4+Phm+Pj4Zvj4+Gb4+Phm9/f3Zfb2
+        9jsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8vLyFPj4+P/4+Pj/9/f3Yvf390H4+Piq+Pj4qvj4
+        +Kr6+vo0+fn5dvj4+P/4+Pj/AAAAAP///xL5+flV+fn5Vfn5+VX5+flV+fn5Vfn5+VX5+flV+fn5Vfn5
+        +VX39/dAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADy8vIU+Pj4//j4+P/5+fl3+Pj4Ivj4
+        +CL4+Pgi+Pj4Ivj4+CL4+PiI+Pj4//j4+P8AAAAA+Pj4q/j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/6+vo1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPLy8hT4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4/wAAAAD4+PjE+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//n5+U8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Bvf3
+        9+34+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+PjfAAAAAPj4+MT4+Pj/+Pj4u/j4
+        +CL4+Pgi+Pj4Ivj4+CL4+Pgi+Pj4RPj4+P/4+Pj/+fn5TwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA9/f3IPn5+VL5+flV+fn5Vfn5+VX5+flV+fn5Vfn5+VX5+flV+fn5Ufb29hsAAAAA+Pj4xPj4
+        +P/4+PiwAAAAAAAAAAAAAAAAAAAAAAAAAAD4+Pgn+Pj4//j4+P/5+flPAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAD4+PjE+Pj4//j4+ND4+Phm+Pj4Zvj4+Gb4+Phm+Pj4Zvn5+X34+Pj/+Pj4//n5+U8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAPj4+MP4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4TQAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA+Pj4cPj4+Pf4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +Nr09PQXAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAGAAAABgAAAAAAA/////wAAAAAAAAAAAAAAAIAA
+        O7GAADuxgAAAAYAAAAGAADuxgAA7scAAAAPA+B/zwYw/88GMP/PB/B/zwYwAA+H8AAf5jP//+Yz///n4
+        gA/4AIAP+ACPz///j8///4/P//+AD///wA8=
+</value>
+  </data>
 </root>

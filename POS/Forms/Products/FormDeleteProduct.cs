@@ -1,23 +1,18 @@
 ﻿using FontAwesome.Sharp;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POS.Forms
+namespace POS.Forms.Products
 {
-	public partial class FormProductSettings : Form
+	public partial class FormDeleteProduct : Form
 	{
-		public FormProductSettings()
+		public FormDeleteProduct()
 		{
 			InitializeComponent();
 			ActivateTheme();
 		}
+
 
 		private void ActivateTheme()
 		{
@@ -25,6 +20,8 @@ namespace POS.Forms
 			foreach (var textbox in GetAllChildren(this).OfType<IconPictureBox>())
 			{
 				textbox.IconColor = Properties.Settings.Default.MenuBarColor;
+				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
+				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			}
 			foreach (var textbox in GetAllChildren(this).OfType<TextBox>())
 			{
@@ -35,8 +32,6 @@ namespace POS.Forms
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Panel>())
 				textbox.BackColor = Properties.Settings.Default.ForeColor;
-			//this.cbxCategory.BackColor = Properties.Settings.Default.OnHoverColor;
-			//this.cbxCategory.ForeColor = Properties.Settings.Default.ForeColor;
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)

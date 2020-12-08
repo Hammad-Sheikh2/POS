@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FontAwesome.Sharp;
 using POS.Forms;
-using FontAwesome.Sharp;
 using POS.Forms.Customers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace POS.UserControls
 {
@@ -62,7 +57,7 @@ namespace POS.UserControls
 
 		private void btnSettings_Click(object sender, EventArgs e)
 		{
-			FormSupplierSettings f = new FormSupplierSettings(true);
+			FormSupplierSettings f = new FormSupplierSettings();
 			f.ShowDialog();
 		}
 

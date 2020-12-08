@@ -36,7 +36,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.tbChange = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.btnCredit = new FontAwesome.Sharp.IconButton();
+			this.btnCheckout = new FontAwesome.Sharp.IconButton();
 			this.SuspendLayout();
 			// 
 			// tbNoOfProducts
@@ -114,28 +114,29 @@
 			this.label4.TabIndex = 107;
 			this.label4.Text = "Change";
 			// 
-			// btnCredit
+			// btnCheckout
 			// 
-			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnCredit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnCredit.IconColor = System.Drawing.Color.Black;
-			this.btnCredit.IconSize = 16;
-			this.btnCredit.Location = new System.Drawing.Point(309, 57);
-			this.btnCredit.Name = "btnCredit";
-			this.btnCredit.Rotation = 0D;
-			this.btnCredit.Size = new System.Drawing.Size(140, 71);
-			this.btnCredit.TabIndex = 109;
-			this.btnCredit.Text = "Confirm";
-			this.btnCredit.UseVisualStyleBackColor = true;
+			this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCheckout.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCheckout.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCheckout.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+			this.btnCheckout.IconColor = System.Drawing.Color.Black;
+			this.btnCheckout.IconSize = 40;
+			this.btnCheckout.Location = new System.Drawing.Point(309, 57);
+			this.btnCheckout.Name = "btnCheckout";
+			this.btnCheckout.Rotation = 0D;
+			this.btnCheckout.Size = new System.Drawing.Size(140, 71);
+			this.btnCheckout.TabIndex = 109;
+			this.btnCheckout.Text = "Checkout";
+			this.btnCheckout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.btnCheckout.UseVisualStyleBackColor = true;
 			// 
 			// FormCashPurchase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(461, 195);
-			this.Controls.Add(this.btnCredit);
+			this.Controls.Add(this.btnCheckout);
 			this.Controls.Add(this.tbChange);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.tbCashGiven);
@@ -163,7 +164,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox tbChange;
 		private System.Windows.Forms.Label label4;
-		private FontAwesome.Sharp.IconButton btnCredit;
+		private FontAwesome.Sharp.IconButton btnCheckout;
 		public System.Windows.Forms.TextBox tbNoOfProducts;
 		public System.Windows.Forms.TextBox tbTotalBill;
 	}

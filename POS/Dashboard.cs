@@ -1,16 +1,11 @@
 ﻿using FontAwesome.Sharp;
+using POS.Classes;
 using POS.UserControls;
 using POS.UserControls.Finances;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POS
@@ -37,9 +32,8 @@ namespace POS
 			ActivateCurrentTheme();
 			//Form
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-			UC_SellingWindow uc = new UC_SellingWindow();
-			uc.Dock = DockStyle.Fill;
-			panelFill.Controls.Add(uc);
+			ActivateButton(btnDashboard, Color.WhiteSmoke);
+			OpenChildForm(new UC_SellingWindow());
 
 		}
 
@@ -276,22 +270,25 @@ namespace POS
 
 		private void btnFinanceEndOfPeriod_Click(object sender, EventArgs e)
 		{
-			cmxEndOfPeriod.Show(btnFinanceEndOfPeriod, new Point(btnFinanceEndOfPeriod.Width / 2, btnFinanceEndOfPeriod.Height));
+			ActivateButton(sender, Color.WhiteSmoke);
+			OpenChildForm(new UC_Closing());
+			//cmxEndOfPeriod.Show(btnFinanceEndOfPeriod, new Point(btnFinanceEndOfPeriod.Width / 2, btnFinanceEndOfPeriod.Height));
 		}
 
-		private void closingShiftToolStripMenuItem_Click(object sender, EventArgs e)
+		private void btnProducts_Click(object sender, EventArgs e)
 		{
-
+			ActivateButton(sender, Color.WhiteSmoke);
+			OpenChildForm(new UC_Products());
 		}
 
-		private void closingDayToolStripMenuItem_Click(object sender, EventArgs e)
+		private void btnStoreShelves_Click(object sender, EventArgs e)
 		{
-
+			Manager.Show("Will available soon", Forms.Notification.Type.Info);
 		}
 
-		private void closingMonthToolStripMenuItem_Click(object sender, EventArgs e)
+		private void btnPurchases_Click(object sender, EventArgs e)
 		{
-
+			Manager.Show("Will available soon", Forms.Notification.Type.Info);
 		}
 	}
 }

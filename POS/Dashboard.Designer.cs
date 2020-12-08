@@ -32,24 +32,15 @@ namespace POS
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
 			this.panelMenu = new System.Windows.Forms.Panel();
-			this.PanelFinance = new System.Windows.Forms.Panel();
-			this.panelLogo = new System.Windows.Forms.Panel();
-			this.lblSoftwareName = new Bunifu.Framework.UI.BunifuCustomLabel();
-			this.panelTitle = new System.Windows.Forms.Panel();
-			this.labelCurrentControl = new Bunifu.Framework.UI.BunifuCustomLabel();
-			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-			this.panelFill = new System.Windows.Forms.Panel();
-			this.PanelProducts = new System.Windows.Forms.Panel();
-			this.pbCurrentControlIcon = new FontAwesome.Sharp.IconPictureBox();
-			this.pbMinimize = new FontAwesome.Sharp.IconPictureBox();
-			this.pbMaximize = new FontAwesome.Sharp.IconPictureBox();
-			this.pbClose = new FontAwesome.Sharp.IconPictureBox();
 			this.BtnSettings = new FontAwesome.Sharp.IconButton();
+			this.PanelProducts = new System.Windows.Forms.Panel();
 			this.btnPurchases = new FontAwesome.Sharp.IconButton();
 			this.btnStoreShelves = new FontAwesome.Sharp.IconButton();
 			this.btnProducts = new FontAwesome.Sharp.IconButton();
 			this.btnProductsMenu = new FontAwesome.Sharp.IconButton();
+			this.PanelFinance = new System.Windows.Forms.Panel();
 			this.btnFinanceEndOfPeriod = new FontAwesome.Sharp.IconButton();
 			this.btnFinanceInvoices = new FontAwesome.Sharp.IconButton();
 			this.btnFinanceTurnOvers = new FontAwesome.Sharp.IconButton();
@@ -58,22 +49,27 @@ namespace POS
 			this.btnCustomers = new FontAwesome.Sharp.IconButton();
 			this.btnSuppliers = new FontAwesome.Sharp.IconButton();
 			this.btnDashboard = new FontAwesome.Sharp.IconButton();
+			this.panelLogo = new System.Windows.Forms.Panel();
+			this.lblSoftwareName = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.pbLogo = new System.Windows.Forms.PictureBox();
-			this.cmxEndOfPeriod = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.closingShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.closingDayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.closingMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.panelTitle = new System.Windows.Forms.Panel();
+			this.pbCurrentControlIcon = new FontAwesome.Sharp.IconPictureBox();
+			this.labelCurrentControl = new Bunifu.Framework.UI.BunifuCustomLabel();
+			this.pbMinimize = new FontAwesome.Sharp.IconPictureBox();
+			this.pbMaximize = new FontAwesome.Sharp.IconPictureBox();
+			this.pbClose = new FontAwesome.Sharp.IconPictureBox();
+			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+			this.panelFill = new System.Windows.Forms.Panel();
 			this.panelMenu.SuspendLayout();
+			this.PanelProducts.SuspendLayout();
 			this.PanelFinance.SuspendLayout();
 			this.panelLogo.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
 			this.panelTitle.SuspendLayout();
-			this.PanelProducts.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbCurrentControlIcon)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbMinimize)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbMaximize)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-			this.cmxEndOfPeriod.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelMenu
@@ -92,156 +88,6 @@ namespace POS
 			this.panelMenu.Size = new System.Drawing.Size(223, 658);
 			this.panelMenu.TabIndex = 0;
 			// 
-			// PanelFinance
-			// 
-			this.PanelFinance.Controls.Add(this.btnFinanceEndOfPeriod);
-			this.PanelFinance.Controls.Add(this.btnFinanceInvoices);
-			this.PanelFinance.Controls.Add(this.btnFinanceTurnOvers);
-			this.PanelFinance.Controls.Add(this.btnFinanceDashboard);
-			this.PanelFinance.Controls.Add(this.btnFinances);
-			this.PanelFinance.Dock = System.Windows.Forms.DockStyle.Top;
-			this.PanelFinance.Location = new System.Drawing.Point(0, 219);
-			this.PanelFinance.Name = "PanelFinance";
-			this.PanelFinance.Size = new System.Drawing.Size(223, 176);
-			this.PanelFinance.TabIndex = 0;
-			// 
-			// panelLogo
-			// 
-			this.panelLogo.Controls.Add(this.lblSoftwareName);
-			this.panelLogo.Controls.Add(this.pbLogo);
-			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelLogo.Location = new System.Drawing.Point(0, 0);
-			this.panelLogo.Name = "panelLogo";
-			this.panelLogo.Size = new System.Drawing.Size(223, 69);
-			this.panelLogo.TabIndex = 0;
-			// 
-			// lblSoftwareName
-			// 
-			this.lblSoftwareName.AutoSize = true;
-			this.lblSoftwareName.Font = new System.Drawing.Font("Sitka Small", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblSoftwareName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.lblSoftwareName.Location = new System.Drawing.Point(66, 22);
-			this.lblSoftwareName.Name = "lblSoftwareName";
-			this.lblSoftwareName.Size = new System.Drawing.Size(155, 34);
-			this.lblSoftwareName.TabIndex = 5;
-			this.lblSoftwareName.Text = "1234567891";
-			// 
-			// panelTitle
-			// 
-			this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-			this.panelTitle.Controls.Add(this.pbCurrentControlIcon);
-			this.panelTitle.Controls.Add(this.labelCurrentControl);
-			this.panelTitle.Controls.Add(this.pbMinimize);
-			this.panelTitle.Controls.Add(this.pbMaximize);
-			this.panelTitle.Controls.Add(this.pbClose);
-			this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelTitle.Location = new System.Drawing.Point(223, 0);
-			this.panelTitle.Name = "panelTitle";
-			this.panelTitle.Size = new System.Drawing.Size(1085, 56);
-			this.panelTitle.TabIndex = 1;
-			// 
-			// labelCurrentControl
-			// 
-			this.labelCurrentControl.AutoSize = true;
-			this.labelCurrentControl.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelCurrentControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.labelCurrentControl.Location = new System.Drawing.Point(47, 21);
-			this.labelCurrentControl.Name = "labelCurrentControl";
-			this.labelCurrentControl.Size = new System.Drawing.Size(113, 22);
-			this.labelCurrentControl.TabIndex = 3;
-			this.labelCurrentControl.Text = "Dashboard";
-			// 
-			// bunifuDragControl1
-			// 
-			this.bunifuDragControl1.Fixed = true;
-			this.bunifuDragControl1.Horizontal = true;
-			this.bunifuDragControl1.TargetControl = this.panelTitle;
-			this.bunifuDragControl1.Vertical = true;
-			// 
-			// panelFill
-			// 
-			this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
-			this.panelFill.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelFill.Location = new System.Drawing.Point(223, 56);
-			this.panelFill.Name = "panelFill";
-			this.panelFill.Size = new System.Drawing.Size(1085, 602);
-			this.panelFill.TabIndex = 2;
-			this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
-			// 
-			// PanelProducts
-			// 
-			this.PanelProducts.Controls.Add(this.btnPurchases);
-			this.PanelProducts.Controls.Add(this.btnStoreShelves);
-			this.PanelProducts.Controls.Add(this.btnProducts);
-			this.PanelProducts.Controls.Add(this.btnProductsMenu);
-			this.PanelProducts.Dock = System.Windows.Forms.DockStyle.Top;
-			this.PanelProducts.Location = new System.Drawing.Point(0, 395);
-			this.PanelProducts.Name = "PanelProducts";
-			this.PanelProducts.Size = new System.Drawing.Size(223, 146);
-			this.PanelProducts.TabIndex = 19;
-			// 
-			// pbCurrentControlIcon
-			// 
-			this.pbCurrentControlIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-			this.pbCurrentControlIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pbCurrentControlIcon.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.pbCurrentControlIcon.IconChar = FontAwesome.Sharp.IconChar.Home;
-			this.pbCurrentControlIcon.IconColor = System.Drawing.Color.WhiteSmoke;
-			this.pbCurrentControlIcon.IconSize = 28;
-			this.pbCurrentControlIcon.Location = new System.Drawing.Point(14, 20);
-			this.pbCurrentControlIcon.Name = "pbCurrentControlIcon";
-			this.pbCurrentControlIcon.Size = new System.Drawing.Size(28, 30);
-			this.pbCurrentControlIcon.TabIndex = 4;
-			this.pbCurrentControlIcon.TabStop = false;
-			// 
-			// pbMinimize
-			// 
-			this.pbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.pbMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-			this.pbMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pbMinimize.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.pbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-			this.pbMinimize.IconColor = System.Drawing.Color.WhiteSmoke;
-			this.pbMinimize.IconSize = 24;
-			this.pbMinimize.Location = new System.Drawing.Point(1012, 1);
-			this.pbMinimize.Name = "pbMinimize";
-			this.pbMinimize.Size = new System.Drawing.Size(24, 24);
-			this.pbMinimize.TabIndex = 2;
-			this.pbMinimize.TabStop = false;
-			this.pbMinimize.Click += new System.EventHandler(this.pbMinimize_Click);
-			// 
-			// pbMaximize
-			// 
-			this.pbMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.pbMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-			this.pbMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pbMaximize.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.pbMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-			this.pbMaximize.IconColor = System.Drawing.Color.WhiteSmoke;
-			this.pbMaximize.IconSize = 24;
-			this.pbMaximize.Location = new System.Drawing.Point(1036, 1);
-			this.pbMaximize.Name = "pbMaximize";
-			this.pbMaximize.Size = new System.Drawing.Size(24, 24);
-			this.pbMaximize.TabIndex = 1;
-			this.pbMaximize.TabStop = false;
-			this.pbMaximize.Click += new System.EventHandler(this.pbMaximize_Click);
-			// 
-			// pbClose
-			// 
-			this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.pbClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-			this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pbClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.pbClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-			this.pbClose.IconColor = System.Drawing.Color.WhiteSmoke;
-			this.pbClose.IconSize = 24;
-			this.pbClose.Location = new System.Drawing.Point(1060, 1);
-			this.pbClose.Name = "pbClose";
-			this.pbClose.Size = new System.Drawing.Size(24, 24);
-			this.pbClose.TabIndex = 0;
-			this.pbClose.TabStop = false;
-			this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
-			// 
 			// BtnSettings
 			// 
 			this.BtnSettings.Dock = System.Windows.Forms.DockStyle.Top;
@@ -254,7 +100,7 @@ namespace POS
 			this.BtnSettings.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.BtnSettings.IconSize = 30;
 			this.BtnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.BtnSettings.Location = new System.Drawing.Point(0, 541);
+			this.BtnSettings.Location = new System.Drawing.Point(0, 317);
 			this.BtnSettings.Name = "BtnSettings";
 			this.BtnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
 			this.BtnSettings.Rotation = 0D;
@@ -265,6 +111,18 @@ namespace POS
 			this.BtnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.BtnSettings.UseVisualStyleBackColor = true;
 			this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
+			// 
+			// PanelProducts
+			// 
+			this.PanelProducts.Controls.Add(this.btnPurchases);
+			this.PanelProducts.Controls.Add(this.btnStoreShelves);
+			this.PanelProducts.Controls.Add(this.btnProducts);
+			this.PanelProducts.Controls.Add(this.btnProductsMenu);
+			this.PanelProducts.Dock = System.Windows.Forms.DockStyle.Top;
+			this.PanelProducts.Location = new System.Drawing.Point(0, 267);
+			this.PanelProducts.Name = "PanelProducts";
+			this.PanelProducts.Size = new System.Drawing.Size(223, 50);
+			this.PanelProducts.TabIndex = 19;
 			// 
 			// btnPurchases
 			// 
@@ -288,6 +146,7 @@ namespace POS
 			this.btnPurchases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnPurchases.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnPurchases.UseVisualStyleBackColor = true;
+			this.btnPurchases.Click += new System.EventHandler(this.btnPurchases_Click);
 			// 
 			// btnStoreShelves
 			// 
@@ -311,6 +170,7 @@ namespace POS
 			this.btnStoreShelves.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnStoreShelves.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnStoreShelves.UseVisualStyleBackColor = true;
+			this.btnStoreShelves.Click += new System.EventHandler(this.btnStoreShelves_Click);
 			// 
 			// btnProducts
 			// 
@@ -334,6 +194,7 @@ namespace POS
 			this.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnProducts.UseVisualStyleBackColor = true;
+			this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
 			// 
 			// btnProductsMenu
 			// 
@@ -344,7 +205,7 @@ namespace POS
 			this.btnProductsMenu.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
 			this.btnProductsMenu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnProductsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.btnProductsMenu.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+			this.btnProductsMenu.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
 			this.btnProductsMenu.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.btnProductsMenu.IconSize = 30;
 			this.btnProductsMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,9 +221,21 @@ namespace POS
 			this.btnProductsMenu.UseVisualStyleBackColor = true;
 			this.btnProductsMenu.Click += new System.EventHandler(this.btnProductsMenu_Click);
 			// 
+			// PanelFinance
+			// 
+			this.PanelFinance.Controls.Add(this.btnFinanceEndOfPeriod);
+			this.PanelFinance.Controls.Add(this.btnFinanceInvoices);
+			this.PanelFinance.Controls.Add(this.btnFinanceTurnOvers);
+			this.PanelFinance.Controls.Add(this.btnFinanceDashboard);
+			this.PanelFinance.Controls.Add(this.btnFinances);
+			this.PanelFinance.Dock = System.Windows.Forms.DockStyle.Top;
+			this.PanelFinance.Location = new System.Drawing.Point(0, 219);
+			this.PanelFinance.Name = "PanelFinance";
+			this.PanelFinance.Size = new System.Drawing.Size(223, 48);
+			this.PanelFinance.TabIndex = 0;
+			// 
 			// btnFinanceEndOfPeriod
 			// 
-			this.btnFinanceEndOfPeriod.ContextMenuStrip = this.cmxEndOfPeriod;
 			this.btnFinanceEndOfPeriod.Dock = System.Windows.Forms.DockStyle.Top;
 			this.btnFinanceEndOfPeriod.FlatAppearance.BorderSize = 0;
 			this.btnFinanceEndOfPeriod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -554,6 +427,27 @@ namespace POS
 			this.btnDashboard.UseVisualStyleBackColor = true;
 			this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
 			// 
+			// panelLogo
+			// 
+			this.panelLogo.Controls.Add(this.lblSoftwareName);
+			this.panelLogo.Controls.Add(this.pbLogo);
+			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelLogo.Location = new System.Drawing.Point(0, 0);
+			this.panelLogo.Name = "panelLogo";
+			this.panelLogo.Size = new System.Drawing.Size(223, 69);
+			this.panelLogo.TabIndex = 0;
+			// 
+			// lblSoftwareName
+			// 
+			this.lblSoftwareName.AutoSize = true;
+			this.lblSoftwareName.Font = new System.Drawing.Font("Sitka Small", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblSoftwareName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.lblSoftwareName.Location = new System.Drawing.Point(66, 22);
+			this.lblSoftwareName.Name = "lblSoftwareName";
+			this.lblSoftwareName.Size = new System.Drawing.Size(155, 34);
+			this.lblSoftwareName.TabIndex = 5;
+			this.lblSoftwareName.Text = "1234567891";
+			// 
 			// pbLogo
 			// 
 			this.pbLogo.Image = global::POS.Properties.Resources.Daco_4579002;
@@ -564,36 +458,109 @@ namespace POS
 			this.pbLogo.TabIndex = 7;
 			this.pbLogo.TabStop = false;
 			// 
-			// cmxEndOfPeriod
+			// panelTitle
 			// 
-			this.cmxEndOfPeriod.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closingShiftToolStripMenuItem,
-            this.closingDayToolStripMenuItem,
-            this.closingMonthToolStripMenuItem});
-			this.cmxEndOfPeriod.Name = "cmxEndOfPeriod";
-			this.cmxEndOfPeriod.Size = new System.Drawing.Size(181, 92);
-			this.cmxEndOfPeriod.Text = "End of Period";
+			this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+			this.panelTitle.Controls.Add(this.pbCurrentControlIcon);
+			this.panelTitle.Controls.Add(this.labelCurrentControl);
+			this.panelTitle.Controls.Add(this.pbMinimize);
+			this.panelTitle.Controls.Add(this.pbMaximize);
+			this.panelTitle.Controls.Add(this.pbClose);
+			this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelTitle.Location = new System.Drawing.Point(223, 0);
+			this.panelTitle.Name = "panelTitle";
+			this.panelTitle.Size = new System.Drawing.Size(1085, 56);
+			this.panelTitle.TabIndex = 1;
 			// 
-			// closingShiftToolStripMenuItem
+			// pbCurrentControlIcon
 			// 
-			this.closingShiftToolStripMenuItem.Name = "closingShiftToolStripMenuItem";
-			this.closingShiftToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.closingShiftToolStripMenuItem.Text = "Closing Shift";
-			this.closingShiftToolStripMenuItem.Click += new System.EventHandler(this.closingShiftToolStripMenuItem_Click);
+			this.pbCurrentControlIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+			this.pbCurrentControlIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pbCurrentControlIcon.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.pbCurrentControlIcon.IconChar = FontAwesome.Sharp.IconChar.Home;
+			this.pbCurrentControlIcon.IconColor = System.Drawing.Color.WhiteSmoke;
+			this.pbCurrentControlIcon.IconSize = 28;
+			this.pbCurrentControlIcon.Location = new System.Drawing.Point(14, 20);
+			this.pbCurrentControlIcon.Name = "pbCurrentControlIcon";
+			this.pbCurrentControlIcon.Size = new System.Drawing.Size(28, 30);
+			this.pbCurrentControlIcon.TabIndex = 4;
+			this.pbCurrentControlIcon.TabStop = false;
 			// 
-			// closingDayToolStripMenuItem
+			// labelCurrentControl
 			// 
-			this.closingDayToolStripMenuItem.Name = "closingDayToolStripMenuItem";
-			this.closingDayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.closingDayToolStripMenuItem.Text = "Closing Day";
-			this.closingDayToolStripMenuItem.Click += new System.EventHandler(this.closingDayToolStripMenuItem_Click);
+			this.labelCurrentControl.AutoSize = true;
+			this.labelCurrentControl.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelCurrentControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.labelCurrentControl.Location = new System.Drawing.Point(47, 21);
+			this.labelCurrentControl.Name = "labelCurrentControl";
+			this.labelCurrentControl.Size = new System.Drawing.Size(113, 22);
+			this.labelCurrentControl.TabIndex = 3;
+			this.labelCurrentControl.Text = "Dashboard";
 			// 
-			// closingMonthToolStripMenuItem
+			// pbMinimize
 			// 
-			this.closingMonthToolStripMenuItem.Name = "closingMonthToolStripMenuItem";
-			this.closingMonthToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.closingMonthToolStripMenuItem.Text = "Closing Month";
-			this.closingMonthToolStripMenuItem.Click += new System.EventHandler(this.closingMonthToolStripMenuItem_Click);
+			this.pbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pbMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+			this.pbMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pbMinimize.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.pbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+			this.pbMinimize.IconColor = System.Drawing.Color.WhiteSmoke;
+			this.pbMinimize.IconSize = 24;
+			this.pbMinimize.Location = new System.Drawing.Point(1012, 1);
+			this.pbMinimize.Name = "pbMinimize";
+			this.pbMinimize.Size = new System.Drawing.Size(24, 24);
+			this.pbMinimize.TabIndex = 2;
+			this.pbMinimize.TabStop = false;
+			this.pbMinimize.Click += new System.EventHandler(this.pbMinimize_Click);
+			// 
+			// pbMaximize
+			// 
+			this.pbMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pbMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+			this.pbMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pbMaximize.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.pbMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+			this.pbMaximize.IconColor = System.Drawing.Color.WhiteSmoke;
+			this.pbMaximize.IconSize = 24;
+			this.pbMaximize.Location = new System.Drawing.Point(1036, 1);
+			this.pbMaximize.Name = "pbMaximize";
+			this.pbMaximize.Size = new System.Drawing.Size(24, 24);
+			this.pbMaximize.TabIndex = 1;
+			this.pbMaximize.TabStop = false;
+			this.pbMaximize.Click += new System.EventHandler(this.pbMaximize_Click);
+			// 
+			// pbClose
+			// 
+			this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pbClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+			this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pbClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.pbClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+			this.pbClose.IconColor = System.Drawing.Color.WhiteSmoke;
+			this.pbClose.IconSize = 24;
+			this.pbClose.Location = new System.Drawing.Point(1060, 1);
+			this.pbClose.Name = "pbClose";
+			this.pbClose.Size = new System.Drawing.Size(24, 24);
+			this.pbClose.TabIndex = 0;
+			this.pbClose.TabStop = false;
+			this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
+			// 
+			// bunifuDragControl1
+			// 
+			this.bunifuDragControl1.Fixed = true;
+			this.bunifuDragControl1.Horizontal = true;
+			this.bunifuDragControl1.TargetControl = this.panelTitle;
+			this.bunifuDragControl1.Vertical = true;
+			// 
+			// panelFill
+			// 
+			this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
+			this.panelFill.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelFill.Location = new System.Drawing.Point(223, 56);
+			this.panelFill.Name = "panelFill";
+			this.panelFill.Size = new System.Drawing.Size(1085, 602);
+			this.panelFill.TabIndex = 2;
+			this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
 			// 
 			// Dashboard
 			// 
@@ -606,23 +573,23 @@ namespace POS
 			this.Controls.Add(this.panelTitle);
 			this.Controls.Add(this.panelMenu);
 			this.DoubleBuffered = true;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Dashboard";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Dashboard_Load);
 			this.panelMenu.ResumeLayout(false);
+			this.PanelProducts.ResumeLayout(false);
 			this.PanelFinance.ResumeLayout(false);
 			this.panelLogo.ResumeLayout(false);
 			this.panelLogo.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
 			this.panelTitle.ResumeLayout(false);
 			this.panelTitle.PerformLayout();
-			this.PanelProducts.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pbCurrentControlIcon)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbMinimize)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbMaximize)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-			this.cmxEndOfPeriod.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -656,9 +623,5 @@ namespace POS
 		private FontAwesome.Sharp.IconButton btnStoreShelves;
 		private FontAwesome.Sharp.IconButton btnProducts;
 		private FontAwesome.Sharp.IconButton btnProductsMenu;
-		private ContextMenuStrip cmxEndOfPeriod;
-		private ToolStripMenuItem closingShiftToolStripMenuItem;
-		private ToolStripMenuItem closingDayToolStripMenuItem;
-		private ToolStripMenuItem closingMonthToolStripMenuItem;
 	}
 }

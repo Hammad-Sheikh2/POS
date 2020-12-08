@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using FontAwesome.Sharp;
+﻿using FontAwesome.Sharp;
 using POS.Forms;
+using POS.Forms.Products;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace POS.UserControls
 {
@@ -19,6 +16,7 @@ namespace POS.UserControls
 			InitializeComponent();
 			ActivateTheme();
 		}
+		
 
 		#region Methods
 
@@ -32,8 +30,8 @@ namespace POS.UserControls
 			}
 			foreach (var textbox in GetAllChildren(this).OfType<IconButton>())
 			{
-				textbox.IconColor = Properties.Settings.Default.HeaderColor;
-				textbox.ForeColor = Properties.Settings.Default.MenuBarColor;
+				textbox.ForeColor = Properties.Settings.Default.ForeColor;
+				textbox.BackColor = Properties.Settings.Default.HeaderColor;
 			}
 			foreach (var textbox in GetAllChildren(this).OfType<Panel>())
 				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
@@ -41,22 +39,14 @@ namespace POS.UserControls
 				textbox.ForeColor = Properties.Settings.Default.HeaderColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Label>())
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
-			foreach (var textbox in GetAllChildren(this).OfType<Button>())
-			{
-				textbox.ForeColor = Properties.Settings.Default.ForeColor;
-				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
-			}
 			foreach (var textbox in GetAllChildren(this).OfType<ComboBox>())
 			{
 				textbox.BackColor = Properties.Settings.Default.OnHoverColor;
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			}
-			btnInStore.BackColor = Properties.Settings.Default.HeaderColor;
-			btnInShelves.BackColor = Properties.Settings.Default.HeaderColor;
-			btnReturned.BackColor = Properties.Settings.Default.HeaderColor;
-			btnDormant.BackColor = Properties.Settings.Default.HeaderColor;
-			btnExpired.BackColor = Properties.Settings.Default.HeaderColor;
-
+			dg.HeaderBgColor = Properties.Settings.Default.HeaderColor;
+			dg.HeaderForeColor = Properties.Settings.Default.ForeColor;
+			dg.BackgroundColor = Properties.Settings.Default.MenuBarColor;
 			panelListings.BackColor = Color.Transparent;
 		}
 
@@ -82,14 +72,22 @@ namespace POS.UserControls
 			f.ShowDialog();
 		}
 
-		private void btnClear_Click(object sender, EventArgs e)
+		private void btnAdd_Click(object sender, EventArgs e)
 		{
-			foreach (var textbox in GetAllChildren(Canva).OfType<TextBox>())
-				textbox.Clear();
-			foreach (var textbox in GetAllChildren(Canva).OfType<ComboBox>())
-				textbox.SelectedIndex = -1;
-			foreach (var textbox in GetAllChildren(Canva).OfType<DateTimePicker>())
-				textbox.Value = DateTime.Now;
+			FormNewProduct f = new FormNewProduct();
+			f.ShowDialog();
+		}
+
+		private void btnEdit_Click(object sender, EventArgs e)
+		{
+			FormEditProduct f = new FormEditProduct();
+			f.ShowDialog();
+		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			FormDeleteProduct f = new FormDeleteProduct();
+			f.ShowDialog();
 		}
 	}
 }

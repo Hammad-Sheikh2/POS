@@ -44,6 +44,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.btnPayment = new FontAwesome.Sharp.IconButton();
+			this.cbxProductNames = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.creditInvoiceBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -51,7 +52,7 @@
 			// tbTotal
 			// 
 			this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-			this.tbTotal.Location = new System.Drawing.Point(138, 12);
+			this.tbTotal.Location = new System.Drawing.Point(137, 16);
 			this.tbTotal.Name = "tbTotal";
 			this.tbTotal.Size = new System.Drawing.Size(430, 29);
 			this.tbTotal.TabIndex = 102;
@@ -60,7 +61,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-			this.label1.Location = new System.Drawing.Point(12, 19);
+			this.label1.Location = new System.Drawing.Point(11, 23);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(116, 19);
 			this.label1.TabIndex = 101;
@@ -110,7 +111,7 @@
 			this.dg.Name = "dg";
 			this.dg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dg.RowHeadersVisible = false;
-			this.dg.Size = new System.Drawing.Size(440, 113);
+			this.dg.Size = new System.Drawing.Size(434, 113);
 			this.dg.TabIndex = 104;
 			// 
 			// dateDataGridViewTextBoxColumn
@@ -151,7 +152,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Calibri", 12F);
-			this.label3.Location = new System.Drawing.Point(12, 87);
+			this.label3.Location = new System.Drawing.Point(12, 77);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(63, 19);
 			this.label3.TabIndex = 105;
@@ -160,7 +161,7 @@
 			// textBox1
 			// 
 			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox1.Location = new System.Drawing.Point(16, 111);
+			this.textBox1.Location = new System.Drawing.Point(16, 137);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(98, 26);
 			this.textBox1.TabIndex = 106;
@@ -173,7 +174,7 @@
 			this.btnPayment.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnPayment.IconColor = System.Drawing.Color.Black;
 			this.btnPayment.IconSize = 16;
-			this.btnPayment.Location = new System.Drawing.Point(16, 143);
+			this.btnPayment.Location = new System.Drawing.Point(16, 169);
 			this.btnPayment.Name = "btnPayment";
 			this.btnPayment.Rotation = 0D;
 			this.btnPayment.Size = new System.Drawing.Size(98, 31);
@@ -181,11 +182,27 @@
 			this.btnPayment.Text = "Confirm";
 			this.btnPayment.UseVisualStyleBackColor = true;
 			// 
+			// cbxProductNames
+			// 
+			this.cbxProductNames.Font = new System.Drawing.Font("Times New Roman", 13F);
+			this.cbxProductNames.FormattingEnabled = true;
+			this.cbxProductNames.Items.AddRange(new object[] {
+            "Product 1",
+            "Product 2",
+            "Product 3",
+            "Product 4"});
+			this.cbxProductNames.Location = new System.Drawing.Point(16, 104);
+			this.cbxProductNames.Name = "cbxProductNames";
+			this.cbxProductNames.Size = new System.Drawing.Size(98, 27);
+			this.cbxProductNames.TabIndex = 108;
+			this.cbxProductNames.Text = "Invoice #";
+			// 
 			// FormCreditPayment
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(594, 225);
+			this.Controls.Add(this.cbxProductNames);
 			this.Controls.Add(this.btnPayment);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label3);
@@ -222,5 +239,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox textBox1;
 		private FontAwesome.Sharp.IconButton btnPayment;
+		private System.Windows.Forms.ComboBox cbxProductNames;
 	}
 }

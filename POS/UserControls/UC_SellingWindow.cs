@@ -1,14 +1,12 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using POS.Classes;
+using POS.Classes.Products;
+using POS.Forms.Selling;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
-using POS.Forms.Selling;
 
 namespace POS.UserControls
 {
@@ -18,6 +16,7 @@ namespace POS.UserControls
 		{
 			InitializeComponent();
 			ActivateTheme();
+			PopulateComboboxes();
 		}
 
 		private void ActivateTheme()
@@ -38,6 +37,14 @@ namespace POS.UserControls
 			dg.BackgroundColor = Properties.Settings.Default.MenuBarColor;
 			tbTotal.BackColor = Properties.Settings.Default.HeaderColor;
 			tbTotal.ForeColor = Properties.Settings.Default.ForeColor;
+		}
+
+		private void PopulateComboboxes()
+		{
+			cbxCustomers.AutoCompleteCustomSource = Access.CustomerCompletionSource;
+			cbxCustomers.Items.AddRange(Access.Customers.ToArray());
+			cbxProductNames.AutoCompleteCustomSource = Access.ItemsCompletionSource;
+			cbxProductNames.Items.AddRange(Access.Items.ToArray());
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)
@@ -76,6 +83,20 @@ namespace POS.UserControls
 			{
 				f.ShowDialog();
 			}
+		}
+
+		private void cbxProductNames_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				//cbxProductNames_SelectedIndexChanged(sender, e);
+			}
+		}
+
+		private void cbxProductNames_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Product pr = Access.GetProductByName(cbxProductNames.Text);
+			cartBindingSource.List.Add(new Cart() { ProductName = pr.Name, Quantity = 1, Shape = pr.Shape, UnitPrice = pr.UnitPrice });
 		}
 	}
 }

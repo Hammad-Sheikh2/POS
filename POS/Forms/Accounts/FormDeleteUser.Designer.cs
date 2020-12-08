@@ -71,18 +71,6 @@
 			this.cbxThemes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxThemes.Font = new System.Drawing.Font("Sitka Small", 14F);
 			this.cbxThemes.FormattingEnabled = true;
-			this.cbxThemes.Items.AddRange(new object[] {
-            "Dark Green",
-            "Dark Blue",
-            "Dark Cyan",
-            "Dark Gray",
-            "Dark Purple",
-            "Dark Red",
-            "Light Blue",
-            "Light Cyan",
-            "Light Gray",
-            "Light Purple",
-            "Light Red"});
 			this.cbxThemes.Location = new System.Drawing.Point(28, 40);
 			this.cbxThemes.Name = "cbxThemes";
 			this.cbxThemes.Size = new System.Drawing.Size(259, 36);

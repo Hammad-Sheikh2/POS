@@ -33,6 +33,13 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelSearch = new System.Windows.Forms.Panel();
+			this.iconButton2 = new FontAwesome.Sharp.IconButton();
+			this.iconButton1 = new FontAwesome.Sharp.IconButton();
+			this.btnProducts = new FontAwesome.Sharp.IconButton();
+			this.label6 = new System.Windows.Forms.Label();
+			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
@@ -40,19 +47,7 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.cbxFilter = new System.Windows.Forms.ComboBox();
 			this.tbSearch = new System.Windows.Forms.TextBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.btnProducts = new FontAwesome.Sharp.IconButton();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label5 = new System.Windows.Forms.Label();
-			this.tbTotal = new System.Windows.Forms.TextBox();
-			this.tbPaid = new System.Windows.Forms.TextBox();
-			this.tbLeft = new System.Windows.Forms.TextBox();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cashierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,10 +57,17 @@
 			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.tbLeft = new System.Windows.Forms.TextBox();
+			this.tbPaid = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.tbTotal = new System.Windows.Forms.TextBox();
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.panelSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSearch
@@ -90,6 +92,94 @@
 			this.panelSearch.Name = "panelSearch";
 			this.panelSearch.Size = new System.Drawing.Size(604, 115);
 			this.panelSearch.TabIndex = 16;
+			// 
+			// iconButton2
+			// 
+			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.iconButton2.Font = new System.Drawing.Font("Calibri", 12F);
+			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.iconButton2.IconColor = System.Drawing.Color.Black;
+			this.iconButton2.IconSize = 16;
+			this.iconButton2.Location = new System.Drawing.Point(397, 77);
+			this.iconButton2.Name = "iconButton2";
+			this.iconButton2.Rotation = 0D;
+			this.iconButton2.Size = new System.Drawing.Size(140, 32);
+			this.iconButton2.TabIndex = 117;
+			this.iconButton2.Text = "Cash";
+			this.iconButton2.UseVisualStyleBackColor = true;
+			// 
+			// iconButton1
+			// 
+			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.iconButton1.Font = new System.Drawing.Font("Calibri", 12F);
+			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.iconButton1.IconColor = System.Drawing.Color.Black;
+			this.iconButton1.IconSize = 16;
+			this.iconButton1.Location = new System.Drawing.Point(251, 77);
+			this.iconButton1.Name = "iconButton1";
+			this.iconButton1.Rotation = 0D;
+			this.iconButton1.Size = new System.Drawing.Size(140, 32);
+			this.iconButton1.TabIndex = 116;
+			this.iconButton1.Text = "Credit";
+			this.iconButton1.UseVisualStyleBackColor = true;
+			// 
+			// btnProducts
+			// 
+			this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnProducts.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnProducts.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnProducts.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnProducts.IconColor = System.Drawing.Color.Black;
+			this.btnProducts.IconSize = 16;
+			this.btnProducts.Location = new System.Drawing.Point(105, 77);
+			this.btnProducts.Name = "btnProducts";
+			this.btnProducts.Rotation = 0D;
+			this.btnProducts.Size = new System.Drawing.Size(140, 32);
+			this.btnProducts.TabIndex = 115;
+			this.btnProducts.Text = "All";
+			this.btnProducts.UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label6.Location = new System.Drawing.Point(382, 43);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(85, 18);
+			this.label6.TabIndex = 114;
+			this.label6.Text = "Client Name";
+			// 
+			// textBox2
+			// 
+			this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.textBox2.Location = new System.Drawing.Point(482, 39);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(104, 24);
+			this.textBox2.TabIndex = 113;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label3.Location = new System.Drawing.Point(382, 15);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(94, 18);
+			this.label3.TabIndex = 112;
+			this.label3.Text = "Cashier Name";
+			// 
+			// textBox1
+			// 
+			this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.textBox1.Location = new System.Drawing.Point(482, 11);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(104, 24);
+			this.textBox1.TabIndex = 111;
 			// 
 			// label2
 			// 
@@ -166,94 +256,6 @@
 			this.tbSearch.Size = new System.Drawing.Size(75, 24);
 			this.tbSearch.TabIndex = 0;
 			// 
-			// textBox1
-			// 
-			this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.textBox1.Location = new System.Drawing.Point(482, 11);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(104, 24);
-			this.textBox1.TabIndex = 111;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label3.Location = new System.Drawing.Point(382, 15);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(94, 18);
-			this.label3.TabIndex = 112;
-			this.label3.Text = "Cashier Name";
-			// 
-			// textBox2
-			// 
-			this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.textBox2.Location = new System.Drawing.Point(482, 39);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(104, 24);
-			this.textBox2.TabIndex = 113;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label6.Location = new System.Drawing.Point(382, 43);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(85, 18);
-			this.label6.TabIndex = 114;
-			this.label6.Text = "Client Name";
-			// 
-			// btnProducts
-			// 
-			this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnProducts.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnProducts.Font = new System.Drawing.Font("Calibri", 12F);
-			this.btnProducts.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnProducts.IconColor = System.Drawing.Color.Black;
-			this.btnProducts.IconSize = 16;
-			this.btnProducts.Location = new System.Drawing.Point(105, 77);
-			this.btnProducts.Name = "btnProducts";
-			this.btnProducts.Rotation = 0D;
-			this.btnProducts.Size = new System.Drawing.Size(140, 32);
-			this.btnProducts.TabIndex = 115;
-			this.btnProducts.Text = "All";
-			this.btnProducts.UseVisualStyleBackColor = true;
-			// 
-			// iconButton1
-			// 
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton1.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton1.IconColor = System.Drawing.Color.Black;
-			this.iconButton1.IconSize = 16;
-			this.iconButton1.Location = new System.Drawing.Point(251, 77);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Rotation = 0D;
-			this.iconButton1.Size = new System.Drawing.Size(140, 32);
-			this.iconButton1.TabIndex = 116;
-			this.iconButton1.Text = "Credit";
-			this.iconButton1.UseVisualStyleBackColor = true;
-			// 
-			// iconButton2
-			// 
-			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton2.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton2.IconColor = System.Drawing.Color.Black;
-			this.iconButton2.IconSize = 16;
-			this.iconButton2.Location = new System.Drawing.Point(397, 77);
-			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Rotation = 0D;
-			this.iconButton2.Size = new System.Drawing.Size(140, 32);
-			this.iconButton2.TabIndex = 117;
-			this.iconButton2.Text = "Cash";
-			this.iconButton2.UseVisualStyleBackColor = true;
-			// 
 			// dg
 			// 
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -302,59 +304,6 @@
 			this.dg.Size = new System.Drawing.Size(1035, 359);
 			this.dg.TabIndex = 17;
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
-			// 
-			// panel1
-			// 
-			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.panel1.BackColor = System.Drawing.Color.Silver;
-			this.panel1.Controls.Add(this.tbLeft);
-			this.panel1.Controls.Add(this.tbPaid);
-			this.panel1.Controls.Add(this.label5);
-			this.panel1.Controls.Add(this.tbTotal);
-			this.panel1.Location = new System.Drawing.Point(30, 515);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1035, 39);
-			this.panel1.TabIndex = 118;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-			this.label5.Location = new System.Drawing.Point(13, 12);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(38, 18);
-			this.label5.TabIndex = 114;
-			this.label5.Text = "Total";
-			// 
-			// tbTotal
-			// 
-			this.tbTotal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbTotal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbTotal.Location = new System.Drawing.Point(528, 7);
-			this.tbTotal.Name = "tbTotal";
-			this.tbTotal.Size = new System.Drawing.Size(125, 24);
-			this.tbTotal.TabIndex = 111;
-			// 
-			// tbPaid
-			// 
-			this.tbPaid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbPaid.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbPaid.Location = new System.Drawing.Point(793, 7);
-			this.tbPaid.Name = "tbPaid";
-			this.tbPaid.Size = new System.Drawing.Size(127, 24);
-			this.tbPaid.TabIndex = 115;
-			// 
-			// tbLeft
-			// 
-			this.tbLeft.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbLeft.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbLeft.Location = new System.Drawing.Point(925, 8);
-			this.tbLeft.Name = "tbLeft";
-			this.tbLeft.Size = new System.Drawing.Size(107, 24);
-			this.tbLeft.TabIndex = 116;
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -408,6 +357,69 @@
 			// 
 			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
 			// 
+			// panel1
+			// 
+			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.panel1.BackColor = System.Drawing.Color.Silver;
+			this.panel1.Controls.Add(this.tbLeft);
+			this.panel1.Controls.Add(this.tbPaid);
+			this.panel1.Controls.Add(this.label5);
+			this.panel1.Controls.Add(this.tbTotal);
+			this.panel1.Location = new System.Drawing.Point(30, 515);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1035, 39);
+			this.panel1.TabIndex = 118;
+			// 
+			// tbLeft
+			// 
+			this.tbLeft.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbLeft.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbLeft.Location = new System.Drawing.Point(925, 8);
+			this.tbLeft.Name = "tbLeft";
+			this.tbLeft.Size = new System.Drawing.Size(107, 24);
+			this.tbLeft.TabIndex = 116;
+			// 
+			// tbPaid
+			// 
+			this.tbPaid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbPaid.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbPaid.Location = new System.Drawing.Point(793, 7);
+			this.tbPaid.Name = "tbPaid";
+			this.tbPaid.Size = new System.Drawing.Size(127, 24);
+			this.tbPaid.TabIndex = 115;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+			this.label5.Location = new System.Drawing.Point(13, 12);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(38, 18);
+			this.label5.TabIndex = 114;
+			this.label5.Text = "Total";
+			// 
+			// tbTotal
+			// 
+			this.tbTotal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbTotal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbTotal.Location = new System.Drawing.Point(528, 7);
+			this.tbTotal.Name = "tbTotal";
+			this.tbTotal.Size = new System.Drawing.Size(125, 24);
+			this.tbTotal.TabIndex = 111;
+			// 
+			// bunifuElipse1
+			// 
+			this.bunifuElipse1.ElipseRadius = 5;
+			this.bunifuElipse1.TargetControl = this.panelSearch;
+			// 
+			// bunifuElipse2
+			// 
+			this.bunifuElipse2.ElipseRadius = 5;
+			this.bunifuElipse2.TargetControl = this.dg;
+			// 
 			// UC_Invoices
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,9 +432,9 @@
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -459,5 +471,7 @@
 		private System.Windows.Forms.TextBox tbTotal;
 		private System.Windows.Forms.TextBox tbLeft;
 		private System.Windows.Forms.TextBox tbPaid;
+		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+		private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
 	}
 }
