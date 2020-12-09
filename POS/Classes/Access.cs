@@ -1,11 +1,68 @@
 ﻿using POS.Classes.Products;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using Dapper;
+using Dapper.Contrib;
+using System.Data;
 
 namespace POS.Classes
 {
 	public static class Access
 	{
+
+		#region General
+
+		public static bool IsDuplicate(string Query)
+		{
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand(Query, cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+					return true;
+				return false;
+			}
+		}
+
+		public static List<string> GetStringList(string Query, bool Integer = false)
+		{
+			List<string> col = new List<string>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand(Query, cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				while (reader.Read())
+				{
+					if (!Integer)
+						col.Add(reader.GetString(0));
+					else
+						col.Add(reader.GetInt32(0).ToString());
+				}
+			}
+			return col;
+		}
+
+		public static List<string> GetDoublesStringList(string Query)
+		{
+			List<string> col = new List<string>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand(Query, cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				while (reader.Read())
+				{
+					col.Add(Math.Round(reader.GetDouble(0), 2).ToString());
+				}
+			}
+			return col;
+		}
+
+		#endregion
 
 		#region Customers
 
@@ -40,6 +97,199 @@ namespace POS.Classes
 		#endregion
 
 		#region Products
+
+		public static int NextProductId
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(Id), 0) + 1 FROM Products;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 1;
+				}
+			}
+		}
+
+		public static AutoCompleteStringCollection GetAllProductNamesCollection
+		{
+			get
+			{
+				AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ProductName FROM Products;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					while (reader.Read())
+						col.Add(reader.GetString(0));
+				}
+				return col;
+			}
+		}
+
+		public static Product GetProduct(int ProductId)
+		{
+			Product product = new Product();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Products WHERE Id = {ProductId};", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						product.Id = (int)reader["Id"];
+						product.Name = (string)reader["ProductName"];
+						product.Shape = (string)reader["ProductShape"];
+						product.Weight = (double)reader["ProductWeight"];
+						product.QuantityInStore = (double)reader["QuantityInStore"];
+						product.QuantityInShelves = (double)reader["QuantityInShelves"];
+						product.QuantityInBox = (double)reader["QuantityInBox"];
+						product.QuantityMaxInShelve = (double)reader["QuantityMaxInShelve"];
+						product.UnitPrice = (double)reader["UnitPrice"];
+						product.PurchasePrice = (double)reader["PurchasePrice"];
+						product.SellingPrice = (double)reader["SellingPrice"];
+						product.ShelfCode = (string)reader["ShelfCode"];
+						product.AlertThreshold = (double)reader["AlertThreshold"];
+						product.CreatedBy = (string)reader["CreatedBy"];
+						product.DateCreated = (DateTime)reader["DateCreated"];
+						product.ExpiryDate = (DateTime)reader["ExpiryDate"];
+						product.DateModified = (DateTime)reader["DateModified"];
+						product.SupplierName = (string)reader["SupplierName"];
+						product.Store = (bool)reader["Store"];
+					}
+				}
+			}
+			return product;
+		}
+
+		public static Product GetProduct(string ProductName)
+		{
+			Product product = new Product();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Products WHERE ProductName = '{ProductName}';", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						product.Id = (int)reader["Id"];
+						product.Name = (string)reader["ProductName"];
+						product.Shape = (string)reader["ProductShape"];
+						product.Weight = (double)reader["ProductWeight"];
+						product.QuantityInStore = (double)reader["QuantityInStore"];
+						product.QuantityInShelves = (double)reader["QuantityInShelves"];
+						product.QuantityInBox = (double)reader["QuantityInBox"];
+						product.QuantityMaxInShelve = (double)reader["QuantityMaxInShelve"];
+						product.UnitPrice = (double)reader["UnitPrice"];
+						product.PurchasePrice = (double)reader["PurchasePrice"];
+						product.SellingPrice = (double)reader["SellingPrice"];
+						product.ShelfCode = (string)reader["ShelfCode"];
+						product.AlertThreshold = (double)reader["AlertThreshold"];
+						product.CreatedBy = (string)reader["CreatedBy"];
+						product.DateCreated = (DateTime)reader["DateCreated"];
+						product.ExpiryDate = (DateTime)reader["ExpiryDate"];
+						product.DateModified = (DateTime)reader["DateModified"];
+						product.SupplierName = (string)reader["SupplierName"];
+						product.Store = (bool)reader["Store"];
+					}
+				}
+			}
+			return product;
+		}
+
+		public static Product[] GetProducts(string Query = "SELECT * FROM Products;")
+		{
+			List<Product> li = new List<Product>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand(Query, cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Product product = new Product();
+						product.Id = (int)reader["Id"];
+						product.Name = (string)reader["ProductName"];
+						product.Shape = (string)reader["ProductShape"];
+						product.Weight = (double)reader["ProductWeight"];
+						product.QuantityInStore = (double)reader["QuantityInStore"];
+						product.QuantityInShelves = (double)reader["QuantityInShelves"];
+						product.QuantityInBox = (double)reader["QuantityInBox"];
+						product.QuantityMaxInShelve = (double)reader["QuantityMaxInShelve"];
+						product.UnitPrice = (double)reader["UnitPrice"];
+						product.PurchasePrice = (double)reader["PurchasePrice"];
+						product.SellingPrice = (double)reader["SellingPrice"];
+						product.ShelfCode = (string)reader["ShelfCode"];
+						product.AlertThreshold = (double)reader["AlertThreshold"];
+						product.CreatedBy = (string)reader["CreatedBy"];
+						product.DateCreated = (DateTime)reader["DateCreated"];
+						product.ExpiryDate = (DateTime)reader["ExpiryDate"];
+						product.DateModified = (DateTime)reader["DateModified"];
+						product.SupplierName = (string)reader["SupplierName"];
+						product.Store = (bool)reader["Store"];
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Cart GetCart(Product product)
+		{
+			Cart cart = new Cart();
+			cart.ProductId = product.Id;
+			cart.ProductName = product.Name;
+			cart.UnitPrice = product.UnitPrice;
+			cart.Shape = product.Shape;
+			cart.Quantity = 1;
+			return cart;
+		}
+
+		public static Cart[] GetCart(Product[] products)
+		{
+			List<Cart> li = new List<Cart>();
+			foreach (Product item in products)
+			{
+				li.Add(GetCart(item));
+			}
+			return li.ToArray();
+		}
+
+		public static void InsertProduct(Product product)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Insert(product);
+			}
+		}
+
+		public static void UpdateProduct(Product product)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Update(product);
+			}
+		}
+
+		public static void DeleteProduct(Product product)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Delete(product);
+			}
+		}
 
 		public static AutoCompleteStringCollection ItemsCompletionSource
 		{
@@ -84,6 +334,34 @@ namespace POS.Classes
 					return item;
 			}
 			return null;
+		}
+
+		#endregion
+
+		#region Settings
+
+		public static void InsertCategory(string category)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Execute($"INSERT INTO Categories(Value)Values('{category}');");
+			}
+		}
+
+		public static void InsertShelfNumber(string shelf)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Execute($"INSERT INTO ShelfNumbers(Value)Values('{shelf}');");
+			}
+		}
+
+		public static void InsertWeight(double weight)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Execute($"INSERT INTO Weights(Value)Values({weight});");
+			}
 		}
 
 		#endregion

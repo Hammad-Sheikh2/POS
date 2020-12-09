@@ -43,8 +43,8 @@ namespace POS.UserControls
 		{
 			cbxCustomers.AutoCompleteCustomSource = Access.CustomerCompletionSource;
 			cbxCustomers.Items.AddRange(Access.Customers.ToArray());
-			cbxProductNames.AutoCompleteCustomSource = Access.ItemsCompletionSource;
-			cbxProductNames.Items.AddRange(Access.Items.ToArray());
+			cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
+			cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)
@@ -95,8 +95,16 @@ namespace POS.UserControls
 
 		private void cbxProductNames_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			Product pr = Access.GetProductByName(cbxProductNames.Text);
-			cartBindingSource.List.Add(new Cart() { ProductName = pr.Name, Quantity = 1, Shape = pr.Shape, UnitPrice = pr.UnitPrice });
+			foreach (Cart item in cartBindingSource.List)
+			{
+				if (item.ProductName == cbxProductNames.Text)
+				{
+					item.Quantity++;
+					cartBindingSource.ResetBindings(false);
+					return;
+				}
+			}
+			cartBindingSource.List.Add(Access.GetCart(Access.GetProduct(cbxProductNames.Text)));
 		}
 	}
 }
