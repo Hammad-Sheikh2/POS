@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using POS.Classes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,6 +8,8 @@ namespace POS.Forms
 {
 	public partial class FormSupplierSettings : Form
 	{
+		ErrorProvider error = new ErrorProvider();
+
 		public FormSupplierSettings()
 		{
 			InitializeComponent();
@@ -43,6 +46,49 @@ namespace POS.Forms
 					stack.Push(child);
 				yield return next;
 			}
+		}
+
+		private void btnAddCity_Click(object sender, System.EventArgs e)
+		{
+			if (tbCity.TextLength == 0)
+			{
+				error.SetError(btnAddCity, "City name is empty");
+				return;
+			}
+			else
+				error.SetError(btnAddCity, "");
+
+			if (!Access.IsDuplicate($"SELECT Value FROM Cities WHERE Value = '{tbCity.Text}'"))
+			{
+				Access.InsertCity(tbCity.Text);
+				Manager.Show("City Added", Notification.Type.Success);
+			}
+			else
+				Manager.Show("Already Exists", Notification.Type.Error);
+		}
+
+		private void tbCity_Click(object sender, System.EventArgs e)
+		{
+			(sender as TextBox).Clear();
+		}
+
+		private void btnAddProvince_Click(object sender, System.EventArgs e)
+		{
+			if (tbProvince.TextLength == 0)
+			{
+				error.SetError(btnAddProvince, "Province name is empty");
+				return;
+			}
+			else
+				error.SetError(btnAddProvince, "");
+
+			if (!Access.IsDuplicate($"SELECT Value FROM Provinces WHERE Value = '{tbProvince.Text}'"))
+			{
+				Access.InsertProvince(tbProvince.Text);
+				Manager.Show("Province Added", Notification.Type.Success);
+			}
+			else
+				Manager.Show("Already Exists", Notification.Type.Error);
 		}
 	}
 }

@@ -338,6 +338,53 @@ namespace POS.Classes
 
 		#endregion
 
+		#region Suppliers
+
+		public static int NextSupplierId
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(Id), 0) + 1 FROM Suppliers;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 1;
+				}
+			}
+		}
+
+		public static void InsertSupplier(Supplier sup)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Insert(sup);
+			}
+		}
+
+		public static void UpdateSupplier(Supplier sup)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Update(sup);
+			}
+		}
+
+		public static void DeleteSupplier(Supplier sup)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Delete(sup);
+			}
+		}
+
+		#endregion
+
 		#region Settings
 
 		public static void InsertCategory(string category)
@@ -364,6 +411,21 @@ namespace POS.Classes
 			}
 		}
 
+		public static void InsertCity(string city)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Execute($"INSERT INTO Cities(Value)Values('{city}');");
+			}
+		}
+
+		public static void InsertProvince(string province)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Execute($"INSERT INTO Provinces(Value)Values('{province}');");
+			}
+		}
 		#endregion
 
 	}

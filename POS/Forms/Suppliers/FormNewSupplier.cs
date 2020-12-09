@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using POS.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,61 @@ namespace POS.Forms.Suppliers
 {
 	public partial class FormNewSupplier : Form
 	{
+		ErrorProvider error = new ErrorProvider();
+		Supplier sup = new Supplier();
+
+
 		public FormNewSupplier()
 		{
 			InitializeComponent();
 			ActivateTheme();
+			Populate();
+			Clear();
 		}
 
-		private void FormNewSupplier_Load(object sender, EventArgs e)
+		private void Populate()
 		{
+			cbxCity.Items.AddRange(Access.GetStringList("SELECT Value FROM Cities").ToArray());
+			cbxProvince.Items.AddRange(Access.GetStringList("SELECT Value FROM Provinces").ToArray());
+		}
 
+		private void Clear()
+		{
+			lblId.Text = Access.NextSupplierId.ToString();
+		}
+
+		private void Reload()
+		{
+			sup.Id = int.Parse(lblId.Text);
+			sup.Name = tbName.Text;
+			sup.City = cbxCity.Text;
+			sup.Province = cbxProvince.Text;
+			sup.Email = tbEmail.Text;
+			sup.Category = cbxCategory.Text;
+			sup.Contact1 = tbContact1.Text;
+			sup.Contact2 = tbContact2.Text;
+			sup.AirtelMoney = tbAirtel.Text;
+			sup.BankAccount = tbBank.Text;
+		}
+
+		private void ValidateCombobox(object sender, EventArgs e)
+		{
+			ComboBox cb = sender as ComboBox;
+			if (cb.SelectedIndex == -1)
+				error.SetError(cb, "Please select an option");
+			else
+				error.SetError(cb, "");
+		}
+
+		private void ValidateInput(object sender, EventArgs e)
+		{
+			TextBox tb = sender as TextBox;
+			if (!double.TryParse(tb.Text, out _))
+			{
+				error.SetError(tb, "Not a valid number");
+			}
+			else
+			{ error.SetError(tb, ""); }
 		}
 
 		private void ActivateTheme()
@@ -55,6 +102,27 @@ namespace POS.Forms.Suppliers
 				foreach (Control child in next.Controls)
 					stack.Push(child);
 				yield return next;
+			}
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			Clear();
+			GetAllChildren(this).OfType<ComboBox>().ToList().ForEach(item => item.SelectedIndex = -1);
+			GetAllChildren(this).OfType<TextBox>().ToList().ForEach(item => item.Clear());
+		}
+
+		private void btnSave_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Reload();
+				Access.InsertSupplier(sup);
+				Manager.Show("Supplier inserted", Notification.Type.Success);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}

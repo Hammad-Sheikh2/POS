@@ -73,7 +73,11 @@ namespace POS.UserControls
 			{
 				f.tbTotalBill.Text = tbTotal.Text;
 				f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
-				f.ShowDialog();
+				if (f.ShowDialog() == DialogResult.OK)
+				{
+					// Update Database
+
+				}
 			}
 		}
 

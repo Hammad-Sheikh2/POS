@@ -29,34 +29,36 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.tbName = new System.Windows.Forms.TextBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.tbCity = new System.Windows.Forms.TextBox();
+			this.tbProvince = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAddCity = new FontAwesome.Sharp.IconPictureBox();
-			this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+			this.btnAddProvince = new FontAwesome.Sharp.IconPictureBox();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.btnAddCity)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnAddProvince)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// tbName
+			// tbCity
 			// 
-			this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-			this.tbName.Location = new System.Drawing.Point(43, 43);
-			this.tbName.Name = "tbName";
-			this.tbName.Size = new System.Drawing.Size(226, 29);
-			this.tbName.TabIndex = 0;
+			this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+			this.tbCity.Location = new System.Drawing.Point(43, 43);
+			this.tbCity.Name = "tbCity";
+			this.tbCity.Size = new System.Drawing.Size(226, 29);
+			this.tbCity.TabIndex = 0;
+			this.tbCity.Click += new System.EventHandler(this.tbCity_Click);
 			// 
-			// textBox1
+			// tbProvince
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-			this.textBox1.Location = new System.Drawing.Point(43, 127);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(226, 29);
-			this.textBox1.TabIndex = 1;
+			this.tbProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+			this.tbProvince.Location = new System.Drawing.Point(43, 127);
+			this.tbProvince.Name = "tbProvince";
+			this.tbProvince.Size = new System.Drawing.Size(226, 29);
+			this.tbProvince.TabIndex = 1;
+			this.tbProvince.Click += new System.EventHandler(this.tbCity_Click);
 			// 
 			// panel1
 			// 
@@ -111,42 +113,44 @@
 			this.btnAddCity.TabIndex = 98;
 			this.btnAddCity.TabStop = false;
 			this.toolTip1.SetToolTip(this.btnAddCity, "Add City");
+			this.btnAddCity.Click += new System.EventHandler(this.btnAddCity_Click);
 			// 
-			// iconPictureBox1
+			// btnAddProvince
 			// 
-			this.iconPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.iconPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-			this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			this.iconPictureBox1.IconSize = 26;
-			this.iconPictureBox1.Location = new System.Drawing.Point(272, 130);
-			this.iconPictureBox1.Name = "iconPictureBox1";
-			this.iconPictureBox1.Size = new System.Drawing.Size(26, 27);
-			this.iconPictureBox1.TabIndex = 99;
-			this.iconPictureBox1.TabStop = false;
-			this.toolTip1.SetToolTip(this.iconPictureBox1, "Add Province");
+			this.btnAddProvince.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAddProvince.BackColor = System.Drawing.Color.Transparent;
+			this.btnAddProvince.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAddProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			this.btnAddProvince.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+			this.btnAddProvince.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			this.btnAddProvince.IconSize = 26;
+			this.btnAddProvince.Location = new System.Drawing.Point(272, 130);
+			this.btnAddProvince.Name = "btnAddProvince";
+			this.btnAddProvince.Size = new System.Drawing.Size(26, 27);
+			this.btnAddProvince.TabIndex = 99;
+			this.btnAddProvince.TabStop = false;
+			this.toolTip1.SetToolTip(this.btnAddProvince, "Add Province");
+			this.btnAddProvince.Click += new System.EventHandler(this.btnAddProvince_Click);
 			// 
 			// FormSupplierSettings
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(326, 199);
-			this.Controls.Add(this.iconPictureBox1);
+			this.Controls.Add(this.btnAddProvince);
 			this.Controls.Add(this.btnAddCity);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label15);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.tbName);
+			this.Controls.Add(this.tbProvince);
+			this.Controls.Add(this.tbCity);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormSupplierSettings";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Supplier Settings";
 			((System.ComponentModel.ISupportInitialize)(this.btnAddCity)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnAddProvince)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -154,14 +158,14 @@
 
 		#endregion
 
-		private System.Windows.Forms.TextBox tbName;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox tbCity;
+		private System.Windows.Forms.TextBox tbProvince;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label label1;
 		private FontAwesome.Sharp.IconPictureBox btnAddCity;
-		private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+		private FontAwesome.Sharp.IconPictureBox btnAddProvince;
 		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }
