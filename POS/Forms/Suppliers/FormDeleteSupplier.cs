@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using POS.Classes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,10 +8,21 @@ namespace POS.Forms.Suppliers
 {
 	public partial class FormDeleteSupplier : Form
 	{
+		ErrorProvider error = new ErrorProvider();
+		Supplier sup;
+
 		public FormDeleteSupplier()
 		{
 			InitializeComponent();
 			ActivateTheme();
+			Populate();
+		}
+
+		private void Populate()
+		{
+			cbxFilter.Items.Clear();
+			cbxFilter.Items.AddRange(Access.GetStringList("SELECT Id FROM Suppliers", true).ToArray());
+			tbSearch.AutoCompleteCustomSource = Access.GetAllSupplierNamesCollection;
 		}
 
 		private void ActivateTheme()
@@ -45,6 +57,42 @@ namespace POS.Forms.Suppliers
 					stack.Push(child);
 				yield return next;
 			}
+		}
+
+		private void tbSearch_Click(object sender, System.EventArgs e)
+		{
+			(sender as TextBox).Clear();
+		}
+
+		private void btnDelete_Click(object sender, System.EventArgs e)
+		{
+			if (sup == null)
+			{
+				error.SetError(btnDelete, "No supplier selected");
+			}
+			else
+			{
+				error.SetError(btnDelete, "");
+				if (MessageBox.Show($"Do you want to delete {sup.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Access.DeleteSupplier(sup);
+					Manager.Show("Supplier Deleted", Notification.Type.Info);
+					Populate();
+				}
+			}
+		}
+
+		private void tbSearch_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				sup = Access.GetSupplier(tbSearch.Text);
+			}
+		}
+
+		private void cbxFilter_SelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			sup = Access.GetSupplier(int.Parse(cbxFilter.Text));
 		}
 	}
 }

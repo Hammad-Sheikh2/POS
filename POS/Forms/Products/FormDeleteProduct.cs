@@ -73,6 +73,7 @@ namespace POS.Forms.Products
 			}
 			else
 			{
+				error.SetError(btnDelete, "");
 				if (MessageBox.Show($"Do you want to delete {product.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					Access.DeleteProduct(product);

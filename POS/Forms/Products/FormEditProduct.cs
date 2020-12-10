@@ -19,10 +19,10 @@ namespace POS.Forms.Products
 			InitializeComponent();
 			ActivateTheme();
 			tbSearch.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
-			Access.GetStringList("SELECT Id FROM Products;", true).ForEach(item => cbxFilter.Items.Add(item));
-			Access.GetStringList("SELECT Value FROM Categories").ForEach(item => cbxCategory.Items.Add(item));
-			Access.GetStringList("SELECT Value FROM ShelfNumbers").ForEach(item => cbxShelf.Items.Add(item));
-			Access.GetDoublesStringList("SELECT Value FROM Weights").ForEach(item => cbxWeight.Items.Add(item));
+			cbxFilter.Items.AddRange(Access.GetStringList("SELECT Id FROM Products;", true).ToArray());
+			cbxCategory.Items.AddRange(Access.GetStringList("SELECT Value FROM Categories").ToArray());
+			cbxShelf.Items.AddRange(Access.GetStringList("SELECT Value FROM ShelfNumbers").ToArray());
+			cbxWeight.Items.AddRange(Access.GetDoublesStringList("SELECT Value FROM Weights").ToArray());
 		}
 
 		private void ActivateTheme()

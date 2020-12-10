@@ -359,6 +359,23 @@ namespace POS.Classes
 			}
 		}
 
+		public static AutoCompleteStringCollection GetAllSupplierNamesCollection
+		{
+			get
+			{
+				AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT Name FROM Suppliers;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					while (reader.Read())
+						col.Add(reader.GetString(0));
+				}
+				return col;
+			}
+		}
+
 		public static void InsertSupplier(Supplier sup)
 		{
 			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
@@ -380,6 +397,62 @@ namespace POS.Classes
 			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
 			{
 				connection.Delete(sup);
+			}
+		}
+
+		public static Supplier GetSupplier(int id)
+		{
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				Supplier sup = new Supplier();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Suppliers WHERE Id = {id}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						sup.Id = (int)reader["Id"];
+						sup.Name = (string)reader["Name"];
+						sup.City = (string)reader["City"];
+						sup.Province = (string)reader["Province"];
+						sup.Email = (string)reader["Email"];
+						sup.Contact1 = (string)reader["Contact1"];
+						sup.Contact2 = (string)reader["Contact2"];
+						sup.AirtelMoney = (string)reader["AirtelMoney"];
+						sup.BankAccount = (string)reader["BankAccount"];
+						sup.Category = (string)reader["Category"];
+					}
+				}
+				return sup;
+			}
+		}
+
+		public static Supplier GetSupplier(string name)
+		{
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				Supplier sup = new Supplier();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Suppliers WHERE Name = '{name}'", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						sup.Id = (int)reader["Id"];
+						sup.Name = (string)reader["Name"];
+						sup.City = (string)reader["City"];
+						sup.Province = (string)reader["Province"];
+						sup.Email = (string)reader["Email"];
+						sup.Contact1 = (string)reader["Contact1"];
+						sup.Contact2 = (string)reader["Contact2"];
+						sup.AirtelMoney = (string)reader["AirtelMoney"];
+						sup.BankAccount = (string)reader["BankAccount"];
+						sup.Category = (string)reader["Category"];
+					}
+				}
+				return sup;
 			}
 		}
 

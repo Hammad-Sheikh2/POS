@@ -30,6 +30,8 @@ namespace POS.Forms.Suppliers
 		private void Clear()
 		{
 			lblId.Text = Access.NextSupplierId.ToString();
+			GetAllChildren(this).OfType<ComboBox>().ToList().ForEach(item => item.SelectedIndex = -1);
+			GetAllChildren(this).OfType<TextBox>().ToList().ForEach(item => item.Clear());
 		}
 
 		private void Reload()
@@ -108,8 +110,7 @@ namespace POS.Forms.Suppliers
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			Clear();
-			GetAllChildren(this).OfType<ComboBox>().ToList().ForEach(item => item.SelectedIndex = -1);
-			GetAllChildren(this).OfType<TextBox>().ToList().ForEach(item => item.Clear());
+			
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)

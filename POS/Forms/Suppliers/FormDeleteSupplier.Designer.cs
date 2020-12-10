@@ -30,26 +30,19 @@
 		{
 			this.cbxFilter = new System.Windows.Forms.ComboBox();
 			this.tbSearch = new System.Windows.Forms.TextBox();
-			this.btnCredit = new FontAwesome.Sharp.IconButton();
+			this.btnDelete = new FontAwesome.Sharp.IconButton();
 			this.SuspendLayout();
 			// 
 			// cbxFilter
 			// 
 			this.cbxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.cbxFilter.FormattingEnabled = true;
-			this.cbxFilter.Items.AddRange(new object[] {
-            "Id",
-            "Name",
-            "Address",
-            "Proprietor",
-            "Email",
-            "Contact",
-            "Fax"});
 			this.cbxFilter.Location = new System.Drawing.Point(57, 20);
 			this.cbxFilter.Name = "cbxFilter";
 			this.cbxFilter.Size = new System.Drawing.Size(229, 26);
 			this.cbxFilter.TabIndex = 3;
 			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
 			// 
 			// tbSearch
 			// 
@@ -61,29 +54,32 @@
 			this.tbSearch.Size = new System.Drawing.Size(229, 26);
 			this.tbSearch.TabIndex = 2;
 			this.tbSearch.Text = "Search by Name";
+			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
 			// 
-			// btnCredit
+			// btnDelete
 			// 
-			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnCredit.Font = new System.Drawing.Font("Calibri", 11F);
-			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnCredit.IconColor = System.Drawing.Color.Black;
-			this.btnCredit.IconSize = 16;
-			this.btnCredit.Location = new System.Drawing.Point(115, 89);
-			this.btnCredit.Name = "btnCredit";
-			this.btnCredit.Rotation = 0D;
-			this.btnCredit.Size = new System.Drawing.Size(115, 26);
-			this.btnCredit.TabIndex = 113;
-			this.btnCredit.Text = "Delete";
-			this.btnCredit.UseVisualStyleBackColor = true;
+			this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDelete.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnDelete.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnDelete.IconColor = System.Drawing.Color.Black;
+			this.btnDelete.IconSize = 16;
+			this.btnDelete.Location = new System.Drawing.Point(57, 84);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Rotation = 0D;
+			this.btnDelete.Size = new System.Drawing.Size(229, 26);
+			this.btnDelete.TabIndex = 113;
+			this.btnDelete.Text = "Delete";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// FormDeleteSupplier
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(334, 124);
-			this.Controls.Add(this.btnCredit);
+			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.cbxFilter);
 			this.Controls.Add(this.tbSearch);
 			this.MaximizeBox = false;
@@ -101,6 +97,6 @@
 
 		private System.Windows.Forms.ComboBox cbxFilter;
 		private System.Windows.Forms.TextBox tbSearch;
-		private FontAwesome.Sharp.IconButton btnCredit;
+		private FontAwesome.Sharp.IconButton btnDelete;
 	}
 }
