@@ -33,31 +33,36 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.tbSearch = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.iconButton1 = new FontAwesome.Sharp.IconButton();
+			this.iconButton4 = new FontAwesome.Sharp.IconButton();
+			this.label12 = new System.Windows.Forms.Label();
+			this.btnCancel = new FontAwesome.Sharp.IconButton();
+			this.btnUpdate = new FontAwesome.Sharp.IconButton();
+			this.tbAirtel = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
-			this.textBox9 = new System.Windows.Forms.TextBox();
+			this.tbTotalLeft = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.tbTotalPaid = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.tbDownPayment = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.tbDiscount = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.comboBox4 = new System.Windows.Forms.ComboBox();
-			this.comboBox5 = new System.Windows.Forms.ComboBox();
+			this.cbxCategory = new System.Windows.Forms.ComboBox();
+			this.cbxProvince = new System.Windows.Forms.ComboBox();
+			this.cbxCity = new System.Windows.Forms.ComboBox();
 			this.label21 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
-			this.label23 = new System.Windows.Forms.Label();
+			this.lblId = new System.Windows.Forms.Label();
 			this.label24 = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.tbContact2 = new System.Windows.Forms.TextBox();
+			this.tbContact1 = new System.Windows.Forms.TextBox();
+			this.tbEmail = new System.Windows.Forms.TextBox();
 			this.label25 = new System.Windows.Forms.Label();
 			this.label26 = new System.Windows.Forms.Label();
 			this.label27 = new System.Windows.Forms.Label();
@@ -67,16 +72,12 @@
 			this.label31 = new System.Windows.Forms.Label();
 			this.label32 = new System.Windows.Forms.Label();
 			this.label33 = new System.Windows.Forms.Label();
-			this.textBox6 = new System.Windows.Forms.TextBox();
+			this.tbName = new System.Windows.Forms.TextBox();
 			this.label34 = new System.Windows.Forms.Label();
 			this.label35 = new System.Windows.Forms.Label();
 			this.label36 = new System.Windows.Forms.Label();
 			this.label37 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.iconButton3 = new FontAwesome.Sharp.IconButton();
-			this.iconButton2 = new FontAwesome.Sharp.IconButton();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.iconButton4 = new FontAwesome.Sharp.IconButton();
+			this.btnClear = new FontAwesome.Sharp.IconButton();
 			this.panelSearch.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -91,23 +92,18 @@
 			this.panelSearch.Location = new System.Drawing.Point(214, 12);
 			this.panelSearch.Name = "panelSearch";
 			this.panelSearch.Size = new System.Drawing.Size(443, 60);
-			this.panelSearch.TabIndex = 118;
+			this.panelSearch.TabIndex = 0;
 			// 
 			// cbxFilter
 			// 
 			this.cbxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.cbxFilter.FormattingEnabled = true;
-			this.cbxFilter.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
 			this.cbxFilter.Location = new System.Drawing.Point(55, 31);
 			this.cbxFilter.Name = "cbxFilter";
 			this.cbxFilter.Size = new System.Drawing.Size(165, 26);
-			this.cbxFilter.TabIndex = 1;
+			this.cbxFilter.TabIndex = 0;
 			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
 			// 
 			// label5
 			// 
@@ -127,44 +123,47 @@
 			this.tbSearch.Location = new System.Drawing.Point(226, 30);
 			this.tbSearch.Name = "tbSearch";
 			this.tbSearch.Size = new System.Drawing.Size(169, 26);
-			this.tbSearch.TabIndex = 0;
+			this.tbSearch.TabIndex = 1;
 			this.tbSearch.Text = "Search by Name";
 			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
+			this.tbSearch.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// panel1
 			// 
 			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.panel1.BackColor = System.Drawing.Color.Silver;
+			this.panel1.Controls.Add(this.btnClear);
 			this.panel1.Controls.Add(this.iconButton1);
 			this.panel1.Controls.Add(this.iconButton4);
 			this.panel1.Controls.Add(this.label12);
-			this.panel1.Controls.Add(this.iconButton2);
-			this.panel1.Controls.Add(this.iconButton3);
-			this.panel1.Controls.Add(this.textBox1);
+			this.panel1.Controls.Add(this.btnCancel);
+			this.panel1.Controls.Add(this.btnUpdate);
+			this.panel1.Controls.Add(this.tbAirtel);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.label10);
-			this.panel1.Controls.Add(this.textBox9);
+			this.panel1.Controls.Add(this.tbTotalLeft);
 			this.panel1.Controls.Add(this.label8);
 			this.panel1.Controls.Add(this.label9);
-			this.panel1.Controls.Add(this.textBox8);
+			this.panel1.Controls.Add(this.tbTotalPaid);
 			this.panel1.Controls.Add(this.label6);
 			this.panel1.Controls.Add(this.label7);
-			this.panel1.Controls.Add(this.textBox7);
+			this.panel1.Controls.Add(this.tbDownPayment);
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.label4);
-			this.panel1.Controls.Add(this.textBox2);
+			this.panel1.Controls.Add(this.tbDiscount);
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.label11);
-			this.panel1.Controls.Add(this.comboBox3);
-			this.panel1.Controls.Add(this.comboBox4);
-			this.panel1.Controls.Add(this.comboBox5);
+			this.panel1.Controls.Add(this.cbxCategory);
+			this.panel1.Controls.Add(this.cbxProvince);
+			this.panel1.Controls.Add(this.cbxCity);
 			this.panel1.Controls.Add(this.label21);
 			this.panel1.Controls.Add(this.label22);
-			this.panel1.Controls.Add(this.label23);
+			this.panel1.Controls.Add(this.lblId);
 			this.panel1.Controls.Add(this.label24);
-			this.panel1.Controls.Add(this.textBox3);
-			this.panel1.Controls.Add(this.textBox4);
-			this.panel1.Controls.Add(this.textBox5);
+			this.panel1.Controls.Add(this.tbContact2);
+			this.panel1.Controls.Add(this.tbContact1);
+			this.panel1.Controls.Add(this.tbEmail);
 			this.panel1.Controls.Add(this.label25);
 			this.panel1.Controls.Add(this.label26);
 			this.panel1.Controls.Add(this.label27);
@@ -174,7 +173,7 @@
 			this.panel1.Controls.Add(this.label31);
 			this.panel1.Controls.Add(this.label32);
 			this.panel1.Controls.Add(this.label33);
-			this.panel1.Controls.Add(this.textBox6);
+			this.panel1.Controls.Add(this.tbName);
 			this.panel1.Controls.Add(this.label34);
 			this.panel1.Controls.Add(this.label35);
 			this.panel1.Controls.Add(this.label36);
@@ -184,13 +183,89 @@
 			this.panel1.Size = new System.Drawing.Size(837, 251);
 			this.panel1.TabIndex = 119;
 			// 
-			// textBox1
+			// iconButton1
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox1.Location = new System.Drawing.Point(651, 174);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(148, 26);
-			this.textBox1.TabIndex = 11;
+			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.iconButton1.Font = new System.Drawing.Font("Calibri", 11F);
+			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.iconButton1.IconColor = System.Drawing.Color.Black;
+			this.iconButton1.IconSize = 16;
+			this.iconButton1.Location = new System.Drawing.Point(114, 203);
+			this.iconButton1.Name = "iconButton1";
+			this.iconButton1.Rotation = 0D;
+			this.iconButton1.Size = new System.Drawing.Size(78, 26);
+			this.iconButton1.TabIndex = 12;
+			this.iconButton1.Text = "Cash";
+			this.iconButton1.UseVisualStyleBackColor = true;
+			// 
+			// iconButton4
+			// 
+			this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.iconButton4.Font = new System.Drawing.Font("Calibri", 11F);
+			this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.iconButton4.IconColor = System.Drawing.Color.Black;
+			this.iconButton4.IconSize = 16;
+			this.iconButton4.Location = new System.Drawing.Point(30, 203);
+			this.iconButton4.Name = "iconButton4";
+			this.iconButton4.Rotation = 0D;
+			this.iconButton4.Size = new System.Drawing.Size(78, 26);
+			this.iconButton4.TabIndex = 11;
+			this.iconButton4.Text = "Credit";
+			this.iconButton4.UseVisualStyleBackColor = true;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label12.Location = new System.Drawing.Point(83, 182);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(59, 18);
+			this.label12.TabIndex = 106;
+			this.label12.Text = "Invoices";
+			// 
+			// btnCancel
+			// 
+			this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCancel.IconColor = System.Drawing.Color.Black;
+			this.btnCancel.IconSize = 16;
+			this.btnCancel.Location = new System.Drawing.Point(362, 222);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Rotation = 0D;
+			this.btnCancel.Size = new System.Drawing.Size(115, 26);
+			this.btnCancel.TabIndex = 9;
+			this.btnCancel.Text = "Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnUpdate.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnUpdate.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnUpdate.IconColor = System.Drawing.Color.Black;
+			this.btnUpdate.IconSize = 16;
+			this.btnUpdate.Location = new System.Drawing.Point(241, 222);
+			this.btnUpdate.Name = "btnUpdate";
+			this.btnUpdate.Rotation = 0D;
+			this.btnUpdate.Size = new System.Drawing.Size(115, 26);
+			this.btnUpdate.TabIndex = 8;
+			this.btnUpdate.Text = "Update";
+			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			// 
+			// tbAirtel
+			// 
+			this.tbAirtel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbAirtel.Location = new System.Drawing.Point(651, 174);
+			this.tbAirtel.Name = "tbAirtel";
+			this.tbAirtel.Size = new System.Drawing.Size(148, 26);
+			this.tbAirtel.TabIndex = 7;
+			this.tbAirtel.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label1
 			// 
@@ -212,13 +287,14 @@
 			this.label10.TabIndex = 104;
 			this.label10.Text = "Airtel Money";
 			// 
-			// textBox9
+			// tbTotalLeft
 			// 
-			this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox9.Location = new System.Drawing.Point(651, 142);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(148, 26);
-			this.textBox9.TabIndex = 10;
+			this.tbTotalLeft.Enabled = false;
+			this.tbTotalLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbTotalLeft.Location = new System.Drawing.Point(651, 142);
+			this.tbTotalLeft.Name = "tbTotalLeft";
+			this.tbTotalLeft.Size = new System.Drawing.Size(148, 26);
+			this.tbTotalLeft.TabIndex = 10;
 			// 
 			// label8
 			// 
@@ -240,13 +316,14 @@
 			this.label9.TabIndex = 101;
 			this.label9.Text = "Total Left";
 			// 
-			// textBox8
+			// tbTotalPaid
 			// 
-			this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox8.Location = new System.Drawing.Point(651, 109);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(148, 26);
-			this.textBox8.TabIndex = 9;
+			this.tbTotalPaid.Enabled = false;
+			this.tbTotalPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbTotalPaid.Location = new System.Drawing.Point(651, 109);
+			this.tbTotalPaid.Name = "tbTotalPaid";
+			this.tbTotalPaid.Size = new System.Drawing.Size(148, 26);
+			this.tbTotalPaid.TabIndex = 9;
 			// 
 			// label6
 			// 
@@ -268,13 +345,14 @@
 			this.label7.TabIndex = 98;
 			this.label7.Text = "Total Paid";
 			// 
-			// textBox7
+			// tbDownPayment
 			// 
-			this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox7.Location = new System.Drawing.Point(651, 76);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(148, 26);
-			this.textBox7.TabIndex = 8;
+			this.tbDownPayment.Enabled = false;
+			this.tbDownPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbDownPayment.Location = new System.Drawing.Point(651, 76);
+			this.tbDownPayment.Name = "tbDownPayment";
+			this.tbDownPayment.Size = new System.Drawing.Size(148, 26);
+			this.tbDownPayment.TabIndex = 8;
 			// 
 			// label3
 			// 
@@ -296,13 +374,14 @@
 			this.label4.TabIndex = 95;
 			this.label4.Text = "Down Payment";
 			// 
-			// textBox2
+			// tbDiscount
 			// 
-			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox2.Location = new System.Drawing.Point(651, 43);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(148, 26);
-			this.textBox2.TabIndex = 7;
+			this.tbDiscount.Enabled = false;
+			this.tbDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbDiscount.Location = new System.Drawing.Point(651, 43);
+			this.tbDiscount.Name = "tbDiscount";
+			this.tbDiscount.Size = new System.Drawing.Size(148, 26);
+			this.tbDiscount.TabIndex = 7;
 			// 
 			// label2
 			// 
@@ -324,35 +403,42 @@
 			this.label11.TabIndex = 92;
 			this.label11.Text = "Discount";
 			// 
-			// comboBox3
+			// cbxCategory
 			// 
-			this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(116, 144);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(172, 26);
-			this.comboBox3.TabIndex = 3;
-			this.comboBox3.Text = "Select";
+			this.cbxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxCategory.FormattingEnabled = true;
+			this.cbxCategory.Items.AddRange(new object[] {
+            "Company",
+            "Individual",
+            "Company Employee"});
+			this.cbxCategory.Location = new System.Drawing.Point(116, 144);
+			this.cbxCategory.Name = "cbxCategory";
+			this.cbxCategory.Size = new System.Drawing.Size(172, 26);
+			this.cbxCategory.TabIndex = 3;
+			this.cbxCategory.Text = "Select";
+			this.cbxCategory.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
-			// comboBox4
+			// cbxProvince
 			// 
-			this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.comboBox4.FormattingEnabled = true;
-			this.comboBox4.Location = new System.Drawing.Point(116, 110);
-			this.comboBox4.Name = "comboBox4";
-			this.comboBox4.Size = new System.Drawing.Size(172, 26);
-			this.comboBox4.TabIndex = 2;
-			this.comboBox4.Text = "Select";
+			this.cbxProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxProvince.FormattingEnabled = true;
+			this.cbxProvince.Location = new System.Drawing.Point(116, 110);
+			this.cbxProvince.Name = "cbxProvince";
+			this.cbxProvince.Size = new System.Drawing.Size(172, 26);
+			this.cbxProvince.TabIndex = 2;
+			this.cbxProvince.Text = "Select";
+			this.cbxProvince.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
-			// comboBox5
+			// cbxCity
 			// 
-			this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.comboBox5.FormattingEnabled = true;
-			this.comboBox5.Location = new System.Drawing.Point(115, 76);
-			this.comboBox5.Name = "comboBox5";
-			this.comboBox5.Size = new System.Drawing.Size(172, 26);
-			this.comboBox5.TabIndex = 1;
-			this.comboBox5.Text = "Select";
+			this.cbxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxCity.FormattingEnabled = true;
+			this.cbxCity.Location = new System.Drawing.Point(115, 76);
+			this.cbxCity.Name = "cbxCity";
+			this.cbxCity.Size = new System.Drawing.Size(172, 26);
+			this.cbxCity.TabIndex = 1;
+			this.cbxCity.Text = "Select";
+			this.cbxCity.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// label21
 			// 
@@ -374,15 +460,15 @@
 			this.label22.TabIndex = 86;
 			this.label22.Text = "Category";
 			// 
-			// label23
+			// lblId
 			// 
-			this.label23.AutoSize = true;
-			this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.label23.Location = new System.Drawing.Point(461, 9);
-			this.label23.Name = "label23";
-			this.label23.Size = new System.Drawing.Size(17, 19);
-			this.label23.TabIndex = 46;
-			this.label23.Text = "0";
+			this.lblId.AutoSize = true;
+			this.lblId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+			this.lblId.Location = new System.Drawing.Point(461, 9);
+			this.lblId.Name = "lblId";
+			this.lblId.Size = new System.Drawing.Size(17, 19);
+			this.lblId.TabIndex = 46;
+			this.lblId.Text = "0";
 			// 
 			// label24
 			// 
@@ -394,29 +480,32 @@
 			this.label24.TabIndex = 45;
 			this.label24.Text = "Customer ID#";
 			// 
-			// textBox3
+			// tbContact2
 			// 
-			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox3.Location = new System.Drawing.Point(392, 142);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(148, 26);
-			this.textBox3.TabIndex = 6;
+			this.tbContact2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbContact2.Location = new System.Drawing.Point(392, 142);
+			this.tbContact2.Name = "tbContact2";
+			this.tbContact2.Size = new System.Drawing.Size(148, 26);
+			this.tbContact2.TabIndex = 6;
+			this.tbContact2.Validated += new System.EventHandler(this.ValidateInput);
 			// 
-			// textBox4
+			// tbContact1
 			// 
-			this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox4.Location = new System.Drawing.Point(392, 110);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(148, 26);
-			this.textBox4.TabIndex = 5;
+			this.tbContact1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbContact1.Location = new System.Drawing.Point(392, 110);
+			this.tbContact1.Name = "tbContact1";
+			this.tbContact1.Size = new System.Drawing.Size(148, 26);
+			this.tbContact1.TabIndex = 5;
+			this.tbContact1.Validated += new System.EventHandler(this.ValidateInput);
 			// 
-			// textBox5
+			// tbEmail
 			// 
-			this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox5.Location = new System.Drawing.Point(392, 75);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(148, 26);
-			this.textBox5.TabIndex = 4;
+			this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbEmail.Location = new System.Drawing.Point(392, 75);
+			this.tbEmail.Name = "tbEmail";
+			this.tbEmail.Size = new System.Drawing.Size(148, 26);
+			this.tbEmail.TabIndex = 4;
+			this.tbEmail.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label25
 			// 
@@ -508,13 +597,14 @@
 			this.label33.TabIndex = 10;
 			this.label33.Text = "Province";
 			// 
-			// textBox6
+			// tbName
 			// 
-			this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox6.Location = new System.Drawing.Point(116, 44);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(424, 26);
-			this.textBox6.TabIndex = 0;
+			this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbName.Location = new System.Drawing.Point(116, 44);
+			this.tbName.Name = "tbName";
+			this.tbName.Size = new System.Drawing.Size(424, 26);
+			this.tbName.TabIndex = 0;
+			this.tbName.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label34
 			// 
@@ -556,79 +646,22 @@
 			this.label37.TabIndex = 5;
 			this.label37.Text = "City";
 			// 
-			// label12
+			// btnClear
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(83, 182);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(59, 18);
-			this.label12.TabIndex = 106;
-			this.label12.Text = "Invoices";
-			// 
-			// iconButton3
-			// 
-			this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton3.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton3.IconColor = System.Drawing.Color.Black;
-			this.iconButton3.IconSize = 16;
-			this.iconButton3.Location = new System.Drawing.Point(303, 220);
-			this.iconButton3.Name = "iconButton3";
-			this.iconButton3.Rotation = 0D;
-			this.iconButton3.Size = new System.Drawing.Size(115, 26);
-			this.iconButton3.TabIndex = 1;
-			this.iconButton3.Text = "Update";
-			this.iconButton3.UseVisualStyleBackColor = true;
-			// 
-			// iconButton2
-			// 
-			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton2.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton2.IconColor = System.Drawing.Color.Black;
-			this.iconButton2.IconSize = 16;
-			this.iconButton2.Location = new System.Drawing.Point(424, 220);
-			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Rotation = 0D;
-			this.iconButton2.Size = new System.Drawing.Size(115, 26);
-			this.iconButton2.TabIndex = 2;
-			this.iconButton2.Text = "Cancel";
-			this.iconButton2.UseVisualStyleBackColor = true;
-			// 
-			// iconButton1
-			// 
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton1.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton1.IconColor = System.Drawing.Color.Black;
-			this.iconButton1.IconSize = 16;
-			this.iconButton1.Location = new System.Drawing.Point(114, 203);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Rotation = 0D;
-			this.iconButton1.Size = new System.Drawing.Size(68, 26);
-			this.iconButton1.TabIndex = 108;
-			this.iconButton1.Text = "Cash";
-			this.iconButton1.UseVisualStyleBackColor = true;
-			// 
-			// iconButton4
-			// 
-			this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton4.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton4.IconColor = System.Drawing.Color.Black;
-			this.iconButton4.IconSize = 16;
-			this.iconButton4.Location = new System.Drawing.Point(30, 203);
-			this.iconButton4.Name = "iconButton4";
-			this.iconButton4.Rotation = 0D;
-			this.iconButton4.Size = new System.Drawing.Size(78, 26);
-			this.iconButton4.TabIndex = 107;
-			this.iconButton4.Text = "Credit";
-			this.iconButton4.UseVisualStyleBackColor = true;
+			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnClear.IconColor = System.Drawing.Color.Black;
+			this.btnClear.IconSize = 16;
+			this.btnClear.Location = new System.Drawing.Point(483, 222);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Rotation = 0D;
+			this.btnClear.Size = new System.Drawing.Size(115, 26);
+			this.btnClear.TabIndex = 10;
+			this.btnClear.Text = "Clear";
+			this.btnClear.UseVisualStyleBackColor = true;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// FormEditCustomer
 			// 
@@ -640,6 +673,7 @@
 			this.Name = "FormEditCustomer";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Edit Customer";
+			this.Validated += new System.EventHandler(this.ValidateCombobox);
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
 			this.panel1.ResumeLayout(false);
@@ -655,31 +689,31 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox tbSearch;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox tbAirtel;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.TextBox textBox9;
+		private System.Windows.Forms.TextBox tbTotalLeft;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox textBox8;
+		private System.Windows.Forms.TextBox tbTotalPaid;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.TextBox tbDownPayment;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox tbDiscount;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.ComboBox comboBox3;
-		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.ComboBox comboBox5;
+		private System.Windows.Forms.ComboBox cbxCategory;
+		private System.Windows.Forms.ComboBox cbxProvince;
+		private System.Windows.Forms.ComboBox cbxCity;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.Label lblId;
 		private System.Windows.Forms.Label label24;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.TextBox tbContact2;
+		private System.Windows.Forms.TextBox tbContact1;
+		private System.Windows.Forms.TextBox tbEmail;
 		private System.Windows.Forms.Label label25;
 		private System.Windows.Forms.Label label26;
 		private System.Windows.Forms.Label label27;
@@ -689,7 +723,7 @@
 		private System.Windows.Forms.Label label31;
 		private System.Windows.Forms.Label label32;
 		private System.Windows.Forms.Label label33;
-		private System.Windows.Forms.TextBox textBox6;
+		private System.Windows.Forms.TextBox tbName;
 		private System.Windows.Forms.Label label34;
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.Label label36;
@@ -697,7 +731,8 @@
 		private System.Windows.Forms.Label label12;
 		private FontAwesome.Sharp.IconButton iconButton1;
 		private FontAwesome.Sharp.IconButton iconButton4;
-		private FontAwesome.Sharp.IconButton iconButton2;
-		private FontAwesome.Sharp.IconButton iconButton3;
+		private FontAwesome.Sharp.IconButton btnCancel;
+		private FontAwesome.Sharp.IconButton btnUpdate;
+		private FontAwesome.Sharp.IconButton btnClear;
 	}
 }

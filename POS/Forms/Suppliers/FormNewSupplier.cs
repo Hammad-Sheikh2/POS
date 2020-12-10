@@ -60,9 +60,9 @@ namespace POS.Forms.Suppliers
 		private void ValidateInput(object sender, EventArgs e)
 		{
 			TextBox tb = sender as TextBox;
-			if (!double.TryParse(tb.Text, out _))
+			if (tb.TextLength == 0)
 			{
-				error.SetError(tb, "Not a valid number");
+				error.SetError(tb, "Field can't be empty");
 			}
 			else
 			{ error.SetError(tb, ""); }
@@ -110,7 +110,7 @@ namespace POS.Forms.Suppliers
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			Clear();
-			
+
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)

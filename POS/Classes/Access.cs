@@ -66,6 +66,25 @@ namespace POS.Classes
 
 		#region Customers
 
+		public static int NextCustomerId
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(Id), 0) + 1 FROM Customers;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 1;
+				}
+			}
+		}
+
 		public static List<string> Customers
 		{
 			get
@@ -80,6 +99,23 @@ namespace POS.Classes
 			}
 		}
 
+		public static AutoCompleteStringCollection GetAllCustomerNamesCollection
+		{
+			get
+			{
+				AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT Name FROM Customers;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					while (reader.Read())
+						col.Add(reader.GetString(0));
+				}
+				return col;
+			}
+		}
+
 		public static AutoCompleteStringCollection CustomerCompletionSource
 		{
 			get
@@ -91,6 +127,84 @@ namespace POS.Classes
 				cust.Add("Customer 4");
 				cust.Add("Customer 5");
 				return cust;
+			}
+		}
+
+		public static void InsertCustomer(Customer cus)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Insert(cus);
+			}
+		}
+
+		public static void UpdateCustomer(Customer cus)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Update(cus);
+			}
+		}
+
+		public static void DeleteCustomer(Customer cus)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Delete(cus);
+			}
+		}
+
+		public static Customer GetCustomer(int id)
+		{
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				Customer cus = new Customer();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Customers WHERE Id = {id}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						cus.Id = (int)reader["Id"];
+						cus.Name = (string)reader["Name"];
+						cus.City = (string)reader["City"];
+						cus.Province = (string)reader["Province"];
+						cus.Email = (string)reader["Email"];
+						cus.Contact1 = (string)reader["Contact1"];
+						cus.Contact2 = (string)reader["Contact2"];
+						cus.AirtelMoney = (string)reader["AirtelMoney"];
+						cus.Category = (string)reader["Category"];
+					}
+				}
+				return cus;
+			}
+		}
+
+		public static Customer GetCustomer(string name)
+		{
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				Customer cus = new Customer();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Customers WHERE Name = '{name}'", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						cus.Id = (int)reader["Id"];
+						cus.Name = (string)reader["Name"];
+						cus.City = (string)reader["City"];
+						cus.Province = (string)reader["Province"];
+						cus.Email = (string)reader["Email"];
+						cus.Contact1 = (string)reader["Contact1"];
+						cus.Contact2 = (string)reader["Contact2"];
+						cus.AirtelMoney = (string)reader["AirtelMoney"];
+						cus.Category = (string)reader["Category"];
+					}
+				}
+				return cus;
 			}
 		}
 

@@ -29,6 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.panelDetails = new System.Windows.Forms.Panel();
+			this.cbxCategory = new System.Windows.Forms.ComboBox();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label20 = new System.Windows.Forms.Label();
 			this.tbBank = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
@@ -59,9 +62,6 @@
 			this.btnSave = new FontAwesome.Sharp.IconButton();
 			this.iconButton1 = new FontAwesome.Sharp.IconButton();
 			this.btnClear = new FontAwesome.Sharp.IconButton();
-			this.cbxCategory = new System.Windows.Forms.ComboBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label20 = new System.Windows.Forms.Label();
 			this.panelDetails.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -104,6 +104,40 @@
 			this.panelDetails.Size = new System.Drawing.Size(740, 207);
 			this.panelDetails.TabIndex = 0;
 			// 
+			// cbxCategory
+			// 
+			this.cbxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxCategory.FormattingEnabled = true;
+			this.cbxCategory.Items.AddRange(new object[] {
+            "Company",
+            "Individual"});
+			this.cbxCategory.Location = new System.Drawing.Point(112, 139);
+			this.cbxCategory.Name = "cbxCategory";
+			this.cbxCategory.Size = new System.Drawing.Size(226, 26);
+			this.cbxCategory.TabIndex = 97;
+			this.cbxCategory.Text = "Select";
+			this.cbxCategory.Validated += new System.EventHandler(this.ValidateCombobox);
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.Location = new System.Drawing.Point(100, 147);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(11, 15);
+			this.label17.TabIndex = 99;
+			this.label17.Text = ":";
+			// 
+			// label20
+			// 
+			this.label20.AutoSize = true;
+			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label20.Location = new System.Drawing.Point(14, 147);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(62, 17);
+			this.label20.TabIndex = 98;
+			this.label20.Text = "Category";
+			// 
 			// tbBank
 			// 
 			this.tbBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -111,6 +145,7 @@
 			this.tbBank.Name = "tbBank";
 			this.tbBank.Size = new System.Drawing.Size(215, 26);
 			this.tbBank.TabIndex = 7;
+			this.tbBank.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label7
 			// 
@@ -141,6 +176,7 @@
 			this.cbxProvince.Size = new System.Drawing.Size(226, 26);
 			this.cbxProvince.TabIndex = 2;
 			this.cbxProvince.Text = "Select";
+			this.cbxProvince.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// label5
 			// 
@@ -171,6 +207,7 @@
 			this.cbxCity.Size = new System.Drawing.Size(226, 26);
 			this.cbxCity.TabIndex = 1;
 			this.cbxCity.Text = "Select";
+			this.cbxCity.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// tbAirtel
 			// 
@@ -179,6 +216,7 @@
 			this.tbAirtel.Name = "tbAirtel";
 			this.tbAirtel.Size = new System.Drawing.Size(215, 26);
 			this.tbAirtel.TabIndex = 6;
+			this.tbAirtel.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label18
 			// 
@@ -227,6 +265,7 @@
 			this.tbContact2.Name = "tbContact2";
 			this.tbContact2.Size = new System.Drawing.Size(215, 26);
 			this.tbContact2.TabIndex = 5;
+			this.tbContact2.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// tbContact1
 			// 
@@ -235,6 +274,7 @@
 			this.tbContact1.Name = "tbContact1";
 			this.tbContact1.Size = new System.Drawing.Size(215, 26);
 			this.tbContact1.TabIndex = 4;
+			this.tbContact1.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// tbEmail
 			// 
@@ -243,6 +283,7 @@
 			this.tbEmail.Name = "tbEmail";
 			this.tbEmail.Size = new System.Drawing.Size(226, 26);
 			this.tbEmail.TabIndex = 3;
+			this.tbEmail.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label14
 			// 
@@ -322,6 +363,7 @@
 			this.tbName.Size = new System.Drawing.Size(226, 26);
 			this.tbName.TabIndex = 0;
 			this.tbName.Text = "Grossistes";
+			this.tbName.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label1
 			// 
@@ -413,39 +455,6 @@
 			this.btnClear.Text = "Clear";
 			this.btnClear.UseVisualStyleBackColor = true;
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// cbxCategory
-			// 
-			this.cbxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbxCategory.FormattingEnabled = true;
-			this.cbxCategory.Items.AddRange(new object[] {
-            "Company",
-            "Individual"});
-			this.cbxCategory.Location = new System.Drawing.Point(112, 139);
-			this.cbxCategory.Name = "cbxCategory";
-			this.cbxCategory.Size = new System.Drawing.Size(226, 26);
-			this.cbxCategory.TabIndex = 97;
-			this.cbxCategory.Text = "Select";
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label17.Location = new System.Drawing.Point(100, 147);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(11, 15);
-			this.label17.TabIndex = 99;
-			this.label17.Text = ":";
-			// 
-			// label20
-			// 
-			this.label20.AutoSize = true;
-			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label20.Location = new System.Drawing.Point(14, 147);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(62, 17);
-			this.label20.TabIndex = 98;
-			this.label20.Text = "Category";
 			// 
 			// FormNewSupplier
 			// 
