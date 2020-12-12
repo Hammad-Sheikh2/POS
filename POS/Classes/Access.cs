@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Dapper;
 using Dapper.Contrib;
 using System.Data;
+using POS.Classes.Finances;
 
 namespace POS.Classes
 {
@@ -13,6 +14,16 @@ namespace POS.Classes
 	{
 
 		#region General
+
+		public static void ExecuteCommand(string query)
+		{
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand(query, cnn);
+				cmd.ExecuteNonQuery();
+			}
+		}
 
 		public static bool IsDuplicate(string Query)
 		{
@@ -367,6 +378,7 @@ namespace POS.Classes
 			cart.ProductName = product.Name;
 			cart.UnitPrice = product.UnitPrice;
 			cart.Shape = product.Shape;
+			cart.RetailUnit = product.PurchasePrice;
 			cart.Quantity = 1;
 			return cart;
 		}
@@ -568,6 +580,375 @@ namespace POS.Classes
 				}
 				return sup;
 			}
+		}
+
+		#endregion
+
+		#region Invoices
+
+		public static int NextInvoiceId
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(Id), 0) + 1 FROM Invoices;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 1;
+				}
+			}
+		}
+
+		public static void InsertInvoice(Invoice inv, Cart[] cart)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Insert(inv);
+				foreach (Cart item in cart)
+				{
+					ExecuteCommand($"INSERT INTO InvoiceDetails(InvoiceId, ProductId, ProductName, RetailUnit, UnitPrice, Quantity, Total)VALUES({inv.Id}, {item.ProductId}, '{item.ProductName}', {item.RetailUnit}, {item.UnitPrice}, {item.Quantity}, '{item.Total}');");
+				}
+			}
+		}
+
+		public static void UpdateInvoice(Invoice inv)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Update(inv);
+			}
+		}
+
+		public static void DeleteInvoice(Invoice inv)
+		{
+			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
+			{
+				connection.Delete(inv);
+			}
+		}
+
+		public static Invoice GetInvoice(int id)
+		{
+			Invoice inv = new Invoice();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE Id = {id}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+					}
+				}
+				return inv;
+			}
+		}
+
+		public static Invoice[] GetInvoicesByCustomers(int CustomerId)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE CustomerId = {CustomerId}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Invoice[] GetInvoicesByCustomersUnpaid(int CustomerId)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE CustomerId = {CustomerId} AND Total > Paid", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Invoice[] GetInvoicesByShift(int ShiftId)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE ShiftId = {ShiftId}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Invoice[] GetInvoicesByUser(int UserId)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE UserId = {UserId}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Invoice[] GetInvoices(DateTime InvoiceDate)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE InvoiceDate = '{InvoiceDate.ToString("yyyy-MM-dd")}'", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Invoice[] GetInvoices(DateTime StartDate, DateTime EndDate)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE InvoiceDate BETWEEN '{StartDate.ToString("yyyy-MM-dd")}' AND '{EndDate.ToString("yyyy-MM-dd")}'", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Invoice[] GetInvoicesByCustomers(int CustomerId, DateTime StartDate, DateTime EndDate)
+		{
+			List<Invoice> li = new List<Invoice>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE CustomerId = {CustomerId} AND (InvoiceDate BETWEEN '{StartDate.ToString("yyyy-MM-dd")}' AND '{EndDate.ToString("yyyy-MM-dd")}')", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Invoice inv = new Invoice();
+						inv.Id = (int)reader["Id"];
+						inv.CustomerId = (int)reader["CustomerId"];
+						inv.InvoiceDate = (DateTime)reader["InvoiceDate"];
+						inv.Credit = (bool)reader["Credit"];
+						inv.Total = (double)reader["Total"];
+						inv.Paid = (double)reader["Paid"];
+						inv.UserId = (int)reader["UserId"];
+						inv.ShiftId = (int)reader["ShiftId"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Cart[] GetCarts(int InvoiceId)
+		{
+			List<Cart> li = new List<Cart>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM InvoiceDetails WHERE InvoiceId = {InvoiceId}", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Cart inv = new Cart();
+						inv.ProductId = (int)reader["ProductId"];
+						inv.ProductName = (string)reader["ProductName"];
+						inv.UnitPrice = (double)reader["UnitPrice"];
+						inv.Quantity = (double)reader["Quantity"];
+						inv.Total = (double)reader["Total"];
+						inv.RetailUnit = (double)reader["RetailUnit"];
+						li.Add(inv);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		#endregion
+
+		#region Shifts
+
+		public static Shift GetShift()
+		{
+			Shift shift = new Shift();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT Value FROM Variables WHERE Variable = 'Shift'", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						shift.Id = Convert.ToInt32(reader["Value"]);
+					}
+				}
+				return shift;
+			}
+		}
+
+		public static Shift[] GetShifts(DateTime dt)
+		{
+			Shift shift = new Shift();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT Value FROM Variables WHERE Variable = 'Shift'", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						shift.Id = Convert.ToInt32(reader["Value"]);
+					}
+				}
+				return new List<Shift>().ToArray();
+			}
+		}
+
+
+		#endregion
+
+		#region Users
+
+		public static User GetUser(int id)
+		{
+			User user = new User();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Users WHERE Id = {id};", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						user.Id = (int)reader["Id"];
+						user.Name = (string)reader["Name"];
+						user.Username = (string)reader["Username"];
+						user.Pass = (string)reader["Pass"];
+						user.Role = (string)reader["Role"];
+					}
+				}
+			}
+			return user;
 		}
 
 		#endregion

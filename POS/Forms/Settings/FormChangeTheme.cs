@@ -6,6 +6,7 @@ namespace POS.Forms
 {
 	public partial class FormChangeTheme : Form
 	{
+
 		public FormChangeTheme()
 		{
 			InitializeComponent();
@@ -75,5 +76,6 @@ namespace POS.Forms
 		{
 			Manager.Show("Theme Changed", Notification.Type.Success);
 		}
+
 	}
 }

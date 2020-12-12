@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Dapper;
+using System.ComponentModel;
 
 namespace POS.Classes
 {
@@ -10,6 +11,9 @@ namespace POS.Classes
 		public string ProductName { get; set; }
 		[DisplayName("Shape")]
 		public string Shape { get; set; }
+
+		public double RetailUnit { get; set; }
+
 		[DisplayName("Unit Price")]
 		public double UnitPrice { get; set; }
 		[DisplayName("Quantity")]

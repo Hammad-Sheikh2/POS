@@ -33,14 +33,8 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cartBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panelDetails = new System.Windows.Forms.Panel();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblCashier = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnCash = new FontAwesome.Sharp.IconButton();
@@ -60,10 +54,16 @@
 			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cartBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).BeginInit();
 			this.panelDetails.SuspendLayout();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dg
@@ -111,48 +111,11 @@
 			this.dg.TabIndex = 6;
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
 			// 
-			// productNameDataGridViewTextBoxColumn
-			// 
-			this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.HeaderText = "Name of Product";
-			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-			// 
-			// shapeDataGridViewTextBoxColumn
-			// 
-			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
-			this.shapeDataGridViewTextBoxColumn.HeaderText = "Shape";
-			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
-			this.shapeDataGridViewTextBoxColumn.Width = 150;
-			// 
-			// unitPriceDataGridViewTextBoxColumn
-			// 
-			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
-			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-			// 
-			// quantityDataGridViewTextBoxColumn
-			// 
-			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-			// 
-			// totalDataGridViewTextBoxColumn
-			// 
-			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-			this.totalDataGridViewTextBoxColumn.Width = 150;
-			// 
-			// cartBindingSource
-			// 
-			this.cartBindingSource.DataSource = typeof(POS.Classes.Cart);
-			// 
 			// panelDetails
 			// 
 			this.panelDetails.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.panelDetails.BackColor = System.Drawing.Color.Silver;
-			this.panelDetails.Controls.Add(this.label4);
+			this.panelDetails.Controls.Add(this.lblCashier);
 			this.panelDetails.Controls.Add(this.label2);
 			this.panelDetails.Controls.Add(this.label3);
 			this.panelDetails.Controls.Add(this.btnCash);
@@ -170,15 +133,15 @@
 			this.panelDetails.Size = new System.Drawing.Size(1035, 104);
 			this.panelDetails.TabIndex = 7;
 			// 
-			// label4
+			// lblCashier
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label4.Location = new System.Drawing.Point(79, 45);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(92, 18);
-			this.label4.TabIndex = 105;
-			this.label4.Text = "Cashier name";
+			this.lblCashier.AutoSize = true;
+			this.lblCashier.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.lblCashier.Location = new System.Drawing.Point(79, 45);
+			this.lblCashier.Name = "lblCashier";
+			this.lblCashier.Size = new System.Drawing.Size(92, 18);
+			this.lblCashier.TabIndex = 105;
+			this.lblCashier.Text = "Cashier name";
 			// 
 			// label2
 			// 
@@ -393,6 +356,43 @@
 			this.bunifuElipse3.ElipseRadius = 5;
 			this.bunifuElipse3.TargetControl = this.panel1;
 			// 
+			// productNameDataGridViewTextBoxColumn
+			// 
+			this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+			this.productNameDataGridViewTextBoxColumn.HeaderText = "Name of Product";
+			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			// 
+			// shapeDataGridViewTextBoxColumn
+			// 
+			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
+			this.shapeDataGridViewTextBoxColumn.HeaderText = "Shape";
+			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
+			this.shapeDataGridViewTextBoxColumn.Width = 150;
+			// 
+			// unitPriceDataGridViewTextBoxColumn
+			// 
+			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
+			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+			// 
+			// quantityDataGridViewTextBoxColumn
+			// 
+			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+			// 
+			// totalDataGridViewTextBoxColumn
+			// 
+			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			this.totalDataGridViewTextBoxColumn.Width = 150;
+			// 
+			// cartBindingSource
+			// 
+			this.cartBindingSource.DataSource = typeof(POS.Classes.Cart);
+			// 
 			// UC_SellingWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,11 +403,11 @@
 			this.Name = "UC_SellingWindow";
 			this.Size = new System.Drawing.Size(1103, 563);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).EndInit();
 			this.panelDetails.ResumeLayout(false);
 			this.panelDetails.PerformLayout();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -436,7 +436,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label lblCashier;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;

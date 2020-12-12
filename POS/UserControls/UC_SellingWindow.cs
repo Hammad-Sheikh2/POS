@@ -41,10 +41,11 @@ namespace POS.UserControls
 
 		private void PopulateComboboxes()
 		{
-			cbxCustomers.AutoCompleteCustomSource = Access.CustomerCompletionSource;
-			cbxCustomers.Items.AddRange(Access.Customers.ToArray());
+			cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
 			cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
 			cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
+			lblCashier.Text = Login.Name;
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)
@@ -63,28 +64,28 @@ namespace POS.UserControls
 
 		private void dg_Paint(object sender, PaintEventArgs e)
 		{
-			//double your_variable = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["Column4"].Value));
 			tbTotal.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["totalDataGridViewTextBoxColumn"].Value)).ToString();
 		}
 
 		private void btnCash_Click(object sender, EventArgs e)
 		{
-			using (FormCashPurchase f = new FormCashPurchase())
+			Customer cus = Access.GetCustomer(cbxCustomers.Text);
+			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
+			using (FormCashPurchase f = new FormCashPurchase(cus, arr))
 			{
 				f.tbTotalBill.Text = tbTotal.Text;
 				f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
-				if (f.ShowDialog() == DialogResult.OK)
-				{
-					// Update Database
-
-				}
+				f.ShowDialog();
 			}
 		}
 
 		private void btnCredit_Click(object sender, EventArgs e)
 		{
-			using (FormCreditPayment f = new FormCreditPayment())
+			Customer cus = Access.GetCustomer(cbxCustomers.Text);
+			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
+			using (FormCreditPayment f = new FormCreditPayment(cus, arr))
 			{
+				f.tbTotalBill.Text = tbTotal.Text;
 				f.ShowDialog();
 			}
 		}

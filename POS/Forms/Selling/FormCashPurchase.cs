@@ -1,4 +1,6 @@
 ﻿using FontAwesome.Sharp;
+using POS.Classes;
+using POS.Classes.Finances;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +10,40 @@ namespace POS.Forms.Selling
 {
 	public partial class FormCashPurchase : Form
 	{
+		public Customer customer { get; set; }
+		public Cart[] cart { get; set; }
+		Invoice invoice = new Invoice();
+
 		public FormCashPurchase()
 		{
 			InitializeComponent();
 			ActivateTheme();
+		}
+
+		public FormCashPurchase(Customer cus, Cart[] arr)
+		{
+			InitializeComponent();
+			ActivateTheme();
+			customer = cus;
+			cart = arr;
+			Populate();
+		}
+
+		private void Populate()
+		{
+			lblId.Text = Access.NextInvoiceId.ToString();
+		}
+
+		private void Reload()
+		{
+			invoice.Id = int.Parse(lblId.Text);
+			invoice.Total = double.Parse(tbTotalBill.Text);
+			invoice.Paid = double.Parse(tbCashGiven.Text);
+			invoice.CustomerId = customer.Id;
+			invoice.UserId = Login.Id;
+			invoice.Credit = false;
+			invoice.InvoiceDate = DateTime.Now;
+			invoice.ShiftId = Access.GetShift().Id;
 		}
 
 		private void ActivateTheme()
@@ -52,6 +84,20 @@ namespace POS.Forms.Selling
 			catch (Exception)
 			{
 				tbChange.Text = "0";
+			}
+		}
+
+		private void btnCheckout_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Reload();
+				Access.InsertInvoice(invoice, cart);
+				Manager.Show("Ivoice created", Notification.Type.Success);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}

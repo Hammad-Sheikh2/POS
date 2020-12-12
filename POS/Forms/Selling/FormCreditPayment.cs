@@ -1,4 +1,7 @@
 ﻿using FontAwesome.Sharp;
+using POS.Classes;
+using POS.Classes.Finances;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,10 +10,55 @@ namespace POS.Forms.Selling
 {
 	public partial class FormCreditPayment : Form
 	{
+		public Customer customer { get; set; }
+		public Cart[] cart { get; set; }
+		Invoice invoice = new Invoice();
+		private bool IsNew = true;
+
 		public FormCreditPayment()
 		{
 			InitializeComponent();
 			ActivateTheme();
+		}
+
+		public FormCreditPayment(Customer cus, Cart[] arr)
+		{
+			InitializeComponent();
+			ActivateTheme();
+			customer = cus;
+			cart = arr;
+			cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
+			Populate();
+		}
+
+		private void Populate()
+		{
+			lblId.Text = Access.NextInvoiceId.ToString();
+			invoiceBindingSource.DataSource = Access.GetInvoicesByCustomersUnpaid(customer.Id);
+			cbxInvoices.Items.Clear();
+			cbxInvoices.Items.AddRange(Access.GetStringList($"SELECT Id FROM Invoices WHERE CustomerId = {customer.Id} AND Total > Paid", true).ToArray());
+			cbxCustomers.Text = customer.Name;
+		}
+
+		private void Display()
+		{
+			lblId.Text = invoice.Id.ToString();
+			cbxCustomers.Text = Access.GetCustomer(invoice.CustomerId).Name;
+			tbTotalBill.Text = invoice.Total.ToString();
+			tbCashGiven.Text = invoice.Paid.ToString();
+		}
+
+		private void Reload()
+		{
+			invoice.Id = int.Parse(lblId.Text);
+			invoice.Total = double.Parse(tbTotalBill.Text);
+			invoice.Paid = double.Parse(tbCashGiven.Text);
+			invoice.CustomerId = customer.Id;
+			invoice.UserId = Login.Id;
+			invoice.Credit = false;
+			invoice.InvoiceDate = DateTime.Now;
+			invoice.ShiftId = Access.GetShift().Id;
 		}
 
 		private void ActivateTheme()
@@ -29,10 +77,8 @@ namespace POS.Forms.Selling
 			dg.HeaderBgColor = Properties.Settings.Default.HeaderColor;
 			dg.HeaderForeColor = Properties.Settings.Default.ForeColor;
 			dg.BackgroundColor = Properties.Settings.Default.MenuBarColor;
-			tbTotal.BackColor = Properties.Settings.Default.HeaderColor;
-			tbTotal.ForeColor = Properties.Settings.Default.ForeColor;
-			cbxProductNames.BackColor = Properties.Settings.Default.OnHoverColor;
-			cbxProductNames.ForeColor = Properties.Settings.Default.ForeColor;
+			cbxInvoices.BackColor = Properties.Settings.Default.OnHoverColor;
+			cbxInvoices.ForeColor = Properties.Settings.Default.ForeColor;
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)
@@ -49,5 +95,47 @@ namespace POS.Forms.Selling
 			}
 		}
 
+		private void btnSaveInvoice_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Reload();
+				if (IsNew)
+				{
+					Access.InsertInvoice(invoice, cart);
+					Manager.Show("Ivoice created", Notification.Type.Success);
+				}
+				else
+				{
+					Access.UpdateInvoice(invoice);
+					Manager.Show("Ivoice updated", Notification.Type.Success);
+				}
+				Populate();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void cbxCustomers_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			customer = Access.GetCustomer(cbxCustomers.SelectedItem.ToString());
+			invoiceBindingSource.DataSource = Access.GetInvoicesByCustomersUnpaid(customer.Id);
+		}
+
+		private void cbxInvoices_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			invoice = Access.GetInvoice(int.Parse(cbxInvoices.SelectedItem.ToString()));
+			Display();
+			IsNew = false;
+		}
+
+		private void btnConfirm_Click(object sender, EventArgs e)
+		{
+			invoice = Access.GetInvoice(int.Parse(cbxInvoices.SelectedItem.ToString()));
+			Display();
+			IsNew = false;
+		}
 	}
 }

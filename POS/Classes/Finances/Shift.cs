@@ -8,7 +8,7 @@ namespace POS.Classes.Finances
 
 		public DateTime Date { get; set; }
 
-		public string Cashier { get; set; }
+		public int UserId { get; set; }
 
 		public double Value { get; set; }
 

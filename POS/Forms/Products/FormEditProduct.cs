@@ -118,7 +118,7 @@ namespace POS.Forms.Products
 			product.SellingPrice = double.Parse(tbSellingPrice.Text);
 			product.ShelfCode = cbxShelf.Text;
 			product.AlertThreshold = double.Parse(tbAlertThreshold.Text);
-			product.CreatedBy = CurrentUser.Name;
+			product.CreatedBy = Login.Name;
 			product.ExpiryDate = dpExpire.Value;
 			product.SupplierName = cbxSupplier.Text;
 			product.Store = cbxStore.SelectedIndex == 0 ? true : false;

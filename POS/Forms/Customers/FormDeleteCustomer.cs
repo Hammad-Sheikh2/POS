@@ -59,6 +59,7 @@ namespace POS.Forms.Customers
 				yield return next;
 			}
 		}
+
 		private void btnCredit_Click(object sender, System.EventArgs e)
 		{
 			if (cus == null)
