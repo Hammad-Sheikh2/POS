@@ -48,26 +48,27 @@ namespace POS.UserControls
 
 		private void btnProducts_Click(object sender, EventArgs e)
 		{
-			Canva.Controls.Clear();
+			//Canva.Controls.Clear();
+
 			UC_TurnoverByProducts uc = new UC_TurnoverByProducts();
 			uc.Dock = DockStyle.Fill;
-			Canva.Controls.Add(uc);
+			//Canva.Controls.Add(uc);
 		}
 
 		private void btnCashier_Click(object sender, EventArgs e)
 		{
-			Canva.Controls.Clear();
+			//Canva.Controls.Clear();
 			UC_TurnOverByCashier uc = new UC_TurnOverByCashier();
 			uc.Dock = DockStyle.Fill;
-			Canva.Controls.Add(uc);
+			//Canva.Controls.Add(uc);
 		}
 
 		private void btnMonth_Click(object sender, EventArgs e)
 		{
-			Canva.Controls.Clear();
+			//Canva.Controls.Clear();
 			UC_TurnoverByMonth uc = new UC_TurnoverByMonth();
 			uc.Dock = DockStyle.Fill;
-			Canva.Controls.Add(uc);
+			//Canva.Controls.Add(uc);
 		}
 	}
 }

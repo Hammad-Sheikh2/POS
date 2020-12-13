@@ -29,11 +29,13 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelListings = new System.Windows.Forms.Panel();
 			this.btnMonth = new FontAwesome.Sharp.IconButton();
 			this.btnCashier = new FontAwesome.Sharp.IconButton();
-			this.btnProducts = new FontAwesome.Sharp.IconButton();
-			this.Canva = new System.Windows.Forms.Panel();
+			this.btnByProducts = new FontAwesome.Sharp.IconButton();
 			this.panelSearch = new System.Windows.Forms.Panel();
 			this.label6 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,8 +50,10 @@
 			this.tbSearch = new System.Windows.Forms.TextBox();
 			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.panelListings.SuspendLayout();
 			this.panelSearch.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelListings
@@ -57,7 +61,7 @@
 			this.panelListings.BackColor = System.Drawing.Color.Transparent;
 			this.panelListings.Controls.Add(this.btnMonth);
 			this.panelListings.Controls.Add(this.btnCashier);
-			this.panelListings.Controls.Add(this.btnProducts);
+			this.panelListings.Controls.Add(this.btnByProducts);
 			this.panelListings.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelListings.Location = new System.Drawing.Point(0, 83);
 			this.panelListings.Name = "panelListings";
@@ -100,32 +104,23 @@
 			this.btnCashier.UseVisualStyleBackColor = true;
 			this.btnCashier.Click += new System.EventHandler(this.btnCashier_Click);
 			// 
-			// btnProducts
+			// btnByProducts
 			// 
-			this.btnProducts.Dock = System.Windows.Forms.DockStyle.Left;
-			this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnProducts.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnProducts.Font = new System.Drawing.Font("Calibri", 15F);
-			this.btnProducts.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnProducts.IconColor = System.Drawing.Color.Black;
-			this.btnProducts.IconSize = 16;
-			this.btnProducts.Location = new System.Drawing.Point(0, 0);
-			this.btnProducts.Name = "btnProducts";
-			this.btnProducts.Rotation = 0D;
-			this.btnProducts.Size = new System.Drawing.Size(234, 36);
-			this.btnProducts.TabIndex = 9;
-			this.btnProducts.Text = "By Products";
-			this.btnProducts.UseVisualStyleBackColor = true;
-			this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
-			// 
-			// Canva
-			// 
-			this.Canva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-			this.Canva.BackColor = System.Drawing.Color.Transparent;
-			this.Canva.Location = new System.Drawing.Point(48, 149);
-			this.Canva.Name = "Canva";
-			this.Canva.Size = new System.Drawing.Size(1010, 400);
-			this.Canva.TabIndex = 93;
+			this.btnByProducts.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnByProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnByProducts.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnByProducts.Font = new System.Drawing.Font("Calibri", 15F);
+			this.btnByProducts.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnByProducts.IconColor = System.Drawing.Color.Black;
+			this.btnByProducts.IconSize = 16;
+			this.btnByProducts.Location = new System.Drawing.Point(0, 0);
+			this.btnByProducts.Name = "btnByProducts";
+			this.btnByProducts.Rotation = 0D;
+			this.btnByProducts.Size = new System.Drawing.Size(234, 36);
+			this.btnByProducts.TabIndex = 9;
+			this.btnByProducts.Text = "By Products";
+			this.btnByProducts.UseVisualStyleBackColor = true;
+			this.btnByProducts.Click += new System.EventHandler(this.btnProducts_Click);
 			// 
 			// panelSearch
 			// 
@@ -271,29 +266,65 @@
 			// bunifuElipse2
 			// 
 			this.bunifuElipse2.ElipseRadius = 5;
-			this.bunifuElipse2.TargetControl = this.Canva;
+			this.bunifuElipse2.TargetControl = this.dg;
+			// 
+			// dg
+			// 
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dg.BackgroundColor = System.Drawing.Color.Silver;
+			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
+			this.dg.DoubleBuffered = true;
+			this.dg.EnableHeadersVisualStyles = false;
+			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			this.dg.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.Location = new System.Drawing.Point(39, 147);
+			this.dg.Name = "dg";
+			this.dg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.dg.RowHeadersVisible = false;
+			this.dg.Size = new System.Drawing.Size(1010, 400);
+			this.dg.TabIndex = 115;
 			// 
 			// UC_Turnovers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.dg);
 			this.Controls.Add(this.panelSearch);
-			this.Controls.Add(this.Canva);
 			this.Name = "UC_Turnovers";
 			this.Size = new System.Drawing.Size(1103, 563);
 			this.panelListings.ResumeLayout(false);
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 		private System.Windows.Forms.Panel panelListings;
-		private System.Windows.Forms.Panel Canva;
 		private FontAwesome.Sharp.IconButton btnMonth;
 		private FontAwesome.Sharp.IconButton btnCashier;
-		private FontAwesome.Sharp.IconButton btnProducts;
+		private FontAwesome.Sharp.IconButton btnByProducts;
 		private System.Windows.Forms.Panel panelSearch;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox textBox2;
@@ -308,5 +339,6 @@
 		private System.Windows.Forms.TextBox tbSearch;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
 	}
 }

@@ -29,34 +29,25 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelSearch = new System.Windows.Forms.Panel();
-			this.iconButton2 = new FontAwesome.Sharp.IconButton();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.btnProducts = new FontAwesome.Sharp.IconButton();
+			this.btnCash = new FontAwesome.Sharp.IconButton();
+			this.btnCredit = new FontAwesome.Sharp.IconButton();
+			this.btnAll = new FontAwesome.Sharp.IconButton();
 			this.label6 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.tbClientName = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.tbCashierName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dpEnd = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dpStart = new System.Windows.Forms.DateTimePicker();
 			this.label4 = new System.Windows.Forms.Label();
-			this.cbxFilter = new System.Windows.Forms.ComboBox();
-			this.tbSearch = new System.Windows.Forms.TextBox();
+			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
+			this.tbDays = new System.Windows.Forms.TextBox();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cashierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.thresholdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tbLeft = new System.Windows.Forms.TextBox();
 			this.tbPaid = new System.Windows.Forms.TextBox();
@@ -64,102 +55,117 @@
 			this.tbTotal = new System.Windows.Forms.TextBox();
 			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.shiftIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.creditDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.invoiceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.thresholdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.panelSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelSearch
 			// 
 			this.panelSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.panelSearch.BackColor = System.Drawing.Color.Silver;
-			this.panelSearch.Controls.Add(this.iconButton2);
-			this.panelSearch.Controls.Add(this.iconButton1);
-			this.panelSearch.Controls.Add(this.btnProducts);
+			this.panelSearch.Controls.Add(this.btnCash);
+			this.panelSearch.Controls.Add(this.btnCredit);
+			this.panelSearch.Controls.Add(this.btnAll);
 			this.panelSearch.Controls.Add(this.label6);
-			this.panelSearch.Controls.Add(this.textBox2);
+			this.panelSearch.Controls.Add(this.tbClientName);
 			this.panelSearch.Controls.Add(this.label3);
-			this.panelSearch.Controls.Add(this.textBox1);
+			this.panelSearch.Controls.Add(this.tbCashierName);
 			this.panelSearch.Controls.Add(this.label2);
-			this.panelSearch.Controls.Add(this.dateTimePicker2);
+			this.panelSearch.Controls.Add(this.dpEnd);
 			this.panelSearch.Controls.Add(this.label1);
-			this.panelSearch.Controls.Add(this.dateTimePicker1);
+			this.panelSearch.Controls.Add(this.dpStart);
 			this.panelSearch.Controls.Add(this.label4);
-			this.panelSearch.Controls.Add(this.cbxFilter);
-			this.panelSearch.Controls.Add(this.tbSearch);
+			this.panelSearch.Controls.Add(this.cbxDefinedPeriod);
+			this.panelSearch.Controls.Add(this.tbDays);
 			this.panelSearch.Location = new System.Drawing.Point(206, 23);
 			this.panelSearch.Name = "panelSearch";
 			this.panelSearch.Size = new System.Drawing.Size(604, 115);
 			this.panelSearch.TabIndex = 16;
 			// 
-			// iconButton2
+			// btnCash
 			// 
-			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton2.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton2.IconColor = System.Drawing.Color.Black;
-			this.iconButton2.IconSize = 16;
-			this.iconButton2.Location = new System.Drawing.Point(397, 77);
-			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Rotation = 0D;
-			this.iconButton2.Size = new System.Drawing.Size(140, 32);
-			this.iconButton2.TabIndex = 117;
-			this.iconButton2.Text = "Cash";
-			this.iconButton2.UseVisualStyleBackColor = true;
+			this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCash.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCash.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnCash.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCash.IconColor = System.Drawing.Color.Black;
+			this.btnCash.IconSize = 16;
+			this.btnCash.Location = new System.Drawing.Point(397, 77);
+			this.btnCash.Name = "btnCash";
+			this.btnCash.Rotation = 0D;
+			this.btnCash.Size = new System.Drawing.Size(140, 32);
+			this.btnCash.TabIndex = 117;
+			this.btnCash.Text = "Cash";
+			this.btnCash.UseVisualStyleBackColor = true;
+			this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
 			// 
-			// iconButton1
+			// btnCredit
 			// 
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton1.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton1.IconColor = System.Drawing.Color.Black;
-			this.iconButton1.IconSize = 16;
-			this.iconButton1.Location = new System.Drawing.Point(251, 77);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Rotation = 0D;
-			this.iconButton1.Size = new System.Drawing.Size(140, 32);
-			this.iconButton1.TabIndex = 116;
-			this.iconButton1.Text = "Credit";
-			this.iconButton1.UseVisualStyleBackColor = true;
+			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCredit.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCredit.IconColor = System.Drawing.Color.Black;
+			this.btnCredit.IconSize = 16;
+			this.btnCredit.Location = new System.Drawing.Point(251, 77);
+			this.btnCredit.Name = "btnCredit";
+			this.btnCredit.Rotation = 0D;
+			this.btnCredit.Size = new System.Drawing.Size(140, 32);
+			this.btnCredit.TabIndex = 116;
+			this.btnCredit.Text = "Credit";
+			this.btnCredit.UseVisualStyleBackColor = true;
+			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
 			// 
-			// btnProducts
+			// btnAll
 			// 
-			this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnProducts.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnProducts.Font = new System.Drawing.Font("Calibri", 12F);
-			this.btnProducts.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnProducts.IconColor = System.Drawing.Color.Black;
-			this.btnProducts.IconSize = 16;
-			this.btnProducts.Location = new System.Drawing.Point(105, 77);
-			this.btnProducts.Name = "btnProducts";
-			this.btnProducts.Rotation = 0D;
-			this.btnProducts.Size = new System.Drawing.Size(140, 32);
-			this.btnProducts.TabIndex = 115;
-			this.btnProducts.Text = "All";
-			this.btnProducts.UseVisualStyleBackColor = true;
+			this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAll.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnAll.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnAll.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnAll.IconColor = System.Drawing.Color.Black;
+			this.btnAll.IconSize = 16;
+			this.btnAll.Location = new System.Drawing.Point(105, 77);
+			this.btnAll.Name = "btnAll";
+			this.btnAll.Rotation = 0D;
+			this.btnAll.Size = new System.Drawing.Size(140, 32);
+			this.btnAll.TabIndex = 115;
+			this.btnAll.Text = "All";
+			this.btnAll.UseVisualStyleBackColor = true;
+			this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label6.Location = new System.Drawing.Point(382, 43);
+			this.label6.Location = new System.Drawing.Point(391, 43);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(85, 18);
 			this.label6.TabIndex = 114;
 			this.label6.Text = "Client Name";
 			// 
-			// textBox2
+			// tbClientName
 			// 
-			this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.textBox2.Location = new System.Drawing.Point(482, 39);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(104, 24);
-			this.textBox2.TabIndex = 113;
+			this.tbClientName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbClientName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbClientName.Location = new System.Drawing.Point(482, 39);
+			this.tbClientName.Name = "tbClientName";
+			this.tbClientName.Size = new System.Drawing.Size(104, 24);
+			this.tbClientName.TabIndex = 113;
 			// 
 			// label3
 			// 
@@ -171,15 +177,15 @@
 			this.label3.TabIndex = 112;
 			this.label3.Text = "Cashier Name";
 			// 
-			// textBox1
+			// tbCashierName
 			// 
-			this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.textBox1.Location = new System.Drawing.Point(482, 11);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(104, 24);
-			this.textBox1.TabIndex = 111;
+			this.tbCashierName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbCashierName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbCashierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbCashierName.Location = new System.Drawing.Point(482, 11);
+			this.tbCashierName.Name = "tbCashierName";
+			this.tbCashierName.Size = new System.Drawing.Size(104, 24);
+			this.tbCashierName.TabIndex = 111;
 			// 
 			// label2
 			// 
@@ -191,14 +197,15 @@
 			this.label2.TabIndex = 110;
 			this.label2.Text = "End Date";
 			// 
-			// dateTimePicker2
+			// dpEnd
 			// 
-			this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker2.Location = new System.Drawing.Point(99, 44);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.Size = new System.Drawing.Size(123, 24);
-			this.dateTimePicker2.TabIndex = 109;
+			this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.dpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dpEnd.Location = new System.Drawing.Point(99, 44);
+			this.dpEnd.Name = "dpEnd";
+			this.dpEnd.Size = new System.Drawing.Size(123, 24);
+			this.dpEnd.TabIndex = 109;
+			this.dpEnd.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
 			// 
 			// label1
 			// 
@@ -210,14 +217,15 @@
 			this.label1.TabIndex = 108;
 			this.label1.Text = "Start Date";
 			// 
-			// dateTimePicker1
+			// dpStart
 			// 
-			this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker1.Location = new System.Drawing.Point(99, 14);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(123, 24);
-			this.dateTimePicker1.TabIndex = 107;
+			this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.dpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dpStart.Location = new System.Drawing.Point(99, 14);
+			this.dpStart.Name = "dpStart";
+			this.dpStart.Size = new System.Drawing.Size(123, 24);
+			this.dpStart.TabIndex = 107;
+			this.dpStart.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
 			// 
 			// label4
 			// 
@@ -229,70 +237,75 @@
 			this.label4.TabIndex = 106;
 			this.label4.Text = "Days";
 			// 
-			// cbxFilter
+			// cbxDefinedPeriod
 			// 
-			this.cbxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbxFilter.FormattingEnabled = true;
-			this.cbxFilter.Items.AddRange(new object[] {
+			this.cbxDefinedPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxDefinedPeriod.FormattingEnabled = true;
+			this.cbxDefinedPeriod.Items.AddRange(new object[] {
             "Today",
             "1 Week",
             "1 Month",
             "3 Months",
             "6 Months",
             "1 Year"});
-			this.cbxFilter.Location = new System.Drawing.Point(254, 39);
-			this.cbxFilter.Name = "cbxFilter";
-			this.cbxFilter.Size = new System.Drawing.Size(122, 26);
-			this.cbxFilter.TabIndex = 1;
-			this.cbxFilter.Text = "Defined Period";
+			this.cbxDefinedPeriod.Location = new System.Drawing.Point(251, 44);
+			this.cbxDefinedPeriod.Name = "cbxDefinedPeriod";
+			this.cbxDefinedPeriod.Size = new System.Drawing.Size(122, 26);
+			this.cbxDefinedPeriod.TabIndex = 1;
+			this.cbxDefinedPeriod.Text = "Defined Period";
+			this.cbxDefinedPeriod.SelectedIndexChanged += new System.EventHandler(this.cbxDefinedPeriod_SelectedIndexChanged);
 			// 
-			// tbSearch
+			// tbDays
 			// 
-			this.tbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbSearch.Location = new System.Drawing.Point(301, 11);
-			this.tbSearch.Name = "tbSearch";
-			this.tbSearch.Size = new System.Drawing.Size(75, 24);
-			this.tbSearch.TabIndex = 0;
+			this.tbDays.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbDays.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbDays.Enabled = false;
+			this.tbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbDays.Location = new System.Drawing.Point(298, 16);
+			this.tbDays.Name = "tbDays";
+			this.tbDays.Size = new System.Drawing.Size(75, 24);
+			this.tbDays.TabIndex = 0;
+			this.tbDays.Text = "0";
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.dg.AutoGenerateColumns = false;
 			this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.cashierDataGridViewTextBoxColumn,
-            this.clientDataGridViewTextBoxColumn,
+            this.userIdDataGridViewTextBoxColumn,
+            this.shiftIdDataGridViewTextBoxColumn,
+            this.customerIdDataGridViewTextBoxColumn,
+            this.creditDataGridViewCheckBoxColumn,
+            this.invoiceDateDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn,
-            this.thresholdDataGridViewTextBoxColumn,
             this.paidDataGridViewTextBoxColumn,
+            this.thresholdDataGridViewTextBoxColumn,
             this.leftDataGridViewTextBoxColumn});
 			this.dg.DataSource = this.invoiceBindingSource;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle6;
 			this.dg.DoubleBuffered = true;
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
@@ -304,58 +317,6 @@
 			this.dg.Size = new System.Drawing.Size(1035, 359);
 			this.dg.TabIndex = 17;
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			// 
-			// dateDataGridViewTextBoxColumn
-			// 
-			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-			// 
-			// cashierDataGridViewTextBoxColumn
-			// 
-			this.cashierDataGridViewTextBoxColumn.DataPropertyName = "Cashier";
-			this.cashierDataGridViewTextBoxColumn.HeaderText = "Cashier";
-			this.cashierDataGridViewTextBoxColumn.Name = "cashierDataGridViewTextBoxColumn";
-			// 
-			// clientDataGridViewTextBoxColumn
-			// 
-			this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
-			this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
-			this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
-			// 
-			// totalDataGridViewTextBoxColumn
-			// 
-			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-			// 
-			// thresholdDataGridViewTextBoxColumn
-			// 
-			this.thresholdDataGridViewTextBoxColumn.DataPropertyName = "Threshold";
-			this.thresholdDataGridViewTextBoxColumn.HeaderText = "Threshold";
-			this.thresholdDataGridViewTextBoxColumn.Name = "thresholdDataGridViewTextBoxColumn";
-			// 
-			// paidDataGridViewTextBoxColumn
-			// 
-			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewTextBoxColumn.HeaderText = "Paid";
-			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
-			// 
-			// leftDataGridViewTextBoxColumn
-			// 
-			this.leftDataGridViewTextBoxColumn.DataPropertyName = "Left";
-			this.leftDataGridViewTextBoxColumn.HeaderText = "Left";
-			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
-			// 
-			// invoiceBindingSource
-			// 
-			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
 			// 
 			// panel1
 			// 
@@ -379,6 +340,7 @@
 			this.tbLeft.Name = "tbLeft";
 			this.tbLeft.Size = new System.Drawing.Size(107, 24);
 			this.tbLeft.TabIndex = 116;
+			this.toolTip1.SetToolTip(this.tbLeft, "Total Left");
 			// 
 			// tbPaid
 			// 
@@ -389,6 +351,7 @@
 			this.tbPaid.Name = "tbPaid";
 			this.tbPaid.Size = new System.Drawing.Size(127, 24);
 			this.tbPaid.TabIndex = 115;
+			this.toolTip1.SetToolTip(this.tbPaid, "Total Paid Amount");
 			// 
 			// label5
 			// 
@@ -405,10 +368,11 @@
 			this.tbTotal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbTotal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbTotal.Location = new System.Drawing.Point(528, 7);
+			this.tbTotal.Location = new System.Drawing.Point(662, 7);
 			this.tbTotal.Name = "tbTotal";
 			this.tbTotal.Size = new System.Drawing.Size(125, 24);
 			this.tbTotal.TabIndex = 111;
+			this.toolTip1.SetToolTip(this.tbTotal, "Total of Invoices");
 			// 
 			// bunifuElipse1
 			// 
@@ -419,6 +383,71 @@
 			// 
 			this.bunifuElipse2.ElipseRadius = 5;
 			this.bunifuElipse2.TargetControl = this.dg;
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			// 
+			// userIdDataGridViewTextBoxColumn
+			// 
+			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+			this.userIdDataGridViewTextBoxColumn.HeaderText = "User Id";
+			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+			// 
+			// shiftIdDataGridViewTextBoxColumn
+			// 
+			this.shiftIdDataGridViewTextBoxColumn.DataPropertyName = "ShiftId";
+			this.shiftIdDataGridViewTextBoxColumn.HeaderText = "Shift Id";
+			this.shiftIdDataGridViewTextBoxColumn.Name = "shiftIdDataGridViewTextBoxColumn";
+			// 
+			// customerIdDataGridViewTextBoxColumn
+			// 
+			this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
+			this.customerIdDataGridViewTextBoxColumn.HeaderText = "Customer Id";
+			this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+			// 
+			// creditDataGridViewCheckBoxColumn
+			// 
+			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
+			this.creditDataGridViewCheckBoxColumn.HeaderText = "Credit";
+			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
+			// 
+			// invoiceDateDataGridViewTextBoxColumn
+			// 
+			this.invoiceDateDataGridViewTextBoxColumn.DataPropertyName = "InvoiceDate";
+			this.invoiceDateDataGridViewTextBoxColumn.HeaderText = "Date";
+			this.invoiceDateDataGridViewTextBoxColumn.Name = "invoiceDateDataGridViewTextBoxColumn";
+			// 
+			// totalDataGridViewTextBoxColumn
+			// 
+			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			// 
+			// paidDataGridViewTextBoxColumn
+			// 
+			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
+			this.paidDataGridViewTextBoxColumn.HeaderText = "Paid";
+			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
+			// 
+			// thresholdDataGridViewTextBoxColumn
+			// 
+			this.thresholdDataGridViewTextBoxColumn.DataPropertyName = "Threshold";
+			this.thresholdDataGridViewTextBoxColumn.HeaderText = "Threshold";
+			this.thresholdDataGridViewTextBoxColumn.Name = "thresholdDataGridViewTextBoxColumn";
+			this.thresholdDataGridViewTextBoxColumn.Visible = false;
+			// 
+			// leftDataGridViewTextBoxColumn
+			// 
+			this.leftDataGridViewTextBoxColumn.DataPropertyName = "Left";
+			this.leftDataGridViewTextBoxColumn.HeaderText = "Left";
+			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
+			// 
+			// invoiceBindingSource
+			// 
+			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
 			// 
 			// UC_Invoices
 			// 
@@ -432,9 +461,9 @@
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -443,29 +472,23 @@
 
 		private System.Windows.Forms.Panel panelSearch;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker dpEnd;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DateTimePicker dpStart;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.ComboBox cbxFilter;
-		private System.Windows.Forms.TextBox tbSearch;
+		private System.Windows.Forms.ComboBox cbxDefinedPeriod;
+		private System.Windows.Forms.TextBox tbDays;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox tbClientName;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox1;
-		private FontAwesome.Sharp.IconButton iconButton2;
-		private FontAwesome.Sharp.IconButton iconButton1;
-		private FontAwesome.Sharp.IconButton btnProducts;
+		private System.Windows.Forms.TextBox tbCashierName;
+		private FontAwesome.Sharp.IconButton btnCash;
+		private FontAwesome.Sharp.IconButton btnCredit;
+		private FontAwesome.Sharp.IconButton btnAll;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
-		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cashierDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn thresholdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paidDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn leftDataGridViewTextBoxColumn;
-		private System.Windows.Forms.BindingSource invoiceBindingSource;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox tbTotal;
@@ -473,5 +496,17 @@
 		private System.Windows.Forms.TextBox tbPaid;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn shiftIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn creditDataGridViewCheckBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn invoiceDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn paidDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn thresholdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn leftDataGridViewTextBoxColumn;
+		private System.Windows.Forms.BindingSource invoiceBindingSource;
+		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }

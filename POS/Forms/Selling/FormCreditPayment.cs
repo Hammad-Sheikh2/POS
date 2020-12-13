@@ -56,7 +56,7 @@ namespace POS.Forms.Selling
 			invoice.Paid = double.Parse(tbCashGiven.Text);
 			invoice.CustomerId = customer.Id;
 			invoice.UserId = Login.Id;
-			invoice.Credit = false;
+			invoice.Credit = true;
 			invoice.InvoiceDate = DateTime.Now;
 			invoice.ShiftId = Access.GetShift().Id;
 		}
