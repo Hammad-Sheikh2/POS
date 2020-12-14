@@ -33,6 +33,7 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.tbSearch = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnClear = new FontAwesome.Sharp.IconButton();
 			this.iconButton1 = new FontAwesome.Sharp.IconButton();
 			this.iconButton4 = new FontAwesome.Sharp.IconButton();
 			this.label12 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
 			this.label35 = new System.Windows.Forms.Label();
 			this.label36 = new System.Windows.Forms.Label();
 			this.label37 = new System.Windows.Forms.Label();
-			this.btnClear = new FontAwesome.Sharp.IconButton();
 			this.panelSearch.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -182,6 +182,23 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(837, 251);
 			this.panel1.TabIndex = 119;
+			// 
+			// btnClear
+			// 
+			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnClear.IconColor = System.Drawing.Color.Black;
+			this.btnClear.IconSize = 16;
+			this.btnClear.Location = new System.Drawing.Point(483, 222);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Rotation = 0D;
+			this.btnClear.Size = new System.Drawing.Size(115, 26);
+			this.btnClear.TabIndex = 10;
+			this.btnClear.Text = "Clear";
+			this.btnClear.UseVisualStyleBackColor = true;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// iconButton1
 			// 
@@ -289,10 +306,10 @@
 			// 
 			// tbTotalLeft
 			// 
-			this.tbTotalLeft.Enabled = false;
 			this.tbTotalLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.tbTotalLeft.Location = new System.Drawing.Point(651, 142);
 			this.tbTotalLeft.Name = "tbTotalLeft";
+			this.tbTotalLeft.ReadOnly = true;
 			this.tbTotalLeft.Size = new System.Drawing.Size(148, 26);
 			this.tbTotalLeft.TabIndex = 10;
 			// 
@@ -318,10 +335,10 @@
 			// 
 			// tbTotalPaid
 			// 
-			this.tbTotalPaid.Enabled = false;
 			this.tbTotalPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.tbTotalPaid.Location = new System.Drawing.Point(651, 109);
 			this.tbTotalPaid.Name = "tbTotalPaid";
+			this.tbTotalPaid.ReadOnly = true;
 			this.tbTotalPaid.Size = new System.Drawing.Size(148, 26);
 			this.tbTotalPaid.TabIndex = 9;
 			// 
@@ -347,10 +364,10 @@
 			// 
 			// tbDownPayment
 			// 
-			this.tbDownPayment.Enabled = false;
 			this.tbDownPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.tbDownPayment.Location = new System.Drawing.Point(651, 76);
 			this.tbDownPayment.Name = "tbDownPayment";
+			this.tbDownPayment.ReadOnly = true;
 			this.tbDownPayment.Size = new System.Drawing.Size(148, 26);
 			this.tbDownPayment.TabIndex = 8;
 			// 
@@ -376,10 +393,10 @@
 			// 
 			// tbDiscount
 			// 
-			this.tbDiscount.Enabled = false;
 			this.tbDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.tbDiscount.Location = new System.Drawing.Point(651, 43);
 			this.tbDiscount.Name = "tbDiscount";
+			this.tbDiscount.ReadOnly = true;
 			this.tbDiscount.Size = new System.Drawing.Size(148, 26);
 			this.tbDiscount.TabIndex = 7;
 			// 
@@ -645,23 +662,6 @@
 			this.label37.Size = new System.Drawing.Size(32, 17);
 			this.label37.TabIndex = 5;
 			this.label37.Text = "City";
-			// 
-			// btnClear
-			// 
-			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
-			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnClear.IconColor = System.Drawing.Color.Black;
-			this.btnClear.IconSize = 16;
-			this.btnClear.Location = new System.Drawing.Point(483, 222);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.Rotation = 0D;
-			this.btnClear.Size = new System.Drawing.Size(115, 26);
-			this.btnClear.TabIndex = 10;
-			this.btnClear.Text = "Clear";
-			this.btnClear.UseVisualStyleBackColor = true;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// FormEditCustomer
 			// 

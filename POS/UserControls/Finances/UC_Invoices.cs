@@ -185,7 +185,15 @@ namespace POS.UserControls.Finances
 
 		private void ValidateDateInterval(object sender, EventArgs e)
 		{
-
+			if (dpStart.Value > dpEnd.Value)
+			{
+				error.SetError(dpEnd, "End date must be greater than start date");
+			}
+			else
+			{
+				tbDays.Text = ((int)(dpEnd.Value - dpStart.Value).TotalDays).ToString();
+				error.SetError(dpEnd, "");
+			}
 		}
 
 		private void dg_Paint(object sender, PaintEventArgs e)
@@ -244,6 +252,11 @@ namespace POS.UserControls.Finances
 				default:
 					break;
 			}
+		}
+
+		private void panelSearch_Paint(object sender, PaintEventArgs e)
+		{
+
 		}
 	}
 }

@@ -29,22 +29,20 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.panelSearch = new System.Windows.Forms.Panel();
 			this.cbxFilter = new System.Windows.Forms.ComboBox();
-			this.label5 = new System.Windows.Forms.Label();
 			this.tbSearch = new System.Windows.Forms.TextBox();
 			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.btnSettings = new FontAwesome.Sharp.IconPictureBox();
 			this.btnEdit = new FontAwesome.Sharp.IconPictureBox();
 			this.btnAdd = new FontAwesome.Sharp.IconPictureBox();
 			this.btnExportToExcel = new FontAwesome.Sharp.IconPictureBox();
 			this.btnDelete = new FontAwesome.Sharp.IconPictureBox();
+			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+			this.label3 = new System.Windows.Forms.Label();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,19 +53,19 @@
 			this.bankAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			this.panelSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+			this.bunifuCards1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -76,14 +74,14 @@
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -106,71 +104,34 @@
 			this.dg.Size = new System.Drawing.Size(984, 452);
 			this.dg.TabIndex = 2;
 			// 
-			// bunifuElipse1
-			// 
-			this.bunifuElipse1.ElipseRadius = 10;
-			this.bunifuElipse1.TargetControl = this.panelSearch;
-			// 
-			// panelSearch
-			// 
-			this.panelSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.panelSearch.BackColor = System.Drawing.Color.Silver;
-			this.panelSearch.Controls.Add(this.cbxFilter);
-			this.panelSearch.Controls.Add(this.label5);
-			this.panelSearch.Controls.Add(this.tbSearch);
-			this.panelSearch.Location = new System.Drawing.Point(304, 14);
-			this.panelSearch.Name = "panelSearch";
-			this.panelSearch.Size = new System.Drawing.Size(443, 72);
-			this.panelSearch.TabIndex = 0;
-			// 
 			// cbxFilter
 			// 
 			this.cbxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.cbxFilter.FormattingEnabled = true;
-			this.cbxFilter.Items.AddRange(new object[] {
-            "Id",
-            "Name",
-            "Address",
-            "Proprietor",
-            "Email",
-            "Contact",
-            "Fax"});
-			this.cbxFilter.Location = new System.Drawing.Point(55, 37);
+			this.cbxFilter.Location = new System.Drawing.Point(122, 37);
 			this.cbxFilter.Name = "cbxFilter";
-			this.cbxFilter.Size = new System.Drawing.Size(105, 26);
+			this.cbxFilter.Size = new System.Drawing.Size(136, 26);
 			this.cbxFilter.TabIndex = 1;
-			this.cbxFilter.Text = "Select Filter";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(199, 8);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(64, 23);
-			this.label5.TabIndex = 10;
-			this.label5.Text = "Search";
+			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
 			// 
 			// tbSearch
 			// 
 			this.tbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.tbSearch.Location = new System.Drawing.Point(166, 36);
+			this.tbSearch.Location = new System.Drawing.Point(264, 36);
 			this.tbSearch.Name = "tbSearch";
 			this.tbSearch.Size = new System.Drawing.Size(229, 26);
 			this.tbSearch.TabIndex = 0;
-			this.tbSearch.Text = "Search by Filter";
+			this.tbSearch.Text = "Search by Name";
 			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
 			// 
 			// bunifuElipse3
 			// 
 			this.bunifuElipse3.ElipseRadius = 10;
 			this.bunifuElipse3.TargetControl = this.dg;
-			// 
-			// bunifuElipse2
-			// 
-			this.bunifuElipse2.ElipseRadius = 10;
 			// 
 			// btnSettings
 			// 
@@ -257,6 +218,34 @@
 			this.toolTip1.SetToolTip(this.btnDelete, "Delete Supplier");
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
+			// bunifuCards1
+			// 
+			this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.bunifuCards1.BackColor = System.Drawing.Color.Silver;
+			this.bunifuCards1.BorderRadius = 5;
+			this.bunifuCards1.BottomSahddow = true;
+			this.bunifuCards1.color = System.Drawing.Color.Tomato;
+			this.bunifuCards1.Controls.Add(this.cbxFilter);
+			this.bunifuCards1.Controls.Add(this.tbSearch);
+			this.bunifuCards1.Controls.Add(this.label3);
+			this.bunifuCards1.LeftSahddow = false;
+			this.bunifuCards1.Location = new System.Drawing.Point(248, 14);
+			this.bunifuCards1.Name = "bunifuCards1";
+			this.bunifuCards1.RightSahddow = true;
+			this.bunifuCards1.ShadowDepth = 20;
+			this.bunifuCards1.Size = new System.Drawing.Size(605, 72);
+			this.bunifuCards1.TabIndex = 113;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(274, 8);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(64, 23);
+			this.label3.TabIndex = 113;
+			this.label3.Text = "Search";
+			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -314,9 +303,9 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+			this.Controls.Add(this.bunifuCards1);
 			this.Controls.Add(this.btnSettings);
 			this.Controls.Add(this.dg);
-			this.Controls.Add(this.panelSearch);
 			this.Controls.Add(this.btnEdit);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.btnExportToExcel);
@@ -324,13 +313,13 @@
 			this.Name = "UC_Suppliers";
 			this.Size = new System.Drawing.Size(1085, 563);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
-			this.panelSearch.ResumeLayout(false);
-			this.panelSearch.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+			this.bunifuCards1.ResumeLayout(false);
+			this.bunifuCards1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
@@ -342,13 +331,9 @@
 		private FontAwesome.Sharp.IconPictureBox btnEdit;
 		private FontAwesome.Sharp.IconPictureBox btnAdd;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
-		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-		private System.Windows.Forms.Panel panelSearch;
 		private System.Windows.Forms.ComboBox cbxFilter;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox tbSearch;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
-		private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private FontAwesome.Sharp.IconPictureBox btnSettings;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
@@ -360,5 +345,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn airtelMoneyDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn bankAccountDataGridViewTextBoxColumn;
 		private System.Windows.Forms.BindingSource supplierBindingSource;
+		private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+		private System.Windows.Forms.Label label3;
 	}
 }

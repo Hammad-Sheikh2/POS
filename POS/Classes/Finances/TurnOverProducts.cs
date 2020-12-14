@@ -7,21 +7,21 @@ namespace POS.Classes.Finances
 {
 	public class TurnOverProducts
 	{
-		[Key]
-		[Required]
+		[DisplayName("ProductId")]
+		public int ProductId { get; set; }
+
 		public string Name { get; set; }
-		[Editable(false)]
+
 		public double Quantity { get; set; } = 0;
 
-		public double Sold { get; set; } = 0;
-		[DisplayName("Buy Price")]
+		[DisplayName("Total Buy Price")]
 		public double BuyingPrice { get; set; } = 0;
-		[DisplayName("Selling Price")]
+		[DisplayName("Total Selling Price")]
 		public double SellingPrice { get; set; } = 0;
 
 		public double Margin
 		{
-			get { return BuyingPrice - SellingPrice; }
+			get { return SellingPrice - BuyingPrice; }
 			set { Margin = value; }
 		}
 
@@ -38,12 +38,12 @@ namespace POS.Classes.Finances
 				var first = group.FirstOrDefault();
 				first.Quantity = group.Sum(x => x.Quantity);
 				first.Total = group.Sum(x => x.Total);
-				first.RetailUnit = group.Sum(x => x.RetailUnit);
-				first.UnitPrice = group.Sum(x => x.UnitPrice);
+
+				turn.ProductId = first.ProductId;
 				turn.Name = first.ProductName;
 				turn.Quantity = first.Quantity;
-				turn.BuyingPrice = first.RetailUnit;
-				turn.SellingPrice = first.UnitPrice;
+				turn.BuyingPrice = first.RetailUnit * first.Quantity;
+				turn.SellingPrice = first.UnitPrice * first.Quantity;
 				ret.Add(turn);
 			}
 

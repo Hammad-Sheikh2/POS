@@ -48,6 +48,8 @@ namespace POS.Forms.Customers
 			tbContact1.Text = cus.Contact1;
 			tbContact2.Text = cus.Contact2;
 			tbAirtel.Text = cus.AirtelMoney;
+			tbTotalPaid.Text = cus.Paid.ToString();
+			tbTotalLeft.Text = cus.Left.ToString();
 		}
 
 		private void Reload()

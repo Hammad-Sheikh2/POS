@@ -74,6 +74,8 @@
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Finances\Invoice.cs" />
     <Compile Include="Classes\Finances\Shift.cs" />
+    <Compile Include="Classes\Finances\TurnOverCashier.cs" />
+    <Compile Include="Classes\Finances\TurnOverMonth.cs" />
     <Compile Include="Classes\Finances\TurnOverProducts.cs" />
     <Compile Include="Classes\Manager.cs" />
     <Compile Include="Classes\Products\Product.cs" />
@@ -422,6 +424,8 @@
     <None Include="Properties\DataSources\POS.Classes.Customer.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Finances.Invoice.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Finances.Shift.datasource" />
+    <None Include="Properties\DataSources\POS.Classes.Finances.TurnOverCashier.datasource" />
+    <None Include="Properties\DataSources\POS.Classes.Finances.TurnOverMonth.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Finances.TurnOverProducts.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Products.Product.datasource" />
     <None Include="Properties\DataSources\POS.Classes.Selling.CreditInvoice.datasource" />

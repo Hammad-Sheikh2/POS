@@ -1,5 +1,7 @@
 ﻿using Dapper;
 using POS.Forms;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
 
 namespace POS.Classes
@@ -18,6 +20,18 @@ namespace POS.Classes
 		{
 			Notification not = new Notification();
 			not.Popup(Message, type);
+		}
+
+		public static List<DateTime> GetMonthsBetweenDates(DateTime startdate, DateTime enddate)
+		{
+			List<DateTime> li = new List<DateTime>();
+			while (startdate <= enddate)
+			{
+				// pull out month and year
+				li.Add(new DateTime(startdate.Year, startdate.Month, startdate.Day));
+				startdate = startdate.AddMonths(1);
+			}
+			return li;
 		}
 	}
 

@@ -7,6 +7,7 @@ using Dapper;
 using Dapper.Contrib;
 using System.Data;
 using POS.Classes.Finances;
+using System.Linq;
 
 namespace POS.Classes
 {
@@ -187,6 +188,13 @@ namespace POS.Classes
 						cus.AirtelMoney = (string)reader["AirtelMoney"];
 						cus.Category = (string)reader["Category"];
 					}
+
+				}
+				reader.Close();
+				using (IDbConnection idb = cnn)
+				{
+					cus.Paid = idb.Query<double>($"SELECT ISNULL(SUM(Invoices.Paid), 0) FROM (Customers INNER JOIN Invoices ON Customers.Id=Invoices.CustomerId) WHERE Customers.Id = {cus.Id};").First<double>();
+					cus.Left = idb.Query<double>($"SELECT ISNULL(SUM(Invoices.Total - Invoices.Paid), 0) FROM (Customers INNER JOIN Invoices ON Customers.Id=Invoices.CustomerId) WHERE Customers.Id = {cus.Id};").First<double>();
 				}
 				return cus;
 			}
@@ -214,8 +222,54 @@ namespace POS.Classes
 						cus.AirtelMoney = (string)reader["AirtelMoney"];
 						cus.Category = (string)reader["Category"];
 					}
+
+				}
+				reader.Close();
+				using (IDbConnection idb = cnn)
+				{
+					cus.Paid = idb.Query<double>($"SELECT ISNULL(SUM(Invoices.Paid), 0) FROM (Customers INNER JOIN Invoices ON Customers.Id=Invoices.CustomerId) WHERE Customers.Id = {cus.Id};").First<double>();
+					cus.Left = idb.Query<double>($"SELECT ISNULL(SUM(Invoices.Total - Invoices.Paid), 0) FROM (Customers INNER JOIN Invoices ON Customers.Id=Invoices.CustomerId) WHERE Customers.Id = {cus.Id};").First<double>();
 				}
 				return cus;
+			}
+		}
+
+		public static Customer[] GetCustomers()
+		{
+			List<Customer> li = new List<Customer>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Customers", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Customer cus = new Customer();
+						cus.Id = (int)reader["Id"];
+						cus.Name = (string)reader["Name"];
+						cus.City = (string)reader["City"];
+						cus.Province = (string)reader["Province"];
+						cus.Email = (string)reader["Email"];
+						cus.Contact1 = (string)reader["Contact1"];
+						cus.Contact2 = (string)reader["Contact2"];
+						cus.AirtelMoney = (string)reader["AirtelMoney"];
+						cus.Category = (string)reader["Category"];
+
+						li.Add(cus);
+					}
+				}
+				reader.Close();
+				using (IDbConnection idb = cnn)
+				{
+					foreach (Customer cus in li)
+					{
+						cus.Paid = idb.Query<double>($"SELECT ISNULL(SUM(Invoices.Paid), 0) FROM (Customers INNER JOIN Invoices ON Customers.Id=Invoices.CustomerId) WHERE Customers.Id = {cus.Id};").First<double>();
+						cus.Left = idb.Query<double>($"SELECT ISNULL(SUM(Invoices.Total - Invoices.Paid), 0) FROM (Customers INNER JOIN Invoices ON Customers.Id=Invoices.CustomerId) WHERE Customers.Id = {cus.Id};").First<double>();
+					}
+				}
+				return li.ToArray();
 			}
 		}
 
@@ -373,14 +427,15 @@ namespace POS.Classes
 
 		public static Cart GetCart(Product product)
 		{
-			Cart cart = new Cart();
-			cart.ProductId = product.Id;
-			cart.ProductName = product.Name;
-			cart.UnitPrice = product.UnitPrice;
-			cart.Shape = product.Shape;
-			cart.RetailUnit = product.PurchasePrice;
-			cart.Quantity = 1;
-			return cart;
+			return new Cart
+			{
+				ProductId = product.Id,
+				ProductName = product.Name,
+				UnitPrice = product.SellingPrice,
+				Shape = product.Shape,
+				RetailUnit = product.PurchasePrice,
+				Quantity = 1
+			};
 		}
 
 		public static Cart[] GetCart(Product[] products)
@@ -579,6 +634,36 @@ namespace POS.Classes
 					}
 				}
 				return sup;
+			}
+		}
+
+		public static Supplier[] GetSuppliers()
+		{
+			List<Supplier> li = new List<Supplier>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Suppliers;", cnn);
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Supplier sup = new Supplier();
+						sup.Id = (int)reader["Id"];
+						sup.Name = (string)reader["Name"];
+						sup.City = (string)reader["City"];
+						sup.Province = (string)reader["Province"];
+						sup.Email = (string)reader["Email"];
+						sup.Contact1 = (string)reader["Contact1"];
+						sup.Contact2 = (string)reader["Contact2"];
+						sup.AirtelMoney = (string)reader["AirtelMoney"];
+						sup.BankAccount = (string)reader["BankAccount"];
+						sup.Category = (string)reader["Category"];
+						li.Add(sup);
+					}
+				}
+				return li.ToArray();
 			}
 		}
 
@@ -1245,14 +1330,15 @@ namespace POS.Classes
 			return li.ToArray();
 		}
 
-		public static List<Cart[]> GetCarts(Invoice[] arr)
+		public static Cart[] GetCarts(Invoice[] arr)
 		{
-			List<Cart[]> li = new List<Cart[]>();
+			//List<Cart[]> li = new List<Cart[]>();
+			List<Cart> carts = new List<Cart>();
 			foreach (Invoice item in arr)
 			{
-				li.Add(GetCarts(item.Id));
+				carts.AddRange(GetCarts(item.Id));
 			}
-			return li;
+			return carts.ToArray();
 		}
 
 		#endregion
@@ -1363,6 +1449,130 @@ namespace POS.Classes
 				}
 			}
 			return user;
+		}
+
+		#endregion
+
+		#region DashboardContents
+
+		public static double GetTotalTurnOver(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(Total), 0) FROM Invoices WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}'").AsList<double>().First();
+			}
+		}
+
+		public static double GetTotalBuyPrice(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(det.RetailUnit * det.Quantity), 0) FROM (InvoiceDetails det INNER JOIN Invoices ON det.InvoiceId=Invoices.Id)  WHERE Invoices.InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}';").AsList<double>().First();
+			}
+		}
+
+		public static double GetTotalSellPrice(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(det.UnitPrice * det.Quantity), 0) FROM (InvoiceDetails det INNER JOIN Invoices ON det.InvoiceId=Invoices.Id)  WHERE Invoices.InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}';").AsList<double>().First();
+			}
+		}
+
+		public static double GetCreditPayments(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(Total), 0) FROM Invoices WHERE Credit = 1 AND InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}'").AsList<double>().First();
+			}
+		}
+
+		public static double GetCashPayments(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(Total), 0) FROM Invoices WHERE Credit = 0 AND InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}'").AsList<double>().First();
+			}
+		}
+
+		public static double GetUnpaidPayments(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(Total - Paid), 0) FROM Invoices WHERE Total > Paid AND Credit = 1 AND InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}'").AsList<double>().First();
+			}
+		}
+
+		public static double GetAverageSale(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(AVG(Total), 0) FROM Invoices WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}'").AsList<double>().First();
+			}
+		}
+
+		public static double GetInShelvesProductsPrice()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(QuantityInShelves * UnitPrice, 0) FROM Products;").AsList<double>().First();
+			}
+		}
+
+		public static double GetInStoreProductsPrice()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(QuantityInStore * UnitPrice, 0) FROM Products;").AsList<double>().First();
+			}
+		}
+
+		public static double GetInShelvesProductsQuantity()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(QuantityInShelves), 0) FROM Products;").AsList<double>().First();
+			}
+		}
+
+		public static double GetInStoreProductsQuantity()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(SUM(QuantityInStore), 0) FROM Products;").AsList<double>().First();
+			}
+		}
+
+		public static double GetExpiredProductsQuantity()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(Sum(QuantityInShelves)+SUM(QuantityInStore), 0) FROM Products WHERE GETDATE() > ExpiryDate;").AsList<double>().First();
+			}
+		}
+
+		public static double GetExpiredProductsPurchasePrice()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(Sum(QuantityInShelves * PurchasePrice)+SUM(QuantityInStore * PurchasePrice), 0) FROM Products WHERE GETDATE() > ExpiryDate;").AsList<double>().First();
+			}
+		}
+
+		public static double GetExpiredProductsCount()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(Count(Id), 0) FROM Products WHERE GETDATE() > ExpiryDate;").AsList<double>().First();
+			}
+		}
+
+		public static double GetDormantProductsCount(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT ISNULL(COUNT(Id), 0) FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}');").AsList<double>().First();
+			}
 		}
 
 		#endregion
