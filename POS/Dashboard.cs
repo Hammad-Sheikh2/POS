@@ -283,7 +283,8 @@ namespace POS
 
 		private void btnStoreShelves_Click(object sender, EventArgs e)
 		{
-			Manager.Show("Will available soon", Forms.Notification.Type.Info);
+			ActivateButton(sender, Color.WhiteSmoke);
+			OpenChildForm(new UC_StoreToShelves());
 		}
 
 		private void btnPurchases_Click(object sender, EventArgs e)

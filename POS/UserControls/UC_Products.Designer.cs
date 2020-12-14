@@ -33,33 +33,33 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelListings = new System.Windows.Forms.Panel();
-			this.iconButton7 = new FontAwesome.Sharp.IconButton();
-			this.iconButton6 = new FontAwesome.Sharp.IconButton();
-			this.iconButton5 = new FontAwesome.Sharp.IconButton();
-			this.iconButton4 = new FontAwesome.Sharp.IconButton();
-			this.iconButton3 = new FontAwesome.Sharp.IconButton();
-			this.iconButton2 = new FontAwesome.Sharp.IconButton();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.btnProducts = new FontAwesome.Sharp.IconButton();
+			this.btnInStock = new FontAwesome.Sharp.IconButton();
+			this.btnOutOfStock = new FontAwesome.Sharp.IconButton();
+			this.btnExpired = new FontAwesome.Sharp.IconButton();
+			this.btnDormant = new FontAwesome.Sharp.IconButton();
+			this.btnReturned = new FontAwesome.Sharp.IconButton();
+			this.btnInShelves = new FontAwesome.Sharp.IconButton();
+			this.btnInStore = new FontAwesome.Sharp.IconButton();
+			this.btnAll = new FontAwesome.Sharp.IconButton();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.btnSettings = new FontAwesome.Sharp.IconPictureBox();
 			this.btnDelete = new FontAwesome.Sharp.IconPictureBox();
 			this.btnExportToExcel = new FontAwesome.Sharp.IconPictureBox();
 			this.btnEdit = new FontAwesome.Sharp.IconPictureBox();
 			this.btnAdd = new FontAwesome.Sharp.IconPictureBox();
-			this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantityInStoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantityInShelvesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.quantityInBoxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.netProfitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.quantityInBoxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shelfCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.alertThresholdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantityMaxInShelveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,168 +68,169 @@
 			this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.panelListings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelListings
 			// 
 			this.panelListings.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.panelListings.BackColor = System.Drawing.Color.Transparent;
-			this.panelListings.Controls.Add(this.iconButton7);
-			this.panelListings.Controls.Add(this.iconButton6);
-			this.panelListings.Controls.Add(this.iconButton5);
-			this.panelListings.Controls.Add(this.iconButton4);
-			this.panelListings.Controls.Add(this.iconButton3);
-			this.panelListings.Controls.Add(this.iconButton2);
-			this.panelListings.Controls.Add(this.iconButton1);
-			this.panelListings.Controls.Add(this.btnProducts);
+			this.panelListings.Controls.Add(this.btnInStock);
+			this.panelListings.Controls.Add(this.btnOutOfStock);
+			this.panelListings.Controls.Add(this.btnExpired);
+			this.panelListings.Controls.Add(this.btnDormant);
+			this.panelListings.Controls.Add(this.btnReturned);
+			this.panelListings.Controls.Add(this.btnInShelves);
+			this.panelListings.Controls.Add(this.btnInStore);
+			this.panelListings.Controls.Add(this.btnAll);
 			this.panelListings.Location = new System.Drawing.Point(116, 24);
 			this.panelListings.Name = "panelListings";
 			this.panelListings.Size = new System.Drawing.Size(848, 49);
 			this.panelListings.TabIndex = 11;
 			// 
-			// iconButton7
+			// btnInStock
 			// 
-			this.iconButton7.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton7.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton7.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton7.IconColor = System.Drawing.Color.Black;
-			this.iconButton7.IconSize = 16;
-			this.iconButton7.Location = new System.Drawing.Point(735, 0);
-			this.iconButton7.Name = "iconButton7";
-			this.iconButton7.Rotation = 0D;
-			this.iconButton7.Size = new System.Drawing.Size(105, 49);
-			this.iconButton7.TabIndex = 123;
-			this.iconButton7.Text = "With Stock";
-			this.iconButton7.UseVisualStyleBackColor = true;
+			this.btnInStock.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnInStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnInStock.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnInStock.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnInStock.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnInStock.IconColor = System.Drawing.Color.Black;
+			this.btnInStock.IconSize = 16;
+			this.btnInStock.Location = new System.Drawing.Point(735, 0);
+			this.btnInStock.Name = "btnInStock";
+			this.btnInStock.Rotation = 0D;
+			this.btnInStock.Size = new System.Drawing.Size(105, 49);
+			this.btnInStock.TabIndex = 123;
+			this.btnInStock.Text = "With Stock";
+			this.btnInStock.UseVisualStyleBackColor = true;
 			// 
-			// iconButton6
+			// btnOutOfStock
 			// 
-			this.iconButton6.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton6.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton6.IconColor = System.Drawing.Color.Black;
-			this.iconButton6.IconSize = 16;
-			this.iconButton6.Location = new System.Drawing.Point(630, 0);
-			this.iconButton6.Name = "iconButton6";
-			this.iconButton6.Rotation = 0D;
-			this.iconButton6.Size = new System.Drawing.Size(105, 49);
-			this.iconButton6.TabIndex = 122;
-			this.iconButton6.Text = "Out of Stock";
-			this.iconButton6.UseVisualStyleBackColor = true;
+			this.btnOutOfStock.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnOutOfStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnOutOfStock.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnOutOfStock.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnOutOfStock.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnOutOfStock.IconColor = System.Drawing.Color.Black;
+			this.btnOutOfStock.IconSize = 16;
+			this.btnOutOfStock.Location = new System.Drawing.Point(630, 0);
+			this.btnOutOfStock.Name = "btnOutOfStock";
+			this.btnOutOfStock.Rotation = 0D;
+			this.btnOutOfStock.Size = new System.Drawing.Size(105, 49);
+			this.btnOutOfStock.TabIndex = 122;
+			this.btnOutOfStock.Text = "Out of Stock";
+			this.btnOutOfStock.UseVisualStyleBackColor = true;
 			// 
-			// iconButton5
+			// btnExpired
 			// 
-			this.iconButton5.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton5.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton5.IconColor = System.Drawing.Color.Black;
-			this.iconButton5.IconSize = 16;
-			this.iconButton5.Location = new System.Drawing.Point(525, 0);
-			this.iconButton5.Name = "iconButton5";
-			this.iconButton5.Rotation = 0D;
-			this.iconButton5.Size = new System.Drawing.Size(105, 49);
-			this.iconButton5.TabIndex = 121;
-			this.iconButton5.Text = "Expired";
-			this.iconButton5.UseVisualStyleBackColor = true;
+			this.btnExpired.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnExpired.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnExpired.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnExpired.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnExpired.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnExpired.IconColor = System.Drawing.Color.Black;
+			this.btnExpired.IconSize = 16;
+			this.btnExpired.Location = new System.Drawing.Point(525, 0);
+			this.btnExpired.Name = "btnExpired";
+			this.btnExpired.Rotation = 0D;
+			this.btnExpired.Size = new System.Drawing.Size(105, 49);
+			this.btnExpired.TabIndex = 121;
+			this.btnExpired.Text = "Expired";
+			this.btnExpired.UseVisualStyleBackColor = true;
 			// 
-			// iconButton4
+			// btnDormant
 			// 
-			this.iconButton4.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton4.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton4.IconColor = System.Drawing.Color.Black;
-			this.iconButton4.IconSize = 16;
-			this.iconButton4.Location = new System.Drawing.Point(420, 0);
-			this.iconButton4.Name = "iconButton4";
-			this.iconButton4.Rotation = 0D;
-			this.iconButton4.Size = new System.Drawing.Size(105, 49);
-			this.iconButton4.TabIndex = 120;
-			this.iconButton4.Text = "Dormant";
-			this.iconButton4.UseVisualStyleBackColor = true;
+			this.btnDormant.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnDormant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDormant.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnDormant.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnDormant.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnDormant.IconColor = System.Drawing.Color.Black;
+			this.btnDormant.IconSize = 16;
+			this.btnDormant.Location = new System.Drawing.Point(420, 0);
+			this.btnDormant.Name = "btnDormant";
+			this.btnDormant.Rotation = 0D;
+			this.btnDormant.Size = new System.Drawing.Size(105, 49);
+			this.btnDormant.TabIndex = 120;
+			this.btnDormant.Text = "Dormant";
+			this.btnDormant.UseVisualStyleBackColor = true;
 			// 
-			// iconButton3
+			// btnReturned
 			// 
-			this.iconButton3.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton3.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton3.IconColor = System.Drawing.Color.Black;
-			this.iconButton3.IconSize = 16;
-			this.iconButton3.Location = new System.Drawing.Point(315, 0);
-			this.iconButton3.Name = "iconButton3";
-			this.iconButton3.Rotation = 0D;
-			this.iconButton3.Size = new System.Drawing.Size(105, 49);
-			this.iconButton3.TabIndex = 119;
-			this.iconButton3.Text = "Returned";
-			this.iconButton3.UseVisualStyleBackColor = true;
+			this.btnReturned.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnReturned.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnReturned.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnReturned.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnReturned.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnReturned.IconColor = System.Drawing.Color.Black;
+			this.btnReturned.IconSize = 16;
+			this.btnReturned.Location = new System.Drawing.Point(315, 0);
+			this.btnReturned.Name = "btnReturned";
+			this.btnReturned.Rotation = 0D;
+			this.btnReturned.Size = new System.Drawing.Size(105, 49);
+			this.btnReturned.TabIndex = 119;
+			this.btnReturned.Text = "Returned";
+			this.btnReturned.UseVisualStyleBackColor = true;
 			// 
-			// iconButton2
+			// btnInShelves
 			// 
-			this.iconButton2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton2.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton2.IconColor = System.Drawing.Color.Black;
-			this.iconButton2.IconSize = 16;
-			this.iconButton2.Location = new System.Drawing.Point(210, 0);
-			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Rotation = 0D;
-			this.iconButton2.Size = new System.Drawing.Size(105, 49);
-			this.iconButton2.TabIndex = 118;
-			this.iconButton2.Text = "In Shelves";
-			this.iconButton2.UseVisualStyleBackColor = true;
+			this.btnInShelves.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnInShelves.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnInShelves.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnInShelves.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnInShelves.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnInShelves.IconColor = System.Drawing.Color.Black;
+			this.btnInShelves.IconSize = 16;
+			this.btnInShelves.Location = new System.Drawing.Point(210, 0);
+			this.btnInShelves.Name = "btnInShelves";
+			this.btnInShelves.Rotation = 0D;
+			this.btnInShelves.Size = new System.Drawing.Size(105, 49);
+			this.btnInShelves.TabIndex = 118;
+			this.btnInShelves.Text = "In Shelves";
+			this.btnInShelves.UseVisualStyleBackColor = true;
 			// 
-			// iconButton1
+			// btnInStore
 			// 
-			this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton1.Font = new System.Drawing.Font("Calibri", 12F);
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton1.IconColor = System.Drawing.Color.Black;
-			this.iconButton1.IconSize = 16;
-			this.iconButton1.Location = new System.Drawing.Point(105, 0);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Rotation = 0D;
-			this.iconButton1.Size = new System.Drawing.Size(105, 49);
-			this.iconButton1.TabIndex = 117;
-			this.iconButton1.Text = "In Store";
-			this.iconButton1.UseVisualStyleBackColor = true;
+			this.btnInStore.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnInStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnInStore.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnInStore.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnInStore.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnInStore.IconColor = System.Drawing.Color.Black;
+			this.btnInStore.IconSize = 16;
+			this.btnInStore.Location = new System.Drawing.Point(105, 0);
+			this.btnInStore.Name = "btnInStore";
+			this.btnInStore.Rotation = 0D;
+			this.btnInStore.Size = new System.Drawing.Size(105, 49);
+			this.btnInStore.TabIndex = 117;
+			this.btnInStore.Text = "In Store";
+			this.btnInStore.UseVisualStyleBackColor = true;
 			// 
-			// btnProducts
+			// btnAll
 			// 
-			this.btnProducts.Dock = System.Windows.Forms.DockStyle.Left;
-			this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnProducts.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnProducts.Font = new System.Drawing.Font("Calibri", 12F);
-			this.btnProducts.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnProducts.IconColor = System.Drawing.Color.Black;
-			this.btnProducts.IconSize = 16;
-			this.btnProducts.Location = new System.Drawing.Point(0, 0);
-			this.btnProducts.Name = "btnProducts";
-			this.btnProducts.Rotation = 0D;
-			this.btnProducts.Size = new System.Drawing.Size(105, 49);
-			this.btnProducts.TabIndex = 116;
-			this.btnProducts.Text = "All";
-			this.btnProducts.UseVisualStyleBackColor = true;
+			this.btnAll.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAll.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnAll.Font = new System.Drawing.Font("Calibri", 12F);
+			this.btnAll.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnAll.IconColor = System.Drawing.Color.Black;
+			this.btnAll.IconSize = 16;
+			this.btnAll.Location = new System.Drawing.Point(0, 0);
+			this.btnAll.Name = "btnAll";
+			this.btnAll.Rotation = 0D;
+			this.btnAll.Size = new System.Drawing.Size(105, 49);
+			this.btnAll.TabIndex = 116;
+			this.btnAll.Text = "All";
+			this.btnAll.UseVisualStyleBackColor = true;
 			// 
 			// dg
 			// 
@@ -255,15 +256,15 @@
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.shapeDataGridViewTextBoxColumn,
+            this.purchasePriceDataGridViewTextBoxColumn,
+            this.sellingPriceDataGridViewTextBoxColumn,
+            this.marginDataGridViewTextBoxColumn,
             this.weightDataGridViewTextBoxColumn,
             this.quantityInStoreDataGridViewTextBoxColumn,
             this.quantityInShelvesDataGridViewTextBoxColumn,
-            this.quantityInBoxDataGridViewTextBoxColumn,
             this.unitPriceDataGridViewTextBoxColumn,
             this.netProfitDataGridViewTextBoxColumn,
-            this.sellingPriceDataGridViewTextBoxColumn,
-            this.purchasePriceDataGridViewTextBoxColumn,
-            this.marginDataGridViewTextBoxColumn,
+            this.quantityInBoxDataGridViewTextBoxColumn,
             this.shelfCodeDataGridViewTextBoxColumn,
             this.alertThresholdDataGridViewTextBoxColumn,
             this.quantityMaxInShelveDataGridViewTextBoxColumn,
@@ -291,6 +292,11 @@
 			this.dg.RowHeadersVisible = false;
 			this.dg.Size = new System.Drawing.Size(1028, 454);
 			this.dg.TabIndex = 104;
+			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
+			// 
+			// productBindingSource
+			// 
+			this.productBindingSource.DataSource = typeof(POS.Classes.Products.Product);
 			// 
 			// btnSettings
 			// 
@@ -338,6 +344,7 @@
 			this.btnExportToExcel.Size = new System.Drawing.Size(26, 27);
 			this.btnExportToExcel.TabIndex = 101;
 			this.btnExportToExcel.TabStop = false;
+			this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
 			// 
 			// btnEdit
 			// 
@@ -372,10 +379,6 @@
 			this.btnAdd.UseGdi = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
-			// productBindingSource
-			// 
-			this.productBindingSource.DataSource = typeof(POS.Classes.Products.Product);
-			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -394,6 +397,24 @@
 			this.shapeDataGridViewTextBoxColumn.HeaderText = "Shape";
 			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
 			// 
+			// purchasePriceDataGridViewTextBoxColumn
+			// 
+			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
+			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Purchase Price";
+			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
+			// 
+			// sellingPriceDataGridViewTextBoxColumn
+			// 
+			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
+			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price";
+			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
+			// 
+			// marginDataGridViewTextBoxColumn
+			// 
+			this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
+			this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
+			this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
+			// 
 			// weightDataGridViewTextBoxColumn
 			// 
 			this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
@@ -403,25 +424,19 @@
 			// quantityInStoreDataGridViewTextBoxColumn
 			// 
 			this.quantityInStoreDataGridViewTextBoxColumn.DataPropertyName = "QuantityInStore";
-			this.quantityInStoreDataGridViewTextBoxColumn.HeaderText = "QuantityInStore";
+			this.quantityInStoreDataGridViewTextBoxColumn.HeaderText = "In Store";
 			this.quantityInStoreDataGridViewTextBoxColumn.Name = "quantityInStoreDataGridViewTextBoxColumn";
 			// 
 			// quantityInShelvesDataGridViewTextBoxColumn
 			// 
 			this.quantityInShelvesDataGridViewTextBoxColumn.DataPropertyName = "QuantityInShelves";
-			this.quantityInShelvesDataGridViewTextBoxColumn.HeaderText = "QuantityInShelves";
+			this.quantityInShelvesDataGridViewTextBoxColumn.HeaderText = "In Shelves";
 			this.quantityInShelvesDataGridViewTextBoxColumn.Name = "quantityInShelvesDataGridViewTextBoxColumn";
-			// 
-			// quantityInBoxDataGridViewTextBoxColumn
-			// 
-			this.quantityInBoxDataGridViewTextBoxColumn.DataPropertyName = "QuantityInBox";
-			this.quantityInBoxDataGridViewTextBoxColumn.HeaderText = "QuantityInBox";
-			this.quantityInBoxDataGridViewTextBoxColumn.Name = "quantityInBoxDataGridViewTextBoxColumn";
 			// 
 			// unitPriceDataGridViewTextBoxColumn
 			// 
 			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
 			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
 			// 
 			// netProfitDataGridViewTextBoxColumn
@@ -430,64 +445,52 @@
 			this.netProfitDataGridViewTextBoxColumn.HeaderText = "NetProfit";
 			this.netProfitDataGridViewTextBoxColumn.Name = "netProfitDataGridViewTextBoxColumn";
 			// 
-			// sellingPriceDataGridViewTextBoxColumn
+			// quantityInBoxDataGridViewTextBoxColumn
 			// 
-			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
-			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "SellingPrice";
-			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
-			// 
-			// purchasePriceDataGridViewTextBoxColumn
-			// 
-			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
-			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "PurchasePrice";
-			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
-			// 
-			// marginDataGridViewTextBoxColumn
-			// 
-			this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
-			this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
-			this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
+			this.quantityInBoxDataGridViewTextBoxColumn.DataPropertyName = "QuantityInBox";
+			this.quantityInBoxDataGridViewTextBoxColumn.HeaderText = "Quantity In Box";
+			this.quantityInBoxDataGridViewTextBoxColumn.Name = "quantityInBoxDataGridViewTextBoxColumn";
 			// 
 			// shelfCodeDataGridViewTextBoxColumn
 			// 
 			this.shelfCodeDataGridViewTextBoxColumn.DataPropertyName = "ShelfCode";
-			this.shelfCodeDataGridViewTextBoxColumn.HeaderText = "ShelfCode";
+			this.shelfCodeDataGridViewTextBoxColumn.HeaderText = "Shelf Code";
 			this.shelfCodeDataGridViewTextBoxColumn.Name = "shelfCodeDataGridViewTextBoxColumn";
 			// 
 			// alertThresholdDataGridViewTextBoxColumn
 			// 
 			this.alertThresholdDataGridViewTextBoxColumn.DataPropertyName = "AlertThreshold";
-			this.alertThresholdDataGridViewTextBoxColumn.HeaderText = "AlertThreshold";
+			this.alertThresholdDataGridViewTextBoxColumn.HeaderText = "Alert Threshold";
 			this.alertThresholdDataGridViewTextBoxColumn.Name = "alertThresholdDataGridViewTextBoxColumn";
 			// 
 			// quantityMaxInShelveDataGridViewTextBoxColumn
 			// 
 			this.quantityMaxInShelveDataGridViewTextBoxColumn.DataPropertyName = "QuantityMaxInShelve";
-			this.quantityMaxInShelveDataGridViewTextBoxColumn.HeaderText = "QuantityMaxInShelve";
+			this.quantityMaxInShelveDataGridViewTextBoxColumn.HeaderText = "Max In Shelve";
 			this.quantityMaxInShelveDataGridViewTextBoxColumn.Name = "quantityMaxInShelveDataGridViewTextBoxColumn";
 			// 
 			// createdByDataGridViewTextBoxColumn
 			// 
 			this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
-			this.createdByDataGridViewTextBoxColumn.HeaderText = "CreatedBy";
+			this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
 			this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
 			// 
 			// dateCreatedDataGridViewTextBoxColumn
 			// 
 			this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-			this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+			this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
 			this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
 			// 
 			// expiryDateDataGridViewTextBoxColumn
 			// 
 			this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-			this.expiryDateDataGridViewTextBoxColumn.HeaderText = "ExpiryDate";
+			this.expiryDateDataGridViewTextBoxColumn.HeaderText = "Expiry Date";
 			this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
 			// 
 			// supplierNameDataGridViewTextBoxColumn
 			// 
 			this.supplierNameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
-			this.supplierNameDataGridViewTextBoxColumn.HeaderText = "SupplierName";
+			this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier Name";
 			this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
 			// 
 			// storeDataGridViewCheckBoxColumn
@@ -495,6 +498,11 @@
 			this.storeDataGridViewCheckBoxColumn.DataPropertyName = "Store";
 			this.storeDataGridViewCheckBoxColumn.HeaderText = "Store";
 			this.storeDataGridViewCheckBoxColumn.Name = "storeDataGridViewCheckBoxColumn";
+			// 
+			// bunifuElipse1
+			// 
+			this.bunifuElipse1.ElipseRadius = 5;
+			this.bunifuElipse1.TargetControl = this.dg;
 			// 
 			// UC_Products
 			// 
@@ -511,12 +519,12 @@
 			this.Size = new System.Drawing.Size(1085, 563);
 			this.panelListings.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -528,27 +536,28 @@
 		private FontAwesome.Sharp.IconPictureBox btnExportToExcel;
 		private FontAwesome.Sharp.IconPictureBox btnEdit;
 		private FontAwesome.Sharp.IconPictureBox btnAdd;
-		private FontAwesome.Sharp.IconButton iconButton7;
-		private FontAwesome.Sharp.IconButton iconButton6;
-		private FontAwesome.Sharp.IconButton iconButton5;
-		private FontAwesome.Sharp.IconButton iconButton4;
-		private FontAwesome.Sharp.IconButton iconButton3;
-		private FontAwesome.Sharp.IconButton iconButton2;
-		private FontAwesome.Sharp.IconButton iconButton1;
-		private FontAwesome.Sharp.IconButton btnProducts;
+		private FontAwesome.Sharp.IconButton btnInStock;
+		private FontAwesome.Sharp.IconButton btnOutOfStock;
+		private FontAwesome.Sharp.IconButton btnExpired;
+		private FontAwesome.Sharp.IconButton btnDormant;
+		private FontAwesome.Sharp.IconButton btnReturned;
+		private FontAwesome.Sharp.IconButton btnInShelves;
+		private FontAwesome.Sharp.IconButton btnInStore;
+		private FontAwesome.Sharp.IconButton btnAll;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
+		private System.Windows.Forms.BindingSource productBindingSource;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shapeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn marginDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityInStoreDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityInShelvesDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn quantityInBoxDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn netProfitDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn marginDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn quantityInBoxDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shelfCodeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn alertThresholdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityMaxInShelveDataGridViewTextBoxColumn;
@@ -557,6 +566,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn storeDataGridViewCheckBoxColumn;
-		private System.Windows.Forms.BindingSource productBindingSource;
+		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
 	}
 }

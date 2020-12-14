@@ -138,5 +138,11 @@ namespace POS.UserControls
 				supplierBindingSource.DataSource = Access.GetSupplier(tbSearch.Text);
 			}
 		}
+
+		private void btnExportToExcel_Click(object sender, EventArgs e)
+		{
+			Manager.ExportDataGrid(dg);
+			Manager.Show("Export complete", Notification.Type.Error);
+		}
 	}
 }

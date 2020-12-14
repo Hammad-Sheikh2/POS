@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+﻿using Bunifu.Framework.UI;
+using FontAwesome.Sharp;
+using POS.Classes;
 using POS.Forms;
 using POS.Forms.Products;
 using System;
@@ -16,7 +18,6 @@ namespace POS.UserControls
 			InitializeComponent();
 			ActivateTheme();
 		}
-		
 
 		#region Methods
 
@@ -43,6 +44,11 @@ namespace POS.UserControls
 			{
 				textbox.BackColor = Properties.Settings.Default.OnHoverColor;
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
+			}
+			foreach (var textbox in GetAllChildren(this).OfType<BunifuCards>())
+			{
+				textbox.color = Properties.Settings.Default.HeaderColor;
+				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
 			}
 			dg.HeaderBgColor = Properties.Settings.Default.HeaderColor;
 			dg.HeaderForeColor = Properties.Settings.Default.ForeColor;
@@ -88,6 +94,23 @@ namespace POS.UserControls
 		{
 			FormDeleteProduct f = new FormDeleteProduct();
 			f.ShowDialog();
+		}
+
+		private void btnExportToExcel_Click(object sender, EventArgs e)
+		{
+			Manager.ExportDataGrid(dg);
+			Manager.Show("Export complete", Notification.Type.Error);
+		}
+
+		private void dg_Paint(object sender, PaintEventArgs e)
+		{
+			foreach (DataGridViewRow row in dg.Rows)
+			{
+				foreach (DataGridViewCell cell in row.Cells)
+				{
+					
+				}
+			}
 		}
 	}
 }

@@ -39,13 +39,6 @@
 			this.btnDelete = new FontAwesome.Sharp.IconPictureBox();
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-			this.cbxFilter = new System.Windows.Forms.ComboBox();
-			this.tbSearch = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,14 +49,21 @@
 			this.airtelMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+			this.cbxFilter = new System.Windows.Forms.ComboBox();
+			this.tbSearch = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			this.bunifuCards1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+			this.bunifuCards1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnSettings
@@ -133,6 +133,7 @@
 			this.btnExportToExcel.TabIndex = 100;
 			this.btnExportToExcel.TabStop = false;
 			this.toolTip1.SetToolTip(this.btnExportToExcel, "Export All Suppliers");
+			this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
 			// 
 			// btnDelete
 			// 
@@ -200,71 +201,6 @@
 			this.dg.Size = new System.Drawing.Size(1018, 441);
 			this.dg.TabIndex = 5;
 			// 
-			// bunifuElipse1
-			// 
-			this.bunifuElipse1.ElipseRadius = 10;
-			// 
-			// bunifuElipse3
-			// 
-			this.bunifuElipse3.ElipseRadius = 10;
-			this.bunifuElipse3.TargetControl = this.dg;
-			// 
-			// bunifuCards1
-			// 
-			this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.bunifuCards1.BackColor = System.Drawing.Color.Silver;
-			this.bunifuCards1.BorderRadius = 5;
-			this.bunifuCards1.BottomSahddow = true;
-			this.bunifuCards1.color = System.Drawing.Color.Tomato;
-			this.bunifuCards1.Controls.Add(this.cbxFilter);
-			this.bunifuCards1.Controls.Add(this.tbSearch);
-			this.bunifuCards1.Controls.Add(this.label3);
-			this.bunifuCards1.LeftSahddow = false;
-			this.bunifuCards1.Location = new System.Drawing.Point(247, 27);
-			this.bunifuCards1.Name = "bunifuCards1";
-			this.bunifuCards1.RightSahddow = true;
-			this.bunifuCards1.ShadowDepth = 20;
-			this.bunifuCards1.Size = new System.Drawing.Size(605, 72);
-			this.bunifuCards1.TabIndex = 114;
-			// 
-			// cbxFilter
-			// 
-			this.cbxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbxFilter.FormattingEnabled = true;
-			this.cbxFilter.Location = new System.Drawing.Point(122, 37);
-			this.cbxFilter.Name = "cbxFilter";
-			this.cbxFilter.Size = new System.Drawing.Size(136, 26);
-			this.cbxFilter.TabIndex = 1;
-			this.cbxFilter.Text = "Search by Id";
-			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
-			// 
-			// tbSearch
-			// 
-			this.tbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.tbSearch.Location = new System.Drawing.Point(264, 36);
-			this.tbSearch.Name = "tbSearch";
-			this.tbSearch.Size = new System.Drawing.Size(229, 26);
-			this.tbSearch.TabIndex = 0;
-			this.tbSearch.Text = "Search by Name";
-			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
-			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(274, 8);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(64, 23);
-			this.label3.TabIndex = 113;
-			this.label3.Text = "Search";
-			// 
-			// customerBindingSource
-			// 
-			this.customerBindingSource.DataSource = typeof(POS.Classes.Customer);
-			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -325,6 +261,72 @@
 			this.leftDataGridViewTextBoxColumn.HeaderText = "Left";
 			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
 			// 
+			// customerBindingSource
+			// 
+			this.customerBindingSource.DataSource = typeof(POS.Classes.Customer);
+			// 
+			// bunifuElipse1
+			// 
+			this.bunifuElipse1.ElipseRadius = 10;
+			this.bunifuElipse1.TargetControl = this;
+			// 
+			// bunifuElipse3
+			// 
+			this.bunifuElipse3.ElipseRadius = 10;
+			this.bunifuElipse3.TargetControl = this.dg;
+			// 
+			// bunifuCards1
+			// 
+			this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.bunifuCards1.BackColor = System.Drawing.Color.Silver;
+			this.bunifuCards1.BorderRadius = 5;
+			this.bunifuCards1.BottomSahddow = true;
+			this.bunifuCards1.color = System.Drawing.Color.Tomato;
+			this.bunifuCards1.Controls.Add(this.cbxFilter);
+			this.bunifuCards1.Controls.Add(this.tbSearch);
+			this.bunifuCards1.Controls.Add(this.label3);
+			this.bunifuCards1.LeftSahddow = false;
+			this.bunifuCards1.Location = new System.Drawing.Point(247, 27);
+			this.bunifuCards1.Name = "bunifuCards1";
+			this.bunifuCards1.RightSahddow = true;
+			this.bunifuCards1.ShadowDepth = 20;
+			this.bunifuCards1.Size = new System.Drawing.Size(605, 72);
+			this.bunifuCards1.TabIndex = 114;
+			// 
+			// cbxFilter
+			// 
+			this.cbxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxFilter.FormattingEnabled = true;
+			this.cbxFilter.Location = new System.Drawing.Point(122, 37);
+			this.cbxFilter.Name = "cbxFilter";
+			this.cbxFilter.Size = new System.Drawing.Size(136, 26);
+			this.cbxFilter.TabIndex = 1;
+			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
+			// 
+			// tbSearch
+			// 
+			this.tbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbSearch.Location = new System.Drawing.Point(264, 36);
+			this.tbSearch.Name = "tbSearch";
+			this.tbSearch.Size = new System.Drawing.Size(229, 26);
+			this.tbSearch.TabIndex = 0;
+			this.tbSearch.Text = "Search by Name";
+			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(274, 8);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(64, 23);
+			this.label3.TabIndex = 113;
+			this.label3.Text = "Search";
+			// 
 			// UC_Customers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,9 +346,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
 			this.bunifuCards1.ResumeLayout(false);
 			this.bunifuCards1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}

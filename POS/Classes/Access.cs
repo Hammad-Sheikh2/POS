@@ -697,6 +697,7 @@ namespace POS.Classes
 				connection.Insert(inv);
 				foreach (Cart item in cart)
 				{
+					ExecuteCommand($"UPDATE Products SET QuantityInShelves = QuantityInShelves - {item.Quantity} WHERE Id = {item.ProductId}");
 					ExecuteCommand($"INSERT INTO InvoiceDetails(InvoiceId, ProductId, ProductName, RetailUnit, UnitPrice, Quantity, Total)VALUES({inv.Id}, {item.ProductId}, '{item.ProductName}', {item.RetailUnit}, {item.UnitPrice}, {item.Quantity}, '{item.Total}');");
 				}
 			}
