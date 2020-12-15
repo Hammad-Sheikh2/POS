@@ -92,6 +92,7 @@ namespace POS.Classes
 		}
 	}
 
+	[Table("Users")]
 	public class User
 	{
 		[Key]

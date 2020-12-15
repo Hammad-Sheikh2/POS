@@ -109,20 +109,33 @@ namespace POS.UserControls
 
 		private void cbxManageUsers_Click(object sender, EventArgs e)
 		{
-
+			if (Login.Role != "Admin")
+			{
+				Manager.Show("Admins only", Forms.Notification.Type.Error);
+				return;
+			}
 		}
 
 		private void btnNewUser_Click(object sender, EventArgs e)
 		{
+			if (Login.Role != "Admin")
+			{
+				Manager.Show("Admins only", Forms.Notification.Type.Error);
+				return;
+			}
 			using (FormNewUser f = new FormNewUser())
 			{
-				if (f.ShowDialog() == DialogResult.OK)
-					Manager.Show("New User was registered.", Notification.Type.Info);
+				f.ShowDialog();
 			}
 		}
 
 		private void btnDeleteUser_Click(object sender, EventArgs e)
 		{
+			if (Login.Role != "Admin")
+			{
+				Manager.Show("Admins only", Forms.Notification.Type.Error);
+				return;
+			}
 			FormDeleteUser f = new FormDeleteUser();
 			f.ShowDialog();
 		}

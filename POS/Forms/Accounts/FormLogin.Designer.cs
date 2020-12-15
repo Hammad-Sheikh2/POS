@@ -140,6 +140,7 @@
 			this.tbPassword.Size = new System.Drawing.Size(293, 31);
 			this.tbPassword.TabIndex = 153;
 			this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.tbPassword.Enter += new System.EventHandler(this.tbPassword_Enter);
 			// 
 			// btnLogin
 			// 

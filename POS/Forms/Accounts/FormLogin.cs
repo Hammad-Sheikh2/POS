@@ -1,5 +1,6 @@
 ﻿using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
+using POS.Classes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -63,19 +64,20 @@ namespace POS.Forms
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Dashboard dsh = new Dashboard();
-			dsh.Show();
-			this.Hide();
-			//if (tbUsername.Text == Properties.Settings.Default.LoginUsername && tbPassword.Text == Properties.Settings.Default.LoginPassword)
-			//{
-			//	Dashboard dsh = new Dashboard();
-			//	dsh.Show();
-			//	this.Hide();
-			//}
-			//else
-			//{
-			//	Manager.Show("Invalid Credentials", Notification.Type.Warning);
-			//}
+			User user = Access.GetUserByUsername(tbUsername.Text);
+			if (user != null && tbPassword.Text == user.Pass)
+			{
+				Login.Id = user.Id;
+				Login.Name = user.Name;
+				Login.Username = user.Username;
+				Login.Password = user.Pass;
+				Login.Role = user.Role;
+				Manager.Show($"Role: {Login.Role}", Notification.Type.Info);
+				Dashboard dsh = new Dashboard();
+				dsh.Show();
+				this.Hide();
+			}
+			else Manager.Show("Invalid credentials", Notification.Type.Error);
 		}
 
 		private void pbClose_Click(object sender, EventArgs e)

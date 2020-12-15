@@ -1527,6 +1527,25 @@ namespace POS.Classes
 
 		#region Users
 
+		public static int NextUserId
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(Id), 0) + 1 FROM Users;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 1;
+				}
+			}
+		}
+
 		public static AutoCompleteStringCollection GetAllUserNamesCollection
 		{
 			get
@@ -1541,6 +1560,14 @@ namespace POS.Classes
 						col.Add(reader.GetString(0));
 				}
 				return col;
+			}
+		}
+
+		public static void InsertUser(User user)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Insert(user);
 			}
 		}
 
@@ -1588,6 +1615,44 @@ namespace POS.Classes
 				}
 			}
 			return user;
+		}
+
+		public static User GetUserByUsername(string username)
+		{
+			User user = new User();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				try
+				{
+					SqlCommand cmd = new SqlCommand($"SELECT * FROM Users WHERE Username = '{username}';", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+						{
+							user.Id = (int)reader["Id"];
+							user.Name = (string)reader["Name"];
+							user.Username = (string)reader["Username"];
+							user.Pass = (string)reader["Pass"];
+							user.Role = (string)reader["Role"];
+						}
+					}
+				}
+				catch (Exception)
+				{
+					return null;
+				}
+			}
+			return user;
+		}
+
+		public static bool IsValidUsername(string username)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<int>($"SELECT COUNT(*) FROM Users WHERE Username = '{username}'").First() <= 0;
+			}
 		}
 
 		#endregion

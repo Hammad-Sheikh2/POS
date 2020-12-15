@@ -252,6 +252,11 @@ namespace POS
 
 		private void btnFinanceDashboard_Click(object sender, EventArgs e)
 		{
+			if (Login.Role != "Admin")
+			{
+				Manager.Show("Admins only", Forms.Notification.Type.Error);
+				return;
+			}
 			ActivateButton(sender, Color.WhiteSmoke);
 			OpenChildForm(new UC_FinanceDashboard());
 		}
