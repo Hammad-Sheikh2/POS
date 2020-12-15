@@ -42,12 +42,23 @@
 			this.btnInStore = new FontAwesome.Sharp.IconButton();
 			this.btnAll = new FontAwesome.Sharp.IconButton();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.btnSettings = new FontAwesome.Sharp.IconPictureBox();
 			this.btnDelete = new FontAwesome.Sharp.IconPictureBox();
 			this.btnExportToExcel = new FontAwesome.Sharp.IconPictureBox();
 			this.btnEdit = new FontAwesome.Sharp.IconPictureBox();
 			this.btnAdd = new FontAwesome.Sharp.IconPictureBox();
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+			this.label2 = new System.Windows.Forms.Label();
+			this.dpEnd = new System.Windows.Forms.DateTimePicker();
+			this.label1 = new System.Windows.Forms.Label();
+			this.dpStart = new System.Windows.Forms.DateTimePicker();
+			this.label4 = new System.Windows.Forms.Label();
+			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
+			this.tbDays = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.cbFilter = new System.Windows.Forms.CheckBox();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,15 +79,16 @@
 			this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panelListings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+			this.bunifuCards1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelListings
@@ -91,9 +103,9 @@
 			this.panelListings.Controls.Add(this.btnInShelves);
 			this.panelListings.Controls.Add(this.btnInStore);
 			this.panelListings.Controls.Add(this.btnAll);
-			this.panelListings.Location = new System.Drawing.Point(116, 24);
+			this.panelListings.Location = new System.Drawing.Point(23, 105);
 			this.panelListings.Name = "panelListings";
-			this.panelListings.Size = new System.Drawing.Size(848, 49);
+			this.panelListings.Size = new System.Drawing.Size(1028, 29);
 			this.panelListings.TabIndex = 11;
 			// 
 			// btnInStock
@@ -105,13 +117,15 @@
 			this.btnInStock.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnInStock.IconColor = System.Drawing.Color.Black;
 			this.btnInStock.IconSize = 16;
-			this.btnInStock.Location = new System.Drawing.Point(735, 0);
+			this.btnInStock.Location = new System.Drawing.Point(896, 0);
 			this.btnInStock.Name = "btnInStock";
 			this.btnInStock.Rotation = 0D;
-			this.btnInStock.Size = new System.Drawing.Size(105, 49);
+			this.btnInStock.Size = new System.Drawing.Size(128, 29);
 			this.btnInStock.TabIndex = 123;
 			this.btnInStock.Text = "With Stock";
+			this.toolTip1.SetToolTip(this.btnInStock, "Products with (Store quantity + Shelves Quantity) greater than Altert threshold");
 			this.btnInStock.UseVisualStyleBackColor = true;
+			this.btnInStock.Click += new System.EventHandler(this.btnInStock_Click);
 			// 
 			// btnOutOfStock
 			// 
@@ -122,13 +136,15 @@
 			this.btnOutOfStock.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnOutOfStock.IconColor = System.Drawing.Color.Black;
 			this.btnOutOfStock.IconSize = 16;
-			this.btnOutOfStock.Location = new System.Drawing.Point(630, 0);
+			this.btnOutOfStock.Location = new System.Drawing.Point(768, 0);
 			this.btnOutOfStock.Name = "btnOutOfStock";
 			this.btnOutOfStock.Rotation = 0D;
-			this.btnOutOfStock.Size = new System.Drawing.Size(105, 49);
+			this.btnOutOfStock.Size = new System.Drawing.Size(128, 29);
 			this.btnOutOfStock.TabIndex = 122;
 			this.btnOutOfStock.Text = "Out of Stock";
+			this.toolTip1.SetToolTip(this.btnOutOfStock, "Products with (Store quantity + Shelves Quantity) less than Altert threshold");
 			this.btnOutOfStock.UseVisualStyleBackColor = true;
+			this.btnOutOfStock.Click += new System.EventHandler(this.btnOutOfStock_Click);
 			// 
 			// btnExpired
 			// 
@@ -139,13 +155,15 @@
 			this.btnExpired.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnExpired.IconColor = System.Drawing.Color.Black;
 			this.btnExpired.IconSize = 16;
-			this.btnExpired.Location = new System.Drawing.Point(525, 0);
+			this.btnExpired.Location = new System.Drawing.Point(640, 0);
 			this.btnExpired.Name = "btnExpired";
 			this.btnExpired.Rotation = 0D;
-			this.btnExpired.Size = new System.Drawing.Size(105, 49);
+			this.btnExpired.Size = new System.Drawing.Size(128, 29);
 			this.btnExpired.TabIndex = 121;
 			this.btnExpired.Text = "Expired";
+			this.toolTip1.SetToolTip(this.btnExpired, "Products expired");
 			this.btnExpired.UseVisualStyleBackColor = true;
+			this.btnExpired.Click += new System.EventHandler(this.btnExpired_Click);
 			// 
 			// btnDormant
 			// 
@@ -156,13 +174,15 @@
 			this.btnDormant.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnDormant.IconColor = System.Drawing.Color.Black;
 			this.btnDormant.IconSize = 16;
-			this.btnDormant.Location = new System.Drawing.Point(420, 0);
+			this.btnDormant.Location = new System.Drawing.Point(512, 0);
 			this.btnDormant.Name = "btnDormant";
 			this.btnDormant.Rotation = 0D;
-			this.btnDormant.Size = new System.Drawing.Size(105, 49);
+			this.btnDormant.Size = new System.Drawing.Size(128, 29);
 			this.btnDormant.TabIndex = 120;
 			this.btnDormant.Text = "Dormant";
+			this.toolTip1.SetToolTip(this.btnDormant, "Not sold for selected period");
 			this.btnDormant.UseVisualStyleBackColor = true;
+			this.btnDormant.Click += new System.EventHandler(this.btnDormant_Click);
 			// 
 			// btnReturned
 			// 
@@ -173,13 +193,15 @@
 			this.btnReturned.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnReturned.IconColor = System.Drawing.Color.Black;
 			this.btnReturned.IconSize = 16;
-			this.btnReturned.Location = new System.Drawing.Point(315, 0);
+			this.btnReturned.Location = new System.Drawing.Point(384, 0);
 			this.btnReturned.Name = "btnReturned";
 			this.btnReturned.Rotation = 0D;
-			this.btnReturned.Size = new System.Drawing.Size(105, 49);
+			this.btnReturned.Size = new System.Drawing.Size(128, 29);
 			this.btnReturned.TabIndex = 119;
 			this.btnReturned.Text = "Returned";
+			this.toolTip1.SetToolTip(this.btnReturned, "Products returned");
 			this.btnReturned.UseVisualStyleBackColor = true;
+			this.btnReturned.Click += new System.EventHandler(this.btnReturned_Click);
 			// 
 			// btnInShelves
 			// 
@@ -190,13 +212,15 @@
 			this.btnInShelves.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnInShelves.IconColor = System.Drawing.Color.Black;
 			this.btnInShelves.IconSize = 16;
-			this.btnInShelves.Location = new System.Drawing.Point(210, 0);
+			this.btnInShelves.Location = new System.Drawing.Point(256, 0);
 			this.btnInShelves.Name = "btnInShelves";
 			this.btnInShelves.Rotation = 0D;
-			this.btnInShelves.Size = new System.Drawing.Size(105, 49);
+			this.btnInShelves.Size = new System.Drawing.Size(128, 29);
 			this.btnInShelves.TabIndex = 118;
 			this.btnInShelves.Text = "In Shelves";
+			this.toolTip1.SetToolTip(this.btnInShelves, "Products with non-zero quantity in shelves");
 			this.btnInShelves.UseVisualStyleBackColor = true;
+			this.btnInShelves.Click += new System.EventHandler(this.btnInShelves_Click);
 			// 
 			// btnInStore
 			// 
@@ -207,13 +231,15 @@
 			this.btnInStore.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnInStore.IconColor = System.Drawing.Color.Black;
 			this.btnInStore.IconSize = 16;
-			this.btnInStore.Location = new System.Drawing.Point(105, 0);
+			this.btnInStore.Location = new System.Drawing.Point(128, 0);
 			this.btnInStore.Name = "btnInStore";
 			this.btnInStore.Rotation = 0D;
-			this.btnInStore.Size = new System.Drawing.Size(105, 49);
+			this.btnInStore.Size = new System.Drawing.Size(128, 29);
 			this.btnInStore.TabIndex = 117;
 			this.btnInStore.Text = "In Store";
+			this.toolTip1.SetToolTip(this.btnInStore, "Products with non-zero quantity in store");
 			this.btnInStore.UseVisualStyleBackColor = true;
+			this.btnInStore.Click += new System.EventHandler(this.btnInStore_Click);
 			// 
 			// btnAll
 			// 
@@ -227,10 +253,12 @@
 			this.btnAll.Location = new System.Drawing.Point(0, 0);
 			this.btnAll.Name = "btnAll";
 			this.btnAll.Rotation = 0D;
-			this.btnAll.Size = new System.Drawing.Size(105, 49);
+			this.btnAll.Size = new System.Drawing.Size(128, 29);
 			this.btnAll.TabIndex = 116;
 			this.btnAll.Text = "All";
+			this.toolTip1.SetToolTip(this.btnAll, "All products");
 			this.btnAll.UseVisualStyleBackColor = true;
+			this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
 			// 
 			// dg
 			// 
@@ -286,17 +314,13 @@
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
 			this.dg.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.Location = new System.Drawing.Point(23, 92);
+			this.dg.Location = new System.Drawing.Point(23, 140);
 			this.dg.Name = "dg";
 			this.dg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dg.RowHeadersVisible = false;
-			this.dg.Size = new System.Drawing.Size(1028, 454);
+			this.dg.Size = new System.Drawing.Size(1028, 413);
 			this.dg.TabIndex = 104;
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
-			// 
-			// productBindingSource
-			// 
-			this.productBindingSource.DataSource = typeof(POS.Classes.Products.Product);
 			// 
 			// btnSettings
 			// 
@@ -379,6 +403,136 @@
 			this.btnAdd.UseGdi = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
+			// bunifuElipse1
+			// 
+			this.bunifuElipse1.ElipseRadius = 5;
+			this.bunifuElipse1.TargetControl = this.dg;
+			// 
+			// bunifuCards1
+			// 
+			this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.bunifuCards1.BackColor = System.Drawing.Color.Silver;
+			this.bunifuCards1.BorderRadius = 5;
+			this.bunifuCards1.BottomSahddow = true;
+			this.bunifuCards1.color = System.Drawing.Color.Tomato;
+			this.bunifuCards1.Controls.Add(this.cbFilter);
+			this.bunifuCards1.Controls.Add(this.label2);
+			this.bunifuCards1.Controls.Add(this.dpEnd);
+			this.bunifuCards1.Controls.Add(this.label1);
+			this.bunifuCards1.Controls.Add(this.dpStart);
+			this.bunifuCards1.Controls.Add(this.label4);
+			this.bunifuCards1.Controls.Add(this.cbxDefinedPeriod);
+			this.bunifuCards1.Controls.Add(this.tbDays);
+			this.bunifuCards1.Controls.Add(this.label5);
+			this.bunifuCards1.LeftSahddow = false;
+			this.bunifuCards1.Location = new System.Drawing.Point(236, 3);
+			this.bunifuCards1.Name = "bunifuCards1";
+			this.bunifuCards1.RightSahddow = true;
+			this.bunifuCards1.ShadowDepth = 20;
+			this.bunifuCards1.Size = new System.Drawing.Size(605, 96);
+			this.bunifuCards1.TabIndex = 113;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label2.Location = new System.Drawing.Point(113, 67);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(63, 18);
+			this.label2.TabIndex = 128;
+			this.label2.Text = "End Date";
+			// 
+			// dpEnd
+			// 
+			this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.dpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dpEnd.Location = new System.Drawing.Point(188, 64);
+			this.dpEnd.Name = "dpEnd";
+			this.dpEnd.Size = new System.Drawing.Size(123, 24);
+			this.dpEnd.TabIndex = 127;
+			this.dpEnd.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label1.Location = new System.Drawing.Point(113, 41);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(69, 18);
+			this.label1.TabIndex = 126;
+			this.label1.Text = "Start Date";
+			// 
+			// dpStart
+			// 
+			this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.dpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dpStart.Location = new System.Drawing.Point(188, 38);
+			this.dpStart.Name = "dpStart";
+			this.dpStart.Size = new System.Drawing.Size(123, 24);
+			this.dpStart.TabIndex = 125;
+			this.dpStart.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label4.Location = new System.Drawing.Point(345, 40);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(37, 18);
+			this.label4.TabIndex = 124;
+			this.label4.Text = "Days";
+			// 
+			// cbxDefinedPeriod
+			// 
+			this.cbxDefinedPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.cbxDefinedPeriod.FormattingEnabled = true;
+			this.cbxDefinedPeriod.Items.AddRange(new object[] {
+            "Today",
+            "1 Week",
+            "1 Month",
+            "3 Months",
+            "6 Months",
+            "1 Year"});
+			this.cbxDefinedPeriod.Location = new System.Drawing.Point(340, 61);
+			this.cbxDefinedPeriod.Name = "cbxDefinedPeriod";
+			this.cbxDefinedPeriod.Size = new System.Drawing.Size(122, 26);
+			this.cbxDefinedPeriod.TabIndex = 123;
+			this.cbxDefinedPeriod.Text = "Defined Period";
+			this.cbxDefinedPeriod.SelectedIndexChanged += new System.EventHandler(this.cbxDefinedPeriod_SelectedIndexChanged);
+			// 
+			// tbDays
+			// 
+			this.tbDays.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbDays.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbDays.Location = new System.Drawing.Point(387, 36);
+			this.tbDays.Name = "tbDays";
+			this.tbDays.ReadOnly = true;
+			this.tbDays.Size = new System.Drawing.Size(75, 24);
+			this.tbDays.TabIndex = 122;
+			this.tbDays.Text = "0";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(274, 8);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(56, 23);
+			this.label5.TabIndex = 113;
+			this.label5.Text = "Filter";
+			// 
+			// cbFilter
+			// 
+			this.cbFilter.AutoSize = true;
+			this.cbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.cbFilter.Location = new System.Drawing.Point(468, 68);
+			this.cbFilter.Name = "cbFilter";
+			this.cbFilter.Size = new System.Drawing.Size(90, 21);
+			this.cbFilter.TabIndex = 129;
+			this.cbFilter.Text = "Use filters";
+			this.cbFilter.UseVisualStyleBackColor = true;
+			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -396,6 +550,7 @@
 			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
 			this.shapeDataGridViewTextBoxColumn.HeaderText = "Shape";
 			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
+			this.shapeDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// purchasePriceDataGridViewTextBoxColumn
 			// 
@@ -414,12 +569,14 @@
 			this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
 			this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
 			this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
+			this.marginDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// weightDataGridViewTextBoxColumn
 			// 
 			this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
 			this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
 			this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+			this.weightDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// quantityInStoreDataGridViewTextBoxColumn
 			// 
@@ -438,18 +595,21 @@
 			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
 			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
 			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+			this.unitPriceDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// netProfitDataGridViewTextBoxColumn
 			// 
 			this.netProfitDataGridViewTextBoxColumn.DataPropertyName = "NetProfit";
 			this.netProfitDataGridViewTextBoxColumn.HeaderText = "NetProfit";
 			this.netProfitDataGridViewTextBoxColumn.Name = "netProfitDataGridViewTextBoxColumn";
+			this.netProfitDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// quantityInBoxDataGridViewTextBoxColumn
 			// 
 			this.quantityInBoxDataGridViewTextBoxColumn.DataPropertyName = "QuantityInBox";
 			this.quantityInBoxDataGridViewTextBoxColumn.HeaderText = "Quantity In Box";
 			this.quantityInBoxDataGridViewTextBoxColumn.Name = "quantityInBoxDataGridViewTextBoxColumn";
+			this.quantityInBoxDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// shelfCodeDataGridViewTextBoxColumn
 			// 
@@ -468,6 +628,7 @@
 			this.quantityMaxInShelveDataGridViewTextBoxColumn.DataPropertyName = "QuantityMaxInShelve";
 			this.quantityMaxInShelveDataGridViewTextBoxColumn.HeaderText = "Max In Shelve";
 			this.quantityMaxInShelveDataGridViewTextBoxColumn.Name = "quantityMaxInShelveDataGridViewTextBoxColumn";
+			this.quantityMaxInShelveDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// createdByDataGridViewTextBoxColumn
 			// 
@@ -480,6 +641,7 @@
 			this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
 			this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
 			this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+			this.dateCreatedDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// expiryDateDataGridViewTextBoxColumn
 			// 
@@ -499,15 +661,15 @@
 			this.storeDataGridViewCheckBoxColumn.HeaderText = "Store";
 			this.storeDataGridViewCheckBoxColumn.Name = "storeDataGridViewCheckBoxColumn";
 			// 
-			// bunifuElipse1
+			// productBindingSource
 			// 
-			this.bunifuElipse1.ElipseRadius = 5;
-			this.bunifuElipse1.TargetControl = this.dg;
+			this.productBindingSource.DataSource = typeof(POS.Classes.Products.Product);
 			// 
 			// UC_Products
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.bunifuCards1);
 			this.Controls.Add(this.dg);
 			this.Controls.Add(this.btnSettings);
 			this.Controls.Add(this.btnDelete);
@@ -516,15 +678,17 @@
 			this.Controls.Add(this.btnEdit);
 			this.Controls.Add(this.btnAdd);
 			this.Name = "UC_Products";
-			this.Size = new System.Drawing.Size(1085, 563);
+			this.Size = new System.Drawing.Size(1085, 594);
 			this.panelListings.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+			this.bunifuCards1.ResumeLayout(false);
+			this.bunifuCards1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -546,6 +710,8 @@
 		private FontAwesome.Sharp.IconButton btnAll;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
 		private System.Windows.Forms.BindingSource productBindingSource;
+		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shapeDataGridViewTextBoxColumn;
@@ -566,6 +732,15 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn storeDataGridViewCheckBoxColumn;
-		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+		private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.DateTimePicker dpEnd;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DateTimePicker dpStart;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.ComboBox cbxDefinedPeriod;
+		private System.Windows.Forms.TextBox tbDays;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.CheckBox cbFilter;
 	}
 }

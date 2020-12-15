@@ -19,9 +19,10 @@ namespace POS.Forms.Products
 			InitializeComponent();
 			ActivateTheme();
 			Clear();
-			Access.GetStringList("SELECT Value FROM Categories").ForEach(item => cbxCategory.Items.Add(item));
-			Access.GetStringList("SELECT Value FROM ShelfNumbers").ForEach(item => cbxShelf.Items.Add(item));
-			Access.GetDoublesStringList("SELECT Value FROM Weights").ForEach(item => cbxWeight.Items.Add(item));
+			cbxCategory.Items.AddRange(Access.GetStringList("SELECT Value FROM Categories").ToArray());
+			cbxShelf.Items.AddRange(Access.GetStringList("SELECT Value FROM ShelfNumbers").ToArray());
+			cbxSupplier.Items.AddRange(Access.GetStringList("SELECT Name FROM Suppliers").ToArray());
+			cbxWeight.Items.AddRange(Access.GetDoublesStringList("SELECT Value FROM Weights").ToArray());
 		}
 
 
@@ -107,8 +108,16 @@ namespace POS.Forms.Products
 
 		private void btnRegister_Click(object sender, EventArgs e)
 		{
-			Reload();
-			Access.InsertProduct(product);
+			try
+			{
+				Reload();
+				Access.InsertProduct(product);
+				Manager.Show("Product inserted", Notification.Type.Success);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)

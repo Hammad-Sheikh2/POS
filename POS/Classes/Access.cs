@@ -8,6 +8,7 @@ using Dapper.Contrib;
 using System.Data;
 using POS.Classes.Finances;
 using System.Linq;
+using POS.UserControls;
 
 namespace POS.Classes
 {
@@ -419,6 +420,143 @@ namespace POS.Classes
 						product.DateModified = (DateTime)reader["DateModified"];
 						product.SupplierName = (string)reader["SupplierName"];
 						product.Store = (bool)reader["Store"];
+						li.Add(product);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Product[] GetProducts(ProductFilter filter)
+		{
+			List<Product> li = new List<Product>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand("", cnn);
+				switch (filter)
+				{
+					case ProductFilter.All:
+						cmd.CommandText = "SELECT * FROM Products";
+						break;
+					case ProductFilter.InStore:
+						cmd.CommandText = "SELECT * FROM Products WHERE QuantityInStore > 0";
+						break;
+					case ProductFilter.InShelves:
+						cmd.CommandText = "SELECT * FROM Products WHERE QuantityInShelves > 0";
+						break;
+					case ProductFilter.Returned:
+						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
+						break;
+					case ProductFilter.Dormant:
+						cmd.CommandText = $"SELECT * FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id))";
+						break;
+					case ProductFilter.Expired:
+						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
+						break;
+					case ProductFilter.OutOfStock:
+						cmd.CommandText = "SELECT * FROM Products WHERE (SELECT ISNULL(SUM(QuantityInStore)+ SUM(QuantityInShelves), 0) FROM Products) < AlertThreshold;";
+						break;
+					case ProductFilter.InStock:
+						cmd.CommandText = "SELECT * FROM Products WHERE (SELECT ISNULL(SUM(QuantityInStore)+ SUM(QuantityInShelves), 0) FROM Products) > AlertThreshold;";
+						break;
+					default:
+						break;
+				}
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Product product = new Product();
+						product.Id = (int)reader["Id"];
+						product.Name = (string)reader["ProductName"];
+						product.Shape = (string)reader["ProductShape"];
+						product.Weight = (double)reader["ProductWeight"];
+						product.QuantityInStore = (double)reader["QuantityInStore"];
+						product.QuantityInShelves = (double)reader["QuantityInShelves"];
+						product.QuantityInBox = (double)reader["QuantityInBox"];
+						product.QuantityMaxInShelve = (double)reader["QuantityMaxInShelve"];
+						product.UnitPrice = (double)reader["UnitPrice"];
+						product.PurchasePrice = (double)reader["PurchasePrice"];
+						product.SellingPrice = (double)reader["SellingPrice"];
+						product.ShelfCode = (string)reader["ShelfCode"];
+						product.AlertThreshold = (double)reader["AlertThreshold"];
+						product.CreatedBy = (string)reader["CreatedBy"];
+						product.DateCreated = (DateTime)reader["DateCreated"];
+						product.ExpiryDate = (DateTime)reader["ExpiryDate"];
+						product.DateModified = (DateTime)reader["DateModified"];
+						product.SupplierName = (string)reader["SupplierName"];
+						product.Store = (bool)reader["Store"];
+						li.Add(product);
+					}
+				}
+			}
+			return li.ToArray();
+		}
+
+		public static Product[] GetProducts(ProductFilter filter, DateTime start, DateTime end)
+		{
+			List<Product> li = new List<Product>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				cnn.Open();
+				SqlCommand cmd = new SqlCommand("", cnn);
+				switch (filter)
+				{
+					case ProductFilter.All:
+						cmd.CommandText = "SELECT * FROM Products";
+						break;
+					case ProductFilter.InStore:
+						cmd.CommandText = "SELECT * FROM Products WHERE QuantityInStore > 0";
+						break;
+					case ProductFilter.InShelves:
+						cmd.CommandText = "SELECT * FROM Products WHERE QuantityInShelves > 0";
+						break;
+					case ProductFilter.Returned:
+						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
+						break;
+					case ProductFilter.Dormant:
+						cmd.CommandText = $"SELECT * FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}';";
+						break;
+					case ProductFilter.Expired:
+						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
+						break;
+					case ProductFilter.OutOfStock:
+						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(SUM(QuantityInStore, QuantityInShelves), 0) < AlertThreshold;";
+						break;
+					case ProductFilter.InStock:
+						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(SUM(QuantityInStore, QuantityInShelves), 0) > AlertThreshold;";
+						break;
+					default:
+						break;
+				}
+				SqlDataReader reader = cmd.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						Product product = new Product();
+						product.Id = (int)reader["Id"];
+						product.Name = (string)reader["ProductName"];
+						product.Shape = (string)reader["ProductShape"];
+						product.Weight = (double)reader["ProductWeight"];
+						product.QuantityInStore = (double)reader["QuantityInStore"];
+						product.QuantityInShelves = (double)reader["QuantityInShelves"];
+						product.QuantityInBox = (double)reader["QuantityInBox"];
+						product.QuantityMaxInShelve = (double)reader["QuantityMaxInShelve"];
+						product.UnitPrice = (double)reader["UnitPrice"];
+						product.PurchasePrice = (double)reader["PurchasePrice"];
+						product.SellingPrice = (double)reader["SellingPrice"];
+						product.ShelfCode = (string)reader["ShelfCode"];
+						product.AlertThreshold = (double)reader["AlertThreshold"];
+						product.CreatedBy = (string)reader["CreatedBy"];
+						product.DateCreated = (DateTime)reader["DateCreated"];
+						product.ExpiryDate = (DateTime)reader["ExpiryDate"];
+						product.DateModified = (DateTime)reader["DateModified"];
+						product.SupplierName = (string)reader["SupplierName"];
+						product.Store = (bool)reader["Store"];
+						li.Add(product);
 					}
 				}
 			}
