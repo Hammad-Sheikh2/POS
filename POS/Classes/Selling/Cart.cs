@@ -3,13 +3,16 @@ using System.ComponentModel;
 
 namespace POS.Classes
 {
+	[Table("InvoiceDetails")]
 	public class Cart
 	{
 		public int ProductId { get; set; }
 
 		[DisplayName("Name of Product")]
+		[Editable(false)]
 		public string ProductName { get; set; }
 		[DisplayName("Shape")]
+		[Editable(false)]
 		public string Shape { get; set; }
 
 		public double RetailUnit { get; set; }

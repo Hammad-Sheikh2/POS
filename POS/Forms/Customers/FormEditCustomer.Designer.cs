@@ -34,8 +34,8 @@
 			this.tbSearch = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnClear = new FontAwesome.Sharp.IconButton();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.iconButton4 = new FontAwesome.Sharp.IconButton();
+			this.btnCash = new FontAwesome.Sharp.IconButton();
+			this.btnCredit = new FontAwesome.Sharp.IconButton();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnCancel = new FontAwesome.Sharp.IconButton();
 			this.btnUpdate = new FontAwesome.Sharp.IconButton();
@@ -134,8 +134,8 @@
 			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.panel1.BackColor = System.Drawing.Color.Silver;
 			this.panel1.Controls.Add(this.btnClear);
-			this.panel1.Controls.Add(this.iconButton1);
-			this.panel1.Controls.Add(this.iconButton4);
+			this.panel1.Controls.Add(this.btnCash);
+			this.panel1.Controls.Add(this.btnCredit);
 			this.panel1.Controls.Add(this.label12);
 			this.panel1.Controls.Add(this.btnCancel);
 			this.panel1.Controls.Add(this.btnUpdate);
@@ -200,37 +200,39 @@
 			this.btnClear.UseVisualStyleBackColor = true;
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
-			// iconButton1
+			// btnCash
 			// 
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton1.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton1.IconColor = System.Drawing.Color.Black;
-			this.iconButton1.IconSize = 16;
-			this.iconButton1.Location = new System.Drawing.Point(114, 203);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Rotation = 0D;
-			this.iconButton1.Size = new System.Drawing.Size(78, 26);
-			this.iconButton1.TabIndex = 12;
-			this.iconButton1.Text = "Cash";
-			this.iconButton1.UseVisualStyleBackColor = true;
+			this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCash.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCash.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnCash.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCash.IconColor = System.Drawing.Color.Black;
+			this.btnCash.IconSize = 16;
+			this.btnCash.Location = new System.Drawing.Point(114, 203);
+			this.btnCash.Name = "btnCash";
+			this.btnCash.Rotation = 0D;
+			this.btnCash.Size = new System.Drawing.Size(78, 26);
+			this.btnCash.TabIndex = 12;
+			this.btnCash.Text = "Cash";
+			this.btnCash.UseVisualStyleBackColor = true;
+			this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
 			// 
-			// iconButton4
+			// btnCredit
 			// 
-			this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton4.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton4.IconColor = System.Drawing.Color.Black;
-			this.iconButton4.IconSize = 16;
-			this.iconButton4.Location = new System.Drawing.Point(30, 203);
-			this.iconButton4.Name = "iconButton4";
-			this.iconButton4.Rotation = 0D;
-			this.iconButton4.Size = new System.Drawing.Size(78, 26);
-			this.iconButton4.TabIndex = 11;
-			this.iconButton4.Text = "Credit";
-			this.iconButton4.UseVisualStyleBackColor = true;
+			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCredit.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCredit.IconColor = System.Drawing.Color.Black;
+			this.btnCredit.IconSize = 16;
+			this.btnCredit.Location = new System.Drawing.Point(30, 203);
+			this.btnCredit.Name = "btnCredit";
+			this.btnCredit.Rotation = 0D;
+			this.btnCredit.Size = new System.Drawing.Size(78, 26);
+			this.btnCredit.TabIndex = 11;
+			this.btnCredit.Text = "Credit";
+			this.btnCredit.UseVisualStyleBackColor = true;
+			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
 			// 
 			// label12
 			// 
@@ -729,8 +731,8 @@
 		private System.Windows.Forms.Label label36;
 		private System.Windows.Forms.Label label37;
 		private System.Windows.Forms.Label label12;
-		private FontAwesome.Sharp.IconButton iconButton1;
-		private FontAwesome.Sharp.IconButton iconButton4;
+		private FontAwesome.Sharp.IconButton btnCash;
+		private FontAwesome.Sharp.IconButton btnCredit;
 		private FontAwesome.Sharp.IconButton btnCancel;
 		private FontAwesome.Sharp.IconButton btnUpdate;
 		private FontAwesome.Sharp.IconButton btnClear;

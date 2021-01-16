@@ -126,5 +126,10 @@ namespace POS.Forms.Suppliers
 				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
+		private void iconButton1_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace POS
 {
 	public partial class Dashboard : Form
@@ -294,7 +295,8 @@ namespace POS
 
 		private void btnPurchases_Click(object sender, EventArgs e)
 		{
-			Manager.Show("Will available soon", Forms.Notification.Type.Info);
+			ActivateButton(sender, Color.WhiteSmoke);
+			OpenChildForm(new UC_Purchases());
 		}
 	}
 }

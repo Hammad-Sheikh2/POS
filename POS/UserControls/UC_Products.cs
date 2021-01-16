@@ -43,6 +43,8 @@ namespace POS.UserControls
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 				textbox.BackColor = Properties.Settings.Default.HeaderColor;
 			}
+			foreach (var textbox in GetAllChildren(this).OfType<CheckBox>())
+				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Panel>())
 				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
 			foreach (var textbox in GetAllChildren(this).OfType<IconPictureBox>())

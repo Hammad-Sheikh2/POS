@@ -150,12 +150,12 @@ namespace POS.Forms.Products
 			}
 		}
 
-		private void btnPayment_Click(object sender, EventArgs e)
+		private async void btnPayment_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				Reload();
-				Access.UpdateProduct(product);
+				await Access.UpdateProductAsync(product);
 				Manager.Show("Product Updated", Notification.Type.Success);
 			}
 			catch (Exception ex)

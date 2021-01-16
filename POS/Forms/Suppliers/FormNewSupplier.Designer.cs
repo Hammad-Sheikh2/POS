@@ -362,7 +362,6 @@
 			this.tbName.Name = "tbName";
 			this.tbName.Size = new System.Drawing.Size(226, 26);
 			this.tbName.TabIndex = 0;
-			this.tbName.Text = "Grossistes";
 			this.tbName.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label1
@@ -438,6 +437,7 @@
 			this.iconButton1.TabIndex = 2;
 			this.iconButton1.Text = "Cancel";
 			this.iconButton1.UseVisualStyleBackColor = true;
+			this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
 			// 
 			// btnClear
 			// 
@@ -458,9 +458,12 @@
 			// 
 			// FormNewSupplier
 			// 
+			this.AcceptButton = this.btnSave;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.iconButton1;
 			this.ClientSize = new System.Drawing.Size(814, 262);
+			this.ControlBox = false;
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.iconButton1);
 			this.Controls.Add(this.btnSave);
@@ -469,6 +472,8 @@
 			this.MaximumSize = new System.Drawing.Size(830, 305);
 			this.MinimumSize = new System.Drawing.Size(830, 268);
 			this.Name = "FormNewSupplier";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "New Supplier";
 			this.panelDetails.ResumeLayout(false);

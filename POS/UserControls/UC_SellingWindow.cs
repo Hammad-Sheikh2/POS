@@ -30,6 +30,8 @@ namespace POS.UserControls
 			}
 			foreach (var textbox in GetAllChildren(this).OfType<Panel>())
 				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
+			foreach (var textbox in GetAllChildren(this).OfType<RadioButton>())
+				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Label>())
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			dg.HeaderBgColor = Properties.Settings.Default.HeaderColor;
@@ -71,11 +73,27 @@ namespace POS.UserControls
 		{
 			Customer cus = Access.GetCustomer(cbxCustomers.Text);
 			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
-			using (FormCashPurchase f = new FormCashPurchase(cus, arr))
+			if (rbPayment.Checked)
 			{
-				f.tbTotalBill.Text = tbTotal.Text;
-				f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
-				f.ShowDialog();
+				using (FormCashPurchase f = new FormCashPurchase(cus, arr))
+				{
+					f.tbTotalBill.Text = tbTotal.Text;
+					f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
+					f.ShowDialog();
+				}
+			}
+			else
+			{
+				foreach (Cart item in arr)
+				{
+					item.Quantity *= -1;
+				}
+				using (FormReturnPurchase f = new FormReturnPurchase(cus, arr))
+				{
+					f.tbTotalBill.Text = (double.Parse(tbTotal.Text) * -1).ToString();
+					f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
+					f.ShowDialog();
+				}
 			}
 		}
 
@@ -110,6 +128,30 @@ namespace POS.UserControls
 				}
 			}
 			cartBindingSource.List.Add(Access.GetCart(Access.GetProduct(cbxProductNames.Text)));
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			cartBindingSource.Clear();
+		}
+
+		private void cbxProductNames_Click(object sender, EventArgs e)
+		{
+			(sender as ComboBox).Text = "";
+		}
+
+		private void InvoiceType_CheckChanged(object sender, EventArgs e)
+		{
+			if (rbReturn.Checked)
+			{
+				btnCredit.Visible = false;
+				btnCash.Text = "Confirm";
+			}
+			else
+			{
+				btnCredit.Visible = true;
+				btnCash.Text = "Cash";
+			}
 		}
 	}
 }

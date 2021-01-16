@@ -434,7 +434,7 @@
 			// 
 			// shiftBindingSource
 			// 
-			this.shiftBindingSource.DataSource = typeof(POS.Classes.Finances.Shift);
+			this.shiftBindingSource.DataSource = typeof(POS.Classes.Finances.ClosingShift);
 			// 
 			// UC_ClosingShift
 			// 

@@ -1,4 +1,7 @@
-﻿using FontAwesome.Sharp;
+﻿using Bunifu.Framework.UI;
+using FontAwesome.Sharp;
+using POS.Classes;
+using POS.Classes.Finances;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +11,13 @@ namespace POS.UserControls.Finances
 {
 	public partial class UC_Closing : UserControl
 	{
+		Shift shift = new Shift();
+		DayClosing dayClosing = new DayClosing();
+
 		public UC_Closing()
 		{
 			InitializeComponent();
 			ActivateTheme();
-			btnClosingShift_Click(this, new EventArgs());
 		}
 
 		private void ActivateTheme()
@@ -28,6 +33,17 @@ namespace POS.UserControls.Finances
 				textbox.BackColor = Properties.Settings.Default.MenuBarColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Label>())
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
+			foreach (var item in GetAllChildren(this).OfType<BunifuCards>())
+			{
+				item.color = Properties.Settings.Default.HeaderColor;
+				item.BackColor = Properties.Settings.Default.OnHoverColor;
+			}
+			foreach (var item in GetAllChildren(this).OfType<BunifuCustomDataGrid>())
+			{
+				item.BackColor = Properties.Settings.Default.OnHoverColor;
+				item.HeaderBgColor = Properties.Settings.Default.HeaderColor;
+				item.HeaderForeColor = Properties.Settings.Default.ForeColor;
+			}
 		}
 
 		private static IEnumerable<Control> GetAllChildren(Control root)
@@ -44,28 +60,98 @@ namespace POS.UserControls.Finances
 			}
 		}
 
-		private void btnClosingShift_Click(object sender, EventArgs e)
+		private async void UC_Closing_Load(object sender, EventArgs e)
 		{
-			Canva.Controls.Clear();
-			UC_ClosingShift uc = new UC_ClosingShift();
-			uc.Dock = DockStyle.Fill;
-			Canva.Controls.Add(uc);
+			closingShiftBindingSource.DataSource = await Access.GetClosingShiftsAsync();
+			shiftBindingSource.DataSource = await Access.GetShiftsAsync(dpDayClosing.Value);
+			ReloadShift();
+			DisplayShift();
+			ReloadDay();
+			DisplayDay();
 		}
 
-		private void btnClosingDay_Click(object sender, EventArgs e)
+		private void ReloadShift()
 		{
-			Canva.Controls.Clear();
-			UC_ClosingDay uc = new UC_ClosingDay();
-			uc.Dock = DockStyle.Fill;
-			Canva.Controls.Add(uc);
+			shift.Id = Access.GetShift().Id;
+			shift.QuantitySold = closingShiftBindingSource.List.Cast<ClosingShift>().Sum(item => item.Quantity);
+			shift.TotalAmount = closingShiftBindingSource.List.Cast<ClosingShift>().Sum(item => item.Total);
+			shift.PaidAmount = closingShiftBindingSource.List.Cast<ClosingShift>().Sum(item => item.Paid);
+			shift.CreditInvoices = closingShiftBindingSource.List.Cast<ClosingShift>().Sum(item => item.Credit ? 1 : 0);
+			shift.CashInvoices = closingShiftBindingSource.List.Cast<ClosingShift>().Sum(item => item.Credit ? 0 : 1);
+			shift.ClosedOn = DateTime.Now;
+			shift.Explanation = tbExplanation.Text;
 		}
 
-		private void btnClosingMonth_Click(object sender, EventArgs e)
+		private void DisplayShift()
 		{
-			Canva.Controls.Clear();
-			UC_ClosingMonth uc = new UC_ClosingMonth();
-			uc.Dock = DockStyle.Fill;
-			Canva.Controls.Add(uc);
+			tbShiftId.Value = shift.Id;
+			tbQuantity.Value = Convert.ToDecimal(shift.QuantitySold);
+			tbTotal.Value = Convert.ToDecimal(shift.TotalAmount);
+			tbPaid.Value = Convert.ToDecimal(shift.PaidAmount);
+			tbCredit.Value = Convert.ToDecimal(shift.CreditInvoices);
+			tbCash.Value = Convert.ToDecimal(shift.CashInvoices);
+			tbExplanation.Text = shift.Explanation;
+		}
+
+		private void ReloadDay()
+		{
+			//dayClosing.DayId =
+			dayClosing.ClosingDate = dpDayClosing.Value;
+			dayClosing.TotalAmount = shiftBindingSource.List.Cast<Shift>().Sum(item => item.TotalAmount);
+			dayClosing.PaidAmount = shiftBindingSource.List.Cast<Shift>().Sum(item => item.PaidAmount);
+		}
+
+		private void DisplayDay()
+		{
+			//dpDayClosing.Value = dayClosing.ClosingDate;
+			tbTotalAmountDaily.Value = Convert.ToDecimal(dayClosing.TotalAmount);
+			tbPaidAmountDaily.Value = Convert.ToDecimal(dayClosing.PaidAmount);
+
+		}
+
+		private async void btnCloseShift_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				ReloadShift();
+				await Access.InsertShiftAsync(shift);
+				Manager.Show("Shift closed", Forms.Notification.Type.Success);
+				int id = await Access.StartNewShift();
+				Manager.Show("New Shift Started", Forms.Notification.Type.Success);
+				Manager.Show($"Shift Id: {id}", Forms.Notification.Type.Info);
+				UC_Closing_Load(this, e);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private async void dpDayClosing_ValueChanged(object sender, EventArgs e)
+		{
+			shiftBindingSource.DataSource = await Access.GetShiftsAsync(dpDayClosing.Value);
+			ReloadDay();
+			DisplayDay();
+		}
+
+		private async void btnCloseDay_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				ReloadDay();
+				await Access.InsertDayClosingAsync(dayClosing);
+				Manager.Show("Day closed", Forms.Notification.Type.Success);
+				UC_Closing_Load(this, e);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void dpClosingMonth_ValueChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

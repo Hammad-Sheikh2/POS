@@ -106,12 +106,12 @@ namespace POS.Forms.Products
 			}
 		}
 
-		private void btnRegister_Click(object sender, EventArgs e)
+		private async void btnRegister_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				Reload();
-				Access.InsertProduct(product);
+				await Access.InsertProductAsync(product);
 				Manager.Show("Product inserted", Notification.Type.Success);
 			}
 			catch (Exception ex)

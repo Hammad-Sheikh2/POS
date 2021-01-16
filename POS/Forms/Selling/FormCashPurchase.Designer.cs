@@ -39,6 +39,7 @@
 			this.btnCheckout = new FontAwesome.Sharp.IconButton();
 			this.label5 = new System.Windows.Forms.Label();
 			this.lblId = new System.Windows.Forms.Label();
+			this.btnCancel = new FontAwesome.Sharp.IconButton();
 			this.SuspendLayout();
 			// 
 			// tbNoOfProducts
@@ -127,10 +128,10 @@
 			this.btnCheckout.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
 			this.btnCheckout.IconColor = System.Drawing.Color.Black;
 			this.btnCheckout.IconSize = 40;
-			this.btnCheckout.Location = new System.Drawing.Point(309, 81);
+			this.btnCheckout.Location = new System.Drawing.Point(289, 55);
 			this.btnCheckout.Name = "btnCheckout";
 			this.btnCheckout.Rotation = 0D;
-			this.btnCheckout.Size = new System.Drawing.Size(140, 71);
+			this.btnCheckout.Size = new System.Drawing.Size(140, 99);
 			this.btnCheckout.TabIndex = 109;
 			this.btnCheckout.Text = "Checkout";
 			this.btnCheckout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -157,11 +158,33 @@
 			this.lblId.TabIndex = 111;
 			this.lblId.Text = "0";
 			// 
+			// btnCancel
+			// 
+			this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCancel.IconColor = System.Drawing.Color.Black;
+			this.btnCancel.IconSize = 16;
+			this.btnCancel.Location = new System.Drawing.Point(289, 158);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Rotation = 0D;
+			this.btnCancel.Size = new System.Drawing.Size(140, 31);
+			this.btnCancel.TabIndex = 125;
+			this.btnCancel.Text = "Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			// 
 			// FormCashPurchase
 			// 
+			this.AcceptButton = this.btnCheckout;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(461, 195);
+			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.lblId);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.btnCheckout);
@@ -197,5 +220,6 @@
 		public System.Windows.Forms.TextBox tbTotalBill;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label lblId;
+		private FontAwesome.Sharp.IconButton btnCancel;
 	}
 }

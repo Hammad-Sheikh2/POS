@@ -1,29 +1,27 @@
 ﻿using FontAwesome.Sharp;
-using Microsoft.Reporting.WinForms;
 using POS.Classes;
 using POS.Classes.Finances;
-using POS.Reporting;
+using POS.Classes.Products;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POS.Forms.Selling
 {
-	public partial class FormCashPurchase : Form
+	public partial class FormReturnPurchase : Form
 	{
 		public Customer customer { get; set; }
 		public Cart[] cart { get; set; }
 
 		Invoice invoice = new Invoice();
 
-		public FormCashPurchase()
-		{
-			InitializeComponent();
-			ActivateTheme();
-		}
-
-		public FormCashPurchase(Customer cus, Cart[] arr)
+		public FormReturnPurchase(Customer cus, Cart[] arr)
 		{
 			InitializeComponent();
 			ActivateTheme();
@@ -41,12 +39,45 @@ namespace POS.Forms.Selling
 		{
 			invoice.Id = int.Parse(lblId.Text);
 			invoice.Total = double.Parse(tbTotalBill.Text);
-			invoice.Paid = double.Parse(tbCashGiven.Text);
+			invoice.Paid = double.Parse(tbTotalBill.Text);
 			invoice.CustomerId = customer.Id;
 			invoice.UserId = Login.Id;
 			invoice.Credit = false;
 			invoice.InvoiceDate = DateTime.Now;
 			invoice.ShiftId = Access.GetShift().Id;
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private async void btnReturn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Reload();
+				Access.InsertInvoice(invoice, cart);
+				Product[] products = Access.GetProducts(cart);
+				foreach (Product item in products)
+				{
+					foreach (Cart row in cart)
+					{
+						if (row.ProductId == item.Id)
+						{
+							item.QuantityInShelves += row.Quantity;
+						}
+					}
+					await Access.UpdateProductAsync(item);
+				}
+				Manager.Show("Invoice created", Notification.Type.Success);
+				Manager.Show("Stock Updated", Notification.Type.Info);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Manager.Show("Transaction Failed", Notification.Type.Error);
+			}
 		}
 
 		private void ActivateTheme()
@@ -76,38 +107,6 @@ namespace POS.Forms.Selling
 					stack.Push(child);
 				yield return next;
 			}
-		}
-
-		private void tbCashGiven_TextChanged(object sender, EventArgs e)
-		{
-			try
-			{
-				tbChange.Text = (double.Parse(tbTotalBill.Text) - double.Parse(tbCashGiven.Text)).ToString();
-			}
-			catch (Exception)
-			{
-				tbChange.Text = "0";
-			}
-		}
-
-		private void btnCheckout_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				Reload();
-				Access.InsertInvoice(invoice, cart);
-				Manager.Show("Invoice created", Notification.Type.Success);
-				new FormInvioceReport(invoice, cart).Show();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
-		private void btnCancel_Click(object sender, EventArgs e)
-		{
-			this.Close();
 		}
 	}
 }

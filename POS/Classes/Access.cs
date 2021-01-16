@@ -9,6 +9,7 @@ using System.Data;
 using POS.Classes.Finances;
 using System.Linq;
 using POS.UserControls;
+using System.Threading.Tasks;
 
 namespace POS.Classes
 {
@@ -49,6 +50,25 @@ namespace POS.Classes
 				SqlCommand cmd = new SqlCommand(Query, cnn);
 				SqlDataReader reader = cmd.ExecuteReader();
 				while (reader.Read())
+				{
+					if (!Integer)
+						col.Add(reader.GetString(0));
+					else
+						col.Add(reader.GetInt32(0).ToString());
+				}
+			}
+			return col;
+		}
+
+		public static async Task<List<string>> GetStringListAsync(string Query, bool Integer = false)
+		{
+			List<string> col = new List<string>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				await cnn.OpenAsync();
+				SqlCommand cmd = new SqlCommand(Query, cnn);
+				SqlDataReader reader = await cmd.ExecuteReaderAsync();
+				while (await reader.ReadAsync())
 				{
 					if (!Integer)
 						col.Add(reader.GetString(0));
@@ -455,10 +475,10 @@ namespace POS.Classes
 						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
 						break;
 					case ProductFilter.OutOfStock:
-						cmd.CommandText = "SELECT * FROM Products WHERE (SELECT ISNULL(SUM(QuantityInStore)+ SUM(QuantityInShelves), 0) FROM Products) < AlertThreshold;";
+						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(QuantityInStore + QuantityInShelves, 0) < AlertThreshold;";
 						break;
 					case ProductFilter.InStock:
-						cmd.CommandText = "SELECT * FROM Products WHERE (SELECT ISNULL(SUM(QuantityInStore)+ SUM(QuantityInShelves), 0) FROM Products) > AlertThreshold;";
+						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(QuantityInStore + QuantityInShelves, 0) > AlertThreshold;";
 						break;
 					default:
 						break;
@@ -517,16 +537,16 @@ namespace POS.Classes
 						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
 						break;
 					case ProductFilter.Dormant:
-						cmd.CommandText = $"SELECT * FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}';";
+						cmd.CommandText = $"SELECT * FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}')";
 						break;
 					case ProductFilter.Expired:
 						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
 						break;
 					case ProductFilter.OutOfStock:
-						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(SUM(QuantityInStore, QuantityInShelves), 0) < AlertThreshold;";
+						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(QuantityInStore + QuantityInShelves, 0) < AlertThreshold;";
 						break;
 					case ProductFilter.InStock:
-						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(SUM(QuantityInStore, QuantityInShelves), 0) > AlertThreshold;";
+						cmd.CommandText = "SELECT * FROM Products WHERE ISNULL(QuantityInStore + QuantityInShelves, 0) > AlertThreshold;";
 						break;
 					default:
 						break;
@@ -586,19 +606,19 @@ namespace POS.Classes
 			return li.ToArray();
 		}
 
-		public static void InsertProduct(Product product)
+		public static async Task InsertProductAsync(Product product)
 		{
 			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
 			{
-				connection.Insert(product);
+				await connection.InsertAsync(product);
 			}
 		}
 
-		public static void UpdateProduct(Product product)
+		public static async Task UpdateProductAsync(Product product)
 		{
 			using (IDbConnection connection = new SqlConnection(Manager.ConnectionString))
 			{
-				connection.Update(product);
+				await connection.UpdateAsync(product);
 			}
 		}
 
@@ -610,49 +630,15 @@ namespace POS.Classes
 			}
 		}
 
-		public static AutoCompleteStringCollection ItemsCompletionSource
-		{
-			get
-			{
-				AutoCompleteStringCollection cust = new AutoCompleteStringCollection();
-				cust.Add("Item 1");
-				cust.Add("Item 2");
-				cust.Add("Item 3");
-				cust.Add("Item 4");
-				cust.Add("Item 5");
-				return cust;
-			}
-		}
-
-		public static List<string> Items
-		{
-			get
-			{
-				List<string> cust = new List<string>();
-				cust.Add("Item 1");
-				cust.Add("Item 2");
-				cust.Add("Item 3");
-				cust.Add("Item 4");
-				cust.Add("Item 5");
-				return cust;
-			}
-		}
-
-		public static Product GetProductByName(string Name)
+		public static Product[] GetProducts(Cart[] arr)
 		{
 			List<Product> li = new List<Product>();
-			li.Add(new Product() { Id = 1, Name = "Item 1", Shape = "Round", UnitPrice = 100 });
-			li.Add(new Product() { Id = 2, Name = "Item 2", Shape = "Box", UnitPrice = 120 });
-			li.Add(new Product() { Id = 3, Name = "Item 3", Shape = "Round", UnitPrice = 10 });
-			li.Add(new Product() { Id = 4, Name = "Item 4", Shape = "Box", UnitPrice = 70 });
-			li.Add(new Product() { Id = 5, Name = "Item 5", Shape = "Round", UnitPrice = 300 });
-
-			foreach (Product item in li)
+			foreach (Cart item in arr)
 			{
-				if (item.Name == Name)
-					return item;
+				Product product = GetProduct(item.ProductId);
+				li.Add(product);
 			}
-			return null;
+			return li.ToArray();
 		}
 
 		#endregion
@@ -880,6 +866,14 @@ namespace POS.Classes
 					}
 				}
 				return inv;
+			}
+		}
+
+		public static async Task<Invoice> GetInvoiceAsync(int id)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return await cnn.GetAsync<Invoice>(new { Id = id });
 			}
 		}
 
@@ -1469,6 +1463,15 @@ namespace POS.Classes
 			return li.ToArray();
 		}
 
+		public static async Task<IEnumerable<Cart>> GetCartsAsync(int invoiceId)
+		{
+
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return await cnn.GetListAsync<Cart>(new { InvoiceId = invoiceId });
+			}
+		}
+
 		public static Cart[] GetCarts(Invoice[] arr)
 		{
 			//List<Cart[]> li = new List<Cart[]>();
@@ -1482,11 +1485,66 @@ namespace POS.Classes
 
 		#endregion
 
+		#region Purchases
+
+		public static int NextPurchaseId
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(Id), 0) + 1 FROM Purchases;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 1;
+				}
+			}
+		}
+
+		public static async Task InsertPurchaseAsync(Purchase pur)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				await cnn.InsertAsync(pur);
+			}
+		}
+
+		public static async Task<IEnumerable<Purchase>> GetPurchasesAsync()
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return await cnn.GetListAsync<Purchase>();
+			}
+		}
+
+		#endregion
+
 		#region Shifts
 
-		public static Shift GetShift()
+		public static async Task InsertShiftAsync(Shift shift)
 		{
-			Shift shift = new Shift();
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				await cnn.InsertAsync(shift);
+			}
+		}
+
+		public static async Task InsertDayClosingAsync(DayClosing shift)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				await cnn.InsertAsync(shift);
+			}
+		}
+
+		public static ClosingShift GetShift()
+		{
+			ClosingShift shift = new ClosingShift();
 			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
 				cnn.Open();
@@ -1503,25 +1561,61 @@ namespace POS.Classes
 			}
 		}
 
-		public static Shift[] GetShifts(DateTime dt)
+		public static async Task<int> StartNewShift()
 		{
-			Shift shift = new Shift();
+			var nextId = 0;
 			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
-				cnn.Open();
-				SqlCommand cmd = new SqlCommand($"SELECT Value FROM Variables WHERE Variable = 'Shift'", cnn);
-				SqlDataReader reader = cmd.ExecuteReader();
+				await cnn.OpenAsync();
+				SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(ShiftId), 0) + 1 from Invoices", cnn);
+				nextId = Convert.ToInt32(await cmd.ExecuteScalarAsync());
+				cmd.CommandText = $"UPDATE Variables SET Value = '{nextId}' WHERE Variable = 'Shift'";
+				await cmd.ExecuteNonQueryAsync();
+			}
+			return nextId;
+		}
+
+		public static async Task<ClosingShift[]> GetClosingShiftsAsync()
+		{
+			List<ClosingShift> li = new List<ClosingShift>();
+			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				await cnn.OpenAsync();
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE ShiftId = {GetShift().Id}", cnn);
+				SqlDataReader reader = await cmd.ExecuteReaderAsync();
 				if (reader.HasRows)
 				{
-					while (reader.Read())
+					while (await reader.ReadAsync())
 					{
-						shift.Id = Convert.ToInt32(reader["Value"]);
+						ClosingShift shift = new ClosingShift();
+						shift.Id = (int)reader["Id"];
+						shift.Credit = (bool)reader["Credit"];
+						shift.Date = (DateTime)reader["InvoiceDate"];
+						shift.Paid = (double)reader["Paid"];
+						shift.Total = (double)reader["Total"];
+						shift.Quantity = (await GetCartsAsync(shift.Id)).Sum(item => item.Quantity);
+						li.Add(shift);
 					}
 				}
-				return new List<Shift>().ToArray();
+				return li.ToArray();
 			}
 		}
 
+		public static async Task<IEnumerable<Shift>> GetShiftsAsync(DateTime dt)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return await cnn.GetListAsync<Shift>(new { ClosedOn = dt.Date });
+			}
+		}
+
+		public static async Task<IEnumerable<DayClosing>> GetDayClosingsAsync(DateTime dt)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return await cnn.GetListAsync<DayClosing>(new { ClosedOn = dt.Month });
+			}
+		}
 
 		#endregion
 

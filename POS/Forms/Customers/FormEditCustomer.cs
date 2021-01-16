@@ -163,5 +163,21 @@ namespace POS.Forms.Customers
 			cus = Access.GetCustomer(Convert.ToInt32(cbxFilter.SelectedItem));
 			Display();
 		}
+
+		private void btnCredit_Click(object sender, EventArgs e)
+		{
+			using (FormCreditByCustomer f = new FormCreditByCustomer(cus.Id))
+			{
+				f.ShowDialog();
+			}
+		}
+
+		private void btnCash_Click(object sender, EventArgs e)
+		{
+			using (FormCashByCustomer f = new FormCashByCustomer(cus.Id))
+			{
+				f.ShowDialog();
+			}
+		}
 	}
 }
