@@ -18,6 +18,15 @@ namespace POS.UserControls.Finances
 		{
 			InitializeComponent();
 			ActivateTheme();
+			if (Login.Role == "Cashier")
+			{
+				tabControl1.TabPages.Remove(tabPage2);
+				tabControl1.TabPages.Remove(tabPage3);
+			}
+			else if (Login.Role == "Supervisor")
+			{
+				tabControl1.TabPages.Remove(tabPage3);
+			}
 		}
 
 		private void ActivateTheme()
@@ -64,10 +73,12 @@ namespace POS.UserControls.Finances
 		{
 			closingShiftBindingSource.DataSource = await Access.GetClosingShiftsAsync();
 			shiftBindingSource.DataSource = await Access.GetShiftsAsync(dpDayClosing.Value);
+			dayClosingBindingSource.DataSource = await Access.GetDayClosingsAsync(dpClosingMonth.Value);
 			ReloadShift();
 			DisplayShift();
 			ReloadDay();
 			DisplayDay();
+			DisplayMonth();
 		}
 
 		private void ReloadShift()
@@ -107,6 +118,12 @@ namespace POS.UserControls.Finances
 			tbTotalAmountDaily.Value = Convert.ToDecimal(dayClosing.TotalAmount);
 			tbPaidAmountDaily.Value = Convert.ToDecimal(dayClosing.PaidAmount);
 
+		}
+
+		private void DisplayMonth()
+		{
+			tbTotalMonthly.Value = Convert.ToDecimal(dayClosingBindingSource.List.Cast<DayClosing>().Sum(item => item.TotalAmount));
+			tbPaidMonthly.Value = Convert.ToDecimal(dayClosingBindingSource.List.Cast<DayClosing>().Sum(item => item.PaidAmount));
 		}
 
 		private async void btnCloseShift_Click(object sender, EventArgs e)
@@ -151,7 +168,8 @@ namespace POS.UserControls.Finances
 
 		private void dpClosingMonth_ValueChanged(object sender, EventArgs e)
 		{
-
+			//dayClosingBindingSource.DataSource = await Access.GetDayClosingsAsync(dpClosingMonth.Value);
+			UC_Closing_Load(this, e);
 		}
 	}
 }

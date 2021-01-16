@@ -35,7 +35,6 @@
 			this.cbxManageUsers = new System.Windows.Forms.ToolStripDropDownButton();
 			this.btnNewUser = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnDeleteUser = new System.Windows.Forms.ToolStripMenuItem();
-			this.btnViewAllUsers = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.btnLogout = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -139,8 +138,7 @@
 			this.cbxManageUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.cbxManageUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewUser,
-            this.btnDeleteUser,
-            this.btnViewAllUsers});
+            this.btnDeleteUser});
 			this.cbxManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("cbxManageUsers.Image")));
 			this.cbxManageUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.cbxManageUsers.Name = "cbxManageUsers";
@@ -152,7 +150,7 @@
 			// 
 			this.btnNewUser.Name = "btnNewUser";
 			this.btnNewUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.N)));
-			this.btnNewUser.Size = new System.Drawing.Size(185, 22);
+			this.btnNewUser.Size = new System.Drawing.Size(180, 22);
 			this.btnNewUser.Text = "New User";
 			this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
 			// 
@@ -160,17 +158,9 @@
 			// 
 			this.btnDeleteUser.Name = "btnDeleteUser";
 			this.btnDeleteUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
-			this.btnDeleteUser.Size = new System.Drawing.Size(185, 22);
+			this.btnDeleteUser.Size = new System.Drawing.Size(180, 22);
 			this.btnDeleteUser.Text = "Delete User";
 			this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
-			// 
-			// btnViewAllUsers
-			// 
-			this.btnViewAllUsers.Name = "btnViewAllUsers";
-			this.btnViewAllUsers.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-			this.btnViewAllUsers.Size = new System.Drawing.Size(185, 22);
-			this.btnViewAllUsers.Text = "View All Users";
-			this.btnViewAllUsers.Click += new System.EventHandler(this.btnViewAllUsers_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -242,7 +232,7 @@
 			this.panel1.Controls.Add(this.btnCredit);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(963, 34);
+			this.panel1.Size = new System.Drawing.Size(963, 181);
 			this.panel1.TabIndex = 0;
 			// 
 			// textBox18
@@ -588,9 +578,9 @@
 			this.panel2.Controls.Add(this.label19);
 			this.panel2.Controls.Add(this.label20);
 			this.panel2.Controls.Add(this.btnBankAccounts);
-			this.panel2.Location = new System.Drawing.Point(3, 43);
+			this.panel2.Location = new System.Drawing.Point(3, 190);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(963, 34);
+			this.panel2.Size = new System.Drawing.Size(963, 123);
 			this.panel2.TabIndex = 1;
 			// 
 			// label17
@@ -734,9 +724,9 @@
 			this.panel3.Controls.Add(this.label27);
 			this.panel3.Controls.Add(this.label28);
 			this.panel3.Controls.Add(this.btnTickets);
-			this.panel3.Location = new System.Drawing.Point(3, 83);
+			this.panel3.Location = new System.Drawing.Point(3, 319);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(963, 34);
+			this.panel3.Size = new System.Drawing.Size(963, 96);
 			this.panel3.TabIndex = 2;
 			// 
 			// label22
@@ -847,7 +837,6 @@
 		private System.Windows.Forms.ToolStripDropDownButton cbxManageUsers;
 		private System.Windows.Forms.ToolStripMenuItem btnNewUser;
 		private System.Windows.Forms.ToolStripMenuItem btnDeleteUser;
-		private System.Windows.Forms.ToolStripMenuItem btnViewAllUsers;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripButton btnLogout;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;

@@ -89,6 +89,7 @@
 			this.Name = "FormDeleteUser";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Remove User";
+			this.Load += new System.EventHandler(this.FormDeleteUser_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

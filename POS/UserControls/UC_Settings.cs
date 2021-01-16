@@ -83,28 +83,11 @@ namespace POS.UserControls
 			UpdateTheme();
 		}
 
-		private void btnManageSoftware_Click(object sender, EventArgs e)
-		{
-			using (FormSoftwareSettings f = new FormSoftwareSettings())
-			{
-				if (f.ShowDialog() == DialogResult.OK)
-				{
-					Dashboard dsh = this.ParentForm as Dashboard;
-					dsh.lblSoftwareName.Text = Properties.Settings.Default.CompanyName;
-				}
-			}
-		}
-
 		private void btnLogout_Click(object sender, EventArgs e)
 		{
 			FormLogin f = new FormLogin();
 			this.ParentForm.Hide();
 			f.Show();
-		}
-
-		private void btnFactures_Click(object sender, EventArgs e)
-		{
-
 		}
 
 		private void cbxManageUsers_Click(object sender, EventArgs e)

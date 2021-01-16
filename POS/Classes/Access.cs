@@ -1613,7 +1613,7 @@ namespace POS.Classes
 		{
 			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
-				return await cnn.GetListAsync<DayClosing>(new { ClosedOn = dt.Month });
+				return await cnn.GetListAsync<DayClosing>($"WHERE MONTH(ClosingDate)='{dt.ToString("MM")}' AND YEAR(ClosingDate)='{dt.ToString("yyyy")}'");
 			}
 		}
 
@@ -1746,6 +1746,14 @@ namespace POS.Classes
 			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
 				return cnn.Query<int>($"SELECT COUNT(*) FROM Users WHERE Username = '{username}'").First() <= 0;
+			}
+		}
+
+		public static async Task DeleteUser(User user)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				await cnn.DeleteAsync(user);
 			}
 		}
 
