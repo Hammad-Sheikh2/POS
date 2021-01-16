@@ -18,7 +18,6 @@ namespace POS.Forms
 		private void LoadDetails()
 		{
 			Dashboard dsh = new Dashboard();
-			pbLogo.Image = dsh.pbLogo.Image;
 			tbName.Text = Properties.Settings.Default.CompanyName;
 			tbManagerName.Text = Properties.Settings.Default.ManagerName;
 			tbRegistrationNumber.Text = Properties.Settings.Default.RegisterationNumber;
@@ -61,7 +60,7 @@ namespace POS.Forms
 			Properties.Settings.Default.CompanyName = tbName.Text;
 			Properties.Settings.Default.ManagerName = tbManagerName.Text;
 			Properties.Settings.Default.RegisterationNumber = tbRegistrationNumber.Text;
-			Properties.Settings.Default.VAT = Convert.ToDouble(tbVAT.Text);
+			//Properties.Settings.Default.VAT = Convert.ToDouble(tbVAT.Text);
 			Properties.Settings.Default.Save();
 			Manager.Show("Changes saved.", Notification.Type.Success);
 		}

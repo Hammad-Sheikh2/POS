@@ -18,7 +18,7 @@
       <Value Profile="(Default)">48, 62, 69</Value>
     </Setting>
     <Setting Name="CompanyName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">POS</Value>
+      <Value Profile="(Default)">Gles William's</Value>
     </Setting>
     <Setting Name="RegisterationNumber" Type="System.String" Scope="User">
       <Value Profile="(Default)">00000</Value>
@@ -26,8 +26,8 @@
     <Setting Name="ManagerName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Usama Aziz</Value>
     </Setting>
-    <Setting Name="VAT" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="VAT" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Capital" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

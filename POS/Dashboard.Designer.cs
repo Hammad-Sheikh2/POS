@@ -51,7 +51,6 @@ namespace POS
 			this.btnDashboard = new FontAwesome.Sharp.IconButton();
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.lblSoftwareName = new Bunifu.Framework.UI.BunifuCustomLabel();
-			this.pbLogo = new System.Windows.Forms.PictureBox();
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.pbCurrentControlIcon = new FontAwesome.Sharp.IconPictureBox();
 			this.labelCurrentControl = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -60,11 +59,11 @@ namespace POS
 			this.pbClose = new FontAwesome.Sharp.IconPictureBox();
 			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
 			this.panelFill = new System.Windows.Forms.Panel();
+			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.panelMenu.SuspendLayout();
 			this.PanelProducts.SuspendLayout();
 			this.PanelFinance.SuspendLayout();
 			this.panelLogo.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
 			this.panelTitle.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbCurrentControlIcon)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbMinimize)).BeginInit();
@@ -429,8 +428,8 @@ namespace POS
 			// 
 			// panelLogo
 			// 
+			this.panelLogo.Controls.Add(this.bunifuCustomLabel1);
 			this.panelLogo.Controls.Add(this.lblSoftwareName);
-			this.panelLogo.Controls.Add(this.pbLogo);
 			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelLogo.Location = new System.Drawing.Point(0, 0);
 			this.panelLogo.Name = "panelLogo";
@@ -439,24 +438,15 @@ namespace POS
 			// 
 			// lblSoftwareName
 			// 
-			this.lblSoftwareName.AutoSize = true;
-			this.lblSoftwareName.Font = new System.Drawing.Font("Sitka Small", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblSoftwareName.AutoEllipsis = true;
+			this.lblSoftwareName.Font = new System.Drawing.Font("Sitka Small", 14F);
 			this.lblSoftwareName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.lblSoftwareName.Location = new System.Drawing.Point(66, 22);
+			this.lblSoftwareName.Location = new System.Drawing.Point(4, 2);
 			this.lblSoftwareName.Name = "lblSoftwareName";
-			this.lblSoftwareName.Size = new System.Drawing.Size(155, 34);
+			this.lblSoftwareName.Size = new System.Drawing.Size(214, 34);
 			this.lblSoftwareName.TabIndex = 5;
-			this.lblSoftwareName.Text = "1234567891";
-			// 
-			// pbLogo
-			// 
-			this.pbLogo.Image = global::POS.Properties.Resources.Daco_4579002;
-			this.pbLogo.Location = new System.Drawing.Point(3, 10);
-			this.pbLogo.Name = "pbLogo";
-			this.pbLogo.Size = new System.Drawing.Size(58, 46);
-			this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pbLogo.TabIndex = 7;
-			this.pbLogo.TabStop = false;
+			this.lblSoftwareName.Text = "{Software Name}";
+			this.lblSoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panelTitle
 			// 
@@ -562,6 +552,18 @@ namespace POS
 			this.panelFill.TabIndex = 2;
 			this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
 			// 
+			// bunifuCustomLabel1
+			// 
+			this.bunifuCustomLabel1.AutoEllipsis = true;
+			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Sitka Small", 10F);
+			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(4, 39);
+			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(214, 20);
+			this.bunifuCustomLabel1.TabIndex = 6;
+			this.bunifuCustomLabel1.Text = "Inventory Software";
+			this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// Dashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,8 +584,6 @@ namespace POS
 			this.PanelProducts.ResumeLayout(false);
 			this.PanelFinance.ResumeLayout(false);
 			this.panelLogo.ResumeLayout(false);
-			this.panelLogo.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
 			this.panelTitle.ResumeLayout(false);
 			this.panelTitle.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbCurrentControlIcon)).EndInit();
@@ -610,7 +610,6 @@ namespace POS
 		private FontAwesome.Sharp.IconButton btnDashboard;
 		private Panel panelLogo;
 		public Bunifu.Framework.UI.BunifuCustomLabel lblSoftwareName;
-		public PictureBox pbLogo;
 		private Panel PanelFinance;
 		private FontAwesome.Sharp.IconButton btnFinanceDashboard;
 		private FontAwesome.Sharp.IconButton btnFinances;
@@ -623,5 +622,6 @@ namespace POS
 		private FontAwesome.Sharp.IconButton btnStoreShelves;
 		private FontAwesome.Sharp.IconButton btnProducts;
 		private FontAwesome.Sharp.IconButton btnProductsMenu;
+		public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
 	}
 }

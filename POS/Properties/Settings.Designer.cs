@@ -85,7 +85,7 @@ namespace POS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("POS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gles William\'s")]
         public string CompanyName {
             get {
                 return ((string)(this["CompanyName"]));
@@ -121,10 +121,10 @@ namespace POS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VAT {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string VAT {
             get {
-                return ((double)(this["VAT"]));
+                return ((string)(this["VAT"]));
             }
             set {
                 this["VAT"] = value;

@@ -232,16 +232,18 @@
 			this.panel1.Controls.Add(this.btnCredit);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(963, 181);
+			this.panel1.Size = new System.Drawing.Size(963, 36);
 			this.panel1.TabIndex = 0;
 			// 
 			// textBox18
 			// 
+			this.textBox18.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "VAT", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox18.Location = new System.Drawing.Point(576, 139);
 			this.textBox18.Name = "textBox18";
 			this.textBox18.Size = new System.Drawing.Size(367, 26);
 			this.textBox18.TabIndex = 11;
+			this.textBox18.Text = global::POS.Properties.Settings.Default.VAT;
 			// 
 			// label37
 			// 
@@ -265,11 +267,13 @@
 			// 
 			// textBox17
 			// 
+			this.textBox17.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Tel2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox17.Location = new System.Drawing.Point(340, 140);
 			this.textBox17.Name = "textBox17";
 			this.textBox17.Size = new System.Drawing.Size(115, 26);
 			this.textBox17.TabIndex = 6;
+			this.textBox17.Text = global::POS.Properties.Settings.Default.Tel2;
 			// 
 			// label35
 			// 
@@ -293,11 +297,13 @@
 			// 
 			// textBox16
 			// 
+			this.textBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Tel1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox16.Location = new System.Drawing.Point(136, 140);
 			this.textBox16.Name = "textBox16";
 			this.textBox16.Size = new System.Drawing.Size(136, 26);
 			this.textBox16.TabIndex = 5;
+			this.textBox16.Text = global::POS.Properties.Settings.Default.Tel1;
 			// 
 			// label33
 			// 
@@ -321,11 +327,13 @@
 			// 
 			// textBox15
 			// 
+			this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox15.Location = new System.Drawing.Point(576, 107);
 			this.textBox15.Name = "textBox15";
 			this.textBox15.Size = new System.Drawing.Size(367, 26);
 			this.textBox15.TabIndex = 10;
+			this.textBox15.Text = global::POS.Properties.Settings.Default.Email;
 			// 
 			// label31
 			// 
@@ -349,11 +357,13 @@
 			// 
 			// textBox14
 			// 
+			this.textBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Address", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox14.Location = new System.Drawing.Point(136, 108);
 			this.textBox14.Name = "textBox14";
 			this.textBox14.Size = new System.Drawing.Size(319, 26);
 			this.textBox14.TabIndex = 4;
+			this.textBox14.Text = global::POS.Properties.Settings.Default.Address;
 			// 
 			// label29
 			// 
@@ -377,11 +387,13 @@
 			// 
 			// textBox5
 			// 
+			this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Capital", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox5.Location = new System.Drawing.Point(340, 77);
 			this.textBox5.Name = "textBox5";
 			this.textBox5.Size = new System.Drawing.Size(115, 26);
 			this.textBox5.TabIndex = 3;
+			this.textBox5.Text = global::POS.Properties.Settings.Default.Capital;
 			// 
 			// label11
 			// 
@@ -405,11 +417,13 @@
 			// 
 			// textBox4
 			// 
+			this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "NoRCCM", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox4.Location = new System.Drawing.Point(796, 77);
 			this.textBox4.Name = "textBox4";
 			this.textBox4.Size = new System.Drawing.Size(147, 26);
 			this.textBox4.TabIndex = 9;
+			this.textBox4.Text = global::POS.Properties.Settings.Default.NoRCCM;
 			// 
 			// label9
 			// 
@@ -433,11 +447,13 @@
 			// 
 			// textBox3
 			// 
+			this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "NoStat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox3.Location = new System.Drawing.Point(576, 76);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(127, 26);
 			this.textBox3.TabIndex = 8;
+			this.textBox3.Text = global::POS.Properties.Settings.Default.NoStat;
 			// 
 			// label7
 			// 
@@ -461,11 +477,13 @@
 			// 
 			// textBox2
 			// 
+			this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "ManagerName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox2.Location = new System.Drawing.Point(136, 76);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(136, 26);
 			this.textBox2.TabIndex = 2;
+			this.textBox2.Text = global::POS.Properties.Settings.Default.ManagerName;
 			// 
 			// label5
 			// 
@@ -489,11 +507,13 @@
 			// 
 			// textBox1
 			// 
+			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "RegisterationNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox1.Location = new System.Drawing.Point(576, 45);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(367, 26);
 			this.textBox1.TabIndex = 7;
+			this.textBox1.Text = global::POS.Properties.Settings.Default.RegisterationNumber;
 			// 
 			// label3
 			// 
@@ -517,11 +537,13 @@
 			// 
 			// tbName
 			// 
+			this.tbName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "CompanyName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.tbName.Location = new System.Drawing.Point(136, 44);
 			this.tbName.Name = "tbName";
 			this.tbName.Size = new System.Drawing.Size(319, 26);
 			this.tbName.TabIndex = 1;
+			this.tbName.Text = global::POS.Properties.Settings.Default.CompanyName;
 			// 
 			// label1
 			// 
@@ -578,9 +600,9 @@
 			this.panel2.Controls.Add(this.label19);
 			this.panel2.Controls.Add(this.label20);
 			this.panel2.Controls.Add(this.btnBankAccounts);
-			this.panel2.Location = new System.Drawing.Point(3, 190);
+			this.panel2.Location = new System.Drawing.Point(3, 45);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(963, 123);
+			this.panel2.Size = new System.Drawing.Size(963, 37);
 			this.panel2.TabIndex = 1;
 			// 
 			// label17
@@ -615,11 +637,13 @@
 			// 
 			// textBox6
 			// 
+			this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "BankAccount4", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox6.Location = new System.Drawing.Point(597, 76);
 			this.textBox6.Name = "textBox6";
 			this.textBox6.Size = new System.Drawing.Size(349, 26);
 			this.textBox6.TabIndex = 4;
+			this.textBox6.Text = global::POS.Properties.Settings.Default.BankAccount4;
 			// 
 			// label14
 			// 
@@ -633,11 +657,13 @@
 			// 
 			// textBox7
 			// 
+			this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "BankAccount2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox7.Location = new System.Drawing.Point(136, 76);
 			this.textBox7.Name = "textBox7";
 			this.textBox7.Size = new System.Drawing.Size(319, 26);
 			this.textBox7.TabIndex = 2;
+			this.textBox7.Text = global::POS.Properties.Settings.Default.BankAccount2;
 			// 
 			// label16
 			// 
@@ -651,11 +677,13 @@
 			// 
 			// textBox8
 			// 
+			this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "BankAccount3", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox8.Location = new System.Drawing.Point(597, 45);
 			this.textBox8.Name = "textBox8";
 			this.textBox8.Size = new System.Drawing.Size(349, 26);
 			this.textBox8.TabIndex = 3;
+			this.textBox8.Text = global::POS.Properties.Settings.Default.BankAccount3;
 			// 
 			// label18
 			// 
@@ -669,11 +697,13 @@
 			// 
 			// textBox9
 			// 
+			this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "BankAccount1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox9.Location = new System.Drawing.Point(136, 44);
 			this.textBox9.Name = "textBox9";
 			this.textBox9.Size = new System.Drawing.Size(319, 26);
 			this.textBox9.TabIndex = 1;
+			this.textBox9.Text = global::POS.Properties.Settings.Default.BankAccount1;
 			// 
 			// label19
 			// 
@@ -724,9 +754,9 @@
 			this.panel3.Controls.Add(this.label27);
 			this.panel3.Controls.Add(this.label28);
 			this.panel3.Controls.Add(this.btnTickets);
-			this.panel3.Location = new System.Drawing.Point(3, 319);
+			this.panel3.Location = new System.Drawing.Point(3, 88);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(963, 96);
+			this.panel3.Size = new System.Drawing.Size(963, 36);
 			this.panel3.TabIndex = 2;
 			// 
 			// label22
@@ -741,11 +771,13 @@
 			// 
 			// textBox12
 			// 
+			this.textBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Message2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox12.Location = new System.Drawing.Point(597, 45);
 			this.textBox12.Name = "textBox12";
 			this.textBox12.Size = new System.Drawing.Size(349, 26);
 			this.textBox12.TabIndex = 3;
+			this.textBox12.Text = global::POS.Properties.Settings.Default.Message2;
 			// 
 			// label26
 			// 
@@ -759,11 +791,13 @@
 			// 
 			// textBox13
 			// 
+			this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "Message1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.textBox13.Location = new System.Drawing.Point(136, 44);
 			this.textBox13.Name = "textBox13";
 			this.textBox13.Size = new System.Drawing.Size(319, 26);
 			this.textBox13.TabIndex = 2;
+			this.textBox13.Text = global::POS.Properties.Settings.Default.Message1;
 			// 
 			// label27
 			// 

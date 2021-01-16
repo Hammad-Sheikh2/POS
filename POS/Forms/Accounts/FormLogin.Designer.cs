@@ -187,25 +187,28 @@
 			// 
 			// bunifuCustomLabel1
 			// 
-			this.bunifuCustomLabel1.AutoSize = true;
-			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.bunifuCustomLabel1.Location = new System.Drawing.Point(139, 69);
+			this.bunifuCustomLabel1.AutoEllipsis = true;
+			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Sitka Small", 14.25F);
+			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(141, 70);
 			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
 			this.bunifuCustomLabel1.Size = new System.Drawing.Size(206, 22);
 			this.bunifuCustomLabel1.TabIndex = 159;
-			this.bunifuCustomLabel1.Text = "Management System";
+			this.bunifuCustomLabel1.Text = "Inventory System";
+			this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lblSoftwareName
 			// 
-			this.lblSoftwareName.AutoSize = true;
+			this.lblSoftwareName.AutoEllipsis = true;
+			this.lblSoftwareName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "CompanyName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.lblSoftwareName.Font = new System.Drawing.Font("Sitka Small", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblSoftwareName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.lblSoftwareName.Location = new System.Drawing.Point(174, 34);
+			this.lblSoftwareName.ForeColor = System.Drawing.Color.Black;
+			this.lblSoftwareName.Location = new System.Drawing.Point(100, 34);
 			this.lblSoftwareName.Name = "lblSoftwareName";
-			this.lblSoftwareName.Size = new System.Drawing.Size(130, 34);
+			this.lblSoftwareName.Size = new System.Drawing.Size(293, 34);
 			this.lblSoftwareName.TabIndex = 158;
-			this.lblSoftwareName.Text = "Inventory";
+			this.lblSoftwareName.Text = global::POS.Properties.Settings.Default.CompanyName;
+			this.lblSoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// FormLogin
 			// 
