@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS", "POS\POS.csproj", "{FF4C1B27-064F-4E2A-BCAB-FE01EA02E94C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "POS Setup x86Srv2019", "POS Setup x86Srv2019\POS Setup x86Srv2019.vdproj", "{F6A3BB06-91E9-4A78-ACC5-C183480EA00C}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Inventory System Setup x64", "Inventory System Setup x64\Inventory System Setup x64.vdproj", "{53430B8E-A18C-4B27-BDCD-479FB00D0DA2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,10 +15,6 @@ Global
 		{FF4C1B27-064F-4E2A-BCAB-FE01EA02E94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF4C1B27-064F-4E2A-BCAB-FE01EA02E94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF4C1B27-064F-4E2A-BCAB-FE01EA02E94C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6A3BB06-91E9-4A78-ACC5-C183480EA00C}.Debug|Any CPU.ActiveCfg = Debug
-		{F6A3BB06-91E9-4A78-ACC5-C183480EA00C}.Release|Any CPU.ActiveCfg = Release
-		{53430B8E-A18C-4B27-BDCD-479FB00D0DA2}.Debug|Any CPU.ActiveCfg = Debug
-		{53430B8E-A18C-4B27-BDCD-479FB00D0DA2}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

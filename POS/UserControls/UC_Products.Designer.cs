@@ -42,6 +42,7 @@
 			this.btnInStore = new FontAwesome.Sharp.IconButton();
 			this.btnAll = new FontAwesome.Sharp.IconButton();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.btnSettings = new FontAwesome.Sharp.IconPictureBox();
 			this.btnDelete = new FontAwesome.Sharp.IconPictureBox();
 			this.btnExportToExcel = new FontAwesome.Sharp.IconPictureBox();
@@ -50,6 +51,7 @@
 			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+			this.cbFilter = new System.Windows.Forms.CheckBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dpEnd = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
@@ -58,13 +60,11 @@
 			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
 			this.tbDays = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.cbFilter = new System.Windows.Forms.CheckBox();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantityInStoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantityInShelvesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,16 +79,15 @@
 			this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panelListings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
 			this.bunifuCards1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelListings
@@ -286,7 +285,6 @@
             this.shapeDataGridViewTextBoxColumn,
             this.purchasePriceDataGridViewTextBoxColumn,
             this.sellingPriceDataGridViewTextBoxColumn,
-            this.marginDataGridViewTextBoxColumn,
             this.weightDataGridViewTextBoxColumn,
             this.quantityInStoreDataGridViewTextBoxColumn,
             this.quantityInShelvesDataGridViewTextBoxColumn,
@@ -321,6 +319,10 @@
 			this.dg.Size = new System.Drawing.Size(1028, 413);
 			this.dg.TabIndex = 104;
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
+			// 
+			// productBindingSource
+			// 
+			this.productBindingSource.DataSource = typeof(POS.Classes.Products.Product);
 			// 
 			// btnSettings
 			// 
@@ -432,6 +434,17 @@
 			this.bunifuCards1.Size = new System.Drawing.Size(605, 96);
 			this.bunifuCards1.TabIndex = 113;
 			// 
+			// cbFilter
+			// 
+			this.cbFilter.AutoSize = true;
+			this.cbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.cbFilter.Location = new System.Drawing.Point(468, 68);
+			this.cbFilter.Name = "cbFilter";
+			this.cbFilter.Size = new System.Drawing.Size(90, 21);
+			this.cbFilter.TabIndex = 129;
+			this.cbFilter.Text = "Use filters";
+			this.cbFilter.UseVisualStyleBackColor = true;
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -522,17 +535,6 @@
 			this.label5.TabIndex = 113;
 			this.label5.Text = "Filter";
 			// 
-			// cbFilter
-			// 
-			this.cbFilter.AutoSize = true;
-			this.cbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.cbFilter.Location = new System.Drawing.Point(468, 68);
-			this.cbFilter.Name = "cbFilter";
-			this.cbFilter.Size = new System.Drawing.Size(90, 21);
-			this.cbFilter.TabIndex = 129;
-			this.cbFilter.Text = "Use filters";
-			this.cbFilter.UseVisualStyleBackColor = true;
-			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -563,13 +565,6 @@
 			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
 			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price";
 			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
-			// 
-			// marginDataGridViewTextBoxColumn
-			// 
-			this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
-			this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
-			this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
-			this.marginDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// weightDataGridViewTextBoxColumn
 			// 
@@ -661,10 +656,6 @@
 			this.storeDataGridViewCheckBoxColumn.HeaderText = "Store";
 			this.storeDataGridViewCheckBoxColumn.Name = "storeDataGridViewCheckBoxColumn";
 			// 
-			// productBindingSource
-			// 
-			this.productBindingSource.DataSource = typeof(POS.Classes.Products.Product);
-			// 
 			// UC_Products
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,6 +672,7 @@
 			this.Size = new System.Drawing.Size(1085, 594);
 			this.panelListings.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).EndInit();
@@ -688,7 +680,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
 			this.bunifuCards1.ResumeLayout(false);
 			this.bunifuCards1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -712,12 +703,21 @@
 		private System.Windows.Forms.BindingSource productBindingSource;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
 		private System.Windows.Forms.ToolTip toolTip1;
+		private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.DateTimePicker dpEnd;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DateTimePicker dpStart;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.ComboBox cbxDefinedPeriod;
+		private System.Windows.Forms.TextBox tbDays;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.CheckBox cbFilter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shapeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn marginDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityInStoreDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityInShelvesDataGridViewTextBoxColumn;
@@ -732,15 +732,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn storeDataGridViewCheckBoxColumn;
-		private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DateTimePicker dpEnd;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DateTimePicker dpStart;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.ComboBox cbxDefinedPeriod;
-		private System.Windows.Forms.TextBox tbDays;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.CheckBox cbFilter;
 	}
 }
