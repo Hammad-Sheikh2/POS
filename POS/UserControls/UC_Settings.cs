@@ -78,6 +78,11 @@ namespace POS.UserControls
 
 		}
 
+		private void SaveSettings(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.Save();
+		}
+
 		private void UC_Settings_Load(object sender, EventArgs e)
 		{
 			UpdateTheme();

@@ -190,9 +190,9 @@
 			this.bunifuCustomLabel1.AutoEllipsis = true;
 			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Sitka Small", 14.25F);
 			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-			this.bunifuCustomLabel1.Location = new System.Drawing.Point(141, 70);
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(141, 69);
 			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-			this.bunifuCustomLabel1.Size = new System.Drawing.Size(206, 22);
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(206, 34);
 			this.bunifuCustomLabel1.TabIndex = 159;
 			this.bunifuCustomLabel1.Text = "Inventory System";
 			this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

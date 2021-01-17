@@ -15,18 +15,13 @@ namespace POS
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			if (DB.CheckDatabaseExists("GlessInventory"))
-			{
-				Application.Run(new FormLogin());
-			}
-			else
-			{
-				DB.CreateDatabase();
-				DB.CreateTables();
-				Manager.Show("Database initialized", Notification.Type.Success);
-				Application.Run(new FormLogin());
-			}
-			//Application.Run(new FormLogin());
+			Application.Run(new FormLogin());
+			Application.ApplicationExit += Application_ApplicationExit;
+		}
+
+		private static void Application_ApplicationExit(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.Save();
 		}
 	}
 }

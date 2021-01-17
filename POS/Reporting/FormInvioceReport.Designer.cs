@@ -30,7 +30,6 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-			this.btnPrint = new FontAwesome.Sharp.IconButton();
 			this.bindingInvoice = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingCart = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.bindingInvoice)).BeginInit();
@@ -39,30 +38,15 @@
 			// 
 			// reportViewer1
 			// 
+			this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.reportViewer1.LocalReport.ReportEmbeddedResource = "POS.Reporting.InvoiceReport.rdlc";
 			this.reportViewer1.Location = new System.Drawing.Point(12, 12);
 			this.reportViewer1.Name = "reportViewer1";
 			this.reportViewer1.ServerReport.BearerToken = null;
-			this.reportViewer1.Size = new System.Drawing.Size(367, 409);
+			this.reportViewer1.Size = new System.Drawing.Size(416, 445);
 			this.reportViewer1.TabIndex = 0;
-			// 
-			// btnPrint
-			// 
-			this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnPrint.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-			this.btnPrint.IconColor = System.Drawing.Color.Black;
-			this.btnPrint.IconSize = 1;
-			this.btnPrint.Location = new System.Drawing.Point(12, 427);
-			this.btnPrint.Name = "btnPrint";
-			this.btnPrint.Rotation = 0D;
-			this.btnPrint.Size = new System.Drawing.Size(367, 30);
-			this.btnPrint.TabIndex = 110;
-			this.btnPrint.Text = "Print";
-			this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this.btnPrint.UseVisualStyleBackColor = true;
-			this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
 			// 
 			// bindingInvoice
 			// 
@@ -76,10 +60,11 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(391, 469);
-			this.Controls.Add(this.btnPrint);
+			this.ClientSize = new System.Drawing.Size(440, 469);
 			this.Controls.Add(this.reportViewer1);
 			this.Name = "FormInvioceReport";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.Text = "Invoice Report";
 			this.Load += new System.EventHandler(this.FormInvioceReport_Load);
 			((System.ComponentModel.ISupportInitialize)(this.bindingInvoice)).EndInit();
@@ -91,7 +76,6 @@
 		#endregion
 
 		private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-		private FontAwesome.Sharp.IconButton btnPrint;
 		private System.Windows.Forms.BindingSource bindingInvoice;
 		private System.Windows.Forms.BindingSource bindingCart;
 	}

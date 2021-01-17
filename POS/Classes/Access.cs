@@ -466,7 +466,7 @@ namespace POS.Classes
 						cmd.CommandText = "SELECT * FROM Products WHERE QuantityInShelves > 0";
 						break;
 					case ProductFilter.Returned:
-						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
+						cmd.CommandText = $"SELECT * FROM Products WHERE Id IN(SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId= Invoices.Id) WHERE InvoiceDetails.Quantity < 0)";
 						break;
 					case ProductFilter.Dormant:
 						cmd.CommandText = $"SELECT * FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id))";
@@ -534,10 +534,10 @@ namespace POS.Classes
 						cmd.CommandText = "SELECT * FROM Products WHERE QuantityInShelves > 0";
 						break;
 					case ProductFilter.Returned:
-						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";
+						cmd.CommandText = $"SELECT * FROM Products WHERE Id IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}' AND InvoiceDetails.Quantity < 0)";
 						break;
 					case ProductFilter.Dormant:
-						cmd.CommandText = $"SELECT * FROM Products WHERE Id NOT IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}')";
+						cmd.CommandText = $"SELECT * FROM Products WHERE Id = (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}')";
 						break;
 					case ProductFilter.Expired:
 						cmd.CommandText = "SELECT * FROM Products WHERE GETDATE() > ExpiryDate";

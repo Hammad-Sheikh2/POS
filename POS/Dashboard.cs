@@ -58,6 +58,8 @@ namespace POS
 
 		private void pbClose_Click(object sender, EventArgs e)
 		{
+			Properties.Settings.Default.Save();
+
 			Application.Exit();
 		}
 

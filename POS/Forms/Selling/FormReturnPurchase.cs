@@ -58,18 +58,18 @@ namespace POS.Forms.Selling
 			{
 				Reload();
 				Access.InsertInvoice(invoice, cart);
-				Product[] products = Access.GetProducts(cart);
-				foreach (Product item in products)
-				{
-					foreach (Cart row in cart)
-					{
-						if (row.ProductId == item.Id)
-						{
-							item.QuantityInShelves += row.Quantity;
-						}
-					}
-					await Access.UpdateProductAsync(item);
-				}
+				//Product[] products = Access.GetProducts(cart);
+				//foreach (Product item in products)
+				//{
+				//	foreach (Cart row in cart)
+				//	{
+				//		if (row.ProductId == item.Id)
+				//		{
+				//			item.QuantityInShelves -= row.Quantity;
+				//		}
+				//	}
+				//	await Access.UpdateProductAsync(item);
+				//}
 				Manager.Show("Invoice created", Notification.Type.Success);
 				Manager.Show("Stock Updated", Notification.Type.Info);
 			}

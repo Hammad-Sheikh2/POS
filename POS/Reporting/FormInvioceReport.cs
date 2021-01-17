@@ -29,9 +29,13 @@ namespace POS.Reporting
 		{
 			bindingInvoice.DataSource = inv;
 			bindingCart.DataSource = cart;
+			List<ReportParameter> parameters = new List<ReportParameter>();
+			parameters.Add(new ReportParameter("CompanyName", Properties.Settings.Default.CompanyName));
+
 			ReportDataSource ds1 = new ReportDataSource("InvoiceDetailsDataset", bindingInvoice);
 			ReportDataSource ds2 = new ReportDataSource("InvoiceCartDataset", bindingCart);
 
+			reportViewer1.LocalReport.SetParameters(parameters);
 			reportViewer1.LocalReport.DataSources.Clear();
 			reportViewer1.LocalReport.DataSources.Add(ds1);
 			reportViewer1.LocalReport.DataSources.Add(ds2);

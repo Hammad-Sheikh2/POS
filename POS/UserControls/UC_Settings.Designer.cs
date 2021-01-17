@@ -232,7 +232,7 @@
 			this.panel1.Controls.Add(this.btnCredit);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(963, 36);
+			this.panel1.Size = new System.Drawing.Size(963, 184);
 			this.panel1.TabIndex = 0;
 			// 
 			// textBox18
@@ -244,6 +244,7 @@
 			this.textBox18.Size = new System.Drawing.Size(367, 26);
 			this.textBox18.TabIndex = 11;
 			this.textBox18.Text = global::POS.Properties.Settings.Default.VAT;
+			this.textBox18.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label37
 			// 
@@ -274,6 +275,7 @@
 			this.textBox17.Size = new System.Drawing.Size(115, 26);
 			this.textBox17.TabIndex = 6;
 			this.textBox17.Text = global::POS.Properties.Settings.Default.Tel2;
+			this.textBox17.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label35
 			// 
@@ -304,6 +306,7 @@
 			this.textBox16.Size = new System.Drawing.Size(136, 26);
 			this.textBox16.TabIndex = 5;
 			this.textBox16.Text = global::POS.Properties.Settings.Default.Tel1;
+			this.textBox16.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label33
 			// 
@@ -334,6 +337,7 @@
 			this.textBox15.Size = new System.Drawing.Size(367, 26);
 			this.textBox15.TabIndex = 10;
 			this.textBox15.Text = global::POS.Properties.Settings.Default.Email;
+			this.textBox15.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label31
 			// 
@@ -364,6 +368,7 @@
 			this.textBox14.Size = new System.Drawing.Size(319, 26);
 			this.textBox14.TabIndex = 4;
 			this.textBox14.Text = global::POS.Properties.Settings.Default.Address;
+			this.textBox14.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label29
 			// 
@@ -394,6 +399,7 @@
 			this.textBox5.Size = new System.Drawing.Size(115, 26);
 			this.textBox5.TabIndex = 3;
 			this.textBox5.Text = global::POS.Properties.Settings.Default.Capital;
+			this.textBox5.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label11
 			// 
@@ -424,6 +430,7 @@
 			this.textBox4.Size = new System.Drawing.Size(147, 26);
 			this.textBox4.TabIndex = 9;
 			this.textBox4.Text = global::POS.Properties.Settings.Default.NoRCCM;
+			this.textBox4.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label9
 			// 
@@ -454,6 +461,7 @@
 			this.textBox3.Size = new System.Drawing.Size(127, 26);
 			this.textBox3.TabIndex = 8;
 			this.textBox3.Text = global::POS.Properties.Settings.Default.NoStat;
+			this.textBox3.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label7
 			// 
@@ -484,6 +492,7 @@
 			this.textBox2.Size = new System.Drawing.Size(136, 26);
 			this.textBox2.TabIndex = 2;
 			this.textBox2.Text = global::POS.Properties.Settings.Default.ManagerName;
+			this.textBox2.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label5
 			// 
@@ -514,6 +523,7 @@
 			this.textBox1.Size = new System.Drawing.Size(367, 26);
 			this.textBox1.TabIndex = 7;
 			this.textBox1.Text = global::POS.Properties.Settings.Default.RegisterationNumber;
+			this.textBox1.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label3
 			// 
@@ -544,6 +554,8 @@
 			this.tbName.Size = new System.Drawing.Size(319, 26);
 			this.tbName.TabIndex = 1;
 			this.tbName.Text = global::POS.Properties.Settings.Default.CompanyName;
+			this.tbName.Leave += new System.EventHandler(this.SaveSettings);
+			this.tbName.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label1
 			// 
@@ -600,9 +612,9 @@
 			this.panel2.Controls.Add(this.label19);
 			this.panel2.Controls.Add(this.label20);
 			this.panel2.Controls.Add(this.btnBankAccounts);
-			this.panel2.Location = new System.Drawing.Point(3, 45);
+			this.panel2.Location = new System.Drawing.Point(3, 193);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(963, 37);
+			this.panel2.Size = new System.Drawing.Size(963, 114);
 			this.panel2.TabIndex = 1;
 			// 
 			// label17
@@ -644,6 +656,7 @@
 			this.textBox6.Size = new System.Drawing.Size(349, 26);
 			this.textBox6.TabIndex = 4;
 			this.textBox6.Text = global::POS.Properties.Settings.Default.BankAccount4;
+			this.textBox6.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label14
 			// 
@@ -664,6 +677,7 @@
 			this.textBox7.Size = new System.Drawing.Size(319, 26);
 			this.textBox7.TabIndex = 2;
 			this.textBox7.Text = global::POS.Properties.Settings.Default.BankAccount2;
+			this.textBox7.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label16
 			// 
@@ -684,6 +698,7 @@
 			this.textBox8.Size = new System.Drawing.Size(349, 26);
 			this.textBox8.TabIndex = 3;
 			this.textBox8.Text = global::POS.Properties.Settings.Default.BankAccount3;
+			this.textBox8.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label18
 			// 
@@ -704,6 +719,7 @@
 			this.textBox9.Size = new System.Drawing.Size(319, 26);
 			this.textBox9.TabIndex = 1;
 			this.textBox9.Text = global::POS.Properties.Settings.Default.BankAccount1;
+			this.textBox9.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label19
 			// 
@@ -754,9 +770,9 @@
 			this.panel3.Controls.Add(this.label27);
 			this.panel3.Controls.Add(this.label28);
 			this.panel3.Controls.Add(this.btnTickets);
-			this.panel3.Location = new System.Drawing.Point(3, 88);
+			this.panel3.Location = new System.Drawing.Point(3, 313);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(963, 36);
+			this.panel3.Size = new System.Drawing.Size(963, 82);
 			this.panel3.TabIndex = 2;
 			// 
 			// label22
@@ -778,6 +794,7 @@
 			this.textBox12.Size = new System.Drawing.Size(349, 26);
 			this.textBox12.TabIndex = 3;
 			this.textBox12.Text = global::POS.Properties.Settings.Default.Message2;
+			this.textBox12.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label26
 			// 
@@ -798,6 +815,7 @@
 			this.textBox13.Size = new System.Drawing.Size(319, 26);
 			this.textBox13.TabIndex = 2;
 			this.textBox13.Text = global::POS.Properties.Settings.Default.Message1;
+			this.textBox13.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// label27
 			// 
@@ -838,6 +856,7 @@
 			this.btnTickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnTickets.UseVisualStyleBackColor = true;
 			this.btnTickets.Click += new System.EventHandler(this.btnTickets_Click);
+			this.btnTickets.Validated += new System.EventHandler(this.SaveSettings);
 			// 
 			// UC_Settings
 			// 
