@@ -61,11 +61,11 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(109, 9);
+			this.label5.Location = new System.Drawing.Point(82, 9);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(131, 23);
+			this.label5.Size = new System.Drawing.Size(190, 23);
 			this.label5.TabIndex = 11;
-			this.label5.Text = "Select a Theme";
+			this.label5.Text = "sélectionnez un thème";
 			// 
 			// btnOk
 			// 
@@ -86,8 +86,9 @@
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(75, 29);
 			this.btnCancel.TabIndex = 2;
-			this.btnCancel.Text = "Cancel";
+			this.btnCancel.Text = "Annuler";
 			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
 			// FormChangeTheme
 			// 
@@ -101,7 +102,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormChangeTheme";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Change Theme";
+			this.Text = "Changer thème";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

@@ -64,17 +64,18 @@ namespace POS.Forms.Customers
 		{
 			if (cus == null)
 			{
-				error.SetError(btnDelete, "No customer selected");
+				error.SetError(btnDelete, "Aucun client sélectionné");
 			}
 			else
 			{
 				error.SetError(btnDelete, "");
-				if (MessageBox.Show($"Do you want to delete {cus.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show($"Voulez-vous supprimer {cus.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					try
 					{
 						Access.DeleteCustomer(cus);
-						Manager.Show("Customer Deleted", Notification.Type.Info);
+						Manager.Show("Client supprimé", Notification.Type.Info);
+						this.Close();
 					}
 					catch (Exception ex)
 					{

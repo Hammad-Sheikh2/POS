@@ -40,8 +40,7 @@ namespace POS.Forms.Selling
 		private void Reload()
 		{
 			invoice.Id = int.Parse(lblId.Text);
-			invoice.Total = double.Parse(tbTotalBill.Text);
-			invoice.Paid = double.Parse(tbCashGiven.Text);
+			invoice.Paid = double.Parse(tbTotalBill.Text);
 			invoice.CustomerId = customer.Id;
 			invoice.UserId = Login.Id;
 			invoice.Credit = false;
@@ -82,7 +81,8 @@ namespace POS.Forms.Selling
 		{
 			try
 			{
-				tbChange.Text = (double.Parse(tbTotalBill.Text) - double.Parse(tbCashGiven.Text)).ToString();
+				double changeAmt = invoice.Total - double.Parse(tbCashGiven.Text);
+				tbChange.Text = changeAmt > 0 ? "0" : $"{changeAmt}";
 			}
 			catch (Exception)
 			{
@@ -92,22 +92,35 @@ namespace POS.Forms.Selling
 
 		private void btnCheckout_Click(object sender, EventArgs e)
 		{
-			try
+			double given = Convert.ToDouble(tbCashGiven.Text);
+			if (given >= invoice.Total)
 			{
-				Reload();
-				Access.InsertInvoice(invoice, cart);
-				Manager.Show("Invoice created", Notification.Type.Success);
-				new FormInvioceReport(invoice, cart).Show();
+				try
+				{
+					Reload();
+					Access.InsertInvoice(invoice, cart);
+					Manager.Show("Facture créée", Notification.Type.Success);
+					new FormInvioceReport(invoice, cart).Show();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
-			catch (Exception ex)
+			else
 			{
-				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Manager.Show("paiement insuffisant", Notification.Type.Error);
 			}
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void FormCashPurchase_Load(object sender, EventArgs e)
+		{
+			invoice.Total = double.Parse(tbTotalBill.Text);
 		}
 	}
 }

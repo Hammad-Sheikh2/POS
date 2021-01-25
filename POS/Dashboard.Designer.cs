@@ -50,6 +50,7 @@ namespace POS
 			this.btnSuppliers = new FontAwesome.Sharp.IconButton();
 			this.btnDashboard = new FontAwesome.Sharp.IconButton();
 			this.panelLogo = new System.Windows.Forms.Panel();
+			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.lblSoftwareName = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.pbCurrentControlIcon = new FontAwesome.Sharp.IconPictureBox();
@@ -59,7 +60,6 @@ namespace POS
 			this.pbClose = new FontAwesome.Sharp.IconPictureBox();
 			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
 			this.panelFill = new System.Windows.Forms.Panel();
-			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.panelMenu.SuspendLayout();
 			this.PanelProducts.SuspendLayout();
 			this.PanelFinance.SuspendLayout();
@@ -99,13 +99,13 @@ namespace POS
 			this.BtnSettings.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.BtnSettings.IconSize = 30;
 			this.BtnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.BtnSettings.Location = new System.Drawing.Point(0, 317);
+			this.BtnSettings.Location = new System.Drawing.Point(0, 319);
 			this.BtnSettings.Name = "BtnSettings";
 			this.BtnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
 			this.BtnSettings.Rotation = 0D;
 			this.BtnSettings.Size = new System.Drawing.Size(223, 50);
 			this.BtnSettings.TabIndex = 20;
-			this.BtnSettings.Text = "Settings";
+			this.BtnSettings.Text = "Paramètres";
 			this.BtnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.BtnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.BtnSettings.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@ namespace POS
 			this.PanelProducts.Controls.Add(this.btnProducts);
 			this.PanelProducts.Controls.Add(this.btnProductsMenu);
 			this.PanelProducts.Dock = System.Windows.Forms.DockStyle.Top;
-			this.PanelProducts.Location = new System.Drawing.Point(0, 267);
+			this.PanelProducts.Location = new System.Drawing.Point(0, 269);
 			this.PanelProducts.Name = "PanelProducts";
 			this.PanelProducts.Size = new System.Drawing.Size(223, 50);
 			this.PanelProducts.TabIndex = 19;
@@ -141,7 +141,7 @@ namespace POS
 			this.btnPurchases.Rotation = 0D;
 			this.btnPurchases.Size = new System.Drawing.Size(223, 31);
 			this.btnPurchases.TabIndex = 20;
-			this.btnPurchases.Text = "Purchases";
+			this.btnPurchases.Text = "Achats";
 			this.btnPurchases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnPurchases.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnPurchases.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@ namespace POS
 			this.btnStoreShelves.Rotation = 0D;
 			this.btnStoreShelves.Size = new System.Drawing.Size(223, 31);
 			this.btnStoreShelves.TabIndex = 19;
-			this.btnStoreShelves.Text = "Store/Shelves";
+			this.btnStoreShelves.Text = "Magasin / Rayons";
 			this.btnStoreShelves.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnStoreShelves.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnStoreShelves.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@ namespace POS
 			this.btnProducts.Rotation = 0D;
 			this.btnProducts.Size = new System.Drawing.Size(223, 31);
 			this.btnProducts.TabIndex = 18;
-			this.btnProducts.Text = "Products";
+			this.btnProducts.Text = "Produits";
 			this.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnProducts.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@ namespace POS
 			this.btnProductsMenu.Rotation = 0D;
 			this.btnProductsMenu.Size = new System.Drawing.Size(223, 50);
 			this.btnProductsMenu.TabIndex = 17;
-			this.btnProductsMenu.Text = "Products";
+			this.btnProductsMenu.Text = "Produits";
 			this.btnProductsMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnProductsMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnProductsMenu.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@ namespace POS
 			this.PanelFinance.Dock = System.Windows.Forms.DockStyle.Top;
 			this.PanelFinance.Location = new System.Drawing.Point(0, 219);
 			this.PanelFinance.Name = "PanelFinance";
-			this.PanelFinance.Size = new System.Drawing.Size(223, 48);
+			this.PanelFinance.Size = new System.Drawing.Size(223, 50);
 			this.PanelFinance.TabIndex = 0;
 			// 
 			// btnFinanceEndOfPeriod
@@ -251,7 +251,7 @@ namespace POS
 			this.btnFinanceEndOfPeriod.Rotation = 0D;
 			this.btnFinanceEndOfPeriod.Size = new System.Drawing.Size(223, 31);
 			this.btnFinanceEndOfPeriod.TabIndex = 21;
-			this.btnFinanceEndOfPeriod.Text = "End of Period";
+			this.btnFinanceEndOfPeriod.Text = "Fin d\'une période ";
 			this.btnFinanceEndOfPeriod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnFinanceEndOfPeriod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnFinanceEndOfPeriod.UseVisualStyleBackColor = true;
@@ -275,7 +275,7 @@ namespace POS
 			this.btnFinanceInvoices.Rotation = 0D;
 			this.btnFinanceInvoices.Size = new System.Drawing.Size(223, 31);
 			this.btnFinanceInvoices.TabIndex = 20;
-			this.btnFinanceInvoices.Text = "Invoices";
+			this.btnFinanceInvoices.Text = "Facture";
 			this.btnFinanceInvoices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnFinanceInvoices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnFinanceInvoices.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@ namespace POS
 			this.btnFinanceTurnOvers.Rotation = 0D;
 			this.btnFinanceTurnOvers.Size = new System.Drawing.Size(223, 31);
 			this.btnFinanceTurnOvers.TabIndex = 19;
-			this.btnFinanceTurnOvers.Text = "Turn Overs";
+			this.btnFinanceTurnOvers.Text = "Chiffre d\'affaires ";
 			this.btnFinanceTurnOvers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnFinanceTurnOvers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnFinanceTurnOvers.UseVisualStyleBackColor = true;
@@ -323,7 +323,7 @@ namespace POS
 			this.btnFinanceDashboard.Rotation = 0D;
 			this.btnFinanceDashboard.Size = new System.Drawing.Size(223, 31);
 			this.btnFinanceDashboard.TabIndex = 18;
-			this.btnFinanceDashboard.Text = "Dashboard";
+			this.btnFinanceDashboard.Text = "Tableau de bord ";
 			this.btnFinanceDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnFinanceDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnFinanceDashboard.UseVisualStyleBackColor = true;
@@ -372,7 +372,7 @@ namespace POS
 			this.btnCustomers.Rotation = 0D;
 			this.btnCustomers.Size = new System.Drawing.Size(223, 50);
 			this.btnCustomers.TabIndex = 9;
-			this.btnCustomers.Text = "Customers";
+			this.btnCustomers.Text = "Clients";
 			this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnCustomers.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@ namespace POS
 			this.btnSuppliers.Rotation = 0D;
 			this.btnSuppliers.Size = new System.Drawing.Size(223, 50);
 			this.btnSuppliers.TabIndex = 8;
-			this.btnSuppliers.Text = "Suppliers";
+			this.btnSuppliers.Text = "Fournisseurs";
 			this.btnSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnSuppliers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSuppliers.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@ namespace POS
 			this.btnDashboard.Rotation = 0D;
 			this.btnDashboard.Size = new System.Drawing.Size(223, 50);
 			this.btnDashboard.TabIndex = 7;
-			this.btnDashboard.Text = "Home";
+			this.btnDashboard.Text = "Accueil";
 			this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnDashboard.UseVisualStyleBackColor = true;
@@ -435,6 +435,18 @@ namespace POS
 			this.panelLogo.Name = "panelLogo";
 			this.panelLogo.Size = new System.Drawing.Size(223, 69);
 			this.panelLogo.TabIndex = 0;
+			// 
+			// bunifuCustomLabel1
+			// 
+			this.bunifuCustomLabel1.AutoEllipsis = true;
+			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Sitka Small", 10F);
+			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(4, 39);
+			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(214, 20);
+			this.bunifuCustomLabel1.TabIndex = 6;
+			this.bunifuCustomLabel1.Text = "System de gestion";
+			this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lblSoftwareName
 			// 
@@ -551,18 +563,6 @@ namespace POS
 			this.panelFill.Size = new System.Drawing.Size(1085, 602);
 			this.panelFill.TabIndex = 2;
 			this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
-			// 
-			// bunifuCustomLabel1
-			// 
-			this.bunifuCustomLabel1.AutoEllipsis = true;
-			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Sitka Small", 10F);
-			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.bunifuCustomLabel1.Location = new System.Drawing.Point(4, 39);
-			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-			this.bunifuCustomLabel1.Size = new System.Drawing.Size(214, 20);
-			this.bunifuCustomLabel1.TabIndex = 6;
-			this.bunifuCustomLabel1.Text = "Inventory Software";
-			this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// Dashboard
 			// 

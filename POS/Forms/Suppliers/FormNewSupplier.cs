@@ -2,6 +2,7 @@
 using POS.Classes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -110,7 +111,6 @@ namespace POS.Forms.Suppliers
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			Clear();
-
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
@@ -118,8 +118,12 @@ namespace POS.Forms.Suppliers
 			try
 			{
 				Reload();
-				Access.InsertSupplier(sup);
-				Manager.Show("Supplier inserted", Notification.Type.Success);
+				if (Valid())
+				{
+					Access.InsertSupplier(sup);
+					Manager.Show("fournisseur enregistré", Notification.Type.Success);
+					Clear();
+				}
 			}
 			catch (Exception ex)
 			{
@@ -130,6 +134,43 @@ namespace POS.Forms.Suppliers
 		private void iconButton1_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private bool Valid()
+		{
+			if (tbName.TextLength == 0)
+			{
+				Manager.Show("Nom incorrect", Notification.Type.Warning);
+				return false;
+			}
+			if (cbxCity.SelectedIndex == -1)
+			{
+				Manager.Show("Ville invalide", Notification.Type.Warning);
+				return false;
+			}
+			if (cbxCategory.SelectedIndex == -1)
+			{
+				Manager.Show("Catégorie invalide", Notification.Type.Warning);
+				return false;
+			}
+			if (tbContact1.TextLength == 0)
+			{
+				Manager.Show("Contact invalide", Notification.Type.Warning);
+				return false;
+			}
+			if (tbEmail.TextLength > 0)
+			{
+				if (new EmailAddressAttribute().IsValid(tbEmail.Text))
+				{
+
+				}
+				else
+				{
+					Manager.Show("Invalid Email", Notification.Type.Warning);
+					return false;
+				}
+			}
+			return true;
 		}
 	}
 }

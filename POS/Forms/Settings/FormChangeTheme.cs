@@ -77,5 +77,9 @@ namespace POS.Forms
 			Manager.Show("Theme Changed", Notification.Type.Success);
 		}
 
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

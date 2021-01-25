@@ -73,6 +73,11 @@ namespace POS.UserControls
 		{
 			Customer cus = Access.GetCustomer(cbxCustomers.Text);
 			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
+			if (arr.Length == 0)
+			{
+				Manager.Show("Cart Empty", Forms.Notification.Type.Warning);
+				return;
+			}
 			if (rbPayment.Checked)
 			{
 				using (FormCashPurchase f = new FormCashPurchase(cus, arr))
@@ -84,6 +89,11 @@ namespace POS.UserControls
 			}
 			else
 			{
+				if (arr.Length == 0)
+				{
+					Manager.Show("Cart Empty", Forms.Notification.Type.Warning);
+					return;
+				}
 				foreach (Cart item in arr)
 				{
 					item.Quantity *= -1;
@@ -101,6 +111,11 @@ namespace POS.UserControls
 		{
 			Customer cus = Access.GetCustomer(cbxCustomers.Text);
 			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
+			if (arr.Length == 0)
+			{
+				Manager.Show("Cart Empty", Forms.Notification.Type.Warning);
+				return;
+			}
 			using (FormCreditPayment f = new FormCreditPayment(cus, arr))
 			{
 				f.tbTotalBill.Text = tbTotal.Text;
@@ -118,6 +133,14 @@ namespace POS.UserControls
 
 		private void cbxProductNames_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			Product pr = Access.GetProduct(cbxProductNames.Text);
+			if (pr == null)
+				return;
+			if (pr.QuantityInShelves <= 0 && rbPayment.Checked)
+			{
+				Manager.Show("Out of Stock", Forms.Notification.Type.Info);
+				return;
+			}
 			foreach (Cart item in cartBindingSource.List)
 			{
 				if (item.ProductName == cbxProductNames.Text)
@@ -133,6 +156,7 @@ namespace POS.UserControls
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			cartBindingSource.Clear();
+			rbPayment.Checked = true;
 		}
 
 		private void cbxProductNames_Click(object sender, EventArgs e)
@@ -150,7 +174,17 @@ namespace POS.UserControls
 			else
 			{
 				btnCredit.Visible = true;
-				btnCash.Text = "Cash";
+				btnCash.Text = "Espèce";
+			}
+		}
+
+		private void dg_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+		{
+			Cart pr = cartBindingSource.List.Cast<Cart>().ToList().ElementAt(e.RowIndex);
+			if (Access.GetProduct(pr.ProductId).QuantityInShelves <= 0)
+			{
+				Manager.Show("Out of stock", Forms.Notification.Type.Info);
+				e.Cancel = true;
 			}
 		}
 	}

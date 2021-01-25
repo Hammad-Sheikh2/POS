@@ -23,11 +23,11 @@ namespace POS.Forms.Settings
 
 		private async void btnOk_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show($"Are you sure you want to remove user {cbxThemes.Text} from database?", ProductName, MessageBoxButtons.YesNo) == DialogResult.Yes)
+			if (MessageBox.Show($"Voulez-vous vraiment supprimer l'utilisateur {cbxThemes.Text} de la base de données?", ProductName, MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
 				usr = Access.GetUser(cbxThemes.Text);
 				await Access.DeleteUser(usr);
-				Manager.Show("User was removed.", Notification.Type.Warning);
+				Manager.Show("Utilisateur supprimé", Notification.Type.Warning);
 			}
 		}
 
@@ -36,6 +36,11 @@ namespace POS.Forms.Settings
 			cbxThemes.Items.Clear();
 			List<string> li = await Access.GetStringListAsync("Select Name FROM Users", false);
 			cbxThemes.Items.AddRange(li.ToArray());
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

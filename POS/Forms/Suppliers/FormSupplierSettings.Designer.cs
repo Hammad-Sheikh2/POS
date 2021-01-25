@@ -112,7 +112,7 @@
 			this.btnAddCity.Size = new System.Drawing.Size(26, 27);
 			this.btnAddCity.TabIndex = 98;
 			this.btnAddCity.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnAddCity, "Add City");
+			this.toolTip1.SetToolTip(this.btnAddCity, "Add Ville");
 			this.btnAddCity.Click += new System.EventHandler(this.btnAddCity_Click);
 			// 
 			// btnAddProvince
@@ -148,7 +148,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormSupplierSettings";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Supplier Settings";
+			this.Text = "Paramètres du fournisseur";
 			((System.ComponentModel.ISupportInitialize)(this.btnAddCity)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAddProvince)).EndInit();
 			this.ResumeLayout(false);

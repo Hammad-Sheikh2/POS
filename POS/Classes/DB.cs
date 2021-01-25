@@ -10,6 +10,15 @@ using System.Windows.Forms;
 
 namespace POS.Classes
 {
+	//TODO -- Comptant is actually a customer also and should also appear in the customer list
+	//TODO -- Updated customer with an empty form 
+	//TODO -- Inserted a New Customer with an empty form (please verify the same problem in suppliers, products etc...) 
+	//TODO --
+	//TODO --
+	//TODO --
+	//TODO --
+
+
 	public class DB
 	{
 		public static void CreateDatabase()

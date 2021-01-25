@@ -68,15 +68,16 @@ namespace POS.Forms.Suppliers
 		{
 			if (sup == null)
 			{
-				error.SetError(btnDelete, "No supplier selected");
+				error.SetError(btnDelete, "Aucun Fournisseur sélectionné");
 			}
 			else
 			{
 				error.SetError(btnDelete, "");
-				if (MessageBox.Show($"Do you want to delete {sup.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show($"Voulez-vous supprimer {sup.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					Access.DeleteSupplier(sup);
-					Manager.Show("Supplier Deleted", Notification.Type.Info);
+					Manager.Show("Fournisseur supprimé", Notification.Type.Info);
+					this.Close();
 					Populate();
 				}
 			}

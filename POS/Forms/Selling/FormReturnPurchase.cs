@@ -58,25 +58,13 @@ namespace POS.Forms.Selling
 			{
 				Reload();
 				Access.InsertInvoice(invoice, cart);
-				//Product[] products = Access.GetProducts(cart);
-				//foreach (Product item in products)
-				//{
-				//	foreach (Cart row in cart)
-				//	{
-				//		if (row.ProductId == item.Id)
-				//		{
-				//			item.QuantityInShelves -= row.Quantity;
-				//		}
-				//	}
-				//	await Access.UpdateProductAsync(item);
-				//}
-				Manager.Show("Invoice created", Notification.Type.Success);
-				Manager.Show("Stock Updated", Notification.Type.Info);
+				Manager.Show("Facture créée", Notification.Type.Success);
+				Manager.Show("stock mis à jour", Notification.Type.Info);
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-				Manager.Show("Transaction Failed", Notification.Type.Error);
+				Manager.Show("La transaction échoué", Notification.Type.Error);
 			}
 		}
 

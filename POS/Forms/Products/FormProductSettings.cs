@@ -52,7 +52,7 @@ namespace POS.Forms
 		{
 			if (tbCategory.TextLength == 0)
 			{
-				error.SetError(btnAddCategory, "Category name is empty");
+				error.SetError(btnAddCategory, "Le nom de la catégorie est vide");
 				return;
 			}
 			else
@@ -61,17 +61,17 @@ namespace POS.Forms
 			if (!Access.IsDuplicate($"SELECT Value FROM Categories WHERE Value = '{tbCategory.Text}'"))
 			{
 				Access.InsertCategory(tbCategory.Text);
-				Manager.Show("Category Added", Notification.Type.Success);
+				Manager.Show("Catégorie ajoutée", Notification.Type.Success);
 			}
 			else
-				Manager.Show("Already Exists", Notification.Type.Error);
+				Manager.Show("Existe déjà", Notification.Type.Error);
 		}
 
 		private void btnAddShelf_Click(object sender, System.EventArgs e)
 		{
 			if (tbShelf.TextLength == 0)
 			{
-				error.SetError(btnAddShelf, "Shelf number is empty");
+				error.SetError(btnAddShelf, "Le numéro d'étagère est vide");
 				return;
 			}
 			else
@@ -80,34 +80,30 @@ namespace POS.Forms
 			if (!Access.IsDuplicate($"SELECT Value FROM ShelfNumbers WHERE Value = '{tbShelf.Text}'"))
 			{
 				Access.InsertShelfNumber(tbShelf.Text);
-				Manager.Show("Shelf Added", Notification.Type.Success);
+				Manager.Show("Étagère ajoutée", Notification.Type.Success);
 			}
 			else
-				Manager.Show("Already Exists", Notification.Type.Error);
+				Manager.Show("Existe déjà", Notification.Type.Error);
 		}
 
 		private void btnAddWeight_Click(object sender, System.EventArgs e)
 		{
 			if (tbWeight.TextLength == 0)
 			{
-				error.SetError(btnAddWeight, "Weight value is empty");
+				error.SetError(btnAddWeight, "La valeur de poids est vide");
 				return;
 			}
 			else
 				error.SetError(btnAddWeight, "");
 
-			if (double.TryParse(tbWeight.Text, out double value))
+			if (!Access.IsDuplicate($"SELECT Value FROM Weights WHERE Value = '{tbWeight.Text}'"))
 			{
-				if (!Access.IsDuplicate($"SELECT Value FROM Weights WHERE Value = {value}"))
-				{
-					Access.InsertWeight(value);
-					Manager.Show("Weight Added", Notification.Type.Success);
-				}
-				else
-					Manager.Show("Already Exists", Notification.Type.Error);
+				Access.InsertWeight(tbWeight.Text);
+				Manager.Show("poids ajouté", Notification.Type.Success);
 			}
 			else
-				Manager.Show("Invalid number", Notification.Type.Error);
+				Manager.Show("Existe déjà", Notification.Type.Error);
+
 		}
 	}
 }

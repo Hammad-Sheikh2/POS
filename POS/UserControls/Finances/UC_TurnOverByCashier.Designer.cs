@@ -31,21 +31,11 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.TurnOver = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Cahier = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.Cahier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TurnOver = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// TurnOver
-			// 
-			this.TurnOver.HeaderText = "Turn Over";
-			this.TurnOver.Name = "TurnOver";
-			// 
-			// Cahier
-			// 
-			this.Cahier.HeaderText = "Cahier Name";
-			this.Cahier.Name = "Cahier";
 			// 
 			// dg
 			// 
@@ -87,6 +77,16 @@
 			this.dg.Size = new System.Drawing.Size(914, 438);
 			this.dg.TabIndex = 16;
 			// 
+			// Cahier
+			// 
+			this.Cahier.HeaderText = "Cahier Name";
+			this.Cahier.Name = "Cahier";
+			// 
+			// TurnOver
+			// 
+			this.TurnOver.HeaderText = "Chiffre d\'affaires";
+			this.TurnOver.Name = "TurnOver";
+			// 
 			// UC_TurnOverByCashier
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,8 +100,8 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.DataGridViewTextBoxColumn TurnOver;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Cahier;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Cahier;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TurnOver;
 	}
 }

@@ -49,33 +49,33 @@ namespace POS.Forms.Settings
 		{
 			if (tbName.TextLength == 0)
 			{
-				error.SetError(tbName, "Name can't be empty"); return;
+				error.SetError(tbName, "Le nom ne peut pas être vide"); return;
 			}
 			else error.SetError(tbName, "");
 			if (tbUsername.TextLength == 0)
 			{
-				error.SetError(tbUsername, "Username can't be empty"); return;
+				error.SetError(tbUsername, "Le nom d'utilisateur ne peut pas être vide"); return;
 			}
 			else error.SetError(tbUsername, "");
 			if (cbxRole.SelectedIndex == -1)
 			{
-				error.SetError(cbxRole, "Role can't be empty"); return;
+				error.SetError(cbxRole, "Le rôle ne peut pas être vide"); return;
 			}
 			else error.SetError(cbxRole, "");
 			if (tbPassword.TextLength == 0)
 			{
-				error.SetError(tbPassword, "Password can't be empty"); return;
+				error.SetError(tbPassword, "Le mot de passe ne peut pas être vide"); return;
 			}
 			else error.SetError(tbPassword, "");
 			if (tbConfirmPassword.TextLength == 0)
 			{
-				error.SetError(tbConfirmPassword, "Please confirm password"); return;
+				error.SetError(tbConfirmPassword, "Veuillez confirmer le mot de passe"); return;
 			}
 			else error.SetError(tbConfirmPassword, "");
 			if (tbPassword.Text != tbConfirmPassword.Text)
 			{
-				error.SetError(tbPassword, "Password don't match");
-				error.SetError(tbConfirmPassword, "Password don't match");
+				error.SetError(tbPassword, "Le mot de passe ne correspond pas");
+				error.SetError(tbConfirmPassword, "Le mot de passe ne correspond pas");
 				return;
 			}
 			else
@@ -85,11 +85,17 @@ namespace POS.Forms.Settings
 			}
 			if (!Access.IsValidUsername(tbUsername.Text))
 			{
-				error.SetError(tbUsername, "Username already exists"); return;
+				error.SetError(tbUsername, "Ce nom d'utilisateur existe déjà"); return;
 			}
 			else error.SetError(tbUsername, "");
 			Access.InsertUser(new User() { Id = Access.NextUserId, Username = tbUsername.Text, Name = tbName.Text, Pass = tbPassword.Text, Role = cbxRole.SelectedItem.ToString() });
-			Manager.Show("User registered", Notification.Type.Success);
+			Manager.Show("Utilisateur enregistré", Notification.Type.Success);
+			this.Close();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

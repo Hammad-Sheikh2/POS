@@ -36,13 +36,15 @@
 			// 
 			// btnCancel
 			// 
+			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCancel.Location = new System.Drawing.Point(172, 82);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(75, 29);
 			this.btnCancel.TabIndex = 14;
-			this.btnCancel.Text = "Cancel";
+			this.btnCancel.Text = "Annuler";
 			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
 			// btnOk
 			// 
@@ -52,7 +54,7 @@
 			this.btnOk.Name = "btnOk";
 			this.btnOk.Size = new System.Drawing.Size(75, 29);
 			this.btnOk.TabIndex = 13;
-			this.btnOk.Text = "Ok";
+			this.btnOk.Text = "D\'accord";
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
@@ -60,11 +62,11 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(91, 8);
+			this.label5.Location = new System.Drawing.Point(49, 9);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(115, 23);
+			this.label5.Size = new System.Drawing.Size(226, 23);
 			this.label5.TabIndex = 15;
-			this.label5.Text = "Select a User";
+			this.label5.Text = "sélectionner un utilisateur";
 			// 
 			// cbxThemes
 			// 
@@ -78,8 +80,10 @@
 			// 
 			// FormDeleteUser
 			// 
+			this.AcceptButton = this.btnOk;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(325, 119);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnOk);
@@ -88,7 +92,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormDeleteUser";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Remove User";
+			this.Text = "Supprimer l\'utilisateur";
 			this.Load += new System.EventHandler(this.FormDeleteUser_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

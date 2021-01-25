@@ -22,7 +22,7 @@ namespace POS.Forms.Products
 			cbxCategory.Items.AddRange(Access.GetStringList("SELECT Value FROM Categories").ToArray());
 			cbxShelf.Items.AddRange(Access.GetStringList("SELECT Value FROM ShelfNumbers").ToArray());
 			cbxSupplier.Items.AddRange(Access.GetStringList("SELECT Name FROM Suppliers").ToArray());
-			cbxWeight.Items.AddRange(Access.GetDoublesStringList("SELECT Value FROM Weights").ToArray());
+			cbxWeight.Items.AddRange(Access.GetStringList("SELECT Value FROM Weights").ToArray());
 		}
 
 
@@ -51,12 +51,12 @@ namespace POS.Forms.Products
 			product.Id = int.Parse(lblProductId.Text);
 			product.Name = tbName.Text;
 			product.Shape = cbxShape.Text;
-			product.Weight = double.Parse(cbxWeight.Text);
+			product.Weight = cbxWeight.Text;
 			product.QuantityInStore = double.Parse(tbQuantityInStore.Text);
+			product.NetProfit = double.Parse(tbNetProfit.Text);
 			product.QuantityInShelves = double.Parse(tbQtyInShelves.Text);
 			product.QuantityInBox = double.Parse(tbQtyInBox.Text);
 			product.QuantityMaxInShelve = double.Parse(tbQtyMaxInShelve.Text);
-			product.UnitPrice = double.Parse(tbUnitPrice.Text);
 			product.PurchasePrice = double.Parse(tbPurchasingPrice.Text);
 			product.SellingPrice = double.Parse(tbSellingPrice.Text);
 			product.ShelfCode = cbxShelf.Text;
@@ -111,8 +111,12 @@ namespace POS.Forms.Products
 			try
 			{
 				Reload();
-				await Access.InsertProductAsync(product);
-				Manager.Show("Product inserted", Notification.Type.Success);
+				if (Valid())
+				{
+					await Access.InsertProductAsync(product);
+					Manager.Show("Product registered", Notification.Type.Success);
+					Clear();
+				}
 			}
 			catch (Exception ex)
 			{
@@ -123,6 +127,38 @@ namespace POS.Forms.Products
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			Clear();
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void FormNewProduct_Load(object sender, EventArgs e)
+		{
+			cbxStore.SelectedIndex = 0;
+		}
+
+		private void tbPurchasingPrice_Leave(object sender, EventArgs e)
+		{
+			tbNetProfit.Text = (tbSellingPrice.Value - tbPurchasingPrice.Value).ToString();
+		}
+
+		private bool Valid()
+		{
+			if (product.NetProfit < 0)
+			{
+				Manager.Show("Invalid Net Profit", Notification.Type.Warning);
+				return false;
+			}
+			if (product.Name.Length <= 0)
+			{
+				Manager.Show("Invalid Name", Notification.Type.Warning);
+				return false;
+			}
+
+
+			return true;
 		}
 	}
 }

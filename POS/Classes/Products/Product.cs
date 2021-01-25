@@ -11,13 +11,13 @@ namespace POS.Classes.Products
 		public int Id { get; set; }
 
 		[Column("ProductName")]
-		public string Name { get; set; }
+		public string Name { get; set; } = "";
 
 		[Column("ProductShape")]
-		public string Shape { get; set; }
+		public string Shape { get; set; } = "";
 
 		[Column("ProductWeight")]
-		public double Weight { get; set; }
+		public string Weight { get; set; }
 
 		public double QuantityInStore { get; set; }
 
@@ -45,11 +45,11 @@ namespace POS.Classes.Products
 			set { Margin = SellingPrice - PurchasePrice; }
 		}
 
-		public string ShelfCode { get; set; }
+		public string ShelfCode { get; set; } = "";
 
 		public double AlertThreshold { get; set; }
 
-		public string CreatedBy { get; set; }
+		public string CreatedBy { get; set; } = "";
 
 		public DateTime DateCreated { get; set; } = DateTime.Now;
 
@@ -57,9 +57,9 @@ namespace POS.Classes.Products
 
 		public DateTime ExpiryDate { get; set; }
 
-		public string SupplierName { get; set; }
+		public string SupplierName { get; set; } = "";
 
-		public bool Store { get; set; }
+		public bool Store { get; set; } = true;
 
 	}
 }

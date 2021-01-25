@@ -3,15 +3,21 @@ using FontAwesome.Sharp;
 using POS.Classes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POS.Forms
+namespace POS.Forms.Accounts
 {
-	public partial class FormLogin : Form
+	public partial class FormRegister : Form
 	{
-		public FormLogin()
+		ErrorProvider error = new ErrorProvider();
+		public FormRegister()
 		{
 			InitializeComponent();
 			ActivateTheme();
@@ -61,34 +67,9 @@ namespace POS.Forms
 				yield return next;
 			}
 		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			User user = Access.GetUserByUsername(tbUsername.Text);
-			if (user != null && tbPassword.Text == user.Pass)
-			{
-				Login.Id = user.Id;
-				Login.Name = user.Name;
-				Login.Username = user.Username;
-				Login.Password = user.Pass;
-				Login.Role = user.Role;
-				Manager.Show($"Rôle: {Login.Role}", Notification.Type.Info);
-				Dashboard dsh = new Dashboard();
-				dsh.Show();
-				this.Hide();
-			}
-			else Manager.Show("identifiant invalide", Notification.Type.Error);
-		}
-
 		private void pbClose_Click(object sender, EventArgs e)
 		{
-			Properties.Settings.Default.Save();
-			Application.Exit();
-		}
-
-		private void tbPassword_Enter(object sender, EventArgs e)
-		{
-			tbPassword.isPassword = true;
+			this.Close();
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -96,6 +77,28 @@ namespace POS.Forms
 			Process.Start("https://www.facebook.com/gleswills");
 		}
 
-
+		private void btnLogin_Click(object sender, EventArgs e)
+		{
+			if (tbName.Text.Length == 0)
+			{
+				error.SetError(tbName, "Le nom ne peut pas être vide"); return;
+			}
+			else error.SetError(tbName, "");
+			if (tbUsername.Text.Length == 0)
+			{
+				error.SetError(tbUsername, "Le nom d'utilisateur ne peut pas être vide"); return;
+			}
+			else error.SetError(tbUsername, "");
+			if (tbPassword.Text.Length == 0)
+			{
+				error.SetError(tbPassword, "Le mot de passe ne peut pas être vide"); return;
+			}
+			else error.SetError(tbPassword, "");
+			Access.InsertUser(new User() { Id = Access.NextUserId, Username = tbUsername.Text, Name = tbName.Text, Pass = tbPassword.Text, Role = "Admin" });
+			Manager.Show("Admin enregistré", Notification.Type.Success);
+			FormLogin login = new FormLogin();
+			login.Show();
+			this.Hide();
+		}
 	}
 }

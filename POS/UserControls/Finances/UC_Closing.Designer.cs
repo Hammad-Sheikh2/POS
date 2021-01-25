@@ -38,6 +38,7 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+			this.tbExplanation = new System.Windows.Forms.RichTextBox();
 			this.btnCloseShift = new FontAwesome.Sharp.IconButton();
 			this.tbCash = new System.Windows.Forms.NumericUpDown();
 			this.label5 = new System.Windows.Forms.Label();
@@ -52,21 +53,31 @@
 			this.tbShiftId = new System.Windows.Forms.NumericUpDown();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.closingShiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.tbExplanation = new System.Windows.Forms.RichTextBox();
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.label8 = new System.Windows.Forms.Label();
+			this.dpDayClosing = new System.Windows.Forms.DateTimePicker();
+			this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.shiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+			this.tbPaidAmountDaily = new System.Windows.Forms.NumericUpDown();
+			this.label7 = new System.Windows.Forms.Label();
 			this.btnCloseDay = new FontAwesome.Sharp.IconButton();
 			this.tbTotalAmountDaily = new System.Windows.Forms.NumericUpDown();
 			this.label10 = new System.Windows.Forms.Label();
-			this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.tbPaidAmountDaily = new System.Windows.Forms.NumericUpDown();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.dpDayClosing = new System.Windows.Forms.DateTimePicker();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+			this.tbPaidMonthly = new System.Windows.Forms.NumericUpDown();
+			this.label11 = new System.Windows.Forms.Label();
+			this.tbTotalMonthly = new System.Windows.Forms.NumericUpDown();
+			this.label12 = new System.Windows.Forms.Label();
+			this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.dayClosingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.label9 = new System.Windows.Forms.Label();
+			this.dpClosingMonth = new System.Windows.Forms.DateTimePicker();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +85,6 @@
 			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.creditDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.closingShiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantitySoldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,16 +93,6 @@
 			this.cashInvoicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.closedOnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.shiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.label9 = new System.Windows.Forms.Label();
-			this.dpClosingMonth = new System.Windows.Forms.DateTimePicker();
-			this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
-			this.tbPaidMonthly = new System.Windows.Forms.NumericUpDown();
-			this.label11 = new System.Windows.Forms.Label();
-			this.tbTotalMonthly = new System.Windows.Forms.NumericUpDown();
-			this.label12 = new System.Windows.Forms.Label();
-			this.dayClosingBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.closingDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalAmountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,18 +107,18 @@
 			((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbShiftId)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			this.tabPage2.SuspendLayout();
-			this.tabPage3.SuspendLayout();
-			this.bunifuCards2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbTotalAmountDaily)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.tbPaidAmountDaily)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.closingShiftBindingSource)).BeginInit();
+			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
+			this.bunifuCards2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbPaidAmountDaily)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbTotalAmountDaily)).BeginInit();
+			this.tabPage3.SuspendLayout();
 			this.bunifuCards3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbPaidMonthly)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbTotalMonthly)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dayClosingBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -144,7 +144,7 @@
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage1.Size = new System.Drawing.Size(1033, 484);
 			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Closing Shift";
+			this.tabPage1.Text = "Cloture du Jour";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// bunifuCards1
@@ -176,6 +176,14 @@
 			this.bunifuCards1.Size = new System.Drawing.Size(984, 72);
 			this.bunifuCards1.TabIndex = 115;
 			// 
+			// tbExplanation
+			// 
+			this.tbExplanation.Location = new System.Drawing.Point(647, 8);
+			this.tbExplanation.Name = "tbExplanation";
+			this.tbExplanation.Size = new System.Drawing.Size(324, 26);
+			this.tbExplanation.TabIndex = 116;
+			this.tbExplanation.Text = "";
+			// 
 			// btnCloseShift
 			// 
 			this.btnCloseShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,7 +197,7 @@
 			this.btnCloseShift.Rotation = 0D;
 			this.btnCloseShift.Size = new System.Drawing.Size(324, 26);
 			this.btnCloseShift.TabIndex = 109;
-			this.btnCloseShift.Text = "Close Shift";
+			this.btnCloseShift.Text = "Cloturer le poste";
 			this.btnCloseShift.UseVisualStyleBackColor = true;
 			this.btnCloseShift.Click += new System.EventHandler(this.btnCloseShift_Click);
 			// 
@@ -197,7 +205,7 @@
 			// 
 			this.tbCash.Enabled = false;
 			this.tbCash.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbCash.Location = new System.Drawing.Point(537, 40);
+			this.tbCash.Location = new System.Drawing.Point(550, 40);
 			this.tbCash.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -205,7 +213,7 @@
             0});
 			this.tbCash.Name = "tbCash";
 			this.tbCash.ReadOnly = true;
-			this.tbCash.Size = new System.Drawing.Size(104, 29);
+			this.tbCash.Size = new System.Drawing.Size(91, 29);
 			this.tbCash.TabIndex = 12;
 			this.tbCash.ThousandsSeparator = true;
 			// 
@@ -213,17 +221,17 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label5.Location = new System.Drawing.Point(431, 42);
+			this.label5.Location = new System.Drawing.Point(413, 42);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(94, 19);
+			this.label5.Size = new System.Drawing.Size(131, 19);
 			this.label5.TabIndex = 13;
-			this.label5.Text = "Cash Invoices";
+			this.label5.Text = "Factures en espèces";
 			// 
 			// tbCredit
 			// 
 			this.tbCredit.Enabled = false;
 			this.tbCredit.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbCredit.Location = new System.Drawing.Point(537, 8);
+			this.tbCredit.Location = new System.Drawing.Point(550, 8);
 			this.tbCredit.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -231,7 +239,7 @@
             0});
 			this.tbCredit.Name = "tbCredit";
 			this.tbCredit.ReadOnly = true;
-			this.tbCredit.Size = new System.Drawing.Size(104, 29);
+			this.tbCredit.Size = new System.Drawing.Size(91, 29);
 			this.tbCredit.TabIndex = 10;
 			this.tbCredit.ThousandsSeparator = true;
 			// 
@@ -239,17 +247,17 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label6.Location = new System.Drawing.Point(431, 12);
+			this.label6.Location = new System.Drawing.Point(413, 12);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(101, 19);
+			this.label6.Size = new System.Drawing.Size(118, 19);
 			this.label6.TabIndex = 11;
-			this.label6.Text = "Credit Invoices";
+			this.label6.Text = "Factures de crédit";
 			// 
 			// tbPaid
 			// 
 			this.tbPaid.Enabled = false;
 			this.tbPaid.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbPaid.Location = new System.Drawing.Point(320, 40);
+			this.tbPaid.Location = new System.Drawing.Point(266, 40);
 			this.tbPaid.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -257,7 +265,7 @@
             0});
 			this.tbPaid.Name = "tbPaid";
 			this.tbPaid.ReadOnly = true;
-			this.tbPaid.Size = new System.Drawing.Size(104, 29);
+			this.tbPaid.Size = new System.Drawing.Size(141, 29);
 			this.tbPaid.TabIndex = 8;
 			this.tbPaid.ThousandsSeparator = true;
 			// 
@@ -267,15 +275,15 @@
 			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label3.Location = new System.Drawing.Point(221, 42);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(87, 19);
+			this.label3.Size = new System.Drawing.Size(39, 19);
 			this.label3.TabIndex = 9;
-			this.label3.Text = "Paid Amount";
+			this.label3.Text = "Payé";
 			// 
 			// tbTotal
 			// 
 			this.tbTotal.Enabled = false;
 			this.tbTotal.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbTotal.Location = new System.Drawing.Point(320, 8);
+			this.tbTotal.Location = new System.Drawing.Point(266, 8);
 			this.tbTotal.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -283,7 +291,7 @@
             0});
 			this.tbTotal.Name = "tbTotal";
 			this.tbTotal.ReadOnly = true;
-			this.tbTotal.Size = new System.Drawing.Size(104, 29);
+			this.tbTotal.Size = new System.Drawing.Size(141, 29);
 			this.tbTotal.TabIndex = 6;
 			this.tbTotal.ThousandsSeparator = true;
 			// 
@@ -293,9 +301,9 @@
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label4.Location = new System.Drawing.Point(221, 12);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(90, 19);
+			this.label4.Size = new System.Drawing.Size(39, 19);
 			this.label4.TabIndex = 7;
-			this.label4.Text = "Total Amount";
+			this.label4.Text = "Total";
 			// 
 			// tbQuantity
 			// 
@@ -317,11 +325,11 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label2.Location = new System.Drawing.Point(8, 42);
+			this.label2.Location = new System.Drawing.Point(22, 42);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(92, 19);
+			this.label2.Size = new System.Drawing.Size(60, 19);
 			this.label2.TabIndex = 5;
-			this.label2.Text = "Quantity Sold";
+			this.label2.Text = "Quantité";
 			// 
 			// tbShiftId
 			// 
@@ -343,11 +351,11 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label1.Location = new System.Drawing.Point(48, 12);
+			this.label1.Location = new System.Drawing.Point(22, 12);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(53, 19);
+			this.label1.Size = new System.Drawing.Size(78, 19);
 			this.label1.TabIndex = 3;
-			this.label1.Text = "Shift Id";
+			this.label1.Text = "Id du poste";
 			// 
 			// dg
 			// 
@@ -390,6 +398,10 @@
 			this.dg.Size = new System.Drawing.Size(984, 357);
 			this.dg.TabIndex = 4;
 			// 
+			// closingShiftBindingSource
+			// 
+			this.closingShiftBindingSource.DataSource = typeof(POS.Classes.Finances.ClosingShift);
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.Controls.Add(this.label8);
@@ -401,100 +413,26 @@
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage2.Size = new System.Drawing.Size(1033, 484);
 			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Closing Day";
+			this.tabPage2.Text = "Jour de fermeture";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// tabPage3
+			// label8
 			// 
-			this.tabPage3.Controls.Add(this.bunifuCards3);
-			this.tabPage3.Controls.Add(this.bunifuCustomDataGrid2);
-			this.tabPage3.Controls.Add(this.label9);
-			this.tabPage3.Controls.Add(this.dpClosingMonth);
-			this.tabPage3.Location = new System.Drawing.Point(4, 24);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1033, 484);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Closing Month";
-			this.tabPage3.UseVisualStyleBackColor = true;
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label8.Location = new System.Drawing.Point(336, 8);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(130, 19);
+			this.label8.TabIndex = 119;
+			this.label8.Text = "Select Day to Close";
 			// 
-			// bunifuElipse3
+			// dpDayClosing
 			// 
-			this.bunifuElipse3.ElipseRadius = 10;
-			this.bunifuElipse3.TargetControl = this.dg;
-			// 
-			// tbExplanation
-			// 
-			this.tbExplanation.Location = new System.Drawing.Point(647, 8);
-			this.tbExplanation.Name = "tbExplanation";
-			this.tbExplanation.Size = new System.Drawing.Size(324, 26);
-			this.tbExplanation.TabIndex = 116;
-			this.tbExplanation.Text = "";
-			// 
-			// bunifuElipse1
-			// 
-			this.bunifuElipse1.ElipseRadius = 10;
-			// 
-			// bunifuCards2
-			// 
-			this.bunifuCards2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.bunifuCards2.BackColor = System.Drawing.Color.Silver;
-			this.bunifuCards2.BorderRadius = 5;
-			this.bunifuCards2.BottomSahddow = false;
-			this.bunifuCards2.color = System.Drawing.Color.Tomato;
-			this.bunifuCards2.Controls.Add(this.tbPaidAmountDaily);
-			this.bunifuCards2.Controls.Add(this.label7);
-			this.bunifuCards2.Controls.Add(this.btnCloseDay);
-			this.bunifuCards2.Controls.Add(this.tbTotalAmountDaily);
-			this.bunifuCards2.Controls.Add(this.label10);
-			this.bunifuCards2.LeftSahddow = false;
-			this.bunifuCards2.Location = new System.Drawing.Point(24, 402);
-			this.bunifuCards2.Name = "bunifuCards2";
-			this.bunifuCards2.RightSahddow = false;
-			this.bunifuCards2.ShadowDepth = 20;
-			this.bunifuCards2.Size = new System.Drawing.Size(984, 72);
-			this.bunifuCards2.TabIndex = 116;
-			// 
-			// btnCloseDay
-			// 
-			this.btnCloseDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCloseDay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnCloseDay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCloseDay.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnCloseDay.IconColor = System.Drawing.Color.Black;
-			this.btnCloseDay.IconSize = 16;
-			this.btnCloseDay.Location = new System.Drawing.Point(617, 19);
-			this.btnCloseDay.Name = "btnCloseDay";
-			this.btnCloseDay.Rotation = 0D;
-			this.btnCloseDay.Size = new System.Drawing.Size(336, 32);
-			this.btnCloseDay.TabIndex = 109;
-			this.btnCloseDay.Text = "Close Day";
-			this.btnCloseDay.UseVisualStyleBackColor = true;
-			this.btnCloseDay.Click += new System.EventHandler(this.btnCloseDay_Click);
-			// 
-			// tbTotalAmountDaily
-			// 
-			this.tbTotalAmountDaily.Enabled = false;
-			this.tbTotalAmountDaily.Font = new System.Drawing.Font("Times New Roman", 16F);
-			this.tbTotalAmountDaily.Location = new System.Drawing.Point(126, 19);
-			this.tbTotalAmountDaily.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.tbTotalAmountDaily.Name = "tbTotalAmountDaily";
-			this.tbTotalAmountDaily.Size = new System.Drawing.Size(169, 32);
-			this.tbTotalAmountDaily.TabIndex = 6;
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Times New Roman", 14F);
-			this.label10.Location = new System.Drawing.Point(7, 24);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(112, 21);
-			this.label10.TabIndex = 7;
-			this.label10.Text = "Total Amount";
+			this.dpDayClosing.Location = new System.Drawing.Point(471, 6);
+			this.dpDayClosing.Name = "dpDayClosing";
+			this.dpDayClosing.Size = new System.Drawing.Size(200, 23);
+			this.dpDayClosing.TabIndex = 118;
+			this.dpDayClosing.ValueChanged += new System.EventHandler(this.dpDayClosing_ValueChanged);
 			// 
 			// bunifuCustomDataGrid1
 			// 
@@ -538,6 +476,30 @@
 			this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(984, 361);
 			this.bunifuCustomDataGrid1.TabIndex = 117;
 			// 
+			// shiftBindingSource
+			// 
+			this.shiftBindingSource.DataSource = typeof(POS.Classes.Finances.Shift);
+			// 
+			// bunifuCards2
+			// 
+			this.bunifuCards2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.bunifuCards2.BackColor = System.Drawing.Color.Silver;
+			this.bunifuCards2.BorderRadius = 5;
+			this.bunifuCards2.BottomSahddow = false;
+			this.bunifuCards2.color = System.Drawing.Color.Tomato;
+			this.bunifuCards2.Controls.Add(this.tbPaidAmountDaily);
+			this.bunifuCards2.Controls.Add(this.label7);
+			this.bunifuCards2.Controls.Add(this.btnCloseDay);
+			this.bunifuCards2.Controls.Add(this.tbTotalAmountDaily);
+			this.bunifuCards2.Controls.Add(this.label10);
+			this.bunifuCards2.LeftSahddow = false;
+			this.bunifuCards2.Location = new System.Drawing.Point(24, 402);
+			this.bunifuCards2.Name = "bunifuCards2";
+			this.bunifuCards2.RightSahddow = false;
+			this.bunifuCards2.ShadowDepth = 20;
+			this.bunifuCards2.Size = new System.Drawing.Size(984, 72);
+			this.bunifuCards2.TabIndex = 116;
+			// 
 			// tbPaidAmountDaily
 			// 
 			this.tbPaidAmountDaily.Enabled = false;
@@ -562,139 +524,127 @@
 			this.label7.TabIndex = 111;
 			this.label7.Text = "Paid Amount";
 			// 
-			// label8
+			// btnCloseDay
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label8.Location = new System.Drawing.Point(336, 8);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(130, 19);
-			this.label8.TabIndex = 119;
-			this.label8.Text = "Select Day to Close";
+			this.btnCloseDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCloseDay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCloseDay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCloseDay.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCloseDay.IconColor = System.Drawing.Color.Black;
+			this.btnCloseDay.IconSize = 16;
+			this.btnCloseDay.Location = new System.Drawing.Point(617, 19);
+			this.btnCloseDay.Name = "btnCloseDay";
+			this.btnCloseDay.Rotation = 0D;
+			this.btnCloseDay.Size = new System.Drawing.Size(336, 32);
+			this.btnCloseDay.TabIndex = 109;
+			this.btnCloseDay.Text = "Close Day";
+			this.btnCloseDay.UseVisualStyleBackColor = true;
+			this.btnCloseDay.Click += new System.EventHandler(this.btnCloseDay_Click);
 			// 
-			// dpDayClosing
+			// tbTotalAmountDaily
 			// 
-			this.dpDayClosing.Location = new System.Drawing.Point(471, 6);
-			this.dpDayClosing.Name = "dpDayClosing";
-			this.dpDayClosing.Size = new System.Drawing.Size(200, 23);
-			this.dpDayClosing.TabIndex = 118;
-			this.dpDayClosing.ValueChanged += new System.EventHandler(this.dpDayClosing_ValueChanged);
+			this.tbTotalAmountDaily.Enabled = false;
+			this.tbTotalAmountDaily.Font = new System.Drawing.Font("Times New Roman", 16F);
+			this.tbTotalAmountDaily.Location = new System.Drawing.Point(126, 19);
+			this.tbTotalAmountDaily.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.tbTotalAmountDaily.Name = "tbTotalAmountDaily";
+			this.tbTotalAmountDaily.Size = new System.Drawing.Size(169, 32);
+			this.tbTotalAmountDaily.TabIndex = 6;
 			// 
-			// idDataGridViewTextBoxColumn
+			// label10
 			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Invoice Id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Times New Roman", 14F);
+			this.label10.Location = new System.Drawing.Point(7, 24);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(112, 21);
+			this.label10.TabIndex = 7;
+			this.label10.Text = "Total Amount";
 			// 
-			// dateDataGridViewTextBoxColumn
+			// tabPage3
 			// 
-			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+			this.tabPage3.Controls.Add(this.bunifuCards3);
+			this.tabPage3.Controls.Add(this.bunifuCustomDataGrid2);
+			this.tabPage3.Controls.Add(this.label9);
+			this.tabPage3.Controls.Add(this.dpClosingMonth);
+			this.tabPage3.Location = new System.Drawing.Point(4, 24);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(1033, 484);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Clôture du Mois";
+			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
-			// totalDataGridViewTextBoxColumn
+			// bunifuCards3
 			// 
-			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			this.bunifuCards3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.bunifuCards3.BackColor = System.Drawing.Color.Silver;
+			this.bunifuCards3.BorderRadius = 5;
+			this.bunifuCards3.BottomSahddow = false;
+			this.bunifuCards3.color = System.Drawing.Color.Tomato;
+			this.bunifuCards3.Controls.Add(this.tbPaidMonthly);
+			this.bunifuCards3.Controls.Add(this.label11);
+			this.bunifuCards3.Controls.Add(this.tbTotalMonthly);
+			this.bunifuCards3.Controls.Add(this.label12);
+			this.bunifuCards3.LeftSahddow = false;
+			this.bunifuCards3.Location = new System.Drawing.Point(15, 406);
+			this.bunifuCards3.Name = "bunifuCards3";
+			this.bunifuCards3.RightSahddow = false;
+			this.bunifuCards3.ShadowDepth = 20;
+			this.bunifuCards3.Size = new System.Drawing.Size(984, 72);
+			this.bunifuCards3.TabIndex = 123;
 			// 
-			// paidDataGridViewTextBoxColumn
+			// tbPaidMonthly
 			// 
-			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewTextBoxColumn.HeaderText = "Paid";
-			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
+			this.tbPaidMonthly.Enabled = false;
+			this.tbPaidMonthly.Font = new System.Drawing.Font("Times New Roman", 16F);
+			this.tbPaidMonthly.Location = new System.Drawing.Point(587, 19);
+			this.tbPaidMonthly.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbPaidMonthly.Name = "tbPaidMonthly";
+			this.tbPaidMonthly.Size = new System.Drawing.Size(383, 32);
+			this.tbPaidMonthly.TabIndex = 110;
 			// 
-			// quantityDataGridViewTextBoxColumn
+			// label11
 			// 
-			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Times New Roman", 14F);
+			this.label11.Location = new System.Drawing.Point(469, 24);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(112, 21);
+			this.label11.TabIndex = 111;
+			this.label11.Text = "Montant payé";
 			// 
-			// creditDataGridViewCheckBoxColumn
+			// tbTotalMonthly
 			// 
-			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
-			this.creditDataGridViewCheckBoxColumn.HeaderText = "Credit";
-			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
+			this.tbTotalMonthly.Enabled = false;
+			this.tbTotalMonthly.Font = new System.Drawing.Font("Times New Roman", 16F);
+			this.tbTotalMonthly.Location = new System.Drawing.Point(126, 19);
+			this.tbTotalMonthly.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbTotalMonthly.Name = "tbTotalMonthly";
+			this.tbTotalMonthly.Size = new System.Drawing.Size(337, 32);
+			this.tbTotalMonthly.TabIndex = 6;
 			// 
-			// userIdDataGridViewTextBoxColumn
+			// label12
 			// 
-			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-			this.userIdDataGridViewTextBoxColumn.HeaderText = "Cashier Id";
-			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-			// 
-			// closingShiftBindingSource
-			// 
-			this.closingShiftBindingSource.DataSource = typeof(POS.Classes.Finances.ClosingShift);
-			// 
-			// idDataGridViewTextBoxColumn1
-			// 
-			this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn1.HeaderText = "Shift Id";
-			this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-			// 
-			// quantitySoldDataGridViewTextBoxColumn
-			// 
-			this.quantitySoldDataGridViewTextBoxColumn.DataPropertyName = "QuantitySold";
-			this.quantitySoldDataGridViewTextBoxColumn.HeaderText = "Quantity Sold";
-			this.quantitySoldDataGridViewTextBoxColumn.Name = "quantitySoldDataGridViewTextBoxColumn";
-			// 
-			// totalAmountDataGridViewTextBoxColumn
-			// 
-			this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-			this.totalAmountDataGridViewTextBoxColumn.HeaderText = "Total Amount";
-			this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-			// 
-			// paidAmountDataGridViewTextBoxColumn
-			// 
-			this.paidAmountDataGridViewTextBoxColumn.DataPropertyName = "PaidAmount";
-			this.paidAmountDataGridViewTextBoxColumn.HeaderText = "Paid Amount";
-			this.paidAmountDataGridViewTextBoxColumn.Name = "paidAmountDataGridViewTextBoxColumn";
-			// 
-			// creditInvoicesDataGridViewTextBoxColumn
-			// 
-			this.creditInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CreditInvoices";
-			this.creditInvoicesDataGridViewTextBoxColumn.HeaderText = "Credit Invoices";
-			this.creditInvoicesDataGridViewTextBoxColumn.Name = "creditInvoicesDataGridViewTextBoxColumn";
-			// 
-			// cashInvoicesDataGridViewTextBoxColumn
-			// 
-			this.cashInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CashInvoices";
-			this.cashInvoicesDataGridViewTextBoxColumn.HeaderText = "Cash Invoices";
-			this.cashInvoicesDataGridViewTextBoxColumn.Name = "cashInvoicesDataGridViewTextBoxColumn";
-			// 
-			// explanationDataGridViewTextBoxColumn
-			// 
-			this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
-			this.explanationDataGridViewTextBoxColumn.HeaderText = "Explanation";
-			this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
-			// 
-			// closedOnDataGridViewTextBoxColumn
-			// 
-			this.closedOnDataGridViewTextBoxColumn.DataPropertyName = "ClosedOn";
-			this.closedOnDataGridViewTextBoxColumn.HeaderText = "Closed On";
-			this.closedOnDataGridViewTextBoxColumn.Name = "closedOnDataGridViewTextBoxColumn";
-			// 
-			// shiftBindingSource
-			// 
-			this.shiftBindingSource.DataSource = typeof(POS.Classes.Finances.Shift);
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label9.Location = new System.Drawing.Point(281, 9);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(197, 19);
-			this.label9.TabIndex = 121;
-			this.label9.Text = "Select a Month to View Details";
-			// 
-			// dpClosingMonth
-			// 
-			this.dpClosingMonth.Location = new System.Drawing.Point(484, 6);
-			this.dpClosingMonth.Name = "dpClosingMonth";
-			this.dpClosingMonth.Size = new System.Drawing.Size(200, 23);
-			this.dpClosingMonth.TabIndex = 120;
-			this.dpClosingMonth.ValueChanged += new System.EventHandler(this.dpClosingMonth_ValueChanged);
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Times New Roman", 14F);
+			this.label12.Location = new System.Drawing.Point(7, 24);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(109, 21);
+			this.label12.TabIndex = 7;
+			this.label12.Text = "Montant total";
 			// 
 			// bunifuCustomDataGrid2
 			// 
@@ -734,76 +684,127 @@
 			this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(984, 365);
 			this.bunifuCustomDataGrid2.TabIndex = 122;
 			// 
-			// bunifuCards3
-			// 
-			this.bunifuCards3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.bunifuCards3.BackColor = System.Drawing.Color.Silver;
-			this.bunifuCards3.BorderRadius = 5;
-			this.bunifuCards3.BottomSahddow = false;
-			this.bunifuCards3.color = System.Drawing.Color.Tomato;
-			this.bunifuCards3.Controls.Add(this.tbPaidMonthly);
-			this.bunifuCards3.Controls.Add(this.label11);
-			this.bunifuCards3.Controls.Add(this.tbTotalMonthly);
-			this.bunifuCards3.Controls.Add(this.label12);
-			this.bunifuCards3.LeftSahddow = false;
-			this.bunifuCards3.Location = new System.Drawing.Point(15, 406);
-			this.bunifuCards3.Name = "bunifuCards3";
-			this.bunifuCards3.RightSahddow = false;
-			this.bunifuCards3.ShadowDepth = 20;
-			this.bunifuCards3.Size = new System.Drawing.Size(984, 72);
-			this.bunifuCards3.TabIndex = 123;
-			// 
-			// tbPaidMonthly
-			// 
-			this.tbPaidMonthly.Enabled = false;
-			this.tbPaidMonthly.Font = new System.Drawing.Font("Times New Roman", 16F);
-			this.tbPaidMonthly.Location = new System.Drawing.Point(613, 19);
-			this.tbPaidMonthly.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-			this.tbPaidMonthly.Name = "tbPaidMonthly";
-			this.tbPaidMonthly.Size = new System.Drawing.Size(357, 32);
-			this.tbPaidMonthly.TabIndex = 110;
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Times New Roman", 14F);
-			this.label11.Location = new System.Drawing.Point(500, 24);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(107, 21);
-			this.label11.TabIndex = 111;
-			this.label11.Text = "Paid Amount";
-			// 
-			// tbTotalMonthly
-			// 
-			this.tbTotalMonthly.Enabled = false;
-			this.tbTotalMonthly.Font = new System.Drawing.Font("Times New Roman", 16F);
-			this.tbTotalMonthly.Location = new System.Drawing.Point(126, 19);
-			this.tbTotalMonthly.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-			this.tbTotalMonthly.Name = "tbTotalMonthly";
-			this.tbTotalMonthly.Size = new System.Drawing.Size(337, 32);
-			this.tbTotalMonthly.TabIndex = 6;
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Times New Roman", 14F);
-			this.label12.Location = new System.Drawing.Point(7, 24);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(112, 21);
-			this.label12.TabIndex = 7;
-			this.label12.Text = "Total Amount";
-			// 
 			// dayClosingBindingSource
 			// 
 			this.dayClosingBindingSource.DataSource = typeof(POS.Classes.Finances.DayClosing);
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label9.Location = new System.Drawing.Point(281, 9);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(197, 19);
+			this.label9.TabIndex = 121;
+			this.label9.Text = "Select a Month to View Details";
+			// 
+			// dpClosingMonth
+			// 
+			this.dpClosingMonth.Location = new System.Drawing.Point(484, 6);
+			this.dpClosingMonth.Name = "dpClosingMonth";
+			this.dpClosingMonth.Size = new System.Drawing.Size(200, 23);
+			this.dpClosingMonth.TabIndex = 120;
+			this.dpClosingMonth.ValueChanged += new System.EventHandler(this.dpClosingMonth_ValueChanged);
+			// 
+			// bunifuElipse3
+			// 
+			this.bunifuElipse3.ElipseRadius = 10;
+			this.bunifuElipse3.TargetControl = this.dg;
+			// 
+			// bunifuElipse1
+			// 
+			this.bunifuElipse1.ElipseRadius = 10;
+			this.bunifuElipse1.TargetControl = this;
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "ID de facture";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			// 
+			// dateDataGridViewTextBoxColumn
+			// 
+			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+			// 
+			// totalDataGridViewTextBoxColumn
+			// 
+			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			// 
+			// paidDataGridViewTextBoxColumn
+			// 
+			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
+			this.paidDataGridViewTextBoxColumn.HeaderText = "Payé";
+			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
+			// 
+			// quantityDataGridViewTextBoxColumn
+			// 
+			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité";
+			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+			// 
+			// creditDataGridViewCheckBoxColumn
+			// 
+			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
+			this.creditDataGridViewCheckBoxColumn.HeaderText = "Crédit";
+			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
+			// 
+			// userIdDataGridViewTextBoxColumn
+			// 
+			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+			this.userIdDataGridViewTextBoxColumn.HeaderText = "Id caissier";
+			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+			// 
+			// idDataGridViewTextBoxColumn1
+			// 
+			this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn1.HeaderText = "Shift Id";
+			this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+			// 
+			// quantitySoldDataGridViewTextBoxColumn
+			// 
+			this.quantitySoldDataGridViewTextBoxColumn.DataPropertyName = "QuantitySold";
+			this.quantitySoldDataGridViewTextBoxColumn.HeaderText = "Quantité vendue";
+			this.quantitySoldDataGridViewTextBoxColumn.Name = "quantitySoldDataGridViewTextBoxColumn";
+			// 
+			// totalAmountDataGridViewTextBoxColumn
+			// 
+			this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
+			this.totalAmountDataGridViewTextBoxColumn.HeaderText = "Montant total";
+			this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
+			// 
+			// paidAmountDataGridViewTextBoxColumn
+			// 
+			this.paidAmountDataGridViewTextBoxColumn.DataPropertyName = "PaidAmount";
+			this.paidAmountDataGridViewTextBoxColumn.HeaderText = "Montant payé";
+			this.paidAmountDataGridViewTextBoxColumn.Name = "paidAmountDataGridViewTextBoxColumn";
+			// 
+			// creditInvoicesDataGridViewTextBoxColumn
+			// 
+			this.creditInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CreditInvoices";
+			this.creditInvoicesDataGridViewTextBoxColumn.HeaderText = "Factures de crédit";
+			this.creditInvoicesDataGridViewTextBoxColumn.Name = "creditInvoicesDataGridViewTextBoxColumn";
+			// 
+			// cashInvoicesDataGridViewTextBoxColumn
+			// 
+			this.cashInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CashInvoices";
+			this.cashInvoicesDataGridViewTextBoxColumn.HeaderText = "Factures en espèces";
+			this.cashInvoicesDataGridViewTextBoxColumn.Name = "cashInvoicesDataGridViewTextBoxColumn";
+			// 
+			// explanationDataGridViewTextBoxColumn
+			// 
+			this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
+			this.explanationDataGridViewTextBoxColumn.HeaderText = "Explanation";
+			this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
+			// 
+			// closedOnDataGridViewTextBoxColumn
+			// 
+			this.closedOnDataGridViewTextBoxColumn.DataPropertyName = "ClosedOn";
+			this.closedOnDataGridViewTextBoxColumn.HeaderText = "Closed On";
+			this.closedOnDataGridViewTextBoxColumn.Name = "closedOnDataGridViewTextBoxColumn";
 			// 
 			// dayIdDataGridViewTextBoxColumn
 			// 
@@ -820,13 +821,13 @@
 			// totalAmountDataGridViewTextBoxColumn1
 			// 
 			this.totalAmountDataGridViewTextBoxColumn1.DataPropertyName = "TotalAmount";
-			this.totalAmountDataGridViewTextBoxColumn1.HeaderText = "Total Amount";
+			this.totalAmountDataGridViewTextBoxColumn1.HeaderText = "Montant total";
 			this.totalAmountDataGridViewTextBoxColumn1.Name = "totalAmountDataGridViewTextBoxColumn1";
 			// 
 			// paidAmountDataGridViewTextBoxColumn1
 			// 
 			this.paidAmountDataGridViewTextBoxColumn1.DataPropertyName = "PaidAmount";
-			this.paidAmountDataGridViewTextBoxColumn1.HeaderText = "Paid Amount";
+			this.paidAmountDataGridViewTextBoxColumn1.HeaderText = "Montant payé";
 			this.paidAmountDataGridViewTextBoxColumn1.Name = "paidAmountDataGridViewTextBoxColumn1";
 			// 
 			// UC_Closing
@@ -848,22 +849,22 @@
 			((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbShiftId)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.closingShiftBindingSource)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
-			this.tabPage3.ResumeLayout(false);
-			this.tabPage3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource)).EndInit();
 			this.bunifuCards2.ResumeLayout(false);
 			this.bunifuCards2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tbTotalAmountDaily)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbPaidAmountDaily)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.closingShiftBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbTotalAmountDaily)).EndInit();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
 			this.bunifuCards3.ResumeLayout(false);
 			this.bunifuCards3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbPaidMonthly)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbTotalMonthly)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dayClosingBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
@@ -900,26 +901,11 @@
 		private System.Windows.Forms.NumericUpDown tbTotalAmountDaily;
 		private System.Windows.Forms.Label label10;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn quantitySoldDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paidAmountDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn creditInvoicesDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cashInvoicesDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn explanationDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn closedOnDataGridViewTextBoxColumn;
 		private System.Windows.Forms.BindingSource shiftBindingSource;
 		private System.Windows.Forms.NumericUpDown tbPaidAmountDaily;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.DateTimePicker dpDayClosing;
-		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paidDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewCheckBoxColumn creditDataGridViewCheckBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.DateTimePicker dpClosingMonth;
 		private Bunifu.Framework.UI.BunifuCards bunifuCards3;
@@ -928,10 +914,25 @@
 		private System.Windows.Forms.NumericUpDown tbTotalMonthly;
 		private System.Windows.Forms.Label label12;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
+		private System.Windows.Forms.BindingSource dayClosingBindingSource;
+		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn paidDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn creditDataGridViewCheckBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn quantitySoldDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn paidAmountDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn creditInvoicesDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cashInvoicesDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn explanationDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn closedOnDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn closingDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn paidAmountDataGridViewTextBoxColumn1;
-		private System.Windows.Forms.BindingSource dayClosingBindingSource;
 	}
 }

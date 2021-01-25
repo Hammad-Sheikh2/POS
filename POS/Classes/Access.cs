@@ -349,7 +349,7 @@ namespace POS.Classes
 						product.Id = (int)reader["Id"];
 						product.Name = (string)reader["ProductName"];
 						product.Shape = (string)reader["ProductShape"];
-						product.Weight = (double)reader["ProductWeight"];
+						product.Weight = (string)reader["ProductWeight"];
 						product.QuantityInStore = (double)reader["QuantityInStore"];
 						product.QuantityInShelves = (double)reader["QuantityInShelves"];
 						product.QuantityInBox = (double)reader["QuantityInBox"];
@@ -386,7 +386,7 @@ namespace POS.Classes
 						product.Id = (int)reader["Id"];
 						product.Name = (string)reader["ProductName"];
 						product.Shape = (string)reader["ProductShape"];
-						product.Weight = (double)reader["ProductWeight"];
+						product.Weight = (string)reader["ProductWeight"];
 						product.QuantityInStore = (double)reader["QuantityInStore"];
 						product.QuantityInShelves = (double)reader["QuantityInShelves"];
 						product.QuantityInBox = (double)reader["QuantityInBox"];
@@ -424,7 +424,7 @@ namespace POS.Classes
 						product.Id = (int)reader["Id"];
 						product.Name = (string)reader["ProductName"];
 						product.Shape = (string)reader["ProductShape"];
-						product.Weight = (double)reader["ProductWeight"];
+						product.Weight = (string)reader["ProductWeight"];
 						product.QuantityInStore = (double)reader["QuantityInStore"];
 						product.QuantityInShelves = (double)reader["QuantityInShelves"];
 						product.QuantityInBox = (double)reader["QuantityInBox"];
@@ -492,7 +492,7 @@ namespace POS.Classes
 						product.Id = (int)reader["Id"];
 						product.Name = (string)reader["ProductName"];
 						product.Shape = (string)reader["ProductShape"];
-						product.Weight = (double)reader["ProductWeight"];
+						product.Weight = (string)reader["ProductWeight"];
 						product.QuantityInStore = (double)reader["QuantityInStore"];
 						product.QuantityInShelves = (double)reader["QuantityInShelves"];
 						product.QuantityInBox = (double)reader["QuantityInBox"];
@@ -560,7 +560,7 @@ namespace POS.Classes
 						product.Id = (int)reader["Id"];
 						product.Name = (string)reader["ProductName"];
 						product.Shape = (string)reader["ProductShape"];
-						product.Weight = (double)reader["ProductWeight"];
+						product.Weight = (string)reader["ProductWeight"];
 						product.QuantityInStore = (double)reader["QuantityInStore"];
 						product.QuantityInShelves = (double)reader["QuantityInShelves"];
 						product.QuantityInBox = (double)reader["QuantityInBox"];
@@ -1275,7 +1275,7 @@ namespace POS.Classes
 			using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
 				cnn.Open();
-				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE Credit = 1 AND CustomerId = {CustomerId}", cnn);
+				SqlCommand cmd = new SqlCommand($"SELECT * FROM Invoices WHERE Credit = 0 AND CustomerId = {CustomerId}", cnn);
 				SqlDataReader reader = cmd.ExecuteReader();
 				if (reader.HasRows)
 				{
@@ -1640,6 +1640,25 @@ namespace POS.Classes
 			}
 		}
 
+		public static int UsersCount
+		{
+			get
+			{
+				using (SqlConnection cnn = new SqlConnection(Manager.ConnectionString))
+				{
+					cnn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users;", cnn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+							return reader.GetInt32(0);
+					}
+					return 0;
+				}
+			}
+		}
+
 		public static AutoCompleteStringCollection GetAllUserNamesCollection
 		{
 			get
@@ -1881,6 +1900,14 @@ namespace POS.Classes
 			}
 		}
 
+		public static double GetReturnedProductsCount(DateTime start, DateTime end)
+		{
+			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
+			{
+				return cnn.Query<double>($"SELECT COUNT(*) FROM Products WHERE Id IN (SELECT ProductId FROM (InvoiceDetails INNER JOIN Invoices ON InvoiceDetails.InvoiceId=Invoices.Id) WHERE InvoiceDate BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}' AND InvoiceDetails.Quantity < 0)").AsList<double>().First();
+			}
+		}
+
 		#endregion
 
 		#region Settings
@@ -1901,11 +1928,11 @@ namespace POS.Classes
 			}
 		}
 
-		public static void InsertWeight(double weight)
+		public static void InsertWeight(string weight)
 		{
 			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
-				cnn.Execute($"INSERT INTO Weights(Value)Values({weight});");
+				cnn.Execute($"INSERT INTO Weights(Value)Values('{weight}');");
 			}
 		}
 

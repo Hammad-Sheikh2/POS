@@ -85,6 +85,8 @@
 			this.Controls.Add(this.btnClose);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Notification";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.TopMost = true;
 			((System.ComponentModel.ISupportInitialize)(this.pb)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

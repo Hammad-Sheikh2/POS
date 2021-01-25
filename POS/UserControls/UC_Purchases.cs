@@ -85,7 +85,7 @@ namespace POS.UserControls
 				try
 				{
 					await Access.InsertPurchaseAsync(pur);
-					Manager.Show("Purchase Inserted", Forms.Notification.Type.Success);
+					Manager.Show("Purchase Registered", Forms.Notification.Type.Success);
 					Product product = Access.GetProduct(cbxProducts.Text);
 					if (product.Store)
 					{
@@ -129,6 +129,7 @@ namespace POS.UserControls
 			using (FormNewSupplier f = new FormNewSupplier())
 			{
 				f.ShowDialog();
+				UC_Purchases_Load(this, e);
 			}
 		}
 
@@ -137,6 +138,7 @@ namespace POS.UserControls
 			using (FormNewProduct f = new FormNewProduct())
 			{
 				f.ShowDialog();
+				UC_Purchases_Load(this, e);
 			}
 		}
 	}

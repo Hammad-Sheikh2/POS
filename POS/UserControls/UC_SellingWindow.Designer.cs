@@ -34,9 +34,16 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.panelDetails = new System.Windows.Forms.Panel();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.rbPayment = new System.Windows.Forms.RadioButton();
+			this.rbReturn = new System.Windows.Forms.RadioButton();
+			this.btnClear = new FontAwesome.Sharp.IconPictureBox();
 			this.lblCashier = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
+			this.btnCash = new FontAwesome.Sharp.IconButton();
+			this.btnCredit = new FontAwesome.Sharp.IconButton();
 			this.tbTotal = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.cbxCustomers = new System.Windows.Forms.ComboBox();
@@ -50,13 +57,6 @@
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.btnClear = new FontAwesome.Sharp.IconPictureBox();
-			this.btnCash = new FontAwesome.Sharp.IconButton();
-			this.btnCredit = new FontAwesome.Sharp.IconButton();
-			this.rbReturn = new System.Windows.Forms.RadioButton();
-			this.rbPayment = new System.Windows.Forms.RadioButton();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
 			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +65,8 @@
 			this.cartBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
 			this.panelDetails.SuspendLayout();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
+			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -112,6 +112,7 @@
 			this.dg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dg.Size = new System.Drawing.Size(1035, 359);
 			this.dg.TabIndex = 6;
+			this.dg.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dg_CellBeginEdit);
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
 			// 
 			// panelDetails
@@ -139,6 +140,69 @@
 			this.panelDetails.Size = new System.Drawing.Size(1035, 89);
 			this.panelDetails.TabIndex = 7;
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(83, 8);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(11, 15);
+			this.label5.TabIndex = 110;
+			this.label5.Text = ":";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(8, 6);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(54, 18);
+			this.label4.TabIndex = 109;
+			this.label4.Text = "Facture";
+			// 
+			// rbPayment
+			// 
+			this.rbPayment.AutoSize = true;
+			this.rbPayment.Checked = true;
+			this.rbPayment.Font = new System.Drawing.Font("Sitka Small", 9F);
+			this.rbPayment.Location = new System.Drawing.Point(181, 5);
+			this.rbPayment.Name = "rbPayment";
+			this.rbPayment.Size = new System.Drawing.Size(82, 22);
+			this.rbPayment.TabIndex = 108;
+			this.rbPayment.TabStop = true;
+			this.rbPayment.Text = "Paiement";
+			this.rbPayment.UseVisualStyleBackColor = true;
+			this.rbPayment.CheckedChanged += new System.EventHandler(this.InvoiceType_CheckChanged);
+			// 
+			// rbReturn
+			// 
+			this.rbReturn.AutoSize = true;
+			this.rbReturn.Font = new System.Drawing.Font("Sitka Small", 9F);
+			this.rbReturn.Location = new System.Drawing.Point(100, 5);
+			this.rbReturn.Name = "rbReturn";
+			this.rbReturn.Size = new System.Drawing.Size(68, 22);
+			this.rbReturn.TabIndex = 107;
+			this.rbReturn.Text = "Retour";
+			this.rbReturn.UseVisualStyleBackColor = true;
+			this.rbReturn.CheckedChanged += new System.EventHandler(this.InvoiceType_CheckChanged);
+			// 
+			// btnClear
+			// 
+			this.btnClear.BackColor = System.Drawing.Color.Silver;
+			this.btnClear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnClear.ForeColor = System.Drawing.Color.DarkRed;
+			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Trash;
+			this.btnClear.IconColor = System.Drawing.Color.DarkRed;
+			this.btnClear.IconSize = 30;
+			this.btnClear.Location = new System.Drawing.Point(1002, 52);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(30, 30);
+			this.btnClear.TabIndex = 106;
+			this.btnClear.TabStop = false;
+			this.toolTip1.SetToolTip(this.btnClear, "Clear Cart");
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
 			// lblCashier
 			// 
 			this.lblCashier.AutoSize = true;
@@ -165,9 +229,45 @@
 			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.Location = new System.Drawing.Point(8, 30);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(54, 18);
+			this.label3.Size = new System.Drawing.Size(56, 18);
 			this.label3.TabIndex = 103;
-			this.label3.Text = "Cashier";
+			this.label3.Text = "Caissier";
+			// 
+			// btnCash
+			// 
+			this.btnCash.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCash.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCash.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCash.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCash.IconColor = System.Drawing.Color.Black;
+			this.btnCash.IconSize = 16;
+			this.btnCash.Location = new System.Drawing.Point(873, 52);
+			this.btnCash.Name = "btnCash";
+			this.btnCash.Rotation = 0D;
+			this.btnCash.Size = new System.Drawing.Size(127, 31);
+			this.btnCash.TabIndex = 102;
+			this.btnCash.Text = "Espèce";
+			this.btnCash.UseVisualStyleBackColor = true;
+			this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+			// 
+			// btnCredit
+			// 
+			this.btnCredit.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCredit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCredit.IconColor = System.Drawing.Color.Black;
+			this.btnCredit.IconSize = 16;
+			this.btnCredit.Location = new System.Drawing.Point(741, 52);
+			this.btnCredit.Name = "btnCredit";
+			this.btnCredit.Rotation = 0D;
+			this.btnCredit.Size = new System.Drawing.Size(127, 31);
+			this.btnCredit.TabIndex = 101;
+			this.btnCredit.Text = "Crédit";
+			this.btnCredit.UseVisualStyleBackColor = true;
+			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
 			// 
 			// tbTotal
 			// 
@@ -215,9 +315,9 @@
 			this.label17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label17.Location = new System.Drawing.Point(8, 60);
 			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(68, 18);
+			this.label17.Size = new System.Drawing.Size(45, 18);
 			this.label17.TabIndex = 86;
-			this.label17.Text = "Customer";
+			this.label17.Text = "Client";
 			// 
 			// label14
 			// 
@@ -250,7 +350,7 @@
 			this.cbxProductNames.Name = "cbxProductNames";
 			this.cbxProductNames.Size = new System.Drawing.Size(1010, 27);
 			this.cbxProductNames.TabIndex = 3;
-			this.cbxProductNames.Text = "Enter a product name here";
+			this.cbxProductNames.Text = "Nom du produit ici";
 			this.cbxProductNames.SelectedIndexChanged += new System.EventHandler(this.cbxProductNames_SelectedIndexChanged);
 			this.cbxProductNames.Click += new System.EventHandler(this.cbxProductNames_Click);
 			this.cbxProductNames.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbxProductNames_KeyDown);
@@ -280,129 +380,30 @@
 			this.bunifuElipse3.ElipseRadius = 5;
 			this.bunifuElipse3.TargetControl = this.panel1;
 			// 
-			// btnClear
-			// 
-			this.btnClear.BackColor = System.Drawing.Color.Silver;
-			this.btnClear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnClear.ForeColor = System.Drawing.Color.DarkRed;
-			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Trash;
-			this.btnClear.IconColor = System.Drawing.Color.DarkRed;
-			this.btnClear.IconSize = 30;
-			this.btnClear.Location = new System.Drawing.Point(1002, 52);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.Size = new System.Drawing.Size(30, 30);
-			this.btnClear.TabIndex = 106;
-			this.btnClear.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnClear, "Clear Cart");
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// btnCash
-			// 
-			this.btnCash.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCash.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnCash.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCash.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnCash.IconColor = System.Drawing.Color.Black;
-			this.btnCash.IconSize = 16;
-			this.btnCash.Location = new System.Drawing.Point(873, 52);
-			this.btnCash.Name = "btnCash";
-			this.btnCash.Rotation = 0D;
-			this.btnCash.Size = new System.Drawing.Size(127, 31);
-			this.btnCash.TabIndex = 102;
-			this.btnCash.Text = "Cash";
-			this.btnCash.UseVisualStyleBackColor = true;
-			this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
-			// 
-			// btnCredit
-			// 
-			this.btnCredit.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnCredit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnCredit.IconColor = System.Drawing.Color.Black;
-			this.btnCredit.IconSize = 16;
-			this.btnCredit.Location = new System.Drawing.Point(741, 52);
-			this.btnCredit.Name = "btnCredit";
-			this.btnCredit.Rotation = 0D;
-			this.btnCredit.Size = new System.Drawing.Size(127, 31);
-			this.btnCredit.TabIndex = 101;
-			this.btnCredit.Text = "Credit";
-			this.btnCredit.UseVisualStyleBackColor = true;
-			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
-			// 
-			// rbReturn
-			// 
-			this.rbReturn.AutoSize = true;
-			this.rbReturn.Font = new System.Drawing.Font("Sitka Small", 9F);
-			this.rbReturn.Location = new System.Drawing.Point(100, 5);
-			this.rbReturn.Name = "rbReturn";
-			this.rbReturn.Size = new System.Drawing.Size(75, 22);
-			this.rbReturn.TabIndex = 107;
-			this.rbReturn.Text = "Returns";
-			this.rbReturn.UseVisualStyleBackColor = true;
-			this.rbReturn.CheckedChanged += new System.EventHandler(this.InvoiceType_CheckChanged);
-			// 
-			// rbPayment
-			// 
-			this.rbPayment.AutoSize = true;
-			this.rbPayment.Checked = true;
-			this.rbPayment.Font = new System.Drawing.Font("Sitka Small", 9F);
-			this.rbPayment.Location = new System.Drawing.Point(181, 5);
-			this.rbPayment.Name = "rbPayment";
-			this.rbPayment.Size = new System.Drawing.Size(78, 22);
-			this.rbPayment.TabIndex = 108;
-			this.rbPayment.TabStop = true;
-			this.rbPayment.Text = "Payment";
-			this.rbPayment.UseVisualStyleBackColor = true;
-			this.rbPayment.CheckedChanged += new System.EventHandler(this.InvoiceType_CheckChanged);
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(8, 6);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(53, 18);
-			this.label4.TabIndex = 109;
-			this.label4.Text = "Invoice";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(83, 8);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(11, 15);
-			this.label5.TabIndex = 110;
-			this.label5.Text = ":";
-			// 
 			// productNameDataGridViewTextBoxColumn
 			// 
 			this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.HeaderText = "Name of Product";
+			this.productNameDataGridViewTextBoxColumn.HeaderText = "Nom du produit";
 			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
 			// 
 			// shapeDataGridViewTextBoxColumn
 			// 
 			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
-			this.shapeDataGridViewTextBoxColumn.HeaderText = "Shape";
+			this.shapeDataGridViewTextBoxColumn.HeaderText = "Forme";
 			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
 			this.shapeDataGridViewTextBoxColumn.Width = 150;
 			// 
 			// unitPriceDataGridViewTextBoxColumn
 			// 
 			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
+			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Prix unitaire";
 			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
 			// 
 			// quantityDataGridViewTextBoxColumn
 			// 
 			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité ";
 			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
 			// 
 			// totalDataGridViewTextBoxColumn
@@ -428,9 +429,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
 			this.panelDetails.ResumeLayout(false);
 			this.panelDetails.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
@@ -452,11 +453,6 @@
 		private System.Windows.Forms.ComboBox cbxProductNames;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.BindingSource cartBindingSource;
-		private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn shapeDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Label lblCashier;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
@@ -469,5 +465,10 @@
 		private System.Windows.Forms.RadioButton rbReturn;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn shapeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
 	}
 }

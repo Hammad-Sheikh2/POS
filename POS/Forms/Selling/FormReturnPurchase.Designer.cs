@@ -53,11 +53,11 @@ namespace POS.Forms.Selling
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-			this.label5.Location = new System.Drawing.Point(148, 6);
+			this.label5.Location = new System.Drawing.Point(125, 6);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(97, 23);
+			this.label5.Size = new System.Drawing.Size(121, 23);
 			this.label5.TabIndex = 121;
-			this.label5.Text = "Invoice ID#";
+			this.label5.Text = "ID de facture#";
 			// 
 			// tbTotalBill
 			// 
@@ -72,11 +72,11 @@ namespace POS.Forms.Selling
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic);
-			this.label2.Location = new System.Drawing.Point(22, 89);
+			this.label2.Location = new System.Drawing.Point(12, 86);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(78, 17);
+			this.label2.Size = new System.Drawing.Size(85, 17);
 			this.label2.TabIndex = 114;
-			this.label2.Text = "Return Price";
+			this.label2.Text = "prix de retour";
 			// 
 			// tbNoOfProducts
 			// 
@@ -95,7 +95,7 @@ namespace POS.Forms.Selling
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(89, 17);
 			this.label1.TabIndex = 112;
-			this.label1.Text = "N\" of products";
+			this.label1.Text = "N\" de produits";
 			// 
 			// btnReturn
 			// 
@@ -111,7 +111,7 @@ namespace POS.Forms.Selling
 			this.btnReturn.Rotation = 0D;
 			this.btnReturn.Size = new System.Drawing.Size(191, 31);
 			this.btnReturn.TabIndex = 123;
-			this.btnReturn.Text = "Confirm";
+			this.btnReturn.Text = "confirmer";
 			this.btnReturn.UseVisualStyleBackColor = true;
 			this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
 			// 
@@ -130,7 +130,7 @@ namespace POS.Forms.Selling
 			this.btnCancel.Rotation = 0D;
 			this.btnCancel.Size = new System.Drawing.Size(191, 31);
 			this.btnCancel.TabIndex = 124;
-			this.btnCancel.Text = "Cancel";
+			this.btnCancel.Text = "Annuler";
 			this.btnCancel.UseVisualStyleBackColor = true;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
@@ -153,7 +153,7 @@ namespace POS.Forms.Selling
 			this.Name = "FormReturnPurchase";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
-			this.Text = "Return Invoice";
+			this.Text = "retour de facture";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

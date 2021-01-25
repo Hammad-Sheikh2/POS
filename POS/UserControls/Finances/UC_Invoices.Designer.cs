@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelSearch = new System.Windows.Forms.Panel();
 			this.btnCash = new FontAwesome.Sharp.IconButton();
 			this.btnCredit = new FontAwesome.Sharp.IconButton();
@@ -48,6 +48,7 @@
 			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
 			this.tbDays = new System.Windows.Forms.TextBox();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tbLeft = new System.Windows.Forms.TextBox();
 			this.tbPaid = new System.Windows.Forms.TextBox();
@@ -66,11 +67,10 @@
 			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.thresholdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panelSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSearch
@@ -110,7 +110,7 @@
 			this.btnCash.Rotation = 0D;
 			this.btnCash.Size = new System.Drawing.Size(140, 32);
 			this.btnCash.TabIndex = 117;
-			this.btnCash.Text = "Cash";
+			this.btnCash.Text = "Espèce";
 			this.btnCash.UseVisualStyleBackColor = true;
 			this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
 			// 
@@ -127,7 +127,7 @@
 			this.btnCredit.Rotation = 0D;
 			this.btnCredit.Size = new System.Drawing.Size(140, 32);
 			this.btnCredit.TabIndex = 116;
-			this.btnCredit.Text = "Credit";
+			this.btnCredit.Text = "Crédit";
 			this.btnCredit.UseVisualStyleBackColor = true;
 			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
 			// 
@@ -144,7 +144,7 @@
 			this.btnAll.Rotation = 0D;
 			this.btnAll.Size = new System.Drawing.Size(140, 32);
 			this.btnAll.TabIndex = 115;
-			this.btnAll.Text = "All";
+			this.btnAll.Text = "Tout";
 			this.btnAll.UseVisualStyleBackColor = true;
 			this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
 			// 
@@ -152,59 +152,59 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label6.Location = new System.Drawing.Point(391, 43);
+			this.label6.Location = new System.Drawing.Point(379, 43);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(85, 18);
+			this.label6.Size = new System.Drawing.Size(95, 18);
 			this.label6.TabIndex = 114;
-			this.label6.Text = "Client Name";
+			this.label6.Text = "Nom du client";
 			// 
 			// tbClientName
 			// 
 			this.tbClientName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbClientName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbClientName.Location = new System.Drawing.Point(482, 39);
+			this.tbClientName.Location = new System.Drawing.Point(486, 39);
 			this.tbClientName.Name = "tbClientName";
-			this.tbClientName.Size = new System.Drawing.Size(104, 24);
+			this.tbClientName.Size = new System.Drawing.Size(100, 24);
 			this.tbClientName.TabIndex = 113;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label3.Location = new System.Drawing.Point(382, 15);
+			this.label3.Location = new System.Drawing.Point(379, 15);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(94, 18);
+			this.label3.Size = new System.Drawing.Size(106, 18);
 			this.label3.TabIndex = 112;
-			this.label3.Text = "Cashier Name";
+			this.label3.Text = "Nom du caissier";
 			// 
 			// tbCashierName
 			// 
 			this.tbCashierName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbCashierName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbCashierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbCashierName.Location = new System.Drawing.Point(482, 11);
+			this.tbCashierName.Location = new System.Drawing.Point(486, 11);
 			this.tbCashierName.Name = "tbCashierName";
-			this.tbCashierName.Size = new System.Drawing.Size(104, 24);
+			this.tbCashierName.Size = new System.Drawing.Size(100, 24);
 			this.tbCashierName.TabIndex = 111;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label2.Location = new System.Drawing.Point(24, 47);
+			this.label2.Location = new System.Drawing.Point(9, 47);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(63, 18);
+			this.label2.Size = new System.Drawing.Size(75, 18);
 			this.label2.TabIndex = 110;
-			this.label2.Text = "End Date";
+			this.label2.Text = "Date de fin";
 			// 
 			// dpEnd
 			// 
 			this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.dpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dpEnd.Location = new System.Drawing.Point(99, 44);
+			this.dpEnd.Location = new System.Drawing.Point(110, 44);
 			this.dpEnd.Name = "dpEnd";
-			this.dpEnd.Size = new System.Drawing.Size(123, 24);
+			this.dpEnd.Size = new System.Drawing.Size(115, 24);
 			this.dpEnd.TabIndex = 109;
 			this.dpEnd.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
 			// 
@@ -212,19 +212,19 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label1.Location = new System.Drawing.Point(24, 17);
+			this.label1.Location = new System.Drawing.Point(9, 17);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(69, 18);
+			this.label1.Size = new System.Drawing.Size(96, 18);
 			this.label1.TabIndex = 108;
-			this.label1.Text = "Start Date";
+			this.label1.Text = "Date de début";
 			// 
 			// dpStart
 			// 
 			this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.dpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dpStart.Location = new System.Drawing.Point(99, 14);
+			this.dpStart.Location = new System.Drawing.Point(110, 14);
 			this.dpStart.Name = "dpStart";
-			this.dpStart.Size = new System.Drawing.Size(123, 24);
+			this.dpStart.Size = new System.Drawing.Size(115, 24);
 			this.dpStart.TabIndex = 107;
 			this.dpStart.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
 			// 
@@ -232,11 +232,11 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label4.Location = new System.Drawing.Point(258, 15);
+			this.label4.Location = new System.Drawing.Point(231, 20);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(37, 18);
+			this.label4.Size = new System.Drawing.Size(64, 18);
 			this.label4.TabIndex = 106;
-			this.label4.Text = "Days";
+			this.label4.Text = "Journées";
 			// 
 			// cbxDefinedPeriod
 			// 
@@ -253,7 +253,7 @@
 			this.cbxDefinedPeriod.Name = "cbxDefinedPeriod";
 			this.cbxDefinedPeriod.Size = new System.Drawing.Size(122, 26);
 			this.cbxDefinedPeriod.TabIndex = 1;
-			this.cbxDefinedPeriod.Text = "Defined Period";
+			this.cbxDefinedPeriod.Text = "Période définie";
 			this.cbxDefinedPeriod.SelectedIndexChanged += new System.EventHandler(this.cbxDefinedPeriod_SelectedIndexChanged);
 			// 
 			// tbDays
@@ -270,22 +270,22 @@
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.dg.AutoGenerateColumns = false;
 			this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -299,14 +299,14 @@
             this.thresholdDataGridViewTextBoxColumn,
             this.leftDataGridViewTextBoxColumn});
 			this.dg.DataSource = this.invoiceBindingSource;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle9;
 			this.dg.DoubleBuffered = true;
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
@@ -318,6 +318,10 @@
 			this.dg.Size = new System.Drawing.Size(1035, 359);
 			this.dg.TabIndex = 17;
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
+			// 
+			// invoiceBindingSource
+			// 
+			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
 			// 
 			// panel1
 			// 
@@ -394,25 +398,25 @@
 			// userIdDataGridViewTextBoxColumn
 			// 
 			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-			this.userIdDataGridViewTextBoxColumn.HeaderText = "User Id";
+			this.userIdDataGridViewTextBoxColumn.HeaderText = "Id d\'utilisateur";
 			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
 			// 
 			// shiftIdDataGridViewTextBoxColumn
 			// 
 			this.shiftIdDataGridViewTextBoxColumn.DataPropertyName = "ShiftId";
-			this.shiftIdDataGridViewTextBoxColumn.HeaderText = "Shift Id";
+			this.shiftIdDataGridViewTextBoxColumn.HeaderText = "Id du poste";
 			this.shiftIdDataGridViewTextBoxColumn.Name = "shiftIdDataGridViewTextBoxColumn";
 			// 
 			// customerIdDataGridViewTextBoxColumn
 			// 
 			this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
-			this.customerIdDataGridViewTextBoxColumn.HeaderText = "Customer Id";
+			this.customerIdDataGridViewTextBoxColumn.HeaderText = "Id Client";
 			this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
 			// 
 			// creditDataGridViewCheckBoxColumn
 			// 
 			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
-			this.creditDataGridViewCheckBoxColumn.HeaderText = "Credit";
+			this.creditDataGridViewCheckBoxColumn.HeaderText = "Crédit";
 			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
 			// 
 			// invoiceDateDataGridViewTextBoxColumn
@@ -430,7 +434,7 @@
 			// paidDataGridViewTextBoxColumn
 			// 
 			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewTextBoxColumn.HeaderText = "Paid";
+			this.paidDataGridViewTextBoxColumn.HeaderText = "Payé";
 			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
 			// 
 			// thresholdDataGridViewTextBoxColumn
@@ -446,10 +450,6 @@
 			this.leftDataGridViewTextBoxColumn.HeaderText = "Left";
 			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
 			// 
-			// invoiceBindingSource
-			// 
-			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
-			// 
 			// UC_Invoices
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,9 +462,9 @@
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -497,6 +497,8 @@
 		private System.Windows.Forms.TextBox tbPaid;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+		private System.Windows.Forms.BindingSource invoiceBindingSource;
+		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shiftIdDataGridViewTextBoxColumn;
@@ -507,7 +509,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn paidDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn thresholdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn leftDataGridViewTextBoxColumn;
-		private System.Windows.Forms.BindingSource invoiceBindingSource;
-		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }

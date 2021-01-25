@@ -95,6 +95,7 @@ namespace POS.UserControls
 			if (e.KeyCode == Keys.Enter)
 			{
 				product = Access.GetProduct(tbSearch.Text);
+				tbMove.Maximum = Convert.ToDecimal(product.QuantityInStore);
 				Display();
 			}
 		}
@@ -102,6 +103,7 @@ namespace POS.UserControls
 		private void cbxFilter_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			product = Access.GetProduct(int.Parse(cbxFilter.SelectedItem.ToString()));
+			tbMove.Maximum = Convert.ToDecimal(product.QuantityInStore);
 			Display();
 		}
 
@@ -117,26 +119,20 @@ namespace POS.UserControls
 						{
 							if (inStore <= 0)
 							{
-								Manager.Show("Store empty", Forms.Notification.Type.Error);
+								Manager.Show("Magasin vide", Forms.Notification.Type.Error);
 								return;
 							}
 							Access.ExecuteCommand($"UPDATE Products SET QuantityInStore = QuantityInStore - {move}, QuantityInShelves = QuantityInShelves + {move} WHERE Id = {product.Id}");
 							product = Access.GetProduct(product.Id);
 							Display();
-							Manager.Show("Moved", Forms.Notification.Type.Success);
-							lblLimit.ForeColor = Properties.Settings.Default.ForeColor;
-						}
-						else
-						{
-							lblLimit.Text = $"(Must be less than {inStore})";
-							lblLimit.ForeColor = Color.DarkRed;
+							Manager.Show("Stock déplacé", Forms.Notification.Type.Success);
 						}
 					}
-					else Manager.Show("Invalid in-Store Qty", Forms.Notification.Type.Error);
+					else Manager.Show("Quantité invalide", Forms.Notification.Type.Error);
 				}
-				else Manager.Show("Invalid Quantity", Forms.Notification.Type.Error);
+				else Manager.Show("Aucun produit sélectionné", Forms.Notification.Type.Error);
 			}
-			else Manager.Show("No product selected", Forms.Notification.Type.Error);
+			else Manager.Show("Aucun produit sélectionné", Forms.Notification.Type.Error);
 		}
 	}
 }

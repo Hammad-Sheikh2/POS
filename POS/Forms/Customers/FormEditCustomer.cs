@@ -2,6 +2,7 @@
 using POS.Classes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -134,9 +135,12 @@ namespace POS.Forms.Customers
 			try
 			{
 				Reload();
-				Access.UpdateCustomer(cus);
-				tbSearch.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
-				Manager.Show("Customer updated", Notification.Type.Success);
+				if (Valid())
+				{
+					Access.UpdateCustomer(cus);
+					tbSearch.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+					Manager.Show("Client mis à jour", Notification.Type.Success);
+				}
 			}
 			catch (Exception ex)
 			{
@@ -178,6 +182,48 @@ namespace POS.Forms.Customers
 			{
 				f.ShowDialog();
 			}
+		}
+
+		private bool Valid()
+		{
+			if (tbName.TextLength == 0)
+			{
+				Manager.Show("Nom incorrect", Notification.Type.Warning);
+				return false;
+			}
+			if (cbxCity.SelectedIndex == -1)
+			{
+				Manager.Show("Ville invalide", Notification.Type.Warning);
+				return false;
+			}
+			if (cbxCategory.SelectedIndex == -1)
+			{
+				Manager.Show("Catégorie invalide", Notification.Type.Warning);
+				return false;
+			}
+			if (tbContact1.TextLength == 0)
+			{
+				Manager.Show("Contact invalide", Notification.Type.Warning);
+				return false;
+			}
+			if (tbEmail.TextLength > 0)
+			{
+				if (new EmailAddressAttribute().IsValid(tbEmail.Text))
+				{
+
+				}
+				else
+				{
+					Manager.Show("Invalid Email", Notification.Type.Warning);
+					return false;
+				}
+			}
+			return true;
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

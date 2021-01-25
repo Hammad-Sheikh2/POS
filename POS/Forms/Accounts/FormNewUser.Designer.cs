@@ -55,8 +55,9 @@
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 29);
 			this.button1.TabIndex = 6;
-			this.button1.Text = "Cancel";
+			this.button1.Text = "Annuler";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// btnOk
 			// 
@@ -65,7 +66,7 @@
 			this.btnOk.Name = "btnOk";
 			this.btnOk.Size = new System.Drawing.Size(75, 29);
 			this.btnOk.TabIndex = 5;
-			this.btnOk.Text = "Register";
+			this.btnOk.Text = "S\'inscrire";
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
@@ -75,9 +76,9 @@
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label2.Location = new System.Drawing.Point(26, 331);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(122, 19);
+			this.label2.Size = new System.Drawing.Size(169, 19);
 			this.label2.TabIndex = 127;
-			this.label2.Text = "Confirm Password";
+			this.label2.Text = "Confirmez le mot de passe";
 			// 
 			// panel3
 			// 
@@ -103,9 +104,9 @@
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label1.Location = new System.Drawing.Point(26, 258);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(69, 19);
+			this.label1.Size = new System.Drawing.Size(89, 19);
 			this.label1.TabIndex = 124;
-			this.label1.Text = "Password";
+			this.label1.Text = "mot de passe";
 			// 
 			// panel2
 			// 
@@ -160,7 +161,7 @@
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(37, 19);
 			this.label3.TabIndex = 130;
-			this.label3.Text = "Role";
+			this.label3.Text = "Rôle";
 			// 
 			// panel4
 			// 
@@ -190,9 +191,9 @@
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label4.Location = new System.Drawing.Point(26, 29);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(46, 19);
+			this.label4.Size = new System.Drawing.Size(40, 19);
 			this.label4.TabIndex = 133;
-			this.label4.Text = "Name";
+			this.label4.Text = "Nom";
 			// 
 			// panel5
 			// 
@@ -236,7 +237,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormNewUser";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "New User";
+			this.Text = "nouvel utilisateur";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

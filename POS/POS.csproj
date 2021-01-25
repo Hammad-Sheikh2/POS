@@ -8,13 +8,14 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>POS</RootNamespace>
     <AssemblyName>POS</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -48,8 +49,8 @@
     <Reference Include="Dapper.SqlBuilder, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.SqlBuilder.2.0.78\lib\net461\Dapper.SqlBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome.Sharp.5.13.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.14.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -117,6 +118,12 @@
     <Compile Include="Forms\Accounts\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Accounts\FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Accounts\FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Customers\FormCashByCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,12 +171,6 @@
     </Compile>
     <Compile Include="Forms\Products\FormNewProduct.Designer.cs">
       <DependentUpon>FormNewProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Products\FormProductPurchase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Products\FormProductPurchase.Designer.cs">
-      <DependentUpon>FormProductPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Selling\FormCashPurchase.cs">
       <SubType>Form</SubType>
@@ -264,24 +265,6 @@
     <Compile Include="UserControls\Finances\UC_Closing.Designer.cs">
       <DependentUpon>UC_Closing.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Finances\UC_ClosingDay.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Finances\UC_ClosingDay.Designer.cs">
-      <DependentUpon>UC_ClosingDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Finances\UC_ClosingMonth.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Finances\UC_ClosingMonth.Designer.cs">
-      <DependentUpon>UC_ClosingMonth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Finances\UC_ClosingShift.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Finances\UC_ClosingShift.Designer.cs">
-      <DependentUpon>UC_ClosingShift.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\Finances\UC_Invoices.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -372,6 +355,9 @@
     <EmbeddedResource Include="Forms\Accounts\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Accounts\FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customers\FormCashByCustomer.resx">
       <DependentUpon>FormCashByCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,9 +381,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Products\FormNewProduct.resx">
       <DependentUpon>FormNewProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Products\FormProductPurchase.resx">
-      <DependentUpon>FormProductPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Selling\FormCashPurchase.resx">
       <DependentUpon>FormCashPurchase.cs</DependentUpon>
@@ -454,15 +437,6 @@
     <EmbeddedResource Include="Reporting\InvoiceReport.rdlc" />
     <EmbeddedResource Include="UserControls\Finances\UC_Closing.resx">
       <DependentUpon>UC_Closing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Finances\UC_ClosingDay.resx">
-      <DependentUpon>UC_ClosingDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Finances\UC_ClosingMonth.resx">
-      <DependentUpon>UC_ClosingMonth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Finances\UC_ClosingShift.resx">
-      <DependentUpon>UC_ClosingShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Finances\UC_Invoices.resx">
       <DependentUpon>UC_Invoices.cs</DependentUpon>

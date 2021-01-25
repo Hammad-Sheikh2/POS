@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +64,8 @@
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -74,14 +74,14 @@
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -162,9 +162,9 @@
 			this.cbxFilter.FormattingEnabled = true;
 			this.cbxFilter.Location = new System.Drawing.Point(122, 37);
 			this.cbxFilter.Name = "cbxFilter";
-			this.cbxFilter.Size = new System.Drawing.Size(136, 26);
+			this.cbxFilter.Size = new System.Drawing.Size(150, 26);
 			this.cbxFilter.TabIndex = 1;
-			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.Text = "Recherche par ld";
 			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
 			// 
 			// tbSearch
@@ -172,11 +172,11 @@
 			this.tbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.tbSearch.Location = new System.Drawing.Point(264, 36);
+			this.tbSearch.Location = new System.Drawing.Point(278, 36);
 			this.tbSearch.Name = "tbSearch";
-			this.tbSearch.Size = new System.Drawing.Size(229, 26);
+			this.tbSearch.Size = new System.Drawing.Size(215, 26);
 			this.tbSearch.TabIndex = 0;
-			this.tbSearch.Text = "Search by Name";
+			this.tbSearch.Text = "Recherche par nom";
 			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
 			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
 			// 
@@ -199,7 +199,7 @@
 			this.btnSettings.Size = new System.Drawing.Size(26, 27);
 			this.btnSettings.TabIndex = 97;
 			this.btnSettings.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnSettings, "Settings");
+			this.toolTip1.SetToolTip(this.btnSettings, "Paramètres du fournisseur");
 			this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
 			// 
 			// btnEdit
@@ -216,7 +216,7 @@
 			this.btnEdit.Size = new System.Drawing.Size(26, 27);
 			this.btnEdit.TabIndex = 81;
 			this.btnEdit.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnEdit, "Update && Save");
+			this.toolTip1.SetToolTip(this.btnEdit, "Modifier le fournisseur");
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// btnAdd
@@ -233,7 +233,7 @@
 			this.btnAdd.Size = new System.Drawing.Size(26, 27);
 			this.btnAdd.TabIndex = 78;
 			this.btnAdd.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnAdd, "New Supplier");
+			this.toolTip1.SetToolTip(this.btnAdd, "Nouveau fournisseur");
 			this.btnAdd.UseGdi = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -268,7 +268,7 @@
 			this.btnDelete.Size = new System.Drawing.Size(26, 27);
 			this.btnDelete.TabIndex = 84;
 			this.btnDelete.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnDelete, "Delete Supplier");
+			this.toolTip1.SetToolTip(this.btnDelete, "Supprimer le fournisseur");
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// bunifuCards1
@@ -293,11 +293,11 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(274, 8);
+			this.label3.Location = new System.Drawing.Point(255, 9);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(64, 23);
+			this.label3.Size = new System.Drawing.Size(82, 23);
 			this.label3.TabIndex = 113;
-			this.label3.Text = "Search";
+			this.label3.Text = "Chercher";
 			// 
 			// UC_Suppliers
 			// 

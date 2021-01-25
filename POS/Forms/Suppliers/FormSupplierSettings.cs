@@ -52,7 +52,7 @@ namespace POS.Forms
 		{
 			if (tbCity.TextLength == 0)
 			{
-				error.SetError(btnAddCity, "City name is empty");
+				error.SetError(btnAddCity, "ville invalide");
 				return;
 			}
 			else
@@ -61,10 +61,10 @@ namespace POS.Forms
 			if (!Access.IsDuplicate($"SELECT Value FROM Cities WHERE Value = '{tbCity.Text}'"))
 			{
 				Access.InsertCity(tbCity.Text);
-				Manager.Show("City Added", Notification.Type.Success);
+				Manager.Show("ville ajoutée", Notification.Type.Success);
 			}
 			else
-				Manager.Show("Already Exists", Notification.Type.Error);
+				Manager.Show("Existe déjà", Notification.Type.Error);
 		}
 
 		private void tbCity_Click(object sender, System.EventArgs e)
@@ -76,7 +76,7 @@ namespace POS.Forms
 		{
 			if (tbProvince.TextLength == 0)
 			{
-				error.SetError(btnAddProvince, "Province name is empty");
+				error.SetError(btnAddProvince, "Province invalide");
 				return;
 			}
 			else
@@ -88,7 +88,7 @@ namespace POS.Forms
 				Manager.Show("Province Added", Notification.Type.Success);
 			}
 			else
-				Manager.Show("Already Exists", Notification.Type.Error);
+				Manager.Show("Existe déjà", Notification.Type.Error);
 		}
 	}
 }

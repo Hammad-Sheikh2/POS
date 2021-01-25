@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelSearch = new System.Windows.Forms.Panel();
 			this.btnByMonth = new FontAwesome.Sharp.IconButton();
 			this.btnByCashier = new FontAwesome.Sharp.IconButton();
@@ -51,11 +51,11 @@
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.tbTotalQty = new System.Windows.Forms.TextBox();
 			this.tbTotalMargin = new System.Windows.Forms.TextBox();
 			this.tbTotalSell = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.tbTotalBuy = new System.Windows.Forms.TextBox();
-			this.tbTotalQty = new System.Windows.Forms.TextBox();
 			this.turnOverCashierBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.turnOverProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.turnOverMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -103,7 +103,7 @@
 			this.btnByMonth.Rotation = 0D;
 			this.btnByMonth.Size = new System.Drawing.Size(140, 32);
 			this.btnByMonth.TabIndex = 128;
-			this.btnByMonth.Text = "By Month";
+			this.btnByMonth.Text = "Par mois";
 			this.btnByMonth.UseVisualStyleBackColor = true;
 			this.btnByMonth.Click += new System.EventHandler(this.btnByMonth_Click);
 			// 
@@ -120,7 +120,7 @@
 			this.btnByCashier.Rotation = 0D;
 			this.btnByCashier.Size = new System.Drawing.Size(140, 32);
 			this.btnByCashier.TabIndex = 127;
-			this.btnByCashier.Text = "By Cashier";
+			this.btnByCashier.Text = "Par caissier";
 			this.btnByCashier.UseVisualStyleBackColor = true;
 			this.btnByCashier.Click += new System.EventHandler(this.btnByCashier_Click);
 			// 
@@ -137,7 +137,7 @@
 			this.btnByProducts.Rotation = 0D;
 			this.btnByProducts.Size = new System.Drawing.Size(140, 32);
 			this.btnByProducts.TabIndex = 126;
-			this.btnByProducts.Text = "By Products";
+			this.btnByProducts.Text = "Par produits";
 			this.btnByProducts.UseVisualStyleBackColor = true;
 			this.btnByProducts.Click += new System.EventHandler(this.btnByProducts_Click);
 			// 
@@ -145,18 +145,18 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label6.Location = new System.Drawing.Point(448, 48);
+			this.label6.Location = new System.Drawing.Point(439, 48);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(85, 18);
+			this.label6.Size = new System.Drawing.Size(95, 18);
 			this.label6.TabIndex = 125;
-			this.label6.Text = "Client Name";
+			this.label6.Text = "Nom du client";
 			// 
 			// tbClientName
 			// 
 			this.tbClientName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbClientName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbClientName.Location = new System.Drawing.Point(539, 44);
+			this.tbClientName.Location = new System.Drawing.Point(551, 44);
 			this.tbClientName.Name = "tbClientName";
 			this.tbClientName.Size = new System.Drawing.Size(104, 24);
 			this.tbClientName.TabIndex = 124;
@@ -167,16 +167,16 @@
 			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F);
 			this.label3.Location = new System.Drawing.Point(439, 20);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(94, 18);
+			this.label3.Size = new System.Drawing.Size(106, 18);
 			this.label3.TabIndex = 123;
-			this.label3.Text = "Cashier Name";
+			this.label3.Text = "Nom du caissier";
 			// 
 			// tbCashierName
 			// 
 			this.tbCashierName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.tbCashierName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.tbCashierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbCashierName.Location = new System.Drawing.Point(539, 16);
+			this.tbCashierName.Location = new System.Drawing.Point(551, 16);
 			this.tbCashierName.Name = "tbCashierName";
 			this.tbCashierName.Size = new System.Drawing.Size(104, 24);
 			this.tbCashierName.TabIndex = 122;
@@ -185,11 +185,11 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label2.Location = new System.Drawing.Point(81, 52);
+			this.label2.Location = new System.Drawing.Point(75, 50);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(63, 18);
+			this.label2.Size = new System.Drawing.Size(75, 18);
 			this.label2.TabIndex = 121;
-			this.label2.Text = "End Date";
+			this.label2.Text = "Date de fin";
 			// 
 			// dpEnd
 			// 
@@ -205,11 +205,11 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label1.Location = new System.Drawing.Point(81, 22);
+			this.label1.Location = new System.Drawing.Point(54, 22);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(69, 18);
+			this.label1.Size = new System.Drawing.Size(96, 18);
 			this.label1.TabIndex = 119;
-			this.label1.Text = "Start Date";
+			this.label1.Text = "Date de début";
 			// 
 			// dpStart
 			// 
@@ -225,11 +225,11 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label4.Location = new System.Drawing.Point(315, 20);
+			this.label4.Location = new System.Drawing.Point(287, 24);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(37, 18);
+			this.label4.Size = new System.Drawing.Size(64, 18);
 			this.label4.TabIndex = 117;
-			this.label4.Text = "Days";
+			this.label4.Text = "Journées";
 			// 
 			// cbxDefinedPeriod
 			// 
@@ -246,7 +246,7 @@
 			this.cbxDefinedPeriod.Name = "cbxDefinedPeriod";
 			this.cbxDefinedPeriod.Size = new System.Drawing.Size(122, 26);
 			this.cbxDefinedPeriod.TabIndex = 116;
-			this.cbxDefinedPeriod.Text = "Defined Period";
+			this.cbxDefinedPeriod.Text = "Période définie";
 			this.cbxDefinedPeriod.SelectedIndexChanged += new System.EventHandler(this.cbxDefinedPeriod_SelectedIndexChanged);
 			// 
 			// tbDays
@@ -273,30 +273,30 @@
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle15;
 			this.dg.DoubleBuffered = true;
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
@@ -322,6 +322,16 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1010, 39);
 			this.panel1.TabIndex = 119;
+			// 
+			// tbTotalQty
+			// 
+			this.tbTotalQty.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.tbTotalQty.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.tbTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.tbTotalQty.Location = new System.Drawing.Point(498, 8);
+			this.tbTotalQty.Name = "tbTotalQty";
+			this.tbTotalQty.Size = new System.Drawing.Size(125, 24);
+			this.tbTotalQty.TabIndex = 117;
 			// 
 			// tbTotalMargin
 			// 
@@ -362,16 +372,6 @@
 			this.tbTotalBuy.Name = "tbTotalBuy";
 			this.tbTotalBuy.Size = new System.Drawing.Size(125, 24);
 			this.tbTotalBuy.TabIndex = 111;
-			// 
-			// tbTotalQty
-			// 
-			this.tbTotalQty.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbTotalQty.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.tbTotalQty.Location = new System.Drawing.Point(498, 8);
-			this.tbTotalQty.Name = "tbTotalQty";
-			this.tbTotalQty.Size = new System.Drawing.Size(125, 24);
-			this.tbTotalQty.TabIndex = 117;
 			// 
 			// turnOverCashierBindingSource
 			// 

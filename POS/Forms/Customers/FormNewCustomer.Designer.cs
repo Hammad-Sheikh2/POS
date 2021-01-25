@@ -29,11 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.btnCredit = new FontAwesome.Sharp.IconButton();
-			this.lblId = new System.Windows.Forms.Label();
-			this.label24 = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
+			this.btnClear = new FontAwesome.Sharp.IconButton();
 			this.cbxCategory = new System.Windows.Forms.ComboBox();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
@@ -58,7 +54,11 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.btnClear = new FontAwesome.Sharp.IconButton();
+			this.iconButton1 = new FontAwesome.Sharp.IconButton();
+			this.btnCredit = new FontAwesome.Sharp.IconButton();
+			this.lblId = new System.Windows.Forms.Label();
+			this.label24 = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -101,83 +101,36 @@
 			this.panel1.Size = new System.Drawing.Size(837, 228);
 			this.panel1.TabIndex = 0;
 			// 
-			// iconButton1
+			// btnClear
 			// 
-			this.iconButton1.DialogResult = System.Windows.Forms.DialogResult.Abort;
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.iconButton1.Font = new System.Drawing.Font("Calibri", 11F);
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconButton1.IconColor = System.Drawing.Color.Black;
-			this.iconButton1.IconSize = 16;
-			this.iconButton1.Location = new System.Drawing.Point(366, 194);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Rotation = 0D;
-			this.iconButton1.Size = new System.Drawing.Size(115, 26);
-			this.iconButton1.TabIndex = 9;
-			this.iconButton1.Text = "Cancel";
-			this.iconButton1.UseVisualStyleBackColor = true;
-			// 
-			// btnCredit
-			// 
-			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnCredit.Font = new System.Drawing.Font("Calibri", 11F);
-			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnCredit.IconColor = System.Drawing.Color.Black;
-			this.btnCredit.IconSize = 16;
-			this.btnCredit.Location = new System.Drawing.Point(245, 194);
-			this.btnCredit.Name = "btnCredit";
-			this.btnCredit.Rotation = 0D;
-			this.btnCredit.Size = new System.Drawing.Size(115, 26);
-			this.btnCredit.TabIndex = 8;
-			this.btnCredit.Text = "Save";
-			this.btnCredit.UseVisualStyleBackColor = true;
-			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
-			// 
-			// lblId
-			// 
-			this.lblId.AutoSize = true;
-			this.lblId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.lblId.Location = new System.Drawing.Point(461, 9);
-			this.lblId.Name = "lblId";
-			this.lblId.Size = new System.Drawing.Size(17, 19);
-			this.lblId.TabIndex = 46;
-			this.lblId.Text = "0";
-			// 
-			// label24
-			// 
-			this.label24.AutoSize = true;
-			this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.label24.Location = new System.Drawing.Point(350, 9);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(104, 19);
-			this.label24.TabIndex = 45;
-			this.label24.Text = "Customer ID#";
-			// 
-			// label25
-			// 
-			this.label25.AutoSize = true;
-			this.label25.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label25.Location = new System.Drawing.Point(119, 352);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(11, 15);
-			this.label25.TabIndex = 20;
-			this.label25.Text = ":";
+			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnClear.IconColor = System.Drawing.Color.Black;
+			this.btnClear.IconSize = 16;
+			this.btnClear.Location = new System.Drawing.Point(487, 194);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Rotation = 0D;
+			this.btnClear.Size = new System.Drawing.Size(115, 26);
+			this.btnClear.TabIndex = 10;
+			this.btnClear.Text = "Effacer";
+			this.btnClear.UseVisualStyleBackColor = true;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// cbxCategory
 			// 
 			this.cbxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.cbxCategory.FormattingEnabled = true;
 			this.cbxCategory.Items.AddRange(new object[] {
-            "Company",
-            "Individual",
-            "Company Employee"});
+            "Entreprise",
+            "Individuel",
+            "Entreprise Employee"});
 			this.cbxCategory.Location = new System.Drawing.Point(165, 145);
 			this.cbxCategory.Name = "cbxCategory";
 			this.cbxCategory.Size = new System.Drawing.Size(226, 26);
 			this.cbxCategory.TabIndex = 3;
-			this.cbxCategory.Text = "Select";
+			this.cbxCategory.Text = "Sélectionner";
 			this.cbxCategory.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// label17
@@ -196,9 +149,9 @@
 			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label20.Location = new System.Drawing.Point(67, 153);
 			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(62, 17);
+			this.label20.Size = new System.Drawing.Size(65, 17);
 			this.label20.TabIndex = 125;
-			this.label20.Text = "Category";
+			this.label20.Text = "Catégorie";
 			// 
 			// cbxProvince
 			// 
@@ -208,8 +161,7 @@
 			this.cbxProvince.Name = "cbxProvince";
 			this.cbxProvince.Size = new System.Drawing.Size(226, 26);
 			this.cbxProvince.TabIndex = 2;
-			this.cbxProvince.Text = "Select";
-			this.cbxProvince.Validated += new System.EventHandler(this.ValidateCombobox);
+			this.cbxProvince.Text = "Sélectionner";
 			// 
 			// label5
 			// 
@@ -239,7 +191,7 @@
 			this.cbxCity.Name = "cbxCity";
 			this.cbxCity.Size = new System.Drawing.Size(226, 26);
 			this.cbxCity.TabIndex = 1;
-			this.cbxCity.Text = "Select";
+			this.cbxCity.Text = "Sélectionner";
 			this.cbxCity.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// tbAirtel
@@ -249,7 +201,6 @@
 			this.tbAirtel.Name = "tbAirtel";
 			this.tbAirtel.Size = new System.Drawing.Size(215, 26);
 			this.tbAirtel.TabIndex = 7;
-			this.tbAirtel.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label18
 			// 
@@ -278,7 +229,6 @@
 			this.tbContact2.Name = "tbContact2";
 			this.tbContact2.Size = new System.Drawing.Size(215, 26);
 			this.tbContact2.TabIndex = 6;
-			this.tbContact2.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// tbContact1
 			// 
@@ -296,7 +246,6 @@
 			this.tbEmail.Name = "tbEmail";
 			this.tbEmail.Size = new System.Drawing.Size(215, 26);
 			this.tbEmail.TabIndex = 4;
-			this.tbEmail.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label12
 			// 
@@ -373,9 +322,9 @@
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label1.Location = new System.Drawing.Point(66, 56);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(44, 17);
+			this.label1.Size = new System.Drawing.Size(37, 17);
 			this.label1.TabIndex = 102;
-			this.label1.Text = "Name";
+			this.label1.Text = "Nom";
 			// 
 			// label3
 			// 
@@ -403,36 +352,89 @@
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label4.Location = new System.Drawing.Point(67, 90);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(32, 17);
+			this.label4.Size = new System.Drawing.Size(34, 17);
 			this.label4.TabIndex = 108;
-			this.label4.Text = "City";
+			this.label4.Text = "Ville";
 			// 
-			// btnClear
+			// iconButton1
 			// 
-			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
-			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.btnClear.IconColor = System.Drawing.Color.Black;
-			this.btnClear.IconSize = 16;
-			this.btnClear.Location = new System.Drawing.Point(487, 194);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.Rotation = 0D;
-			this.btnClear.Size = new System.Drawing.Size(115, 26);
-			this.btnClear.TabIndex = 10;
-			this.btnClear.Text = "Clear";
-			this.btnClear.UseVisualStyleBackColor = true;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			this.iconButton1.DialogResult = System.Windows.Forms.DialogResult.Abort;
+			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.iconButton1.Font = new System.Drawing.Font("Calibri", 11F);
+			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.iconButton1.IconColor = System.Drawing.Color.Black;
+			this.iconButton1.IconSize = 16;
+			this.iconButton1.Location = new System.Drawing.Point(366, 194);
+			this.iconButton1.Name = "iconButton1";
+			this.iconButton1.Rotation = 0D;
+			this.iconButton1.Size = new System.Drawing.Size(115, 26);
+			this.iconButton1.TabIndex = 9;
+			this.iconButton1.Text = "Annuler";
+			this.iconButton1.UseVisualStyleBackColor = true;
+			this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+			// 
+			// btnCredit
+			// 
+			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnCredit.Font = new System.Drawing.Font("Calibri", 11F);
+			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btnCredit.IconColor = System.Drawing.Color.Black;
+			this.btnCredit.IconSize = 16;
+			this.btnCredit.Location = new System.Drawing.Point(245, 194);
+			this.btnCredit.Name = "btnCredit";
+			this.btnCredit.Rotation = 0D;
+			this.btnCredit.Size = new System.Drawing.Size(115, 26);
+			this.btnCredit.TabIndex = 8;
+			this.btnCredit.Text = "sauvegarder";
+			this.btnCredit.UseVisualStyleBackColor = true;
+			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
+			// 
+			// lblId
+			// 
+			this.lblId.AutoSize = true;
+			this.lblId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+			this.lblId.Location = new System.Drawing.Point(461, 9);
+			this.lblId.Name = "lblId";
+			this.lblId.Size = new System.Drawing.Size(17, 19);
+			this.lblId.TabIndex = 46;
+			this.lblId.Text = "0";
+			// 
+			// label24
+			// 
+			this.label24.AutoSize = true;
+			this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+			this.label24.Location = new System.Drawing.Point(350, 9);
+			this.label24.Name = "label24";
+			this.label24.Size = new System.Drawing.Size(99, 19);
+			this.label24.TabIndex = 45;
+			this.label24.Text = "N ° de client#";
+			// 
+			// label25
+			// 
+			this.label25.AutoSize = true;
+			this.label25.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label25.Location = new System.Drawing.Point(119, 352);
+			this.label25.Name = "label25";
+			this.label25.Size = new System.Drawing.Size(11, 15);
+			this.label25.TabIndex = 20;
+			this.label25.Text = ":";
 			// 
 			// FormNewCustomer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.iconButton1;
 			this.ClientSize = new System.Drawing.Size(886, 252);
 			this.Controls.Add(this.panel1);
+			this.MaximumSize = new System.Drawing.Size(902, 291);
+			this.MinimumSize = new System.Drawing.Size(902, 291);
 			this.Name = "FormNewCustomer";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "New Customer";
+			this.Text = "Nouveau client";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.ResumeLayout(false);

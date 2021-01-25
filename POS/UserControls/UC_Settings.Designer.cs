@@ -77,16 +77,12 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
 			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.label14 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
-			this.label16 = new System.Windows.Forms.Label();
-			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.label18 = new System.Windows.Forms.Label();
-			this.textBox9 = new System.Windows.Forms.TextBox();
+			this.label15 = new System.Windows.Forms.Label();
 			this.label19 = new System.Windows.Forms.Label();
-			this.label20 = new System.Windows.Forms.Label();
+			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.textBox9 = new System.Windows.Forms.TextBox();
 			this.btnBankAccounts = new FontAwesome.Sharp.IconButton();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label22 = new System.Windows.Forms.Label();
@@ -124,8 +120,8 @@
 			this.btnChangeTheme.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeTheme.Image")));
 			this.btnChangeTheme.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnChangeTheme.Name = "btnChangeTheme";
-			this.btnChangeTheme.Size = new System.Drawing.Size(91, 22);
-			this.btnChangeTheme.Text = "Change Theme";
+			this.btnChangeTheme.Size = new System.Drawing.Size(93, 22);
+			this.btnChangeTheme.Text = "Changer thème";
 			this.btnChangeTheme.Click += new System.EventHandler(this.btnChangeTheme_Click);
 			// 
 			// toolStripSeparator1
@@ -142,24 +138,24 @@
 			this.cbxManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("cbxManageUsers.Image")));
 			this.cbxManageUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.cbxManageUsers.Name = "cbxManageUsers";
-			this.cbxManageUsers.Size = new System.Drawing.Size(94, 22);
-			this.cbxManageUsers.Text = "Manage Users";
+			this.cbxManageUsers.Size = new System.Drawing.Size(78, 22);
+			this.cbxManageUsers.Text = "Utilisateurs";
 			this.cbxManageUsers.Click += new System.EventHandler(this.cbxManageUsers_Click);
 			// 
 			// btnNewUser
 			// 
 			this.btnNewUser.Name = "btnNewUser";
 			this.btnNewUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.N)));
-			this.btnNewUser.Size = new System.Drawing.Size(180, 22);
-			this.btnNewUser.Text = "New User";
+			this.btnNewUser.Size = new System.Drawing.Size(236, 22);
+			this.btnNewUser.Text = "nouvel utilisateur";
 			this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
 			// 
 			// btnDeleteUser
 			// 
 			this.btnDeleteUser.Name = "btnDeleteUser";
 			this.btnDeleteUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
-			this.btnDeleteUser.Size = new System.Drawing.Size(180, 22);
-			this.btnDeleteUser.Text = "Delete User";
+			this.btnDeleteUser.Size = new System.Drawing.Size(236, 22);
+			this.btnDeleteUser.Text = "supprimer l\'utilisateur";
 			this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
 			// 
 			// toolStripSeparator2
@@ -173,8 +169,8 @@
 			this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
 			this.btnLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnLogout.Name = "btnLogout";
-			this.btnLogout.Size = new System.Drawing.Size(49, 22);
-			this.btnLogout.Text = "Logout";
+			this.btnLogout.Size = new System.Drawing.Size(48, 22);
+			this.btnLogout.Text = "Fermer";
 			this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
 			// 
 			// toolStripSeparator5
@@ -252,9 +248,9 @@
 			this.label37.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label37.Location = new System.Drawing.Point(504, 146);
 			this.label37.Name = "label37";
-			this.label37.Size = new System.Drawing.Size(52, 17);
+			this.label37.Size = new System.Drawing.Size(50, 17);
 			this.label37.TabIndex = 152;
-			this.label37.Text = "VAT %";
+			this.label37.Text = "TVA%";
 			// 
 			// label38
 			// 
@@ -314,9 +310,9 @@
 			this.label33.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label33.Location = new System.Drawing.Point(9, 146);
 			this.label33.Name = "label33";
-			this.label33.Size = new System.Drawing.Size(79, 17);
+			this.label33.Size = new System.Drawing.Size(80, 17);
 			this.label33.TabIndex = 146;
-			this.label33.Text = "Telephone 1";
+			this.label33.Text = "Téléphone 1";
 			// 
 			// label34
 			// 
@@ -378,7 +374,7 @@
 			this.label29.Name = "label29";
 			this.label29.Size = new System.Drawing.Size(57, 17);
 			this.label29.TabIndex = 140;
-			this.label29.Text = "Address";
+			this.label29.Text = "Adresse";
 			// 
 			// label30
 			// 
@@ -500,9 +496,9 @@
 			this.label5.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label5.Location = new System.Drawing.Point(9, 82);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(101, 17);
+			this.label5.Size = new System.Drawing.Size(96, 17);
 			this.label5.TabIndex = 128;
-			this.label5.Text = "Manager Name";
+			this.label5.Text = "Nom du gérant";
 			// 
 			// label6
 			// 
@@ -529,11 +525,11 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label3.Location = new System.Drawing.Point(466, 51);
+			this.label3.Location = new System.Drawing.Point(461, 51);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(90, 17);
+			this.label3.Size = new System.Drawing.Size(100, 17);
 			this.label3.TabIndex = 125;
-			this.label3.Text = "Registration #";
+			this.label3.Text = "Imatriculation #";
 			// 
 			// label4
 			// 
@@ -561,11 +557,11 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label1.Location = new System.Drawing.Point(9, 50);
+			this.label1.Location = new System.Drawing.Point(5, 50);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(104, 17);
+			this.label1.Size = new System.Drawing.Size(114, 17);
 			this.label1.TabIndex = 122;
-			this.label1.Text = "Company Name";
+			this.label1.Text = "Nom de la société";
 			// 
 			// label2
 			// 
@@ -592,7 +588,7 @@
 			this.btnCredit.Rotation = 0D;
 			this.btnCredit.Size = new System.Drawing.Size(963, 34);
 			this.btnCredit.TabIndex = 0;
-			this.btnCredit.Text = "Company Settings";
+			this.btnCredit.Text = "Paramètres Société";
 			this.btnCredit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnCredit.UseVisualStyleBackColor = true;
 			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
@@ -601,16 +597,12 @@
 			// 
 			this.panel2.Controls.Add(this.label17);
 			this.panel2.Controls.Add(this.label13);
-			this.panel2.Controls.Add(this.label15);
 			this.panel2.Controls.Add(this.textBox6);
-			this.panel2.Controls.Add(this.label14);
-			this.panel2.Controls.Add(this.textBox7);
-			this.panel2.Controls.Add(this.label16);
-			this.panel2.Controls.Add(this.textBox8);
-			this.panel2.Controls.Add(this.label18);
-			this.panel2.Controls.Add(this.textBox9);
+			this.panel2.Controls.Add(this.label15);
 			this.panel2.Controls.Add(this.label19);
-			this.panel2.Controls.Add(this.label20);
+			this.panel2.Controls.Add(this.textBox7);
+			this.panel2.Controls.Add(this.textBox8);
+			this.panel2.Controls.Add(this.textBox9);
 			this.panel2.Controls.Add(this.btnBankAccounts);
 			this.panel2.Location = new System.Drawing.Point(3, 193);
 			this.panel2.Name = "panel2";
@@ -621,31 +613,21 @@
 			// 
 			this.label17.AutoSize = true;
 			this.label17.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label17.Location = new System.Drawing.Point(464, 83);
+			this.label17.Location = new System.Drawing.Point(463, 82);
 			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(112, 17);
+			this.label17.Size = new System.Drawing.Size(128, 17);
 			this.label17.TabIndex = 138;
-			this.label17.Text = "Bank Account L4";
+			this.label17.Text = "Compte bancaire L4";
 			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label13.Location = new System.Drawing.Point(462, 51);
+			this.label13.Location = new System.Drawing.Point(461, 50);
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(112, 17);
+			this.label13.Size = new System.Drawing.Size(128, 17);
 			this.label13.TabIndex = 137;
-			this.label13.Text = "Bank Account L3";
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label15.Location = new System.Drawing.Point(9, 83);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(112, 17);
-			this.label15.TabIndex = 136;
-			this.label15.Text = "Bank Account L2";
+			this.label13.Text = "Compte bancaire L3";
 			// 
 			// textBox6
 			// 
@@ -658,36 +640,36 @@
 			this.textBox6.Text = global::POS.Properties.Settings.Default.BankAccount4;
 			this.textBox6.Validated += new System.EventHandler(this.SaveSettings);
 			// 
-			// label14
+			// label15
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(580, 82);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(11, 15);
-			this.label14.TabIndex = 132;
-			this.label14.Text = ":";
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label15.Location = new System.Drawing.Point(9, 82);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(128, 17);
+			this.label15.TabIndex = 136;
+			this.label15.Text = "Compte bancaire L2";
+			// 
+			// label19
+			// 
+			this.label19.AutoSize = true;
+			this.label19.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label19.Location = new System.Drawing.Point(9, 51);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(128, 17);
+			this.label19.TabIndex = 122;
+			this.label19.Text = "Compte bancaire L1";
 			// 
 			// textBox7
 			// 
 			this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "BankAccount2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox7.Location = new System.Drawing.Point(136, 76);
+			this.textBox7.Location = new System.Drawing.Point(143, 76);
 			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(319, 26);
+			this.textBox7.Size = new System.Drawing.Size(312, 26);
 			this.textBox7.TabIndex = 2;
 			this.textBox7.Text = global::POS.Properties.Settings.Default.BankAccount2;
 			this.textBox7.Validated += new System.EventHandler(this.SaveSettings);
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label16.Location = new System.Drawing.Point(122, 82);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(11, 15);
-			this.label16.TabIndex = 129;
-			this.label16.Text = ":";
 			// 
 			// textBox8
 			// 
@@ -700,46 +682,16 @@
 			this.textBox8.Text = global::POS.Properties.Settings.Default.BankAccount3;
 			this.textBox8.Validated += new System.EventHandler(this.SaveSettings);
 			// 
-			// label18
-			// 
-			this.label18.AutoSize = true;
-			this.label18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label18.Location = new System.Drawing.Point(580, 51);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(11, 15);
-			this.label18.TabIndex = 126;
-			this.label18.Text = ":";
-			// 
 			// textBox9
 			// 
 			this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::POS.Properties.Settings.Default, "BankAccount1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBox9.Location = new System.Drawing.Point(136, 44);
+			this.textBox9.Location = new System.Drawing.Point(143, 44);
 			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(319, 26);
+			this.textBox9.Size = new System.Drawing.Size(312, 26);
 			this.textBox9.TabIndex = 1;
 			this.textBox9.Text = global::POS.Properties.Settings.Default.BankAccount1;
 			this.textBox9.Validated += new System.EventHandler(this.SaveSettings);
-			// 
-			// label19
-			// 
-			this.label19.AutoSize = true;
-			this.label19.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label19.Location = new System.Drawing.Point(9, 50);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(112, 17);
-			this.label19.TabIndex = 122;
-			this.label19.Text = "Bank Account L1";
-			// 
-			// label20
-			// 
-			this.label20.AutoSize = true;
-			this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label20.Location = new System.Drawing.Point(122, 50);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(11, 15);
-			this.label20.TabIndex = 123;
-			this.label20.Text = ":";
 			// 
 			// btnBankAccounts
 			// 
@@ -756,7 +708,7 @@
 			this.btnBankAccounts.Rotation = 0D;
 			this.btnBankAccounts.Size = new System.Drawing.Size(963, 34);
 			this.btnBankAccounts.TabIndex = 0;
-			this.btnBankAccounts.Text = "Bank Accounts";
+			this.btnBankAccounts.Text = "Compte bancaire";
 			this.btnBankAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnBankAccounts.UseVisualStyleBackColor = true;
 			this.btnBankAccounts.Click += new System.EventHandler(this.btnBankAccounts_Click);
@@ -852,7 +804,7 @@
 			this.btnTickets.Rotation = 0D;
 			this.btnTickets.Size = new System.Drawing.Size(963, 34);
 			this.btnTickets.TabIndex = 1;
-			this.btnTickets.Text = "Tickets";
+			this.btnTickets.Text = "Facture";
 			this.btnTickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnTickets.UseVisualStyleBackColor = true;
 			this.btnTickets.Click += new System.EventHandler(this.btnTickets_Click);
@@ -916,14 +868,10 @@
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.TextBox textBox8;
-		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.TextBox textBox9;
 		private System.Windows.Forms.Label label19;
-		private System.Windows.Forms.Label label20;
 		private FontAwesome.Sharp.IconButton btnBankAccounts;
 		private System.Windows.Forms.TextBox textBox5;
 		private System.Windows.Forms.Label label11;

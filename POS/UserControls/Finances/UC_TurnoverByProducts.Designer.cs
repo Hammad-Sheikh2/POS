@@ -33,13 +33,12 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.turnOverProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.soldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buyingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.turnOverProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.turnOverProductsBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -65,7 +64,6 @@
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
-            this.soldDataGridViewTextBoxColumn,
             this.buyingPriceDataGridViewTextBoxColumn,
             this.sellingPriceDataGridViewTextBoxColumn,
             this.marginDataGridViewTextBoxColumn});
@@ -90,34 +88,32 @@
 			this.dg.Size = new System.Drawing.Size(914, 438);
 			this.dg.TabIndex = 13;
 			// 
+			// turnOverProductsBindingSource
+			// 
+			this.turnOverProductsBindingSource.DataSource = typeof(POS.Classes.Finances.TurnOverProducts);
+			// 
 			// nameDataGridViewTextBoxColumn
 			// 
 			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Nom";
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
 			// 
 			// quantityDataGridViewTextBoxColumn
 			// 
 			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité";
 			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-			// 
-			// soldDataGridViewTextBoxColumn
-			// 
-			this.soldDataGridViewTextBoxColumn.DataPropertyName = "Sold";
-			this.soldDataGridViewTextBoxColumn.HeaderText = "Sold";
-			this.soldDataGridViewTextBoxColumn.Name = "soldDataGridViewTextBoxColumn";
 			// 
 			// buyingPriceDataGridViewTextBoxColumn
 			// 
 			this.buyingPriceDataGridViewTextBoxColumn.DataPropertyName = "BuyingPrice";
-			this.buyingPriceDataGridViewTextBoxColumn.HeaderText = "Buy Price";
+			this.buyingPriceDataGridViewTextBoxColumn.HeaderText = "Prix ​​d\'achat";
 			this.buyingPriceDataGridViewTextBoxColumn.Name = "buyingPriceDataGridViewTextBoxColumn";
 			// 
 			// sellingPriceDataGridViewTextBoxColumn
 			// 
 			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
-			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price";
+			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Prix ​​de vente";
 			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
 			// 
 			// marginDataGridViewTextBoxColumn
@@ -125,10 +121,6 @@
 			this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
 			this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
 			this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
-			// 
-			// turnOverProductsBindingSource
-			// 
-			this.turnOverProductsBindingSource.DataSource = typeof(POS.Classes.Finances.TurnOverProducts);
 			// 
 			// UC_TurnoverByProducts
 			// 
@@ -145,12 +137,12 @@
 
 		#endregion
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dg;
+		private System.Windows.Forms.DataGridViewTextBoxColumn soldDataGridViewTextBoxColumn;
+		private System.Windows.Forms.BindingSource turnOverProductsBindingSource;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn soldDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn buyingPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn marginDataGridViewTextBoxColumn;
-		private System.Windows.Forms.BindingSource turnOverProductsBindingSource;
 	}
 }

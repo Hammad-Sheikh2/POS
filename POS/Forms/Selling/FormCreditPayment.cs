@@ -97,18 +97,19 @@ namespace POS.Forms.Selling
 
 		private void btnSaveInvoice_Click(object sender, EventArgs e)
 		{
+
 			try
 			{
 				Reload();
 				if (IsNew)
 				{
 					Access.InsertInvoice(invoice, cart);
-					Manager.Show("Ivoice created", Notification.Type.Success);
+					Manager.Show("Invoice created", Notification.Type.Success);
 				}
 				else
 				{
 					Access.UpdateInvoice(invoice);
-					Manager.Show("Ivoice updated", Notification.Type.Success);
+					Manager.Show("Invoice updated", Notification.Type.Success);
 				}
 				Populate();
 			}

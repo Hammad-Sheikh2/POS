@@ -156,6 +156,7 @@ namespace POS.UserControls
 			tbProductsExpiredCount.Text = Access.GetExpiredProductsCount().ToString();
 			tbQuantityExpired.Text = Access.GetExpiredProductsQuantity().ToString();
 			tbProductsDormantCount.Text = Access.GetDormantProductsCount(dpStart.Value, dpEnd.Value).ToString();
+			tbProductsReturnedCount.Text = Access.GetReturnedProductsCount(dpStart.Value, dpEnd.Value).ToString();
 		}
 	}
 }

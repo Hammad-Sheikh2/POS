@@ -72,6 +72,7 @@
 			// 
 			// iconButton1
 			// 
+			this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.iconButton1.DialogResult = System.Windows.Forms.DialogResult.Abort;
 			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -83,12 +84,14 @@
 			this.iconButton1.Name = "iconButton1";
 			this.iconButton1.Rotation = 0D;
 			this.iconButton1.Size = new System.Drawing.Size(115, 26);
-			this.iconButton1.TabIndex = 113;
-			this.iconButton1.Text = "Cancel";
+			this.iconButton1.TabIndex = 3;
+			this.iconButton1.Text = "Annuler";
 			this.iconButton1.UseVisualStyleBackColor = true;
+			this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
 			// 
 			// btnUpdate
 			// 
+			this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnUpdate.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
 			this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11F);
@@ -99,14 +102,14 @@
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Rotation = 0D;
 			this.btnUpdate.Size = new System.Drawing.Size(115, 26);
-			this.btnUpdate.TabIndex = 112;
-			this.btnUpdate.Text = "Update";
+			this.btnUpdate.TabIndex = 2;
+			this.btnUpdate.Text = "Mettre à jour";
 			this.btnUpdate.UseVisualStyleBackColor = true;
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// panelSearch
 			// 
-			this.panelSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.panelSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.panelSearch.BackColor = System.Drawing.Color.Silver;
 			this.panelSearch.Controls.Add(this.cbxFilter);
 			this.panelSearch.Controls.Add(this.label5);
@@ -114,7 +117,7 @@
 			this.panelSearch.Location = new System.Drawing.Point(192, 12);
 			this.panelSearch.Name = "panelSearch";
 			this.panelSearch.Size = new System.Drawing.Size(443, 60);
-			this.panelSearch.TabIndex = 114;
+			this.panelSearch.TabIndex = 0;
 			// 
 			// cbxFilter
 			// 
@@ -123,19 +126,19 @@
 			this.cbxFilter.Location = new System.Drawing.Point(55, 31);
 			this.cbxFilter.Name = "cbxFilter";
 			this.cbxFilter.Size = new System.Drawing.Size(165, 26);
-			this.cbxFilter.TabIndex = 1;
-			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.TabIndex = 0;
+			this.cbxFilter.Text = "Recherche par ID";
 			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(194, 3);
+			this.label5.Location = new System.Drawing.Point(178, 3);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(64, 23);
+			this.label5.Size = new System.Drawing.Size(82, 23);
 			this.label5.TabIndex = 10;
-			this.label5.Text = "Search";
+			this.label5.Text = "Chercher";
 			// 
 			// tbSearch
 			// 
@@ -145,14 +148,14 @@
 			this.tbSearch.Location = new System.Drawing.Point(226, 30);
 			this.tbSearch.Name = "tbSearch";
 			this.tbSearch.Size = new System.Drawing.Size(169, 26);
-			this.tbSearch.TabIndex = 0;
-			this.tbSearch.Text = "Search by Name";
+			this.tbSearch.TabIndex = 1;
+			this.tbSearch.Text = "Recherche par nom";
 			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
 			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
 			// 
 			// panelDetails
 			// 
-			this.panelDetails.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.panelDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.panelDetails.BackColor = System.Drawing.Color.Silver;
 			this.panelDetails.Controls.Add(this.cbxCategory);
 			this.panelDetails.Controls.Add(this.label17);
@@ -187,7 +190,7 @@
 			this.panelDetails.Location = new System.Drawing.Point(40, 79);
 			this.panelDetails.Name = "panelDetails";
 			this.panelDetails.Size = new System.Drawing.Size(740, 207);
-			this.panelDetails.TabIndex = 115;
+			this.panelDetails.TabIndex = 1;
 			// 
 			// cbxCategory
 			// 
@@ -199,8 +202,8 @@
 			this.cbxCategory.Location = new System.Drawing.Point(112, 139);
 			this.cbxCategory.Name = "cbxCategory";
 			this.cbxCategory.Size = new System.Drawing.Size(226, 26);
-			this.cbxCategory.TabIndex = 97;
-			this.cbxCategory.Text = "Select";
+			this.cbxCategory.TabIndex = 3;
+			this.cbxCategory.Text = "Sélectionner";
 			this.cbxCategory.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// label17
@@ -219,9 +222,9 @@
 			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label20.Location = new System.Drawing.Point(14, 147);
 			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(62, 17);
+			this.label20.Size = new System.Drawing.Size(65, 17);
 			this.label20.TabIndex = 98;
-			this.label20.Text = "Category";
+			this.label20.Text = "Catégorie";
 			// 
 			// tbBank
 			// 
@@ -229,8 +232,7 @@
 			this.tbBank.Location = new System.Drawing.Point(503, 139);
 			this.tbBank.Name = "tbBank";
 			this.tbBank.Size = new System.Drawing.Size(215, 26);
-			this.tbBank.TabIndex = 7;
-			this.tbBank.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbBank.TabIndex = 8;
 			// 
 			// label7
 			// 
@@ -246,11 +248,11 @@
 			// 
 			this.label16.AutoSize = true;
 			this.label16.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label16.Location = new System.Drawing.Point(392, 146);
+			this.label16.Location = new System.Drawing.Point(376, 146);
 			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(92, 17);
+			this.label16.Size = new System.Drawing.Size(108, 17);
 			this.label16.TabIndex = 95;
-			this.label16.Text = "Bank Account";
+			this.label16.Text = "Compte bancaire";
 			// 
 			// cbxProvince
 			// 
@@ -260,8 +262,7 @@
 			this.cbxProvince.Name = "cbxProvince";
 			this.cbxProvince.Size = new System.Drawing.Size(226, 26);
 			this.cbxProvince.TabIndex = 2;
-			this.cbxProvince.Text = "Select";
-			this.cbxProvince.Validated += new System.EventHandler(this.ValidateCombobox);
+			this.cbxProvince.Text = "Sélectionner";
 			// 
 			// label1
 			// 
@@ -291,7 +292,7 @@
 			this.cbxCity.Name = "cbxCity";
 			this.cbxCity.Size = new System.Drawing.Size(226, 26);
 			this.cbxCity.TabIndex = 1;
-			this.cbxCity.Text = "Select";
+			this.cbxCity.Text = "Sélectionner";
 			this.cbxCity.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// tbAirtel
@@ -300,8 +301,7 @@
 			this.tbAirtel.Location = new System.Drawing.Point(503, 108);
 			this.tbAirtel.Name = "tbAirtel";
 			this.tbAirtel.Size = new System.Drawing.Size(215, 26);
-			this.tbAirtel.TabIndex = 6;
-			this.tbAirtel.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbAirtel.TabIndex = 7;
 			// 
 			// label18
 			// 
@@ -317,7 +317,7 @@
 			// 
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label19.Location = new System.Drawing.Point(404, 115);
+			this.label19.Location = new System.Drawing.Point(398, 115);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(86, 17);
 			this.label19.TabIndex = 89;
@@ -337,11 +337,11 @@
 			// 
 			this.label15.AutoSize = true;
 			this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.label15.Location = new System.Drawing.Point(318, 9);
+			this.label15.Location = new System.Drawing.Point(301, 8);
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(94, 19);
+			this.label15.Size = new System.Drawing.Size(111, 19);
 			this.label15.TabIndex = 45;
-			this.label15.Text = "Supplier ID#";
+			this.label15.Text = "ID fournisseur:";
 			// 
 			// tbContact2
 			// 
@@ -349,8 +349,7 @@
 			this.tbContact2.Location = new System.Drawing.Point(503, 75);
 			this.tbContact2.Name = "tbContact2";
 			this.tbContact2.Size = new System.Drawing.Size(215, 26);
-			this.tbContact2.TabIndex = 5;
-			this.tbContact2.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbContact2.TabIndex = 6;
 			// 
 			// tbContact1
 			// 
@@ -358,7 +357,7 @@
 			this.tbContact1.Location = new System.Drawing.Point(503, 43);
 			this.tbContact1.Name = "tbContact1";
 			this.tbContact1.Size = new System.Drawing.Size(215, 26);
-			this.tbContact1.TabIndex = 4;
+			this.tbContact1.TabIndex = 5;
 			this.tbContact1.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// tbEmail
@@ -367,8 +366,7 @@
 			this.tbEmail.Location = new System.Drawing.Point(113, 170);
 			this.tbEmail.Name = "tbEmail";
 			this.tbEmail.Size = new System.Drawing.Size(226, 26);
-			this.tbEmail.TabIndex = 3;
-			this.tbEmail.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbEmail.TabIndex = 4;
 			// 
 			// label14
 			// 
@@ -394,7 +392,7 @@
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label13.Location = new System.Drawing.Point(404, 82);
+			this.label13.Location = new System.Drawing.Point(419, 82);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(65, 17);
 			this.label13.TabIndex = 13;
@@ -414,7 +412,7 @@
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label11.Location = new System.Drawing.Point(404, 49);
+			this.label11.Location = new System.Drawing.Point(419, 49);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(65, 17);
 			this.label11.TabIndex = 16;
@@ -456,9 +454,9 @@
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label2.Location = new System.Drawing.Point(13, 50);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(44, 17);
+			this.label2.Size = new System.Drawing.Size(37, 17);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Name";
+			this.label2.Text = "Nom";
 			// 
 			// label3
 			// 
@@ -486,12 +484,13 @@
 			this.label21.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label21.Location = new System.Drawing.Point(14, 84);
 			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(32, 17);
+			this.label21.Size = new System.Drawing.Size(34, 17);
 			this.label21.TabIndex = 5;
-			this.label21.Text = "City";
+			this.label21.Text = "Ville";
 			// 
 			// btnClear
 			// 
+			this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
 			this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
@@ -502,8 +501,8 @@
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Rotation = 0D;
 			this.btnClear.Size = new System.Drawing.Size(115, 26);
-			this.btnClear.TabIndex = 116;
-			this.btnClear.Text = "Clear";
+			this.btnClear.TabIndex = 4;
+			this.btnClear.Text = "Clair";
 			this.btnClear.UseVisualStyleBackColor = true;
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
@@ -511,6 +510,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.iconButton1;
 			this.ClientSize = new System.Drawing.Size(814, 323);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.panelDetails);
@@ -520,8 +520,10 @@
 			this.MaximizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(830, 340);
 			this.Name = "FormEditSupplier";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Edit Supplier";
+			this.Text = "Modifier le fournisseur";
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
 			this.panelDetails.ResumeLayout(false);

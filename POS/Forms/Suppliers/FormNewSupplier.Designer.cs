@@ -114,8 +114,8 @@
 			this.cbxCategory.Location = new System.Drawing.Point(112, 139);
 			this.cbxCategory.Name = "cbxCategory";
 			this.cbxCategory.Size = new System.Drawing.Size(226, 26);
-			this.cbxCategory.TabIndex = 97;
-			this.cbxCategory.Text = "Select";
+			this.cbxCategory.TabIndex = 3;
+			this.cbxCategory.Text = "Sélectionner";
 			this.cbxCategory.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// label17
@@ -134,9 +134,9 @@
 			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label20.Location = new System.Drawing.Point(14, 147);
 			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(62, 17);
+			this.label20.Size = new System.Drawing.Size(65, 17);
 			this.label20.TabIndex = 98;
-			this.label20.Text = "Category";
+			this.label20.Text = "Catégorie";
 			// 
 			// tbBank
 			// 
@@ -144,8 +144,7 @@
 			this.tbBank.Location = new System.Drawing.Point(503, 139);
 			this.tbBank.Name = "tbBank";
 			this.tbBank.Size = new System.Drawing.Size(215, 26);
-			this.tbBank.TabIndex = 7;
-			this.tbBank.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbBank.TabIndex = 8;
 			// 
 			// label7
 			// 
@@ -161,11 +160,11 @@
 			// 
 			this.label16.AutoSize = true;
 			this.label16.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label16.Location = new System.Drawing.Point(392, 146);
+			this.label16.Location = new System.Drawing.Point(376, 145);
 			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(92, 17);
+			this.label16.Size = new System.Drawing.Size(108, 17);
 			this.label16.TabIndex = 95;
-			this.label16.Text = "Bank Account";
+			this.label16.Text = "Compte bancaire";
 			// 
 			// cbxProvince
 			// 
@@ -175,8 +174,7 @@
 			this.cbxProvince.Name = "cbxProvince";
 			this.cbxProvince.Size = new System.Drawing.Size(226, 26);
 			this.cbxProvince.TabIndex = 2;
-			this.cbxProvince.Text = "Select";
-			this.cbxProvince.Validated += new System.EventHandler(this.ValidateCombobox);
+			this.cbxProvince.Text = "Sélectionner";
 			// 
 			// label5
 			// 
@@ -206,7 +204,7 @@
 			this.cbxCity.Name = "cbxCity";
 			this.cbxCity.Size = new System.Drawing.Size(226, 26);
 			this.cbxCity.TabIndex = 1;
-			this.cbxCity.Text = "Select";
+			this.cbxCity.Text = "Sélectionner";
 			this.cbxCity.Validated += new System.EventHandler(this.ValidateCombobox);
 			// 
 			// tbAirtel
@@ -215,7 +213,7 @@
 			this.tbAirtel.Location = new System.Drawing.Point(503, 108);
 			this.tbAirtel.Name = "tbAirtel";
 			this.tbAirtel.Size = new System.Drawing.Size(215, 26);
-			this.tbAirtel.TabIndex = 6;
+			this.tbAirtel.TabIndex = 7;
 			this.tbAirtel.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label18
@@ -232,7 +230,7 @@
 			// 
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label19.Location = new System.Drawing.Point(404, 115);
+			this.label19.Location = new System.Drawing.Point(398, 115);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(86, 17);
 			this.label19.TabIndex = 89;
@@ -252,11 +250,11 @@
 			// 
 			this.label15.AutoSize = true;
 			this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.label15.Location = new System.Drawing.Point(318, 9);
+			this.label15.Location = new System.Drawing.Point(281, 9);
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(94, 19);
+			this.label15.Size = new System.Drawing.Size(131, 19);
 			this.label15.TabIndex = 45;
-			this.label15.Text = "Supplier ID#";
+			this.label15.Text = "ID du fournisseur:";
 			// 
 			// tbContact2
 			// 
@@ -264,8 +262,7 @@
 			this.tbContact2.Location = new System.Drawing.Point(503, 75);
 			this.tbContact2.Name = "tbContact2";
 			this.tbContact2.Size = new System.Drawing.Size(215, 26);
-			this.tbContact2.TabIndex = 5;
-			this.tbContact2.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbContact2.TabIndex = 6;
 			// 
 			// tbContact1
 			// 
@@ -273,7 +270,7 @@
 			this.tbContact1.Location = new System.Drawing.Point(503, 43);
 			this.tbContact1.Name = "tbContact1";
 			this.tbContact1.Size = new System.Drawing.Size(215, 26);
-			this.tbContact1.TabIndex = 4;
+			this.tbContact1.TabIndex = 5;
 			this.tbContact1.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// tbEmail
@@ -282,8 +279,7 @@
 			this.tbEmail.Location = new System.Drawing.Point(113, 170);
 			this.tbEmail.Name = "tbEmail";
 			this.tbEmail.Size = new System.Drawing.Size(226, 26);
-			this.tbEmail.TabIndex = 3;
-			this.tbEmail.Validated += new System.EventHandler(this.ValidateInput);
+			this.tbEmail.TabIndex = 4;
 			// 
 			// label14
 			// 
@@ -309,7 +305,7 @@
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label13.Location = new System.Drawing.Point(404, 82);
+			this.label13.Location = new System.Drawing.Point(419, 82);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(65, 17);
 			this.label13.TabIndex = 13;
@@ -329,7 +325,7 @@
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label11.Location = new System.Drawing.Point(404, 49);
+			this.label11.Location = new System.Drawing.Point(419, 49);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(65, 17);
 			this.label11.TabIndex = 16;
@@ -370,9 +366,9 @@
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label1.Location = new System.Drawing.Point(13, 50);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(44, 17);
+			this.label1.Size = new System.Drawing.Size(37, 17);
 			this.label1.TabIndex = 2;
-			this.label1.Text = "Name";
+			this.label1.Text = "Nom";
 			// 
 			// label3
 			// 
@@ -400,9 +396,9 @@
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label4.Location = new System.Drawing.Point(14, 84);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(32, 17);
+			this.label4.Size = new System.Drawing.Size(34, 17);
 			this.label4.TabIndex = 5;
-			this.label4.Text = "City";
+			this.label4.Text = "Ville";
 			// 
 			// btnSave
 			// 
@@ -417,7 +413,7 @@
 			this.btnSave.Rotation = 0D;
 			this.btnSave.Size = new System.Drawing.Size(115, 26);
 			this.btnSave.TabIndex = 1;
-			this.btnSave.Text = "Save";
+			this.btnSave.Text = "Sauvegarder";
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
@@ -435,7 +431,7 @@
 			this.iconButton1.Rotation = 0D;
 			this.iconButton1.Size = new System.Drawing.Size(115, 26);
 			this.iconButton1.TabIndex = 2;
-			this.iconButton1.Text = "Cancel";
+			this.iconButton1.Text = "Annuler";
 			this.iconButton1.UseVisualStyleBackColor = true;
 			this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
 			// 
@@ -452,13 +448,12 @@
 			this.btnClear.Rotation = 0D;
 			this.btnClear.Size = new System.Drawing.Size(115, 26);
 			this.btnClear.TabIndex = 3;
-			this.btnClear.Text = "Clear";
+			this.btnClear.Text = "Effacer";
 			this.btnClear.UseVisualStyleBackColor = true;
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// FormNewSupplier
 			// 
-			this.AcceptButton = this.btnSave;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.iconButton1;
@@ -475,7 +470,7 @@
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "New Supplier";
+			this.Text = "Nouveau fournisseur";
 			this.panelDetails.ResumeLayout(false);
 			this.panelDetails.PerformLayout();
 			this.ResumeLayout(false);

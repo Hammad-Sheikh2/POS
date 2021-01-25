@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelListings = new System.Windows.Forms.Panel();
 			this.btnInStock = new FontAwesome.Sharp.IconButton();
 			this.btnOutOfStock = new FontAwesome.Sharp.IconButton();
@@ -52,14 +52,14 @@
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
 			this.cbFilter = new System.Windows.Forms.CheckBox();
-			this.label2 = new System.Windows.Forms.Label();
 			this.dpEnd = new System.Windows.Forms.DateTimePicker();
-			this.label1 = new System.Windows.Forms.Label();
 			this.dpStart = new System.Windows.Forms.DateTimePicker();
-			this.label4 = new System.Windows.Forms.Label();
 			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
 			this.tbDays = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,7 +121,7 @@
 			this.btnInStock.Rotation = 0D;
 			this.btnInStock.Size = new System.Drawing.Size(128, 29);
 			this.btnInStock.TabIndex = 123;
-			this.btnInStock.Text = "With Stock";
+			this.btnInStock.Text = "En stock";
 			this.toolTip1.SetToolTip(this.btnInStock, "Products with (Store quantity + Shelves Quantity) greater than Altert threshold");
 			this.btnInStock.UseVisualStyleBackColor = true;
 			this.btnInStock.Click += new System.EventHandler(this.btnInStock_Click);
@@ -140,7 +140,7 @@
 			this.btnOutOfStock.Rotation = 0D;
 			this.btnOutOfStock.Size = new System.Drawing.Size(128, 29);
 			this.btnOutOfStock.TabIndex = 122;
-			this.btnOutOfStock.Text = "Out of Stock";
+			this.btnOutOfStock.Text = "Terminé";
 			this.toolTip1.SetToolTip(this.btnOutOfStock, "Products with (Store quantity + Shelves Quantity) less than Altert threshold");
 			this.btnOutOfStock.UseVisualStyleBackColor = true;
 			this.btnOutOfStock.Click += new System.EventHandler(this.btnOutOfStock_Click);
@@ -159,7 +159,7 @@
 			this.btnExpired.Rotation = 0D;
 			this.btnExpired.Size = new System.Drawing.Size(128, 29);
 			this.btnExpired.TabIndex = 121;
-			this.btnExpired.Text = "Expired";
+			this.btnExpired.Text = "Expiré";
 			this.toolTip1.SetToolTip(this.btnExpired, "Products expired");
 			this.btnExpired.UseVisualStyleBackColor = true;
 			this.btnExpired.Click += new System.EventHandler(this.btnExpired_Click);
@@ -197,7 +197,7 @@
 			this.btnReturned.Rotation = 0D;
 			this.btnReturned.Size = new System.Drawing.Size(128, 29);
 			this.btnReturned.TabIndex = 119;
-			this.btnReturned.Text = "Returned";
+			this.btnReturned.Text = "Rendu";
 			this.toolTip1.SetToolTip(this.btnReturned, "Products returned");
 			this.btnReturned.UseVisualStyleBackColor = true;
 			this.btnReturned.Click += new System.EventHandler(this.btnReturned_Click);
@@ -216,7 +216,7 @@
 			this.btnInShelves.Rotation = 0D;
 			this.btnInShelves.Size = new System.Drawing.Size(128, 29);
 			this.btnInShelves.TabIndex = 118;
-			this.btnInShelves.Text = "In Shelves";
+			this.btnInShelves.Text = "Au rayons";
 			this.toolTip1.SetToolTip(this.btnInShelves, "Products with non-zero quantity in shelves");
 			this.btnInShelves.UseVisualStyleBackColor = true;
 			this.btnInShelves.Click += new System.EventHandler(this.btnInShelves_Click);
@@ -235,7 +235,7 @@
 			this.btnInStore.Rotation = 0D;
 			this.btnInStore.Size = new System.Drawing.Size(128, 29);
 			this.btnInStore.TabIndex = 117;
-			this.btnInStore.Text = "In Store";
+			this.btnInStore.Text = "En rayon";
 			this.toolTip1.SetToolTip(this.btnInStore, "Products with non-zero quantity in store");
 			this.btnInStore.UseVisualStyleBackColor = true;
 			this.btnInStore.Click += new System.EventHandler(this.btnInStore_Click);
@@ -254,15 +254,15 @@
 			this.btnAll.Rotation = 0D;
 			this.btnAll.Size = new System.Drawing.Size(128, 29);
 			this.btnAll.TabIndex = 116;
-			this.btnAll.Text = "All";
+			this.btnAll.Text = "Tout";
 			this.toolTip1.SetToolTip(this.btnAll, "All products");
 			this.btnAll.UseVisualStyleBackColor = true;
 			this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,14 +270,14 @@
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -300,14 +300,14 @@
             this.supplierNameDataGridViewTextBoxColumn,
             this.storeDataGridViewCheckBoxColumn});
 			this.dg.DataSource = this.productBindingSource;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle6;
 			this.dg.DoubleBuffered = true;
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
@@ -386,6 +386,7 @@
 			this.btnEdit.Size = new System.Drawing.Size(26, 27);
 			this.btnEdit.TabIndex = 99;
 			this.btnEdit.TabStop = false;
+			this.toolTip1.SetToolTip(this.btnEdit, "Mise à jour produit");
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// btnAdd
@@ -402,6 +403,7 @@
 			this.btnAdd.Size = new System.Drawing.Size(26, 27);
 			this.btnAdd.TabIndex = 98;
 			this.btnAdd.TabStop = false;
+			this.toolTip1.SetToolTip(this.btnAdd, "Nouveau Produit");
 			this.btnAdd.UseGdi = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -417,12 +419,12 @@
 			this.bunifuCards1.BorderRadius = 5;
 			this.bunifuCards1.BottomSahddow = true;
 			this.bunifuCards1.color = System.Drawing.Color.Tomato;
-			this.bunifuCards1.Controls.Add(this.cbFilter);
-			this.bunifuCards1.Controls.Add(this.label2);
-			this.bunifuCards1.Controls.Add(this.dpEnd);
-			this.bunifuCards1.Controls.Add(this.label1);
-			this.bunifuCards1.Controls.Add(this.dpStart);
 			this.bunifuCards1.Controls.Add(this.label4);
+			this.bunifuCards1.Controls.Add(this.label2);
+			this.bunifuCards1.Controls.Add(this.label1);
+			this.bunifuCards1.Controls.Add(this.cbFilter);
+			this.bunifuCards1.Controls.Add(this.dpEnd);
+			this.bunifuCards1.Controls.Add(this.dpStart);
 			this.bunifuCards1.Controls.Add(this.cbxDefinedPeriod);
 			this.bunifuCards1.Controls.Add(this.tbDays);
 			this.bunifuCards1.Controls.Add(this.label5);
@@ -440,20 +442,10 @@
 			this.cbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.cbFilter.Location = new System.Drawing.Point(468, 68);
 			this.cbFilter.Name = "cbFilter";
-			this.cbFilter.Size = new System.Drawing.Size(90, 21);
+			this.cbFilter.Size = new System.Drawing.Size(108, 21);
 			this.cbFilter.TabIndex = 129;
-			this.cbFilter.Text = "Use filters";
+			this.cbFilter.Text = "Utiliser filtres";
 			this.cbFilter.UseVisualStyleBackColor = true;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label2.Location = new System.Drawing.Point(113, 67);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(63, 18);
-			this.label2.TabIndex = 128;
-			this.label2.Text = "End Date";
 			// 
 			// dpEnd
 			// 
@@ -465,16 +457,6 @@
 			this.dpEnd.TabIndex = 127;
 			this.dpEnd.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label1.Location = new System.Drawing.Point(113, 41);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(69, 18);
-			this.label1.TabIndex = 126;
-			this.label1.Text = "Start Date";
-			// 
 			// dpStart
 			// 
 			this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -484,16 +466,6 @@
 			this.dpStart.Size = new System.Drawing.Size(123, 24);
 			this.dpStart.TabIndex = 125;
 			this.dpStart.ValueChanged += new System.EventHandler(this.ValidateDateInterval);
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label4.Location = new System.Drawing.Point(345, 40);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(37, 18);
-			this.label4.TabIndex = 124;
-			this.label4.Text = "Days";
 			// 
 			// cbxDefinedPeriod
 			// 
@@ -506,11 +478,11 @@
             "3 Months",
             "6 Months",
             "1 Year"});
-			this.cbxDefinedPeriod.Location = new System.Drawing.Point(340, 61);
+			this.cbxDefinedPeriod.Location = new System.Drawing.Point(320, 61);
 			this.cbxDefinedPeriod.Name = "cbxDefinedPeriod";
-			this.cbxDefinedPeriod.Size = new System.Drawing.Size(122, 26);
+			this.cbxDefinedPeriod.Size = new System.Drawing.Size(142, 26);
 			this.cbxDefinedPeriod.TabIndex = 123;
-			this.cbxDefinedPeriod.Text = "Defined Period";
+			this.cbxDefinedPeriod.Text = "Période prédéfinie";
 			this.cbxDefinedPeriod.SelectedIndexChanged += new System.EventHandler(this.cbxDefinedPeriod_SelectedIndexChanged);
 			// 
 			// tbDays
@@ -533,62 +505,92 @@
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(56, 23);
 			this.label5.TabIndex = 113;
-			this.label5.Text = "Filter";
+			this.label5.Text = "Filtre";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label2.Location = new System.Drawing.Point(107, 68);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(75, 18);
+			this.label2.TabIndex = 131;
+			this.label2.Text = "Date de fin";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label1.Location = new System.Drawing.Point(86, 44);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(96, 18);
+			this.label1.TabIndex = 130;
+			this.label1.Text = "Date de début";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label4.Location = new System.Drawing.Point(317, 40);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(64, 18);
+			this.label4.TabIndex = 132;
+			this.label4.Text = "Journées";
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "ID Produit";
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
 			// 
 			// nameDataGridViewTextBoxColumn
 			// 
 			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Nom";
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
 			// 
 			// shapeDataGridViewTextBoxColumn
 			// 
 			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
-			this.shapeDataGridViewTextBoxColumn.HeaderText = "Shape";
+			this.shapeDataGridViewTextBoxColumn.HeaderText = "Forme";
 			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
 			this.shapeDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// purchasePriceDataGridViewTextBoxColumn
 			// 
 			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
-			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Purchase Price";
+			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Prix d\'achat";
 			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
 			// 
 			// sellingPriceDataGridViewTextBoxColumn
 			// 
 			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
-			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price";
+			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Prix de vente";
 			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
 			// 
 			// weightDataGridViewTextBoxColumn
 			// 
 			this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
-			this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
+			this.weightDataGridViewTextBoxColumn.HeaderText = "Poids";
 			this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
 			this.weightDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// quantityInStoreDataGridViewTextBoxColumn
 			// 
 			this.quantityInStoreDataGridViewTextBoxColumn.DataPropertyName = "QuantityInStore";
-			this.quantityInStoreDataGridViewTextBoxColumn.HeaderText = "In Store";
+			this.quantityInStoreDataGridViewTextBoxColumn.HeaderText = "en stock";
 			this.quantityInStoreDataGridViewTextBoxColumn.Name = "quantityInStoreDataGridViewTextBoxColumn";
 			// 
 			// quantityInShelvesDataGridViewTextBoxColumn
 			// 
 			this.quantityInShelvesDataGridViewTextBoxColumn.DataPropertyName = "QuantityInShelves";
-			this.quantityInShelvesDataGridViewTextBoxColumn.HeaderText = "In Shelves";
+			this.quantityInShelvesDataGridViewTextBoxColumn.HeaderText = "en rayons";
 			this.quantityInShelvesDataGridViewTextBoxColumn.Name = "quantityInShelvesDataGridViewTextBoxColumn";
 			// 
 			// unitPriceDataGridViewTextBoxColumn
 			// 
 			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
+			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Prix unitaire";
 			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
 			this.unitPriceDataGridViewTextBoxColumn.Visible = false;
 			// 
@@ -609,7 +611,7 @@
 			// shelfCodeDataGridViewTextBoxColumn
 			// 
 			this.shelfCodeDataGridViewTextBoxColumn.DataPropertyName = "ShelfCode";
-			this.shelfCodeDataGridViewTextBoxColumn.HeaderText = "Shelf Code";
+			this.shelfCodeDataGridViewTextBoxColumn.HeaderText = "Code rayon";
 			this.shelfCodeDataGridViewTextBoxColumn.Name = "shelfCodeDataGridViewTextBoxColumn";
 			// 
 			// alertThresholdDataGridViewTextBoxColumn
@@ -641,13 +643,13 @@
 			// expiryDateDataGridViewTextBoxColumn
 			// 
 			this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-			this.expiryDateDataGridViewTextBoxColumn.HeaderText = "Expiry Date";
+			this.expiryDateDataGridViewTextBoxColumn.HeaderText = "Date d\'expiration";
 			this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
 			// 
 			// supplierNameDataGridViewTextBoxColumn
 			// 
 			this.supplierNameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
-			this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier Name";
+			this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Fournisseur";
 			this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
 			// 
 			// storeDataGridViewCheckBoxColumn
@@ -704,15 +706,15 @@
 		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DateTimePicker dpEnd;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DateTimePicker dpStart;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox cbxDefinedPeriod;
 		private System.Windows.Forms.TextBox tbDays;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.CheckBox cbFilter;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shapeDataGridViewTextBoxColumn;
