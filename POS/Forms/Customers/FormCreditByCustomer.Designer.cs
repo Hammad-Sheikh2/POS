@@ -152,7 +152,6 @@ namespace POS.Forms.Customers
 			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
 			this.creditDataGridViewCheckBoxColumn.HeaderText = "Credit";
 			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
-			this.creditDataGridViewCheckBoxColumn.Visible = false;
 			// 
 			// invoiceDateDataGridViewTextBoxColumn
 			// 

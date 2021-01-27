@@ -228,7 +228,7 @@
 			this.panel1.Controls.Add(this.btnCredit);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(963, 184);
+			this.panel1.Size = new System.Drawing.Size(963, 34);
 			this.panel1.TabIndex = 0;
 			// 
 			// textBox18
@@ -604,9 +604,9 @@
 			this.panel2.Controls.Add(this.textBox8);
 			this.panel2.Controls.Add(this.textBox9);
 			this.panel2.Controls.Add(this.btnBankAccounts);
-			this.panel2.Location = new System.Drawing.Point(3, 193);
+			this.panel2.Location = new System.Drawing.Point(3, 43);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(963, 114);
+			this.panel2.Size = new System.Drawing.Size(963, 34);
 			this.panel2.TabIndex = 1;
 			// 
 			// label17
@@ -722,9 +722,9 @@
 			this.panel3.Controls.Add(this.label27);
 			this.panel3.Controls.Add(this.label28);
 			this.panel3.Controls.Add(this.btnTickets);
-			this.panel3.Location = new System.Drawing.Point(3, 313);
+			this.panel3.Location = new System.Drawing.Point(3, 83);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(963, 82);
+			this.panel3.Size = new System.Drawing.Size(963, 34);
 			this.panel3.TabIndex = 2;
 			// 
 			// label22

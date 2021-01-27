@@ -39,9 +39,6 @@
 			this.tbDays = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-			this.tbSellingPrice = new System.Windows.Forms.TextBox();
-			this.tbBuyPrice = new System.Windows.Forms.TextBox();
-			this.tbTurnover = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
@@ -56,8 +53,6 @@
 			this.label19 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
-			this.tbCreditPmts = new System.Windows.Forms.TextBox();
-			this.tbCashPmts = new System.Windows.Forms.TextBox();
 			this.tbAvgSale = new System.Windows.Forms.TextBox();
 			this.tbProductsReturnedCount = new System.Windows.Forms.TextBox();
 			this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
@@ -89,18 +84,29 @@
 			this.label21 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
 			this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
-			this.tbUnpaidInvoicesValue = new System.Windows.Forms.TextBox();
 			this.label33 = new System.Windows.Forms.Label();
 			this.label34 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
 			this.label8 = new System.Windows.Forms.Label();
+			this.tbTurnover = new System.Windows.Forms.NumericUpDown();
+			this.tbBuyPrice = new System.Windows.Forms.NumericUpDown();
+			this.tbSellingPrice = new System.Windows.Forms.NumericUpDown();
+			this.tbCreditPmts = new System.Windows.Forms.NumericUpDown();
+			this.tbCashPmts = new System.Windows.Forms.NumericUpDown();
+			this.tbUnpaidInvoicesValue = new System.Windows.Forms.NumericUpDown();
 			this.bunifuCards1.SuspendLayout();
 			this.bunifuCards2.SuspendLayout();
 			this.bunifuCards3.SuspendLayout();
 			this.bunifuCards4.SuspendLayout();
 			this.bunifuCards5.SuspendLayout();
 			this.bunifuCards6.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbTurnover)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbBuyPrice)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbSellingPrice)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbCreditPmts)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbCashPmts)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbUnpaidInvoicesValue)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bunifuCards1
@@ -258,42 +264,6 @@
 			this.bunifuCards2.Size = new System.Drawing.Size(913, 103);
 			this.bunifuCards2.TabIndex = 114;
 			// 
-			// tbSellingPrice
-			// 
-			this.tbSellingPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbSellingPrice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbSellingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-			this.tbSellingPrice.Location = new System.Drawing.Point(488, 67);
-			this.tbSellingPrice.Name = "tbSellingPrice";
-			this.tbSellingPrice.ReadOnly = true;
-			this.tbSellingPrice.Size = new System.Drawing.Size(135, 27);
-			this.tbSellingPrice.TabIndex = 180;
-			this.tbSellingPrice.Text = "0";
-			// 
-			// tbBuyPrice
-			// 
-			this.tbBuyPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbBuyPrice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbBuyPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-			this.tbBuyPrice.Location = new System.Drawing.Point(488, 38);
-			this.tbBuyPrice.Name = "tbBuyPrice";
-			this.tbBuyPrice.ReadOnly = true;
-			this.tbBuyPrice.Size = new System.Drawing.Size(135, 27);
-			this.tbBuyPrice.TabIndex = 179;
-			this.tbBuyPrice.Text = "0";
-			// 
-			// tbTurnover
-			// 
-			this.tbTurnover.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbTurnover.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-			this.tbTurnover.Location = new System.Drawing.Point(488, 9);
-			this.tbTurnover.Name = "tbTurnover";
-			this.tbTurnover.ReadOnly = true;
-			this.tbTurnover.Size = new System.Drawing.Size(135, 27);
-			this.tbTurnover.TabIndex = 178;
-			this.tbTurnover.Text = "0";
-			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
@@ -433,30 +403,6 @@
 			this.label16.Size = new System.Drawing.Size(149, 22);
 			this.label16.TabIndex = 148;
 			this.label16.Text = "Total credits payés ";
-			// 
-			// tbCreditPmts
-			// 
-			this.tbCreditPmts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbCreditPmts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbCreditPmts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-			this.tbCreditPmts.Location = new System.Drawing.Point(281, 39);
-			this.tbCreditPmts.Name = "tbCreditPmts";
-			this.tbCreditPmts.ReadOnly = true;
-			this.tbCreditPmts.Size = new System.Drawing.Size(135, 27);
-			this.tbCreditPmts.TabIndex = 129;
-			this.tbCreditPmts.Text = "0";
-			// 
-			// tbCashPmts
-			// 
-			this.tbCashPmts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbCashPmts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbCashPmts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-			this.tbCashPmts.Location = new System.Drawing.Point(281, 69);
-			this.tbCashPmts.Name = "tbCashPmts";
-			this.tbCashPmts.ReadOnly = true;
-			this.tbCashPmts.Size = new System.Drawing.Size(135, 27);
-			this.tbCashPmts.TabIndex = 171;
-			this.tbCashPmts.Text = "0";
 			// 
 			// tbAvgSale
 			// 
@@ -825,13 +771,13 @@
 			this.bunifuCards5.BottomSahddow = true;
 			this.bunifuCards5.color = System.Drawing.Color.Tomato;
 			this.bunifuCards5.Controls.Add(this.tbUnpaidInvoicesValue);
+			this.bunifuCards5.Controls.Add(this.tbCashPmts);
+			this.bunifuCards5.Controls.Add(this.tbCreditPmts);
 			this.bunifuCards5.Controls.Add(this.label33);
 			this.bunifuCards5.Controls.Add(this.label34);
 			this.bunifuCards5.Controls.Add(this.label6);
-			this.bunifuCards5.Controls.Add(this.tbCreditPmts);
 			this.bunifuCards5.Controls.Add(this.label16);
 			this.bunifuCards5.Controls.Add(this.label15);
-			this.bunifuCards5.Controls.Add(this.tbCashPmts);
 			this.bunifuCards5.Controls.Add(this.label19);
 			this.bunifuCards5.Controls.Add(this.label18);
 			this.bunifuCards5.LeftSahddow = false;
@@ -841,18 +787,6 @@
 			this.bunifuCards5.ShadowDepth = 20;
 			this.bunifuCards5.Size = new System.Drawing.Size(473, 130);
 			this.bunifuCards5.TabIndex = 182;
-			// 
-			// tbUnpaidInvoicesValue
-			// 
-			this.tbUnpaidInvoicesValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.tbUnpaidInvoicesValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.tbUnpaidInvoicesValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-			this.tbUnpaidInvoicesValue.Location = new System.Drawing.Point(281, 98);
-			this.tbUnpaidInvoicesValue.Name = "tbUnpaidInvoicesValue";
-			this.tbUnpaidInvoicesValue.ReadOnly = true;
-			this.tbUnpaidInvoicesValue.Size = new System.Drawing.Size(135, 27);
-			this.tbUnpaidInvoicesValue.TabIndex = 184;
-			this.tbUnpaidInvoicesValue.Text = "0";
 			// 
 			// label33
 			// 
@@ -913,6 +847,90 @@
 			this.label8.TabIndex = 182;
 			this.label8.Text = "Ventes";
 			// 
+			// tbTurnover
+			// 
+			this.tbTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+			this.tbTurnover.Location = new System.Drawing.Point(489, 8);
+			this.tbTurnover.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbTurnover.Name = "tbTurnover";
+			this.tbTurnover.Size = new System.Drawing.Size(134, 27);
+			this.tbTurnover.TabIndex = 181;
+			this.tbTurnover.ThousandsSeparator = true;
+			// 
+			// tbBuyPrice
+			// 
+			this.tbBuyPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+			this.tbBuyPrice.Location = new System.Drawing.Point(489, 38);
+			this.tbBuyPrice.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbBuyPrice.Name = "tbBuyPrice";
+			this.tbBuyPrice.Size = new System.Drawing.Size(134, 27);
+			this.tbBuyPrice.TabIndex = 182;
+			this.tbBuyPrice.ThousandsSeparator = true;
+			// 
+			// tbSellingPrice
+			// 
+			this.tbSellingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+			this.tbSellingPrice.Location = new System.Drawing.Point(489, 68);
+			this.tbSellingPrice.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbSellingPrice.Name = "tbSellingPrice";
+			this.tbSellingPrice.Size = new System.Drawing.Size(134, 27);
+			this.tbSellingPrice.TabIndex = 183;
+			this.tbSellingPrice.ThousandsSeparator = true;
+			// 
+			// tbCreditPmts
+			// 
+			this.tbCreditPmts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+			this.tbCreditPmts.Location = new System.Drawing.Point(281, 38);
+			this.tbCreditPmts.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbCreditPmts.Name = "tbCreditPmts";
+			this.tbCreditPmts.Size = new System.Drawing.Size(134, 27);
+			this.tbCreditPmts.TabIndex = 184;
+			this.tbCreditPmts.ThousandsSeparator = true;
+			// 
+			// tbCashPmts
+			// 
+			this.tbCashPmts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+			this.tbCashPmts.Location = new System.Drawing.Point(281, 68);
+			this.tbCashPmts.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbCashPmts.Name = "tbCashPmts";
+			this.tbCashPmts.Size = new System.Drawing.Size(134, 27);
+			this.tbCashPmts.TabIndex = 185;
+			this.tbCashPmts.ThousandsSeparator = true;
+			// 
+			// tbUnpaidInvoicesValue
+			// 
+			this.tbUnpaidInvoicesValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+			this.tbUnpaidInvoicesValue.Location = new System.Drawing.Point(281, 98);
+			this.tbUnpaidInvoicesValue.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+			this.tbUnpaidInvoicesValue.Name = "tbUnpaidInvoicesValue";
+			this.tbUnpaidInvoicesValue.Size = new System.Drawing.Size(134, 27);
+			this.tbUnpaidInvoicesValue.TabIndex = 186;
+			this.tbUnpaidInvoicesValue.ThousandsSeparator = true;
+			// 
 			// UC_FinanceDashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -937,6 +955,12 @@
 			this.bunifuCards5.PerformLayout();
 			this.bunifuCards6.ResumeLayout(false);
 			this.bunifuCards6.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbTurnover)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbBuyPrice)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbSellingPrice)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbCreditPmts)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbCashPmts)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbUnpaidInvoicesValue)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -966,13 +990,8 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox cbxDefinedPeriod;
 		private System.Windows.Forms.TextBox tbDays;
-		private System.Windows.Forms.TextBox tbSellingPrice;
-		private System.Windows.Forms.TextBox tbBuyPrice;
-		private System.Windows.Forms.TextBox tbTurnover;
 		private System.Windows.Forms.TextBox tbProductsReturnedCount;
 		private System.Windows.Forms.TextBox tbAvgSale;
-		private System.Windows.Forms.TextBox tbCashPmts;
-		private System.Windows.Forms.TextBox tbCreditPmts;
 		private Bunifu.Framework.UI.BunifuCards bunifuCards3;
 		private System.Windows.Forms.TextBox tbInShelvesProductPrice;
 		private System.Windows.Forms.TextBox tbInStoreProductPrice;
@@ -1000,7 +1019,6 @@
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Label label25;
 		private System.Windows.Forms.Label label26;
-		private System.Windows.Forms.TextBox tbUnpaidInvoicesValue;
 		private System.Windows.Forms.Label label33;
 		private System.Windows.Forms.Label label34;
 		private FontAwesome.Sharp.IconButton btnFetch;
@@ -1010,5 +1028,11 @@
 		private System.Windows.Forms.TextBox tbPriceOfProductsExpired;
 		private System.Windows.Forms.Label label41;
 		private System.Windows.Forms.Label label42;
+		private System.Windows.Forms.NumericUpDown tbTurnover;
+		private System.Windows.Forms.NumericUpDown tbSellingPrice;
+		private System.Windows.Forms.NumericUpDown tbBuyPrice;
+		private System.Windows.Forms.NumericUpDown tbCreditPmts;
+		private System.Windows.Forms.NumericUpDown tbCashPmts;
+		private System.Windows.Forms.NumericUpDown tbUnpaidInvoicesValue;
 	}
 }

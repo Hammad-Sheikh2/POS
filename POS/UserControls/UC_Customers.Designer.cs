@@ -288,7 +288,7 @@
 			// cityDataGridViewTextBoxColumn
 			// 
 			this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-			this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+			this.cityDataGridViewTextBoxColumn.HeaderText = "ville";
 			this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
 			// 
 			// emailDataGridViewTextBoxColumn
@@ -318,7 +318,7 @@
 			// paidDataGridViewTextBoxColumn
 			// 
 			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewTextBoxColumn.HeaderText = "Paid";
+			this.paidDataGridViewTextBoxColumn.HeaderText = "payé";
 			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
 			// 
 			// leftDataGridViewTextBoxColumn

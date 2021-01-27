@@ -132,10 +132,10 @@ namespace POS.UserControls.Finances
 			{
 				ReloadShift();
 				await Access.InsertShiftAsync(shift);
-				Manager.Show("Shift closed", Forms.Notification.Type.Success);
+				Manager.Show("Poste bouclé", Forms.Notification.Type.Success);
 				int id = await Access.StartNewShift();
-				Manager.Show("New Shift Started", Forms.Notification.Type.Success);
-				Manager.Show($"Shift Id: {id}", Forms.Notification.Type.Info);
+				Manager.Show("nouveau poste", Forms.Notification.Type.Success);
+				Manager.Show($"poste Id: {id}", Forms.Notification.Type.Info);
 				UC_Closing_Load(this, e);
 			}
 			catch (Exception ex)
@@ -157,7 +157,7 @@ namespace POS.UserControls.Finances
 			{
 				ReloadDay();
 				await Access.InsertDayClosingAsync(dayClosing);
-				Manager.Show("Day closed", Forms.Notification.Type.Success);
+				Manager.Show("Journée cloturée", Forms.Notification.Type.Success);
 				UC_Closing_Load(this, e);
 			}
 			catch (Exception ex)

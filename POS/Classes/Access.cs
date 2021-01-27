@@ -1840,7 +1840,7 @@ namespace POS.Classes
 		{
 			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
-				return cnn.Query<double>($"SELECT ISNULL(QuantityInShelves * UnitPrice, 0) FROM Products;").AsList<double>().First();
+				return cnn.Query<double>($"SELECT ISNULL(sum(QuantityInShelves * PurchasePrice), 0) FROM Products;").AsList<double>().First();
 			}
 		}
 
@@ -1848,7 +1848,7 @@ namespace POS.Classes
 		{
 			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
-				return cnn.Query<double>($"SELECT ISNULL(QuantityInStore * UnitPrice, 0) FROM Products;").AsList<double>().First();
+				return cnn.Query<double>($"SELECT ISNULL(SUM(QuantityInStore * PurchasePrice), 0) FROM Products;").AsList<double>().First();
 			}
 		}
 

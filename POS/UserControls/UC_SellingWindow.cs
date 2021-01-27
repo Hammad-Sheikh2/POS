@@ -41,15 +41,6 @@ namespace POS.UserControls
 			tbTotal.ForeColor = Properties.Settings.Default.ForeColor;
 		}
 
-		private void PopulateComboboxes()
-		{
-			cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
-			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
-			cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
-			cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
-			lblCashier.Text = Login.Name;
-		}
-
 		private static IEnumerable<Control> GetAllChildren(Control root)
 		{
 			var stack = new Stack<Control>();
@@ -62,6 +53,15 @@ namespace POS.UserControls
 					stack.Push(child);
 				yield return next;
 			}
+		}
+
+		private void PopulateComboboxes()
+		{
+			cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
+			cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
+			cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
+			lblCashier.Text = Login.Name;
 		}
 
 		private void dg_Paint(object sender, PaintEventArgs e)

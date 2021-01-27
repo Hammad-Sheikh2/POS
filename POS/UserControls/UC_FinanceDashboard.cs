@@ -141,12 +141,12 @@ namespace POS.UserControls
 
 		private void btnFetch_Click(object sender, EventArgs e)
 		{
-			tbTurnover.Text = Access.GetTotalTurnOver(dpStart.Value, dpEnd.Value).ToString();
-			tbBuyPrice.Text = Access.GetTotalBuyPrice(dpStart.Value, dpEnd.Value).ToString();
-			tbSellingPrice.Text = Access.GetTotalSellPrice(dpStart.Value, dpEnd.Value).ToString();
-			tbCreditPmts.Text = Access.GetCreditPayments(dpStart.Value, dpEnd.Value).ToString();
-			tbCashPmts.Text = Access.GetCashPayments(dpStart.Value, dpEnd.Value).ToString();
-			tbUnpaidInvoicesValue.Text = Access.GetUnpaidPayments(dpStart.Value, dpEnd.Value).ToString();
+			tbTurnover.Value = Convert.ToDecimal(Access.GetTotalTurnOver(dpStart.Value, dpEnd.Value));
+			tbBuyPrice.Value = Convert.ToDecimal(Access.GetTotalBuyPrice(dpStart.Value, dpEnd.Value));
+			tbSellingPrice.Value = Convert.ToDecimal(Access.GetTotalSellPrice(dpStart.Value, dpEnd.Value));
+			tbCreditPmts.Value = Convert.ToDecimal(Access.GetCreditPayments(dpStart.Value, dpEnd.Value));
+			tbCashPmts.Value = Convert.ToDecimal(Access.GetCashPayments(dpStart.Value, dpEnd.Value));
+			tbUnpaidInvoicesValue.Value = Convert.ToDecimal(Access.GetUnpaidPayments(dpStart.Value, dpEnd.Value));
 			tbAvgSale.Text = Math.Round(Access.GetAverageSale(dpStart.Value, dpEnd.Value), 2).ToString();
 			tbInStoreProductPrice.Text = Access.GetInStoreProductsPrice().ToString();
 			tbInShelvesProductPrice.Text = Access.GetInShelvesProductsPrice().ToString();

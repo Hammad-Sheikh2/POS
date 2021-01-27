@@ -53,31 +53,6 @@
 			this.tbShiftId = new System.Windows.Forms.NumericUpDown();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.closingShiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.label8 = new System.Windows.Forms.Label();
-			this.dpDayClosing = new System.Windows.Forms.DateTimePicker();
-			this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.shiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-			this.tbPaidAmountDaily = new System.Windows.Forms.NumericUpDown();
-			this.label7 = new System.Windows.Forms.Label();
-			this.btnCloseDay = new FontAwesome.Sharp.IconButton();
-			this.tbTotalAmountDaily = new System.Windows.Forms.NumericUpDown();
-			this.label10 = new System.Windows.Forms.Label();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
-			this.tbPaidMonthly = new System.Windows.Forms.NumericUpDown();
-			this.label11 = new System.Windows.Forms.Label();
-			this.tbTotalMonthly = new System.Windows.Forms.NumericUpDown();
-			this.label12 = new System.Windows.Forms.Label();
-			this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.dayClosingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.label9 = new System.Windows.Forms.Label();
-			this.dpClosingMonth = new System.Windows.Forms.DateTimePicker();
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +60,11 @@
 			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.creditDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.closingShiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.label8 = new System.Windows.Forms.Label();
+			this.dpDayClosing = new System.Windows.Forms.DateTimePicker();
+			this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.quantitySoldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,10 +73,30 @@
 			this.cashInvoicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.closedOnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.shiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.tbPaidAmountDaily = new System.Windows.Forms.NumericUpDown();
+			this.btnCloseDay = new FontAwesome.Sharp.IconButton();
+			this.tbTotalAmountDaily = new System.Windows.Forms.NumericUpDown();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+			this.tbPaidMonthly = new System.Windows.Forms.NumericUpDown();
+			this.label11 = new System.Windows.Forms.Label();
+			this.tbTotalMonthly = new System.Windows.Forms.NumericUpDown();
+			this.label12 = new System.Windows.Forms.Label();
+			this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.closingDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalAmountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paidAmountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dayClosingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.label9 = new System.Windows.Forms.Label();
+			this.dpClosingMonth = new System.Windows.Forms.DateTimePicker();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.bunifuCards1.SuspendLayout();
@@ -398,6 +398,48 @@
 			this.dg.Size = new System.Drawing.Size(984, 357);
 			this.dg.TabIndex = 4;
 			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "ID de facture";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			// 
+			// dateDataGridViewTextBoxColumn
+			// 
+			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+			// 
+			// totalDataGridViewTextBoxColumn
+			// 
+			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			// 
+			// paidDataGridViewTextBoxColumn
+			// 
+			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
+			this.paidDataGridViewTextBoxColumn.HeaderText = "Payé";
+			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
+			// 
+			// quantityDataGridViewTextBoxColumn
+			// 
+			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité";
+			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+			// 
+			// creditDataGridViewCheckBoxColumn
+			// 
+			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
+			this.creditDataGridViewCheckBoxColumn.HeaderText = "Crédit";
+			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
+			// 
+			// userIdDataGridViewTextBoxColumn
+			// 
+			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+			this.userIdDataGridViewTextBoxColumn.HeaderText = "Id caissier";
+			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+			// 
 			// closingShiftBindingSource
 			// 
 			this.closingShiftBindingSource.DataSource = typeof(POS.Classes.Finances.ClosingShift);
@@ -420,11 +462,11 @@
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label8.Location = new System.Drawing.Point(336, 8);
+			this.label8.Location = new System.Drawing.Point(257, 9);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(130, 19);
+			this.label8.Size = new System.Drawing.Size(208, 19);
 			this.label8.TabIndex = 119;
-			this.label8.Text = "Select Day to Close";
+			this.label8.Text = "Sélectionnez le jour pour cloturer";
 			// 
 			// dpDayClosing
 			// 
@@ -476,6 +518,54 @@
 			this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(984, 361);
 			this.bunifuCustomDataGrid1.TabIndex = 117;
 			// 
+			// idDataGridViewTextBoxColumn1
+			// 
+			this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn1.HeaderText = "Shift Id";
+			this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+			// 
+			// quantitySoldDataGridViewTextBoxColumn
+			// 
+			this.quantitySoldDataGridViewTextBoxColumn.DataPropertyName = "QuantitySold";
+			this.quantitySoldDataGridViewTextBoxColumn.HeaderText = "Quantité vendue";
+			this.quantitySoldDataGridViewTextBoxColumn.Name = "quantitySoldDataGridViewTextBoxColumn";
+			// 
+			// totalAmountDataGridViewTextBoxColumn
+			// 
+			this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
+			this.totalAmountDataGridViewTextBoxColumn.HeaderText = "Montant total";
+			this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
+			// 
+			// paidAmountDataGridViewTextBoxColumn
+			// 
+			this.paidAmountDataGridViewTextBoxColumn.DataPropertyName = "PaidAmount";
+			this.paidAmountDataGridViewTextBoxColumn.HeaderText = "Montant payé";
+			this.paidAmountDataGridViewTextBoxColumn.Name = "paidAmountDataGridViewTextBoxColumn";
+			// 
+			// creditInvoicesDataGridViewTextBoxColumn
+			// 
+			this.creditInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CreditInvoices";
+			this.creditInvoicesDataGridViewTextBoxColumn.HeaderText = "Factures de crédit";
+			this.creditInvoicesDataGridViewTextBoxColumn.Name = "creditInvoicesDataGridViewTextBoxColumn";
+			// 
+			// cashInvoicesDataGridViewTextBoxColumn
+			// 
+			this.cashInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CashInvoices";
+			this.cashInvoicesDataGridViewTextBoxColumn.HeaderText = "Factures en espèces";
+			this.cashInvoicesDataGridViewTextBoxColumn.Name = "cashInvoicesDataGridViewTextBoxColumn";
+			// 
+			// explanationDataGridViewTextBoxColumn
+			// 
+			this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
+			this.explanationDataGridViewTextBoxColumn.HeaderText = "Explanation";
+			this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
+			// 
+			// closedOnDataGridViewTextBoxColumn
+			// 
+			this.closedOnDataGridViewTextBoxColumn.DataPropertyName = "ClosedOn";
+			this.closedOnDataGridViewTextBoxColumn.HeaderText = "Closed On";
+			this.closedOnDataGridViewTextBoxColumn.Name = "closedOnDataGridViewTextBoxColumn";
+			// 
 			// shiftBindingSource
 			// 
 			this.shiftBindingSource.DataSource = typeof(POS.Classes.Finances.Shift);
@@ -487,11 +577,11 @@
 			this.bunifuCards2.BorderRadius = 5;
 			this.bunifuCards2.BottomSahddow = false;
 			this.bunifuCards2.color = System.Drawing.Color.Tomato;
+			this.bunifuCards2.Controls.Add(this.label13);
+			this.bunifuCards2.Controls.Add(this.label14);
 			this.bunifuCards2.Controls.Add(this.tbPaidAmountDaily);
-			this.bunifuCards2.Controls.Add(this.label7);
 			this.bunifuCards2.Controls.Add(this.btnCloseDay);
 			this.bunifuCards2.Controls.Add(this.tbTotalAmountDaily);
-			this.bunifuCards2.Controls.Add(this.label10);
 			this.bunifuCards2.LeftSahddow = false;
 			this.bunifuCards2.Location = new System.Drawing.Point(24, 402);
 			this.bunifuCards2.Name = "bunifuCards2";
@@ -499,6 +589,26 @@
 			this.bunifuCards2.ShadowDepth = 20;
 			this.bunifuCards2.Size = new System.Drawing.Size(984, 72);
 			this.bunifuCards2.TabIndex = 116;
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Times New Roman", 14F);
+			this.label13.Location = new System.Drawing.Point(306, 25);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(112, 21);
+			this.label13.TabIndex = 121;
+			this.label13.Text = "Montant payé";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Times New Roman", 14F);
+			this.label14.Location = new System.Drawing.Point(11, 25);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(109, 21);
+			this.label14.TabIndex = 120;
+			this.label14.Text = "Montant total";
 			// 
 			// tbPaidAmountDaily
 			// 
@@ -513,16 +623,7 @@
 			this.tbPaidAmountDaily.Name = "tbPaidAmountDaily";
 			this.tbPaidAmountDaily.Size = new System.Drawing.Size(169, 32);
 			this.tbPaidAmountDaily.TabIndex = 110;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Times New Roman", 14F);
-			this.label7.Location = new System.Drawing.Point(307, 24);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(107, 21);
-			this.label7.TabIndex = 111;
-			this.label7.Text = "Paid Amount";
+			this.tbPaidAmountDaily.ThousandsSeparator = true;
 			// 
 			// btnCloseDay
 			// 
@@ -537,7 +638,7 @@
 			this.btnCloseDay.Rotation = 0D;
 			this.btnCloseDay.Size = new System.Drawing.Size(336, 32);
 			this.btnCloseDay.TabIndex = 109;
-			this.btnCloseDay.Text = "Close Day";
+			this.btnCloseDay.Text = "jour de fermeture";
 			this.btnCloseDay.UseVisualStyleBackColor = true;
 			this.btnCloseDay.Click += new System.EventHandler(this.btnCloseDay_Click);
 			// 
@@ -554,16 +655,7 @@
 			this.tbTotalAmountDaily.Name = "tbTotalAmountDaily";
 			this.tbTotalAmountDaily.Size = new System.Drawing.Size(169, 32);
 			this.tbTotalAmountDaily.TabIndex = 6;
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Times New Roman", 14F);
-			this.label10.Location = new System.Drawing.Point(7, 24);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(112, 21);
-			this.label10.TabIndex = 7;
-			this.label10.Text = "Total Amount";
+			this.tbTotalAmountDaily.ThousandsSeparator = true;
 			// 
 			// tabPage3
 			// 
@@ -611,6 +703,7 @@
 			this.tbPaidMonthly.Name = "tbPaidMonthly";
 			this.tbPaidMonthly.Size = new System.Drawing.Size(383, 32);
 			this.tbPaidMonthly.TabIndex = 110;
+			this.tbPaidMonthly.ThousandsSeparator = true;
 			// 
 			// label11
 			// 
@@ -635,6 +728,7 @@
 			this.tbTotalMonthly.Name = "tbTotalMonthly";
 			this.tbTotalMonthly.Size = new System.Drawing.Size(337, 32);
 			this.tbTotalMonthly.TabIndex = 6;
+			this.tbTotalMonthly.ThousandsSeparator = true;
 			// 
 			// label12
 			// 
@@ -684,128 +778,6 @@
 			this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(984, 365);
 			this.bunifuCustomDataGrid2.TabIndex = 122;
 			// 
-			// dayClosingBindingSource
-			// 
-			this.dayClosingBindingSource.DataSource = typeof(POS.Classes.Finances.DayClosing);
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label9.Location = new System.Drawing.Point(281, 9);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(197, 19);
-			this.label9.TabIndex = 121;
-			this.label9.Text = "Select a Month to View Details";
-			// 
-			// dpClosingMonth
-			// 
-			this.dpClosingMonth.Location = new System.Drawing.Point(484, 6);
-			this.dpClosingMonth.Name = "dpClosingMonth";
-			this.dpClosingMonth.Size = new System.Drawing.Size(200, 23);
-			this.dpClosingMonth.TabIndex = 120;
-			this.dpClosingMonth.ValueChanged += new System.EventHandler(this.dpClosingMonth_ValueChanged);
-			// 
-			// bunifuElipse3
-			// 
-			this.bunifuElipse3.ElipseRadius = 10;
-			this.bunifuElipse3.TargetControl = this.dg;
-			// 
-			// bunifuElipse1
-			// 
-			this.bunifuElipse1.ElipseRadius = 10;
-			this.bunifuElipse1.TargetControl = this;
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "ID de facture";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			// 
-			// dateDataGridViewTextBoxColumn
-			// 
-			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-			// 
-			// totalDataGridViewTextBoxColumn
-			// 
-			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-			// 
-			// paidDataGridViewTextBoxColumn
-			// 
-			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewTextBoxColumn.HeaderText = "Payé";
-			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
-			// 
-			// quantityDataGridViewTextBoxColumn
-			// 
-			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité";
-			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-			// 
-			// creditDataGridViewCheckBoxColumn
-			// 
-			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
-			this.creditDataGridViewCheckBoxColumn.HeaderText = "Crédit";
-			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
-			// 
-			// userIdDataGridViewTextBoxColumn
-			// 
-			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-			this.userIdDataGridViewTextBoxColumn.HeaderText = "Id caissier";
-			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-			// 
-			// idDataGridViewTextBoxColumn1
-			// 
-			this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn1.HeaderText = "Shift Id";
-			this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-			// 
-			// quantitySoldDataGridViewTextBoxColumn
-			// 
-			this.quantitySoldDataGridViewTextBoxColumn.DataPropertyName = "QuantitySold";
-			this.quantitySoldDataGridViewTextBoxColumn.HeaderText = "Quantité vendue";
-			this.quantitySoldDataGridViewTextBoxColumn.Name = "quantitySoldDataGridViewTextBoxColumn";
-			// 
-			// totalAmountDataGridViewTextBoxColumn
-			// 
-			this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-			this.totalAmountDataGridViewTextBoxColumn.HeaderText = "Montant total";
-			this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-			// 
-			// paidAmountDataGridViewTextBoxColumn
-			// 
-			this.paidAmountDataGridViewTextBoxColumn.DataPropertyName = "PaidAmount";
-			this.paidAmountDataGridViewTextBoxColumn.HeaderText = "Montant payé";
-			this.paidAmountDataGridViewTextBoxColumn.Name = "paidAmountDataGridViewTextBoxColumn";
-			// 
-			// creditInvoicesDataGridViewTextBoxColumn
-			// 
-			this.creditInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CreditInvoices";
-			this.creditInvoicesDataGridViewTextBoxColumn.HeaderText = "Factures de crédit";
-			this.creditInvoicesDataGridViewTextBoxColumn.Name = "creditInvoicesDataGridViewTextBoxColumn";
-			// 
-			// cashInvoicesDataGridViewTextBoxColumn
-			// 
-			this.cashInvoicesDataGridViewTextBoxColumn.DataPropertyName = "CashInvoices";
-			this.cashInvoicesDataGridViewTextBoxColumn.HeaderText = "Factures en espèces";
-			this.cashInvoicesDataGridViewTextBoxColumn.Name = "cashInvoicesDataGridViewTextBoxColumn";
-			// 
-			// explanationDataGridViewTextBoxColumn
-			// 
-			this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
-			this.explanationDataGridViewTextBoxColumn.HeaderText = "Explanation";
-			this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
-			// 
-			// closedOnDataGridViewTextBoxColumn
-			// 
-			this.closedOnDataGridViewTextBoxColumn.DataPropertyName = "ClosedOn";
-			this.closedOnDataGridViewTextBoxColumn.HeaderText = "Closed On";
-			this.closedOnDataGridViewTextBoxColumn.Name = "closedOnDataGridViewTextBoxColumn";
-			// 
 			// dayIdDataGridViewTextBoxColumn
 			// 
 			this.dayIdDataGridViewTextBoxColumn.DataPropertyName = "DayId";
@@ -829,6 +801,38 @@
 			this.paidAmountDataGridViewTextBoxColumn1.DataPropertyName = "PaidAmount";
 			this.paidAmountDataGridViewTextBoxColumn1.HeaderText = "Montant payé";
 			this.paidAmountDataGridViewTextBoxColumn1.Name = "paidAmountDataGridViewTextBoxColumn1";
+			// 
+			// dayClosingBindingSource
+			// 
+			this.dayClosingBindingSource.DataSource = typeof(POS.Classes.Finances.DayClosing);
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label9.Location = new System.Drawing.Point(202, 9);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(276, 19);
+			this.label9.TabIndex = 121;
+			this.label9.Text = "Sélectionnez un mois pour afficher les détails";
+			// 
+			// dpClosingMonth
+			// 
+			this.dpClosingMonth.Location = new System.Drawing.Point(484, 6);
+			this.dpClosingMonth.Name = "dpClosingMonth";
+			this.dpClosingMonth.Size = new System.Drawing.Size(200, 23);
+			this.dpClosingMonth.TabIndex = 120;
+			this.dpClosingMonth.ValueChanged += new System.EventHandler(this.dpClosingMonth_ValueChanged);
+			// 
+			// bunifuElipse3
+			// 
+			this.bunifuElipse3.ElipseRadius = 10;
+			this.bunifuElipse3.TargetControl = this.dg;
+			// 
+			// bunifuElipse1
+			// 
+			this.bunifuElipse1.ElipseRadius = 10;
+			this.bunifuElipse1.TargetControl = this;
 			// 
 			// UC_Closing
 			// 
@@ -899,11 +903,9 @@
 		private Bunifu.Framework.UI.BunifuCards bunifuCards2;
 		private FontAwesome.Sharp.IconButton btnCloseDay;
 		private System.Windows.Forms.NumericUpDown tbTotalAmountDaily;
-		private System.Windows.Forms.Label label10;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
 		private System.Windows.Forms.BindingSource shiftBindingSource;
 		private System.Windows.Forms.NumericUpDown tbPaidAmountDaily;
-		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.DateTimePicker dpDayClosing;
 		private System.Windows.Forms.Label label9;
@@ -934,5 +936,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn closingDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn paidAmountDataGridViewTextBoxColumn1;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label label14;
 	}
 }
