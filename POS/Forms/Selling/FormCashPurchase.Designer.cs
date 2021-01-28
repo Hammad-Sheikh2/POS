@@ -132,17 +132,17 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-			this.label5.Location = new System.Drawing.Point(154, 11);
+			this.label5.Location = new System.Drawing.Point(160, 9);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(97, 23);
+			this.label5.Size = new System.Drawing.Size(121, 23);
 			this.label5.TabIndex = 110;
-			this.label5.Text = "Invoice ID#";
+			this.label5.Text = "ID de facture#";
 			// 
 			// lblId
 			// 
 			this.lblId.AutoSize = true;
 			this.lblId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-			this.lblId.Location = new System.Drawing.Point(258, 11);
+			this.lblId.Location = new System.Drawing.Point(287, 9);
 			this.lblId.Name = "lblId";
 			this.lblId.Size = new System.Drawing.Size(20, 23);
 			this.lblId.TabIndex = 111;

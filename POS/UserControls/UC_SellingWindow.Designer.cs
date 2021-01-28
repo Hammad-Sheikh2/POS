@@ -57,6 +57,7 @@
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.btnReceiveCreditPmt = new System.Windows.Forms.LinkLabel();
 			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,14 +112,16 @@
 			this.dg.Name = "dg";
 			this.dg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dg.Size = new System.Drawing.Size(1035, 359);
-			this.dg.TabIndex = 6;
+			this.dg.TabIndex = 1;
 			this.dg.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dg_CellBeginEdit);
+			this.dg.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellEndEdit);
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
 			// 
 			// panelDetails
 			// 
 			this.panelDetails.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.panelDetails.BackColor = System.Drawing.Color.Silver;
+			this.panelDetails.Controls.Add(this.btnReceiveCreditPmt);
 			this.panelDetails.Controls.Add(this.label5);
 			this.panelDetails.Controls.Add(this.label4);
 			this.panelDetails.Controls.Add(this.rbPayment);
@@ -138,7 +141,7 @@
 			this.panelDetails.Location = new System.Drawing.Point(36, 435);
 			this.panelDetails.Name = "panelDetails";
 			this.panelDetails.Size = new System.Drawing.Size(1035, 89);
-			this.panelDetails.TabIndex = 7;
+			this.panelDetails.TabIndex = 2;
 			// 
 			// label5
 			// 
@@ -168,7 +171,7 @@
 			this.rbPayment.Location = new System.Drawing.Point(181, 5);
 			this.rbPayment.Name = "rbPayment";
 			this.rbPayment.Size = new System.Drawing.Size(82, 22);
-			this.rbPayment.TabIndex = 108;
+			this.rbPayment.TabIndex = 1;
 			this.rbPayment.TabStop = true;
 			this.rbPayment.Text = "Paiement";
 			this.rbPayment.UseVisualStyleBackColor = true;
@@ -181,21 +184,21 @@
 			this.rbReturn.Location = new System.Drawing.Point(100, 5);
 			this.rbReturn.Name = "rbReturn";
 			this.rbReturn.Size = new System.Drawing.Size(68, 22);
-			this.rbReturn.TabIndex = 107;
+			this.rbReturn.TabIndex = 0;
 			this.rbReturn.Text = "Retour";
 			this.rbReturn.UseVisualStyleBackColor = true;
 			this.rbReturn.CheckedChanged += new System.EventHandler(this.InvoiceType_CheckChanged);
 			// 
 			// btnClear
 			// 
+			this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnClear.BackColor = System.Drawing.Color.Silver;
-			this.btnClear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnClear.ForeColor = System.Drawing.Color.DarkRed;
 			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Trash;
 			this.btnClear.IconColor = System.Drawing.Color.DarkRed;
 			this.btnClear.IconSize = 30;
-			this.btnClear.Location = new System.Drawing.Point(1002, 52);
+			this.btnClear.Location = new System.Drawing.Point(1002, 54);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(30, 30);
 			this.btnClear.TabIndex = 106;
@@ -235,6 +238,7 @@
 			// 
 			// btnCash
 			// 
+			this.btnCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCash.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCash.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -242,17 +246,18 @@
 			this.btnCash.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnCash.IconColor = System.Drawing.Color.Black;
 			this.btnCash.IconSize = 16;
-			this.btnCash.Location = new System.Drawing.Point(873, 52);
+			this.btnCash.Location = new System.Drawing.Point(743, 53);
 			this.btnCash.Name = "btnCash";
 			this.btnCash.Rotation = 0D;
 			this.btnCash.Size = new System.Drawing.Size(127, 31);
-			this.btnCash.TabIndex = 102;
+			this.btnCash.TabIndex = 4;
 			this.btnCash.Text = "Espèce";
 			this.btnCash.UseVisualStyleBackColor = true;
 			this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
 			// 
 			// btnCredit
 			// 
+			this.btnCredit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCredit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCredit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -260,28 +265,30 @@
 			this.btnCredit.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnCredit.IconColor = System.Drawing.Color.Black;
 			this.btnCredit.IconSize = 16;
-			this.btnCredit.Location = new System.Drawing.Point(741, 52);
+			this.btnCredit.Location = new System.Drawing.Point(872, 53);
 			this.btnCredit.Name = "btnCredit";
 			this.btnCredit.Rotation = 0D;
 			this.btnCredit.Size = new System.Drawing.Size(127, 31);
-			this.btnCredit.TabIndex = 101;
+			this.btnCredit.TabIndex = 3;
 			this.btnCredit.Text = "Crédit";
 			this.btnCredit.UseVisualStyleBackColor = true;
 			this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
 			// 
 			// tbTotal
 			// 
+			this.tbTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-			this.tbTotal.Location = new System.Drawing.Point(898, 3);
+			this.tbTotal.Location = new System.Drawing.Point(872, 3);
 			this.tbTotal.Name = "tbTotal";
-			this.tbTotal.Size = new System.Drawing.Size(134, 33);
+			this.tbTotal.Size = new System.Drawing.Size(160, 33);
 			this.tbTotal.TabIndex = 100;
 			// 
 			// label1
 			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-			this.label1.Location = new System.Drawing.Point(844, 11);
+			this.label1.Location = new System.Drawing.Point(819, 8);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(48, 23);
 			this.label1.TabIndex = 99;
@@ -296,7 +303,7 @@
 			this.cbxCustomers.Location = new System.Drawing.Point(96, 55);
 			this.cbxCustomers.Name = "cbxCustomers";
 			this.cbxCustomers.Size = new System.Drawing.Size(377, 26);
-			this.cbxCustomers.TabIndex = 3;
+			this.cbxCustomers.TabIndex = 2;
 			this.cbxCustomers.Text = "Comptant";
 			// 
 			// label16
@@ -338,7 +345,7 @@
 			this.panel1.Location = new System.Drawing.Point(36, 13);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1035, 49);
-			this.panel1.TabIndex = 103;
+			this.panel1.TabIndex = 0;
 			// 
 			// cbxProductNames
 			// 
@@ -349,7 +356,7 @@
 			this.cbxProductNames.Location = new System.Drawing.Point(11, 11);
 			this.cbxProductNames.Name = "cbxProductNames";
 			this.cbxProductNames.Size = new System.Drawing.Size(1010, 27);
-			this.cbxProductNames.TabIndex = 3;
+			this.cbxProductNames.TabIndex = 0;
 			this.cbxProductNames.Text = "Nom du produit ici";
 			this.cbxProductNames.SelectedIndexChanged += new System.EventHandler(this.cbxProductNames_SelectedIndexChanged);
 			this.cbxProductNames.Click += new System.EventHandler(this.cbxProductNames_Click);
@@ -380,18 +387,31 @@
 			this.bunifuElipse3.ElipseRadius = 5;
 			this.bunifuElipse3.TargetControl = this.panel1;
 			// 
+			// btnReceiveCreditPmt
+			// 
+			this.btnReceiveCreditPmt.AutoSize = true;
+			this.btnReceiveCreditPmt.Location = new System.Drawing.Point(479, 63);
+			this.btnReceiveCreditPmt.Name = "btnReceiveCreditPmt";
+			this.btnReceiveCreditPmt.Size = new System.Drawing.Size(150, 13);
+			this.btnReceiveCreditPmt.TabIndex = 111;
+			this.btnReceiveCreditPmt.TabStop = true;
+			this.btnReceiveCreditPmt.Text = "recevoir un paiement de crédit";
+			this.btnReceiveCreditPmt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnReceiveCreditPmt_LinkClicked);
+			// 
 			// productNameDataGridViewTextBoxColumn
 			// 
 			this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
 			this.productNameDataGridViewTextBoxColumn.HeaderText = "Nom du produit";
 			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// shapeDataGridViewTextBoxColumn
 			// 
 			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
 			this.shapeDataGridViewTextBoxColumn.HeaderText = "Forme";
 			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
+			this.shapeDataGridViewTextBoxColumn.ReadOnly = true;
 			this.shapeDataGridViewTextBoxColumn.Width = 150;
 			// 
 			// unitPriceDataGridViewTextBoxColumn
@@ -399,6 +419,7 @@
 			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
 			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Prix unitaire";
 			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+			this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// quantityDataGridViewTextBoxColumn
 			// 
@@ -411,6 +432,7 @@
 			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
 			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
 			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			this.totalDataGridViewTextBoxColumn.ReadOnly = true;
 			this.totalDataGridViewTextBoxColumn.Width = 150;
 			// 
 			// cartBindingSource
@@ -470,5 +492,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+		private System.Windows.Forms.LinkLabel btnReceiveCreditPmt;
 	}
 }

@@ -79,7 +79,7 @@
 			// 
 			// Cahier
 			// 
-			this.Cahier.HeaderText = "Cahier Name";
+			this.Cahier.HeaderText = "nom du caissier";
 			this.Cahier.Name = "Cahier";
 			// 
 			// TurnOver

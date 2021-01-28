@@ -99,8 +99,13 @@ namespace POS.Forms.Selling
 				{
 					Reload();
 					Access.InsertInvoice(invoice, cart);
-					Manager.Show("Facture créée", Notification.Type.Success);
-					new FormInvioceReport(invoice, cart).Show();
+					using (FormInvioceReport f = new FormInvioceReport(invoice, cart))
+					{
+						f.ShowDialog();
+						Manager.Show("Facture créée", Notification.Type.Success);
+						this.DialogResult = DialogResult.OK;
+						this.Close();
+					}
 				}
 				catch (Exception ex)
 				{

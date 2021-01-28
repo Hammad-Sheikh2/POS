@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelListings = new System.Windows.Forms.Panel();
 			this.btnInStock = new FontAwesome.Sharp.IconButton();
 			this.btnOutOfStock = new FontAwesome.Sharp.IconButton();
@@ -51,15 +51,15 @@
 			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.cbFilter = new System.Windows.Forms.CheckBox();
 			this.dpEnd = new System.Windows.Forms.DateTimePicker();
 			this.dpStart = new System.Windows.Forms.DateTimePicker();
 			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
 			this.tbDays = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -235,7 +235,7 @@
 			this.btnInStore.Rotation = 0D;
 			this.btnInStore.Size = new System.Drawing.Size(128, 29);
 			this.btnInStore.TabIndex = 117;
-			this.btnInStore.Text = "En rayon";
+			this.btnInStore.Text = "En magasin";
 			this.toolTip1.SetToolTip(this.btnInStore, "Products with non-zero quantity in store");
 			this.btnInStore.UseVisualStyleBackColor = true;
 			this.btnInStore.Click += new System.EventHandler(this.btnInStore_Click);
@@ -261,8 +261,8 @@
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,14 +270,14 @@
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -300,14 +300,14 @@
             this.supplierNameDataGridViewTextBoxColumn,
             this.storeDataGridViewCheckBoxColumn});
 			this.dg.DataSource = this.productBindingSource;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dg.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
 			this.dg.DoubleBuffered = true;
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
@@ -436,6 +436,36 @@
 			this.bunifuCards1.Size = new System.Drawing.Size(605, 96);
 			this.bunifuCards1.TabIndex = 113;
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label4.Location = new System.Drawing.Point(317, 40);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(64, 18);
+			this.label4.TabIndex = 132;
+			this.label4.Text = "Journées";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label2.Location = new System.Drawing.Point(107, 68);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(75, 18);
+			this.label2.TabIndex = 131;
+			this.label2.Text = "Date de fin";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
+			this.label1.Location = new System.Drawing.Point(86, 44);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(96, 18);
+			this.label1.TabIndex = 130;
+			this.label1.Text = "Date de début";
+			// 
 			// cbFilter
 			// 
 			this.cbFilter.AutoSize = true;
@@ -506,36 +536,6 @@
 			this.label5.Size = new System.Drawing.Size(56, 23);
 			this.label5.TabIndex = 113;
 			this.label5.Text = "Filtre";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label2.Location = new System.Drawing.Point(107, 68);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(75, 18);
-			this.label2.TabIndex = 131;
-			this.label2.Text = "Date de fin";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label1.Location = new System.Drawing.Point(86, 44);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(96, 18);
-			this.label1.TabIndex = 130;
-			this.label1.Text = "Date de début";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F);
-			this.label4.Location = new System.Drawing.Point(317, 40);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(64, 18);
-			this.label4.TabIndex = 132;
-			this.label4.Text = "Journées";
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -617,7 +617,7 @@
 			// alertThresholdDataGridViewTextBoxColumn
 			// 
 			this.alertThresholdDataGridViewTextBoxColumn.DataPropertyName = "AlertThreshold";
-			this.alertThresholdDataGridViewTextBoxColumn.HeaderText = "Alert Threshold";
+			this.alertThresholdDataGridViewTextBoxColumn.HeaderText = "Seuil d\'alerte";
 			this.alertThresholdDataGridViewTextBoxColumn.Name = "alertThresholdDataGridViewTextBoxColumn";
 			// 
 			// quantityMaxInShelveDataGridViewTextBoxColumn
@@ -630,7 +630,7 @@
 			// createdByDataGridViewTextBoxColumn
 			// 
 			this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
-			this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
+			this.createdByDataGridViewTextBoxColumn.HeaderText = "créé par";
 			this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
 			// 
 			// dateCreatedDataGridViewTextBoxColumn

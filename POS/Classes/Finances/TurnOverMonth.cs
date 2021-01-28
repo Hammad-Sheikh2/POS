@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,10 @@ namespace POS.Classes.Finances
 {
 	class TurnOverMonth
 	{
+		[DisplayName("mois")]
 		public string Month { get; set; }
 
+		[DisplayName("Chiffre d'affaires ")]
 		public double Turnover { get; set; }
 
 		public static TurnOverMonth[] GetTurnOverMonth(Invoice[] arr)

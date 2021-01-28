@@ -18,13 +18,13 @@ namespace POS.Classes
 
 		public string SupplierName { get; set; }
 
-		public double PurchasePrice { get; set; }
+		public double PurchasePrice { get; set; } = 0;
 
-		public double Quantity { get; set; }
+		public double Quantity { get; set; } = 0;
 
 		public DateTime PurchaseDate { get; set; } = DateTime.Now;
 
-		public double TotalPaid { get; set; }
+		public double TotalPaid { get; set; } = 0;
 
 	}
 }

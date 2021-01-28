@@ -9,11 +9,13 @@ namespace POS.Classes.Finances
 {
 	public class TurnOverCashier
 	{
-		[DisplayName("Cashier Id")]
+		[DisplayName("Id d'utilisateur")]
 		public int CashierId { get; set; }
 
+		[DisplayName("Nom")]
 		public string Name { get; set; }
 
+		[DisplayName("Chiffre d'affair")]
 		public double Turnover { get; set; }
 
 		public static TurnOverCashier[] GetTurnOverCashiers(Invoice[] arr)

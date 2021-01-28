@@ -74,46 +74,55 @@ namespace POS.UserControls
 			li = await Access.GetStringListAsync("SELECT ProductName FROM Products", false);
 			cbxProducts.Items.AddRange(li.ToArray());
 			pur = new Purchase() { Id = Access.NextPurchaseId };
-			purchaseBindingSource1.DataSource = pur;
 			purchaseBindingSource.DataSource = await Access.GetPurchasesAsync();
 		}
 
 		private async void btnSave_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("You are about to register a new purchase. Purchase price and stock of selected product will be updated. Are you sure?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			if (ValidatePurchase())
 			{
-				try
+				if (MessageBox.Show("Vous êtes sur le point d'enregistrer un nouvel achat. Le stock du produit sélectionné sera mis à jour. Êtes-vous sûr?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					await Access.InsertPurchaseAsync(pur);
-					Manager.Show("Purchase Registered", Forms.Notification.Type.Success);
-					Product product = Access.GetProduct(cbxProducts.Text);
-					if (product.Store)
+					try
 					{
-						product.QuantityInStore += pur.Quantity;
+						pur.PurchaseDate = dp.Value;
+						pur.SupplierName = cbxSuppliers.Text;
+						pur.Quantity = double.Parse(tbQty.Value.ToString());
+						pur.TotalPaid = double.Parse(tbTotalPrice.Text);
+						pur.ProductName = cbxProducts.Text;
+						await Access.InsertPurchaseAsync(pur);
+						Manager.Show("Achat enregistré", Forms.Notification.Type.Success);
+						Product product = Access.GetProduct(cbxProducts.Text);
+						if (product.Store)
+						{
+							product.QuantityInStore += pur.Quantity;
+						}
+						else
+						{
+							product.QuantityInShelves += pur.Quantity;
+						}
+						await Access.UpdateProductAsync(product);
+						Manager.Show("stock mis à jour", Forms.Notification.Type.Info);
+						UC_Purchases_Load(this, e);
+						btnClear_Click(this, e);
 					}
-					else
+					catch (Exception ex)
 					{
-						product.QuantityInShelves += pur.Quantity;
+						MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+						Manager.Show("achat raté", Forms.Notification.Type.Error);
 					}
-					product.PurchasePrice = pur.PurchasePrice;
-					await Access.UpdateProductAsync(product);
-					Manager.Show("Stock Updated", Forms.Notification.Type.Info);
-					UC_Purchases_Load(this, e);
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-					Manager.Show("Purchase Failed", Forms.Notification.Type.Error);
 				}
 			}
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)
 		{
-			this.Controls.OfType<TextBox>().ToList().ForEach(item => item.Clear());
-			this.Controls.OfType<NumericUpDown>().ToList().ForEach(item => item.Value = 0);
-			this.Controls.OfType<ComboBox>().ToList().ForEach(item => item.SelectedIndex = -1);
-			Manager.Show("Cleared", Forms.Notification.Type.Info);
+			pur = new Purchase() { Id = Access.NextPurchaseId };
+			panelDetails.Controls.OfType<ComboBox>().ToList().ForEach(item => item.SelectedIndex = -1);
+			panelDetails.Controls.OfType<TextBox>().ToList().ForEach(item => item.Clear());
+			cbxProducts.Text = "Sélectionner";
+			cbxSuppliers.Text = "Sélectionner";
+			tbQty.Value = 0;
 		}
 
 		private async void btnExportToExcel_Click(object sender, EventArgs e)
@@ -140,6 +149,49 @@ namespace POS.UserControls
 				f.ShowDialog();
 				UC_Purchases_Load(this, e);
 			}
+		}
+
+		private void cbxProducts_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cbxProducts.SelectedIndex != -1)
+			{
+				Product pro = Access.GetProduct(cbxProducts.Text);
+				tbPurchasePrice.Text = pro.PurchasePrice.ToString();
+				pur.PurchasePrice = pro.PurchasePrice;
+				tbTotalPrice.Text = (Convert.ToDouble(tbQty.Value) * pro.PurchasePrice).ToString();
+			}
+		}
+
+		private void tbQty_Leave(object sender, EventArgs e)
+		{
+			try
+			{
+				tbTotalPrice.Text = (Convert.ToDouble(tbQty.Value) * double.Parse(tbPurchasePrice.Text)).ToString();
+			}
+			catch (Exception)
+			{
+				tbTotalPrice.Text = "0";
+			}
+		}
+
+		private bool ValidatePurchase()
+		{
+			if (cbxSuppliers.SelectedIndex == -1)
+			{
+				Manager.Show("fournisseur invalide", Forms.Notification.Type.Warning);
+				return false;
+			}
+			if (cbxProducts.SelectedIndex == -1)
+			{
+				Manager.Show("produit invalide", Forms.Notification.Type.Warning);
+				return false;
+			}
+			if (tbQty.Value == 0)
+			{
+				Manager.Show("quantité invalide", Forms.Notification.Type.Warning);
+				return false;
+			}
+			return true;
 		}
 	}
 }

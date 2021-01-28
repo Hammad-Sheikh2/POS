@@ -34,6 +34,8 @@ namespace POS.UserControls
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
 			foreach (var textbox in GetAllChildren(this).OfType<Label>())
 				textbox.ForeColor = Properties.Settings.Default.ForeColor;
+			btnReceiveCreditPmt.ForeColor = Properties.Settings.Default.ForeColor;
+			btnReceiveCreditPmt.LinkColor = Properties.Settings.Default.ForeColor;
 			dg.HeaderBgColor = Properties.Settings.Default.HeaderColor;
 			dg.HeaderForeColor = Properties.Settings.Default.ForeColor;
 			dg.BackgroundColor = Properties.Settings.Default.MenuBarColor;
@@ -61,7 +63,7 @@ namespace POS.UserControls
 			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
 			cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
 			cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
-			lblCashier.Text = Login.Name;
+			lblCashier.Text = Login.Name.ToUpper();
 		}
 
 		private void dg_Paint(object sender, PaintEventArgs e)
@@ -73,25 +75,43 @@ namespace POS.UserControls
 		{
 			Customer cus = Access.GetCustomer(cbxCustomers.Text);
 			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
+			using (FormCashPurchase f = new FormCashPurchase(cus, arr))
+			{
+				f.tbTotalBill.Text = tbTotal.Text;
+				f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
+				if (f.ShowDialog() == DialogResult.OK)
+				{
+					btnClear_Click(this, e);
+				}
+			}
+		}
+
+		private void btnCredit_Click(object sender, EventArgs e)
+		{
+			Customer cus = Access.GetCustomer(cbxCustomers.Text);
+			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
 			if (arr.Length == 0)
 			{
-				Manager.Show("Cart Empty", Forms.Notification.Type.Warning);
+				Manager.Show("panier vide", Forms.Notification.Type.Warning);
 				return;
 			}
+
 			if (rbPayment.Checked)
 			{
-				using (FormCashPurchase f = new FormCashPurchase(cus, arr))
+				using (FormCreditPayment f = new FormCreditPayment(cus, arr))
 				{
 					f.tbTotalBill.Text = tbTotal.Text;
-					f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
-					f.ShowDialog();
+					if (f.ShowDialog() == DialogResult.OK)
+					{
+						btnClear_Click(sender, e);
+					}
 				}
 			}
 			else
 			{
 				if (arr.Length == 0)
 				{
-					Manager.Show("Cart Empty", Forms.Notification.Type.Warning);
+					Manager.Show("panier vide", Forms.Notification.Type.Warning);
 					return;
 				}
 				foreach (Cart item in arr)
@@ -104,22 +124,6 @@ namespace POS.UserControls
 					f.tbNoOfProducts.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["quantityDataGridViewTextBoxColumn"].Value)).ToString();
 					f.ShowDialog();
 				}
-			}
-		}
-
-		private void btnCredit_Click(object sender, EventArgs e)
-		{
-			Customer cus = Access.GetCustomer(cbxCustomers.Text);
-			Cart[] arr = cartBindingSource.List.OfType<Cart>().ToArray();
-			if (arr.Length == 0)
-			{
-				Manager.Show("Cart Empty", Forms.Notification.Type.Warning);
-				return;
-			}
-			using (FormCreditPayment f = new FormCreditPayment(cus, arr))
-			{
-				f.tbTotalBill.Text = tbTotal.Text;
-				f.ShowDialog();
 			}
 		}
 
@@ -151,12 +155,18 @@ namespace POS.UserControls
 				}
 			}
 			cartBindingSource.List.Add(Access.GetCart(Access.GetProduct(cbxProductNames.Text)));
+			dg.ClearSelection();
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			cartBindingSource.Clear();
 			rbPayment.Checked = true;
+			cbxCustomers.SelectedIndex = -1;
+			cbxCustomers.Text = "Comptant";
+			cbxProductNames.Text = "";
+			btnReceiveCreditPmt.LinkColor = Properties.Settings.Default.ForeColor;
+
 		}
 
 		private void cbxProductNames_Click(object sender, EventArgs e)
@@ -168,13 +178,13 @@ namespace POS.UserControls
 		{
 			if (rbReturn.Checked)
 			{
-				btnCredit.Visible = false;
-				btnCash.Text = "Confirm";
+				btnCash.Visible = false;
+				btnCredit.Text = "confirmer";
 			}
 			else
 			{
-				btnCredit.Visible = true;
-				btnCash.Text = "Espèce";
+				btnCash.Visible = true;
+				btnCredit.Text = "Crédit";
 			}
 		}
 
@@ -185,6 +195,26 @@ namespace POS.UserControls
 			{
 				Manager.Show("Out of stock", Forms.Notification.Type.Info);
 				e.Cancel = true;
+			}
+		}
+
+		private void dg_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+		{
+			Cart cr = cartBindingSource.List.Cast<Cart>().ToList().ElementAt(e.RowIndex);
+			Product pr = Access.GetProduct(cr.ProductId);
+			if (pr.QuantityInShelves < cr.Quantity)
+			{
+				Manager.Show("quantité invalide", Forms.Notification.Type.Info);
+				cr.Quantity = pr.QuantityInShelves;
+			}
+		}
+
+		private void btnReceiveCreditPmt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Customer cus = Access.GetCustomer(cbxCustomers.Text);
+			using (FormCreditPayment f = new FormCreditPayment(cus))
+			{
+				f.ShowDialog();
 			}
 		}
 	}

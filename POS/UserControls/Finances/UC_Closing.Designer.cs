@@ -144,7 +144,7 @@
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage1.Size = new System.Drawing.Size(1033, 484);
 			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Cloture du Jour";
+			this.tabPage1.Text = "Clôture du poste";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// bunifuCards1
@@ -207,8 +207,8 @@
 			this.tbCash.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbCash.Location = new System.Drawing.Point(550, 40);
 			this.tbCash.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbCash.Name = "tbCash";
@@ -233,8 +233,8 @@
 			this.tbCredit.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbCredit.Location = new System.Drawing.Point(550, 8);
 			this.tbCredit.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbCredit.Name = "tbCredit";
@@ -259,8 +259,8 @@
 			this.tbPaid.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbPaid.Location = new System.Drawing.Point(266, 40);
 			this.tbPaid.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbPaid.Name = "tbPaid";
@@ -285,8 +285,8 @@
 			this.tbTotal.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbTotal.Location = new System.Drawing.Point(266, 8);
 			this.tbTotal.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbTotal.Name = "tbTotal";
@@ -311,8 +311,8 @@
 			this.tbQuantity.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbQuantity.Location = new System.Drawing.Point(107, 40);
 			this.tbQuantity.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbQuantity.Name = "tbQuantity";
@@ -337,8 +337,8 @@
 			this.tbShiftId.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbShiftId.Location = new System.Drawing.Point(107, 8);
 			this.tbShiftId.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbShiftId.Name = "tbShiftId";
@@ -455,7 +455,7 @@
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage2.Size = new System.Drawing.Size(1033, 484);
 			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Jour de fermeture";
+			this.tabPage2.Text = "Clôture du jour";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// label8
@@ -616,8 +616,8 @@
 			this.tbPaidAmountDaily.Font = new System.Drawing.Font("Times New Roman", 16F);
 			this.tbPaidAmountDaily.Location = new System.Drawing.Point(424, 19);
 			this.tbPaidAmountDaily.Maximum = new decimal(new int[] {
-            1000000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbPaidAmountDaily.Name = "tbPaidAmountDaily";
@@ -648,8 +648,8 @@
 			this.tbTotalAmountDaily.Font = new System.Drawing.Font("Times New Roman", 16F);
 			this.tbTotalAmountDaily.Location = new System.Drawing.Point(126, 19);
 			this.tbTotalAmountDaily.Maximum = new decimal(new int[] {
-            1000000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbTotalAmountDaily.Name = "tbTotalAmountDaily";
@@ -668,7 +668,7 @@
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage3.Size = new System.Drawing.Size(1033, 484);
 			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Clôture du Mois";
+			this.tabPage3.Text = "Clôture du mois";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
 			// bunifuCards3
@@ -696,8 +696,8 @@
 			this.tbPaidMonthly.Font = new System.Drawing.Font("Times New Roman", 16F);
 			this.tbPaidMonthly.Location = new System.Drawing.Point(587, 19);
 			this.tbPaidMonthly.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbPaidMonthly.Name = "tbPaidMonthly";
@@ -721,8 +721,8 @@
 			this.tbTotalMonthly.Font = new System.Drawing.Font("Times New Roman", 16F);
 			this.tbTotalMonthly.Location = new System.Drawing.Point(126, 19);
 			this.tbTotalMonthly.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
 			this.tbTotalMonthly.Name = "tbTotalMonthly";

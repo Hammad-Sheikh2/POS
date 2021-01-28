@@ -1,6 +1,7 @@
 ﻿using FontAwesome.Sharp;
 using POS.Classes;
 using POS.Classes.Finances;
+using POS.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,17 @@ namespace POS.Forms.Selling
 		Invoice invoice = new Invoice();
 		private bool IsNew = true;
 
-		public FormCreditPayment()
+		public FormCreditPayment(Customer cus)
 		{
 			InitializeComponent();
 			ActivateTheme();
+			customer = cus;
+			cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
+			invoiceBindingSource.DataSource = Access.GetInvoicesByCustomersUnpaid(customer.Id);
+			cbxInvoices.Items.Clear();
+			cbxInvoices.Items.AddRange(Access.GetStringList($"SELECT Id FROM Invoices WHERE CustomerId = {customer.Id} AND Total > Paid", true).ToArray());
+			cbxCustomers.Text = customer.Name;
 		}
 
 		public FormCreditPayment(Customer cus, Cart[] arr)
@@ -104,12 +112,20 @@ namespace POS.Forms.Selling
 				if (IsNew)
 				{
 					Access.InsertInvoice(invoice, cart);
-					Manager.Show("Invoice created", Notification.Type.Success);
+					using (FormInvioceReport f = new FormInvioceReport(invoice, cart))
+					{
+						f.ShowDialog();
+						Manager.Show("Facture créée", Notification.Type.Success);
+						this.DialogResult = DialogResult.OK;
+						this.Close();
+					}
 				}
 				else
 				{
 					Access.UpdateInvoice(invoice);
-					Manager.Show("Invoice updated", Notification.Type.Success);
+					Manager.Show("facture mise à jour", Notification.Type.Success);
+					this.DialogResult = DialogResult.OK;
+					this.Close();
 				}
 				Populate();
 			}

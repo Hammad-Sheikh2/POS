@@ -29,27 +29,32 @@ namespace POS.Reporting
 		{
 			bindingInvoice.DataSource = inv;
 			bindingCart.DataSource = cart;
-			List<ReportParameter> parameters = new List<ReportParameter>();
-			parameters.Add(new ReportParameter("CompanyName", Properties.Settings.Default.CompanyName));
+			BindingSource bindingCustomer = new BindingSource();
+			Customer cus = Access.GetCustomer(inv.CustomerId);
+			bindingCustomer.DataSource = cus;
+
+			List<ReportParameter> parameters = new List<ReportParameter>
+			{
+				new ReportParameter("CompanyName", Properties.Settings.Default.CompanyName),
+				new ReportParameter("Message1", Properties.Settings.Default.Message1),
+				new ReportParameter("Message2", Properties.Settings.Default.Message2)
+			};
 
 			ReportDataSource ds1 = new ReportDataSource("InvoiceDetailsDataset", bindingInvoice);
 			ReportDataSource ds2 = new ReportDataSource("InvoiceCartDataset", bindingCart);
+			ReportDataSource ds3 = new ReportDataSource("CustomerDataset", bindingCustomer);
 
-			reportViewer1.LocalReport.SetParameters(parameters);
 			reportViewer1.LocalReport.DataSources.Clear();
 			reportViewer1.LocalReport.DataSources.Add(ds1);
 			reportViewer1.LocalReport.DataSources.Add(ds2);
+			reportViewer1.LocalReport.DataSources.Add(ds3);
+			reportViewer1.LocalReport.SetParameters(parameters);
 			this.reportViewer1.RefreshReport();
 		}
 
-		private void btnPrint_Click(object sender, EventArgs e)
+		private void reportViewer1_Print(object sender, ReportPrintEventArgs e)
 		{
-			bindingInvoice.DataSource = inv;
-			ReportDataSource ds = new ReportDataSource("InvoiceDetailsDataset", bindingInvoice);
-
-			reportViewer1.LocalReport.DataSources.Clear();
-			reportViewer1.LocalReport.DataSources.Add(ds);
-			this.reportViewer1.RefreshReport();
+			this.Close();
 		}
 	}
 }

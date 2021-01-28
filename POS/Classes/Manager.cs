@@ -39,111 +39,125 @@ namespace POS.Classes
 
 		public static void ExportDataGrid(DataGridView dataGridView1)
 		{
-			int rownum = 1;
-			// intialize excel application
-			var excelApp = new Excel.Application();
-			excelApp.Visible = true;
-			// creates a workbook
-			Excel.Workbook excelbk = excelApp.Workbooks.Add(Type.Missing);
-			//Add a Workseet named sheet1 to above workbook
-			Excel.Worksheet xlWorkSheet1 = (Excel.Worksheet)excelbk.Worksheets["Sheet1"];
+			try
+			{
+				int rownum = 1;
+				// intialize excel application
+				var excelApp = new Excel.Application();
+				excelApp.Visible = true;
+				// creates a workbook
+				Excel.Workbook excelbk = excelApp.Workbooks.Add(Type.Missing);
+				//Add a Workseet named sheet1 to above workbook
+				Excel.Worksheet xlWorkSheet1 = (Excel.Worksheet)excelbk.Worksheets["Sheet1"];
 
-			//Add each column name of datagridview to the first row of Excel,
-			//this will be the header text
-			for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
-			{
-				Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
-				xlRange.Value2 = dataGridView1.Columns[colCount].HeaderText;
-				xlRange.Font.Bold = true;
-			}
-			// for each row in the datagridview
-			for (int rowCount = 0; rowCount < dataGridView1.Rows.Count; rowCount++)
-			{
-				//if the row is visible
-				if (dataGridView1.Rows[rowCount].Visible == true)
+				//Add each column name of datagridview to the first row of Excel,
+				//this will be the header text
+				for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
 				{
-					//increment the row number for excel
-					rownum = rownum + 1;
-					for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
+					Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
+					xlRange.Value2 = dataGridView1.Columns[colCount].HeaderText;
+					xlRange.Font.Bold = true;
+				}
+				// for each row in the datagridview
+				for (int rowCount = 0; rowCount < dataGridView1.Rows.Count; rowCount++)
+				{
+					//if the row is visible
+					if (dataGridView1.Rows[rowCount].Visible == true)
 					{
-						//create a excel range for the rownum and the columncount
-						Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
-						try
+						//increment the row number for excel
+						rownum = rownum + 1;
+						for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
 						{
-							//add the gridview cell value to the cellrange
-							if (dataGridView1.Rows[rowCount].Cells[colCount].Value == null)
-								dataGridView1.Rows[rowCount].Cells[colCount].Value = "";
-							xlRange.Value2 =
-							dataGridView1.Rows[rowCount].Cells[colCount].Value.ToString();
-						}
-						catch (Exception)
-						{
+							//create a excel range for the rownum and the columncount
+							Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
 							try
 							{
-								xlRange.Value2 = "";
+								//add the gridview cell value to the cellrange
+								if (dataGridView1.Rows[rowCount].Cells[colCount].Value == null)
+									dataGridView1.Rows[rowCount].Cells[colCount].Value = "";
+								xlRange.Value2 =
+								dataGridView1.Rows[rowCount].Cells[colCount].Value.ToString();
 							}
 							catch (Exception)
 							{
+								try
+								{
+									xlRange.Value2 = "";
+								}
+								catch (Exception)
+								{
 
+								}
 							}
 						}
 					}
 				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
 		public static async Task ExportDataGridAsync(DataGridView dataGridView1)
 		{
-			int rownum = 1;
-			// intialize excel application
-			var excelApp = new Excel.Application();
-			excelApp.Visible = true;
-			// creates a workbook
-			Excel.Workbook excelbk = excelApp.Workbooks.Add(Type.Missing);
-			//Add a Workseet named sheet1 to above workbook
-			Excel.Worksheet xlWorkSheet1 = (Excel.Worksheet)excelbk.Worksheets["Sheet1"];
+			try
+			{
+				int rownum = 1;
+				// intialize excel application
+				var excelApp = new Excel.Application();
+				excelApp.Visible = true;
+				// creates a workbook
+				Excel.Workbook excelbk = excelApp.Workbooks.Add(Type.Missing);
+				//Add a Workseet named sheet1 to above workbook
+				Excel.Worksheet xlWorkSheet1 = (Excel.Worksheet)excelbk.Worksheets["Sheet1"];
 
-			//Add each column name of datagridview to the first row of Excel,
-			//this will be the header text
-			for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
-			{
-				Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
-				xlRange.Value2 = dataGridView1.Columns[colCount].HeaderText;
-				xlRange.Font.Bold = true;
-			}
-			// for each row in the datagridview
-			for (int rowCount = 0; rowCount < dataGridView1.Rows.Count; rowCount++)
-			{
-				//if the row is visible
-				if (dataGridView1.Rows[rowCount].Visible == true)
+				//Add each column name of datagridview to the first row of Excel,
+				//this will be the header text
+				for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
 				{
-					//increment the row number for excel
-					rownum = rownum + 1;
-					for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
+					Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
+					xlRange.Value2 = dataGridView1.Columns[colCount].HeaderText;
+					xlRange.Font.Bold = true;
+				}
+				// for each row in the datagridview
+				for (int rowCount = 0; rowCount < dataGridView1.Rows.Count; rowCount++)
+				{
+					//if the row is visible
+					if (dataGridView1.Rows[rowCount].Visible == true)
 					{
-						//create a excel range for the rownum and the columncount
-						Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
-						try
+						//increment the row number for excel
+						rownum = rownum + 1;
+						for (int colCount = 0; colCount < dataGridView1.Columns.Count; colCount++)
 						{
-							//add the gridview cell value to the cellrange
-							if (dataGridView1.Rows[rowCount].Cells[colCount].Value == null)
-								dataGridView1.Rows[rowCount].Cells[colCount].Value = "";
-							xlRange.Value2 =
-							dataGridView1.Rows[rowCount].Cells[colCount].Value.ToString();
-						}
-						catch (Exception)
-						{
+							//create a excel range for the rownum and the columncount
+							Excel.Range xlRange = (Excel.Range)xlWorkSheet1.Cells[rownum, colCount + 1];
 							try
 							{
-								xlRange.Value2 = "";
+								//add the gridview cell value to the cellrange
+								if (dataGridView1.Rows[rowCount].Cells[colCount].Value == null)
+									dataGridView1.Rows[rowCount].Cells[colCount].Value = "";
+								xlRange.Value2 =
+								dataGridView1.Rows[rowCount].Cells[colCount].Value.ToString();
 							}
 							catch (Exception)
 							{
+								try
+								{
+									xlRange.Value2 = "";
+								}
+								catch (Exception)
+								{
 
+								}
 							}
 						}
 					}
 				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}

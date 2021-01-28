@@ -29,13 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cbxInvoices = new System.Windows.Forms.ComboBox();
 			this.btnConfirm = new FontAwesome.Sharp.IconButton();
 			this.label3 = new System.Windows.Forms.Label();
@@ -52,10 +51,11 @@
 			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbCashGiven)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbTotalBill)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -82,8 +82,8 @@
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -92,14 +92,14 @@
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -116,15 +116,11 @@
 			this.dg.Name = "dg";
 			this.dg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dg.RowHeadersVisible = false;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-			this.dg.RowsDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+			this.dg.RowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.dg.Size = new System.Drawing.Size(411, 120);
 			this.dg.TabIndex = 104;
-			// 
-			// invoiceBindingSource
-			// 
-			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
 			// 
 			// cbxInvoices
 			// 
@@ -174,9 +170,9 @@
 			this.lblId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
 			this.lblId.Location = new System.Drawing.Point(323, 9);
 			this.lblId.Name = "lblId";
-			this.lblId.Size = new System.Drawing.Size(20, 23);
+			this.lblId.Size = new System.Drawing.Size(42, 23);
 			this.lblId.TabIndex = 114;
-			this.lblId.Text = "0";
+			this.lblId.Text = "N/A";
 			// 
 			// label5
 			// 
@@ -200,7 +196,7 @@
 			this.cbxCustomers.Name = "cbxCustomers";
 			this.cbxCustomers.Size = new System.Drawing.Size(434, 26);
 			this.cbxCustomers.TabIndex = 115;
-			this.cbxCustomers.Text = "Comptant";
+			this.cbxCustomers.Text = "sélectionner";
 			this.cbxCustomers.SelectedIndexChanged += new System.EventHandler(this.cbxCustomers_SelectedIndexChanged);
 			// 
 			// label4
@@ -249,8 +245,8 @@
 			this.tbCashGiven.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
 			this.tbCashGiven.Location = new System.Drawing.Point(293, 75);
 			this.tbCashGiven.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1410065408,
+            2,
             0,
             0});
 			this.tbCashGiven.Name = "tbCashGiven";
@@ -265,7 +261,7 @@
 			this.tbTotalBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
 			this.tbTotalBill.Location = new System.Drawing.Point(132, 77);
 			this.tbTotalBill.Maximum = new decimal(new int[] {
-            100000,
+            1000000000,
             0,
             0,
             0});
@@ -304,6 +300,10 @@
 			this.leftDataGridViewTextBoxColumn.HeaderText = "restant";
 			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
 			// 
+			// invoiceBindingSource
+			// 
+			this.invoiceBindingSource.DataSource = typeof(POS.Classes.Finances.Invoice);
+			// 
 			// FormCreditPayment
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,11 +330,11 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Credit Payment";
+			this.Text = "Paiement par crédit";
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbCashGiven)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbTotalBill)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

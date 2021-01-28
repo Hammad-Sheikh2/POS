@@ -7,16 +7,18 @@ namespace POS.Classes.Finances
 {
 	public class TurnOverProducts
 	{
-		[DisplayName("ProductId")]
+		[DisplayName("identifiant du produit")]
 		public int ProductId { get; set; }
 
+		[DisplayName("Nom")]
 		public string Name { get; set; }
 
+		[DisplayName("Quantité")]
 		public double Quantity { get; set; } = 0;
 
-		[DisplayName("Total Buy Price")]
+		[DisplayName("Prix ​​d'achat total")]
 		public double BuyingPrice { get; set; } = 0;
-		[DisplayName("Total Selling Price")]
+		[DisplayName("Prix ​​de vente total")]
 		public double SellingPrice { get; set; } = 0;
 
 		public double Margin

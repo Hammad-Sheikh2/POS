@@ -33,6 +33,10 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.tbSearch = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label20 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
 			this.btnClear = new FontAwesome.Sharp.IconButton();
 			this.btnCash = new FontAwesome.Sharp.IconButton();
 			this.btnCredit = new FontAwesome.Sharp.IconButton();
@@ -68,10 +72,6 @@
 			this.tbName = new System.Windows.Forms.TextBox();
 			this.label35 = new System.Windows.Forms.Label();
 			this.label36 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label20 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
 			this.panelSearch.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -171,6 +171,46 @@
 			this.panel1.Size = new System.Drawing.Size(837, 251);
 			this.panel1.TabIndex = 119;
 			// 
+			// label20
+			// 
+			this.label20.AutoSize = true;
+			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label20.Location = new System.Drawing.Point(16, 148);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(65, 17);
+			this.label20.TabIndex = 128;
+			this.label20.Text = "Catégorie";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label14.Location = new System.Drawing.Point(17, 117);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(60, 17);
+			this.label14.TabIndex = 127;
+			this.label14.Text = "Province";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label15.Location = new System.Drawing.Point(16, 82);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(34, 17);
+			this.label15.TabIndex = 126;
+			this.label15.Text = "Ville";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Times New Roman", 11F);
+			this.label13.Location = new System.Drawing.Point(17, 49);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(37, 17);
+			this.label13.TabIndex = 107;
+			this.label13.Text = "Nom";
+			// 
 			// btnClear
 			// 
 			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -179,7 +219,7 @@
 			this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnClear.IconColor = System.Drawing.Color.Black;
 			this.btnClear.IconSize = 16;
-			this.btnClear.Location = new System.Drawing.Point(483, 222);
+			this.btnClear.Location = new System.Drawing.Point(505, 222);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Rotation = 0D;
 			this.btnClear.Size = new System.Drawing.Size(115, 26);
@@ -240,7 +280,7 @@
 			this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnCancel.IconColor = System.Drawing.Color.Black;
 			this.btnCancel.IconSize = 16;
-			this.btnCancel.Location = new System.Drawing.Point(362, 222);
+			this.btnCancel.Location = new System.Drawing.Point(384, 222);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Rotation = 0D;
 			this.btnCancel.Size = new System.Drawing.Size(115, 26);
@@ -257,7 +297,7 @@
 			this.btnUpdate.IconChar = FontAwesome.Sharp.IconChar.None;
 			this.btnUpdate.IconColor = System.Drawing.Color.Black;
 			this.btnUpdate.IconSize = 16;
-			this.btnUpdate.Location = new System.Drawing.Point(241, 222);
+			this.btnUpdate.Location = new System.Drawing.Point(263, 222);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Rotation = 0D;
 			this.btnUpdate.Size = new System.Drawing.Size(115, 26);
@@ -320,9 +360,9 @@
 			this.label9.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label9.Location = new System.Drawing.Point(552, 115);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(66, 17);
+			this.label9.Size = new System.Drawing.Size(81, 17);
 			this.label9.TabIndex = 101;
-			this.label9.Text = "Total Left";
+			this.label9.Text = "Total restant";
 			// 
 			// tbTotalPaid
 			// 
@@ -349,9 +389,9 @@
 			this.label7.Font = new System.Drawing.Font("Times New Roman", 11F);
 			this.label7.Location = new System.Drawing.Point(552, 80);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(67, 17);
+			this.label7.Size = new System.Drawing.Size(69, 17);
 			this.label7.TabIndex = 98;
-			this.label7.Text = "Total Paid";
+			this.label7.Text = "Total payé";
 			// 
 			// cbxCategory
 			// 
@@ -555,46 +595,6 @@
 			this.label36.Size = new System.Drawing.Size(11, 15);
 			this.label36.TabIndex = 3;
 			this.label36.Text = ":";
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label13.Location = new System.Drawing.Point(17, 49);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(37, 17);
-			this.label13.TabIndex = 107;
-			this.label13.Text = "Nom";
-			// 
-			// label20
-			// 
-			this.label20.AutoSize = true;
-			this.label20.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label20.Location = new System.Drawing.Point(16, 148);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(65, 17);
-			this.label20.TabIndex = 128;
-			this.label20.Text = "Catégorie";
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label14.Location = new System.Drawing.Point(17, 117);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(60, 17);
-			this.label14.TabIndex = 127;
-			this.label14.Text = "Province";
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Times New Roman", 11F);
-			this.label15.Location = new System.Drawing.Point(16, 82);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(34, 17);
-			this.label15.TabIndex = 126;
-			this.label15.Text = "Ville";
 			// 
 			// FormEditCustomer
 			// 

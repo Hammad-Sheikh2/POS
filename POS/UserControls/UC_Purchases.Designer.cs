@@ -38,15 +38,11 @@ namespace POS.UserControls
 			this.btnExportToExcel = new FontAwesome.Sharp.IconPictureBox();
 			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panelDetails = new System.Windows.Forms.Panel();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-			this.purchaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.label9 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
 			this.label8 = new System.Windows.Forms.Label();
 			this.btnClear = new FontAwesome.Sharp.IconButton();
 			this.btnSave = new FontAwesome.Sharp.IconButton();
@@ -65,6 +61,8 @@ namespace POS.UserControls
 			this.label14 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.tbPurchasePrice = new System.Windows.Forms.TextBox();
+			this.tbTotalPrice = new System.Windows.Forms.TextBox();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,16 +70,14 @@ namespace POS.UserControls
 			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.purchaseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.totalPaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.btnNewSupplier)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNewProduct)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
 			this.panelDetails.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbQty)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnNewSupplier
@@ -136,7 +132,7 @@ namespace POS.UserControls
 			this.btnExportToExcel.Size = new System.Drawing.Size(26, 27);
 			this.btnExportToExcel.TabIndex = 112;
 			this.btnExportToExcel.TabStop = false;
-			this.toolTip1.SetToolTip(this.btnExportToExcel, "Export All Suppliers");
+			this.toolTip1.SetToolTip(this.btnExportToExcel, "exporter tous les fournisseurs");
 			this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
 			// 
 			// bunifuElipse3
@@ -185,21 +181,17 @@ namespace POS.UserControls
 			this.dg.Size = new System.Drawing.Size(984, 347);
 			this.dg.TabIndex = 3;
 			// 
-			// purchaseBindingSource
-			// 
-			this.purchaseBindingSource.DataSource = typeof(POS.Classes.Purchase);
-			// 
 			// panelDetails
 			// 
 			this.panelDetails.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.panelDetails.BackColor = System.Drawing.Color.Silver;
+			this.panelDetails.Controls.Add(this.tbTotalPrice);
+			this.panelDetails.Controls.Add(this.tbPurchasePrice);
 			this.panelDetails.Controls.Add(this.btnExportToExcel);
 			this.panelDetails.Controls.Add(this.label12);
 			this.panelDetails.Controls.Add(this.label13);
-			this.panelDetails.Controls.Add(this.numericUpDown2);
 			this.panelDetails.Controls.Add(this.label9);
 			this.panelDetails.Controls.Add(this.label11);
-			this.panelDetails.Controls.Add(this.numericUpDown1);
 			this.panelDetails.Controls.Add(this.label8);
 			this.panelDetails.Controls.Add(this.btnClear);
 			this.panelDetails.Controls.Add(this.btnSave);
@@ -245,24 +237,6 @@ namespace POS.UserControls
 			this.label13.TabIndex = 110;
 			this.label13.Text = "Total payé";
 			// 
-			// numericUpDown2
-			// 
-			this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.purchaseBindingSource1, "TotalPaid", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-			this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.numericUpDown2.Location = new System.Drawing.Point(478, 95);
-			this.numericUpDown2.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(165, 26);
-			this.numericUpDown2.TabIndex = 5;
-			// 
-			// purchaseBindingSource1
-			// 
-			this.purchaseBindingSource1.DataSource = typeof(POS.Classes.Purchase);
-			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
@@ -283,25 +257,11 @@ namespace POS.UserControls
 			this.label11.TabIndex = 107;
 			this.label11.Text = "Prix d\'achat";
 			// 
-			// numericUpDown1
-			// 
-			this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.purchaseBindingSource1, "PurchasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-			this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.numericUpDown1.Location = new System.Drawing.Point(478, 63);
-			this.numericUpDown1.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(165, 26);
-			this.numericUpDown1.TabIndex = 4;
-			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Times New Roman", 8F);
-			this.label8.Location = new System.Drawing.Point(158, 166);
+			this.label8.Location = new System.Drawing.Point(147, 166);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(419, 14);
 			this.label8.TabIndex = 105;
@@ -344,7 +304,6 @@ namespace POS.UserControls
 			// 
 			// dp
 			// 
-			this.dp.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.purchaseBindingSource1, "PurchaseDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
 			this.dp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.dp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dp.Location = new System.Drawing.Point(150, 101);
@@ -394,21 +353,22 @@ namespace POS.UserControls
 			// 
 			// tbQty
 			// 
-			this.tbQty.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.purchaseBindingSource1, "Quantity", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
 			this.tbQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.tbQty.Location = new System.Drawing.Point(478, 32);
 			this.tbQty.Maximum = new decimal(new int[] {
-            100000,
+            1000000,
             0,
             0,
             0});
 			this.tbQty.Name = "tbQty";
 			this.tbQty.Size = new System.Drawing.Size(165, 26);
 			this.tbQty.TabIndex = 3;
+			this.tbQty.ValueChanged += new System.EventHandler(this.tbQty_Leave);
+			this.tbQty.Leave += new System.EventHandler(this.tbQty_Leave);
+			this.tbQty.Validated += new System.EventHandler(this.tbQty_Leave);
 			// 
 			// cbxProducts
 			// 
-			this.cbxProducts.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.purchaseBindingSource1, "ProductName", true));
 			this.cbxProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.cbxProducts.FormattingEnabled = true;
 			this.cbxProducts.Location = new System.Drawing.Point(150, 69);
@@ -416,6 +376,7 @@ namespace POS.UserControls
 			this.cbxProducts.Size = new System.Drawing.Size(165, 26);
 			this.cbxProducts.TabIndex = 1;
 			this.cbxProducts.Text = "Sélectionner";
+			this.cbxProducts.SelectedIndexChanged += new System.EventHandler(this.cbxProducts_SelectedIndexChanged);
 			// 
 			// label5
 			// 
@@ -439,7 +400,6 @@ namespace POS.UserControls
 			// 
 			// cbxSuppliers
 			// 
-			this.cbxSuppliers.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.purchaseBindingSource1, "SupplierName", true));
 			this.cbxSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.cbxSuppliers.FormattingEnabled = true;
 			this.cbxSuppliers.Location = new System.Drawing.Point(150, 37);
@@ -451,9 +411,8 @@ namespace POS.UserControls
 			// lblId
 			// 
 			this.lblId.AutoSize = true;
-			this.lblId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.purchaseBindingSource1, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
 			this.lblId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.lblId.Location = new System.Drawing.Point(396, 6);
+			this.lblId.Location = new System.Drawing.Point(383, 6);
 			this.lblId.Name = "lblId";
 			this.lblId.Size = new System.Drawing.Size(17, 19);
 			this.lblId.TabIndex = 46;
@@ -465,9 +424,9 @@ namespace POS.UserControls
 			this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
 			this.label15.Location = new System.Drawing.Point(290, 6);
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(100, 19);
+			this.label15.Size = new System.Drawing.Size(87, 19);
 			this.label15.TabIndex = 45;
-			this.label15.Text = "Purchase ID#";
+			this.label15.Text = "ID d\'achat#";
 			// 
 			// label14
 			// 
@@ -499,6 +458,24 @@ namespace POS.UserControls
 			this.label4.TabIndex = 5;
 			this.label4.Text = "Fournisseur";
 			// 
+			// tbPurchasePrice
+			// 
+			this.tbPurchasePrice.Enabled = false;
+			this.tbPurchasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbPurchasePrice.Location = new System.Drawing.Point(478, 63);
+			this.tbPurchasePrice.Name = "tbPurchasePrice";
+			this.tbPurchasePrice.Size = new System.Drawing.Size(165, 26);
+			this.tbPurchasePrice.TabIndex = 113;
+			// 
+			// tbTotalPrice
+			// 
+			this.tbTotalPrice.Enabled = false;
+			this.tbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.tbTotalPrice.Location = new System.Drawing.Point(478, 94);
+			this.tbTotalPrice.Name = "tbTotalPrice";
+			this.tbTotalPrice.Size = new System.Drawing.Size(165, 26);
+			this.tbTotalPrice.TabIndex = 114;
+			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -522,6 +499,7 @@ namespace POS.UserControls
 			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
 			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Prix d\'achat";
 			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
+			this.purchasePriceDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// quantityDataGridViewTextBoxColumn
 			// 
@@ -532,14 +510,18 @@ namespace POS.UserControls
 			// purchaseDateDataGridViewTextBoxColumn
 			// 
 			this.purchaseDateDataGridViewTextBoxColumn.DataPropertyName = "PurchaseDate";
-			this.purchaseDateDataGridViewTextBoxColumn.HeaderText = "Purchase Date";
+			this.purchaseDateDataGridViewTextBoxColumn.HeaderText = "date d\'achat";
 			this.purchaseDateDataGridViewTextBoxColumn.Name = "purchaseDateDataGridViewTextBoxColumn";
 			// 
 			// totalPaidDataGridViewTextBoxColumn
 			// 
 			this.totalPaidDataGridViewTextBoxColumn.DataPropertyName = "TotalPaid";
-			this.totalPaidDataGridViewTextBoxColumn.HeaderText = "Total Paid";
+			this.totalPaidDataGridViewTextBoxColumn.HeaderText = "Total payé";
 			this.totalPaidDataGridViewTextBoxColumn.Name = "totalPaidDataGridViewTextBoxColumn";
+			// 
+			// purchaseBindingSource
+			// 
+			this.purchaseBindingSource.DataSource = typeof(POS.Classes.Purchase);
 			// 
 			// UC_Purchases
 			// 
@@ -554,13 +536,10 @@ namespace POS.UserControls
 			((System.ComponentModel.ISupportInitialize)(this.btnNewProduct)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExportToExcel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
 			this.panelDetails.ResumeLayout(false);
 			this.panelDetails.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbQty)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -593,13 +572,12 @@ namespace POS.UserControls
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.NumericUpDown numericUpDown2;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
 		private System.Windows.Forms.BindingSource purchaseBindingSource;
-		private System.Windows.Forms.BindingSource purchaseBindingSource1;
 		private FontAwesome.Sharp.IconPictureBox btnExportToExcel;
+		private System.Windows.Forms.TextBox tbTotalPrice;
+		private System.Windows.Forms.TextBox tbPurchasePrice;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;

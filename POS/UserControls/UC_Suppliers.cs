@@ -139,10 +139,11 @@ namespace POS.UserControls
 			}
 		}
 
-		private void btnExportToExcel_Click(object sender, EventArgs e)
+		private async void btnExportToExcel_Click(object sender, EventArgs e)
 		{
-			Manager.ExportDataGrid(dg);
-			Manager.Show("Export complete", Notification.Type.Error);
+			Manager.Show("exportation", Notification.Type.Info);
+			await Manager.ExportDataGridAsync(dg);
+			Manager.Show("exportation terminée", Notification.Type.Success);
 		}
 	}
 }

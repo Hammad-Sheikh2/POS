@@ -71,14 +71,21 @@ namespace POS.UserControls.Finances
 
 		private async void UC_Closing_Load(object sender, EventArgs e)
 		{
-			closingShiftBindingSource.DataSource = await Access.GetClosingShiftsAsync();
-			shiftBindingSource.DataSource = await Access.GetShiftsAsync(dpDayClosing.Value);
-			dayClosingBindingSource.DataSource = await Access.GetDayClosingsAsync(dpClosingMonth.Value);
-			ReloadShift();
-			DisplayShift();
-			ReloadDay();
-			DisplayDay();
-			DisplayMonth();
+			try
+			{
+				closingShiftBindingSource.DataSource = await Access.GetClosingShiftsAsync();
+				shiftBindingSource.DataSource = await Access.GetShiftsAsync(dpDayClosing.Value);
+				dayClosingBindingSource.DataSource = await Access.GetDayClosingsAsync(dpClosingMonth.Value);
+				ReloadShift();
+				DisplayShift();
+				ReloadDay();
+				DisplayDay();
+				DisplayMonth();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void ReloadShift()

@@ -79,12 +79,12 @@
 			// 
 			// Month
 			// 
-			this.Month.HeaderText = "Month";
+			this.Month.HeaderText = "mois";
 			this.Month.Name = "Month";
 			// 
 			// TurnOver
 			// 
-			this.TurnOver.HeaderText = "Turn Over";
+			this.TurnOver.HeaderText = "Chiffre d\'affaires";
 			this.TurnOver.Name = "TurnOver";
 			// 
 			// UC_TurnoverByMonth
