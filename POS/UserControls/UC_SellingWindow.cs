@@ -59,11 +59,18 @@ namespace POS.UserControls
 
 		private void PopulateComboboxes()
 		{
-			cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
-			cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
-			cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
-			cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
-			lblCashier.Text = Login.Name.ToUpper();
+			try
+			{
+				cbxCustomers.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+				cbxCustomers.Items.AddRange(Access.GetStringList("SELECT Name FROM Customers").ToArray());
+				cbxProductNames.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
+				cbxProductNames.Items.AddRange(Access.GetStringList("SELECT ProductName FROM Products;").ToArray());
+				lblCashier.Text = Login.Name.ToUpper();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void dg_Paint(object sender, PaintEventArgs e)
@@ -137,25 +144,32 @@ namespace POS.UserControls
 
 		private void cbxProductNames_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			Product pr = Access.GetProduct(cbxProductNames.Text);
-			if (pr == null)
-				return;
-			if (pr.QuantityInShelves <= 0 && rbPayment.Checked)
+			try
 			{
-				Manager.Show("Out of Stock", Forms.Notification.Type.Info);
-				return;
-			}
-			foreach (Cart item in cartBindingSource.List)
-			{
-				if (item.ProductName == cbxProductNames.Text)
+				Product pr = Access.GetProduct(cbxProductNames.Text);
+				if (pr == null)
+					return;
+				if (pr.QuantityInShelves <= 0 && rbPayment.Checked)
 				{
-					item.Quantity++;
-					cartBindingSource.ResetBindings(false);
+					Manager.Show("En rupture de stock", Forms.Notification.Type.Info);
 					return;
 				}
+				foreach (Cart item in cartBindingSource.List)
+				{
+					if (item.ProductName == cbxProductNames.Text)
+					{
+						item.Quantity++;
+						cartBindingSource.ResetBindings(false);
+						return;
+					}
+				}
+				cartBindingSource.List.Add(Access.GetCart(Access.GetProduct(cbxProductNames.Text)));
+				dg.ClearSelection();
 			}
-			cartBindingSource.List.Add(Access.GetCart(Access.GetProduct(cbxProductNames.Text)));
-			dg.ClearSelection();
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)

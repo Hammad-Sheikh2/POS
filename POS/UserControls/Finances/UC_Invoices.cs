@@ -1,5 +1,6 @@
 ﻿using FontAwesome.Sharp;
 using POS.Classes;
+using POS.Classes.Finances;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,6 +29,7 @@ namespace POS.UserControls.Finances
 		ErrorProvider error = new ErrorProvider();
 		InvoiceFilter filter = InvoiceFilter.ALL;
 		DefinedPeriod period;
+		private bool IsAscending = true;
 
 		public UC_Invoices()
 		{
@@ -44,76 +46,83 @@ namespace POS.UserControls.Finances
 
 		private void PopulateInvoices()
 		{
-			switch (filter)
+			try
 			{
-				case InvoiceFilter.ALL:
-					if (tbClientName.TextLength != 0 && tbCashierName.TextLength != 0)
-					{
-						int customerId = Access.GetCustomer(tbClientName.Text).Id;
-						int cashierId = Access.GetUser(tbCashierName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoices(customerId, cashierId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbClientName.TextLength != 0)
-					{
-						int customerId = Access.GetCustomer(tbClientName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesByCustomers(customerId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbCashierName.TextLength != 0)
-					{
-						int cashierId = Access.GetUser(tbCashierName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesByUser(cashierId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbCashierName.TextLength == 0 && tbClientName.TextLength == 0)
-					{
-						invoiceBindingSource.DataSource = Access.GetInvoices(dpStart.Value, dpEnd.Value);
-					}
-					break;
-				case InvoiceFilter.CREDIT:
-					if (tbClientName.TextLength != 0 && tbCashierName.TextLength != 0)
-					{
-						int customerId = Access.GetCustomer(tbClientName.Text).Id;
-						int cashierId = Access.GetUser(tbCashierName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesCredit(customerId, cashierId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbClientName.TextLength != 0)
-					{
-						int customerId = Access.GetCustomer(tbClientName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesCreditByCustomers(customerId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbCashierName.TextLength != 0)
-					{
-						int cashierId = Access.GetUser(tbCashierName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesCreditByUser(cashierId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbCashierName.TextLength == 0 && tbClientName.TextLength == 0)
-					{
-						invoiceBindingSource.DataSource = Access.GetInvoicesCredit(dpStart.Value, dpEnd.Value);
-					}
-					break;
-				case InvoiceFilter.CASH:
-					if (tbClientName.TextLength != 0 && tbCashierName.TextLength != 0)
-					{
-						int customerId = Access.GetCustomer(tbClientName.Text).Id;
-						int cashierId = Access.GetUser(tbCashierName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesCash(customerId, cashierId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbClientName.TextLength != 0)
-					{
-						int customerId = Access.GetCustomer(tbClientName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesCashByCustomers(customerId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbCashierName.TextLength != 0)
-					{
-						int cashierId = Access.GetUser(tbCashierName.Text).Id;
-						invoiceBindingSource.DataSource = Access.GetInvoicesCashByUser(cashierId, dpStart.Value, dpEnd.Value);
-					}
-					else if (tbCashierName.TextLength == 0 && tbClientName.TextLength == 0)
-					{
-						invoiceBindingSource.DataSource = Access.GetInvoicesCash(dpStart.Value, dpEnd.Value);
-					}
-					break;
-				default:
-					break;
+				switch (filter)
+				{
+					case InvoiceFilter.ALL:
+						if (tbClientName.TextLength != 0 && tbCashierName.TextLength != 0)
+						{
+							int customerId = Access.GetCustomer(tbClientName.Text).Id;
+							int cashierId = Access.GetUser(tbCashierName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoices(customerId, cashierId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbClientName.TextLength != 0)
+						{
+							int customerId = Access.GetCustomer(tbClientName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesByCustomers(customerId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbCashierName.TextLength != 0)
+						{
+							int cashierId = Access.GetUser(tbCashierName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesByUser(cashierId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbCashierName.TextLength == 0 && tbClientName.TextLength == 0)
+						{
+							invoiceBindingSource.DataSource = Access.GetInvoices(dpStart.Value, dpEnd.Value);
+						}
+						break;
+					case InvoiceFilter.CREDIT:
+						if (tbClientName.TextLength != 0 && tbCashierName.TextLength != 0)
+						{
+							int customerId = Access.GetCustomer(tbClientName.Text).Id;
+							int cashierId = Access.GetUser(tbCashierName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesCredit(customerId, cashierId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbClientName.TextLength != 0)
+						{
+							int customerId = Access.GetCustomer(tbClientName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesCreditByCustomers(customerId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbCashierName.TextLength != 0)
+						{
+							int cashierId = Access.GetUser(tbCashierName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesCreditByUser(cashierId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbCashierName.TextLength == 0 && tbClientName.TextLength == 0)
+						{
+							invoiceBindingSource.DataSource = Access.GetInvoicesCredit(dpStart.Value, dpEnd.Value);
+						}
+						break;
+					case InvoiceFilter.CASH:
+						if (tbClientName.TextLength != 0 && tbCashierName.TextLength != 0)
+						{
+							int customerId = Access.GetCustomer(tbClientName.Text).Id;
+							int cashierId = Access.GetUser(tbCashierName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesCash(customerId, cashierId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbClientName.TextLength != 0)
+						{
+							int customerId = Access.GetCustomer(tbClientName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesCashByCustomers(customerId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbCashierName.TextLength != 0)
+						{
+							int cashierId = Access.GetUser(tbCashierName.Text).Id;
+							invoiceBindingSource.DataSource = Access.GetInvoicesCashByUser(cashierId, dpStart.Value, dpEnd.Value);
+						}
+						else if (tbCashierName.TextLength == 0 && tbClientName.TextLength == 0)
+						{
+							invoiceBindingSource.DataSource = Access.GetInvoicesCash(dpStart.Value, dpEnd.Value);
+						}
+						break;
+					default:
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -198,9 +207,16 @@ namespace POS.UserControls.Finances
 
 		private void dg_Paint(object sender, PaintEventArgs e)
 		{
-			tbTotal.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["totalDataGridViewTextBoxColumn"].Value)).ToString();
-			tbPaid.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["paidDataGridViewTextBoxColumn"].Value)).ToString();
-			tbLeft.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["leftDataGridViewTextBoxColumn"].Value)).ToString();
+			try
+			{
+				tbTotal.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["totalDataGridViewTextBoxColumn"].Value)).ToString();
+				tbPaid.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["paidDataGridViewTextBoxColumn"].Value)).ToString();
+				tbLeft.Text = dg.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["leftDataGridViewTextBoxColumn"].Value)).ToString();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void btnAll_Click(object sender, EventArgs e)
@@ -257,6 +273,27 @@ namespace POS.UserControls.Finances
 		private void panelSearch_Paint(object sender, PaintEventArgs e)
 		{
 
+		}
+
+		private void dg_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			try
+			{
+				if (IsAscending)
+				{
+					invoiceBindingSource.DataSource = invoiceBindingSource.List.OfType<Invoice>().ToList().OrderByDescending(item => item.Id);
+					IsAscending = false;
+				}
+				else
+				{
+					invoiceBindingSource.DataSource = invoiceBindingSource.List.OfType<Invoice>().ToList().OrderBy(item => item.Id);
+					IsAscending = true;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }

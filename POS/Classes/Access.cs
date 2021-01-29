@@ -1518,7 +1518,7 @@ namespace POS.Classes
 		{
 			using (IDbConnection cnn = new SqlConnection(Manager.ConnectionString))
 			{
-				return await cnn.GetListAsync<Purchase>();
+				return await cnn.GetListAsync<Purchase>("ORDER BY PurchaseDate DESC");
 			}
 		}
 

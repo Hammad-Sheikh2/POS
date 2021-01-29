@@ -137,9 +137,17 @@ namespace POS.Forms.Customers
 				Reload();
 				if (Valid())
 				{
-					Access.UpdateCustomer(cus);
-					tbSearch.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
-					Manager.Show("Client mis à jour", Notification.Type.Success);
+					try
+					{
+						Access.UpdateCustomer(cus);
+						tbSearch.AutoCompleteCustomSource = Access.GetAllCustomerNamesCollection;
+						Manager.Show("Client mis à jour", Notification.Type.Success);
+						this.Close();
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 			}
 			catch (Exception ex)

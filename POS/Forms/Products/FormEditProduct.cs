@@ -127,8 +127,15 @@ namespace POS.Forms.Products
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				product = Access.GetProduct(tbSearch.Text);
-				Display();
+				try
+				{
+					product = Access.GetProduct(tbSearch.Text);
+					Display();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 
@@ -156,7 +163,8 @@ namespace POS.Forms.Products
 				if (Valid())
 				{
 					await Access.UpdateProductAsync(product);
-					Manager.Show("Product Updated", Notification.Type.Success);
+					Manager.Show("produit mis à jour", Notification.Type.Success);
+					this.Close();
 				}
 			}
 			catch (Exception ex)

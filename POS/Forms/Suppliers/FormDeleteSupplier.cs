@@ -20,9 +20,16 @@ namespace POS.Forms.Suppliers
 
 		private void Populate()
 		{
-			cbxFilter.Items.Clear();
-			cbxFilter.Items.AddRange(Access.GetStringList("SELECT Id FROM Suppliers", true).ToArray());
-			tbSearch.AutoCompleteCustomSource = Access.GetAllSupplierNamesCollection;
+			try
+			{
+				cbxFilter.Items.Clear();
+				cbxFilter.Items.AddRange(Access.GetStringList("SELECT Id FROM Suppliers", true).ToArray());
+				tbSearch.AutoCompleteCustomSource = Access.GetAllSupplierNamesCollection;
+			}
+			catch (System.Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void ActivateTheme()

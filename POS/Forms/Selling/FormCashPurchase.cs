@@ -5,6 +5,7 @@ using POS.Classes.Finances;
 using POS.Reporting;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -83,6 +84,7 @@ namespace POS.Forms.Selling
 			{
 				double changeAmt = invoice.Total - double.Parse(tbCashGiven.Text);
 				tbChange.Text = changeAmt > 0 ? "0" : $"{changeAmt}";
+				tbCashGiven.ForeColor = (changeAmt > 0 ? Color.Red : Color.DarkGreen);
 			}
 			catch (Exception)
 			{

@@ -48,7 +48,11 @@ namespace POS.Forms.Customers
 
 		private void FormCreditByCustomer_Load(object sender, EventArgs e)
 		{
-			invoiceBindingSource.DataSource = Access.GetInvoicesCreditByCustomers(Id);
+			try
+			{
+				invoiceBindingSource.DataSource = Access.GetInvoicesCreditByCustomers(Id);
+			}
+			catch (Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 		}
 	}
 }

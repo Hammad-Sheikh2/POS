@@ -118,11 +118,19 @@ namespace POS.Forms.Suppliers
 			try
 			{
 				Reload();
-				if (Valid())
+				try
 				{
-					Access.InsertSupplier(sup);
-					Manager.Show("fournisseur enregistré", Notification.Type.Success);
-					Clear();
+					if (Valid())
+					{
+						Access.InsertSupplier(sup);
+						Manager.Show("fournisseur enregistré", Notification.Type.Success);
+						Clear();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 				}
 			}
 			catch (Exception ex)

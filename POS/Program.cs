@@ -17,6 +17,9 @@ namespace POS
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			Application.ThreadException += Application_ThreadException;
+			AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+			Application.ApplicationExit += Application_ApplicationExit;
 			if (InitializeConnection())
 			{
 				if (Access.UsersCount == 0)
@@ -28,7 +31,16 @@ namespace POS
 					Application.Run(new FormLogin());
 				}
 			}
-			Application.ApplicationExit += Application_ApplicationExit;
+		}
+
+		private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+		{
+			MessageBox.Show((e.ExceptionObject as Exception).Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+		}
+
+		private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+		{
+			MessageBox.Show(e.Exception.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		private static bool InitializeConnection()

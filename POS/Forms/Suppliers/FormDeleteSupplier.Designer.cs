@@ -70,7 +70,7 @@
 			this.btnDelete.Rotation = 0D;
 			this.btnDelete.Size = new System.Drawing.Size(229, 26);
 			this.btnDelete.TabIndex = 113;
-			this.btnDelete.Text = "Effacer";
+			this.btnDelete.Text = "Supprimer";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 

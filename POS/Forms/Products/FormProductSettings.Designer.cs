@@ -67,9 +67,9 @@
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label1.Location = new System.Drawing.Point(43, 12);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(65, 19);
+			this.label1.Size = new System.Drawing.Size(68, 19);
 			this.label1.TabIndex = 105;
-			this.label1.Text = "Category";
+			this.label1.Text = "Catégorie";
 			// 
 			// panel2
 			// 
@@ -94,9 +94,9 @@
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label2.Location = new System.Drawing.Point(43, 91);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(101, 19);
+			this.label2.Size = new System.Drawing.Size(97, 19);
 			this.label2.TabIndex = 109;
-			this.label2.Text = "Weight/Dosage";
+			this.label2.Text = "poids / dosage";
 			// 
 			// panel3
 			// 
@@ -121,9 +121,9 @@
 			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label3.Location = new System.Drawing.Point(43, 171);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(93, 19);
+			this.label3.Size = new System.Drawing.Size(81, 19);
 			this.label3.TabIndex = 112;
-			this.label3.Text = "Shelf Number";
+			this.label3.Text = "Code rayon";
 			// 
 			// panel4
 			// 
@@ -194,7 +194,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormProductSettings";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Product Settings";
+			this.Text = "paramètres du produit";
 			((System.ComponentModel.ISupportInitialize)(this.btnAddCategory)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAddWeight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAddShelf)).EndInit();

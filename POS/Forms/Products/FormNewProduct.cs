@@ -114,7 +114,7 @@ namespace POS.Forms.Products
 				if (Valid())
 				{
 					await Access.InsertProductAsync(product);
-					Manager.Show("Product registered", Notification.Type.Success);
+					Manager.Show("produit enregistré", Notification.Type.Success);
 					Clear();
 				}
 			}

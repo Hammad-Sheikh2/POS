@@ -94,11 +94,18 @@ namespace POS.Forms.Accounts
 				error.SetError(tbPassword, "Le mot de passe ne peut pas être vide"); return;
 			}
 			else error.SetError(tbPassword, "");
-			Access.InsertUser(new User() { Id = Access.NextUserId, Username = tbUsername.Text, Name = tbName.Text, Pass = tbPassword.Text, Role = "Admin" });
-			Manager.Show("Admin enregistré", Notification.Type.Success);
-			FormLogin login = new FormLogin();
-			login.Show();
-			this.Hide();
+			try
+			{
+				Access.InsertUser(new User() { Id = Access.NextUserId, Username = tbUsername.Text, Name = tbName.Text, Pass = tbPassword.Text, Role = "Admin" });
+				Manager.Show("Admin enregistré", Notification.Type.Success);
+				FormLogin login = new FormLogin();
+				login.Show();
+				this.Hide();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }

@@ -766,7 +766,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>4.37118cm</Top>
+            <Top>4.30062cm</Top>
             <Left>2.73536cm</Left>
             <Height>0.6cm</Height>
             <Width>3.25375cm</Width>
@@ -798,7 +798,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Paid</rd:DefaultName>
-            <Top>4.40645cm</Top>
+            <Top>4.33589cm</Top>
             <Left>6.1655cm</Left>
             <Height>0.6cm</Height>
             <Width>1.68903cm</Width>
@@ -830,7 +830,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Left</rd:DefaultName>
-            <Top>5.18284cm</Top>
+            <Top>5.04173cm</Top>
             <Left>6.1655cm</Left>
             <Height>0.6cm</Height>
             <Width>1.68903cm</Width>
@@ -866,7 +866,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>5.14757cm</Top>
+            <Top>5.00646cm</Top>
             <Left>2.73536cm</Left>
             <Height>0.6cm</Height>
             <Width>3.25375cm</Width>
@@ -899,7 +899,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>                            Copyright ©  </Value>
+                    <Value>Copyright ©  </Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
                       <FontSize>8pt</FontSize>
@@ -912,18 +912,12 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
               <Paragraph>
                 <TextRuns>
-                  <TextRun>
-                    <Value xml:space="preserve">        </Value>
-                    <Style>
-                      <FontFamily>calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
                   <TextRun>
                     <Value>Contactez le développeur (WhatsApp) +24107102906</Value>
                     <Style>
@@ -933,7 +927,9 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>

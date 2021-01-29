@@ -445,7 +445,6 @@
 			this.tbName.Name = "tbName";
 			this.tbName.Size = new System.Drawing.Size(226, 26);
 			this.tbName.TabIndex = 0;
-			this.tbName.Text = "Grossistes";
 			this.tbName.Validated += new System.EventHandler(this.ValidateInput);
 			// 
 			// label2

@@ -58,13 +58,20 @@ namespace POS.Forms
 			else
 				error.SetError(btnAddCity, "");
 
-			if (!Access.IsDuplicate($"SELECT Value FROM Cities WHERE Value = '{tbCity.Text}'"))
+			try
 			{
-				Access.InsertCity(tbCity.Text);
-				Manager.Show("ville ajoutée", Notification.Type.Success);
+				if (!Access.IsDuplicate($"SELECT Value FROM Cities WHERE Value = '{tbCity.Text}'"))
+				{
+					Access.InsertCity(tbCity.Text);
+					Manager.Show("ville ajoutée", Notification.Type.Success);
+				}
+				else
+					Manager.Show("Existe déjà", Notification.Type.Error);
 			}
-			else
-				Manager.Show("Existe déjà", Notification.Type.Error);
+			catch (System.Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void tbCity_Click(object sender, System.EventArgs e)
@@ -82,13 +89,20 @@ namespace POS.Forms
 			else
 				error.SetError(btnAddProvince, "");
 
-			if (!Access.IsDuplicate($"SELECT Value FROM Provinces WHERE Value = '{tbProvince.Text}'"))
+			try
 			{
-				Access.InsertProvince(tbProvince.Text);
-				Manager.Show("Province Added", Notification.Type.Success);
+				if (!Access.IsDuplicate($"SELECT Value FROM Provinces WHERE Value = '{tbProvince.Text}'"))
+				{
+					Access.InsertProvince(tbProvince.Text);
+					Manager.Show("Province Added", Notification.Type.Success);
+				}
+				else
+					Manager.Show("Existe déjà", Notification.Type.Error);
 			}
-			else
-				Manager.Show("Existe déjà", Notification.Type.Error);
+			catch (System.Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }

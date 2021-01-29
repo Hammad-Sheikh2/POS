@@ -25,9 +25,16 @@ namespace POS.Forms.Settings
 		{
 			if (MessageBox.Show($"Voulez-vous vraiment supprimer l'utilisateur {cbxThemes.Text} de la base de données?", ProductName, MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
-				usr = Access.GetUser(cbxThemes.Text);
-				await Access.DeleteUser(usr);
-				Manager.Show("Utilisateur supprimé", Notification.Type.Warning);
+				try
+				{
+					usr = Access.GetUser(cbxThemes.Text);
+					await Access.DeleteUser(usr);
+					Manager.Show("Utilisateur supprimé", Notification.Type.Warning);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 

@@ -118,9 +118,13 @@ namespace POS.Forms.Customers
 			{
 				if (Valid())
 				{
-					Access.InsertCustomer(cus);
-					Manager.Show("client enregistré", Notification.Type.Success);
-					Clear();
+					try
+					{
+						Access.InsertCustomer(cus);
+						Manager.Show("client enregistré", Notification.Type.Success);
+						Clear();
+					}
+					catch (Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 				}
 			}
 			catch (Exception ex)

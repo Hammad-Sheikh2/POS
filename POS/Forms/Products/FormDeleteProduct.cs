@@ -21,9 +21,13 @@ namespace POS.Forms.Products
 
 		private void Reload()
 		{
-			cbxFilter.Items.Clear();
-			tbSearch.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
-			Access.GetStringList("SELECT Id FROM Products;", true).ForEach(item => cbxFilter.Items.Add(item));
+			try
+			{
+				cbxFilter.Items.Clear();
+				tbSearch.AutoCompleteCustomSource = Access.GetAllProductNamesCollection;
+				Access.GetStringList("SELECT Id FROM Products;", true).ForEach(item => cbxFilter.Items.Add(item));
+			}
+			catch (System.Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 		}
 
 		private void ActivateTheme()
@@ -69,15 +73,15 @@ namespace POS.Forms.Products
 		{
 			if (product == null)
 			{
-				error.SetError(btnDelete, "No product selected");
+				error.SetError(btnDelete, "produit invalide");
 			}
 			else
 			{
 				error.SetError(btnDelete, "");
-				if (MessageBox.Show($"Do you want to delete {product.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show($"voulez-vous supprimer le {product.Name}?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					Access.DeleteProduct(product);
-					Manager.Show("Product Deleted", Notification.Type.Info);
+					Manager.Show("produit supprimé", Notification.Type.Info);
 					Reload();
 				}
 			}
@@ -90,14 +94,18 @@ namespace POS.Forms.Products
 				product = Access.GetProduct(index);
 			}
 			else
-				Manager.Show("Invalid ID", Notification.Type.Warning);
+				Manager.Show("ID invalide", Notification.Type.Warning);
 		}
 
 		private void tbSearch_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				product = Access.GetProduct(tbSearch.Text);
+				try
+				{
+					product = Access.GetProduct(tbSearch.Text);
+				}
+				catch (System.Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 			}
 		}
 	}

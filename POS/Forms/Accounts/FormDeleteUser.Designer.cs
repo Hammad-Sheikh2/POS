@@ -50,11 +50,11 @@
 			// 
 			this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnOk.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnOk.Location = new System.Drawing.Point(91, 82);
+			this.btnOk.Location = new System.Drawing.Point(85, 82);
 			this.btnOk.Name = "btnOk";
-			this.btnOk.Size = new System.Drawing.Size(75, 29);
+			this.btnOk.Size = new System.Drawing.Size(81, 29);
 			this.btnOk.TabIndex = 13;
-			this.btnOk.Text = "D\'accord";
+			this.btnOk.Text = "Supprimer";
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 

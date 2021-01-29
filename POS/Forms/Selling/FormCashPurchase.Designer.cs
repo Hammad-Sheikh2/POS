@@ -169,7 +169,9 @@
 			// 
 			// tbCashGiven
 			// 
+			this.tbCashGiven.BackColor = System.Drawing.Color.White;
 			this.tbCashGiven.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+			this.tbCashGiven.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.tbCashGiven.Location = new System.Drawing.Point(147, 125);
 			this.tbCashGiven.Name = "tbCashGiven";
 			this.tbCashGiven.Size = new System.Drawing.Size(134, 29);

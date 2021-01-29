@@ -88,9 +88,16 @@ namespace POS.Forms.Settings
 				error.SetError(tbUsername, "Ce nom d'utilisateur existe déjà"); return;
 			}
 			else error.SetError(tbUsername, "");
-			Access.InsertUser(new User() { Id = Access.NextUserId, Username = tbUsername.Text, Name = tbName.Text, Pass = tbPassword.Text, Role = cbxRole.SelectedItem.ToString() });
-			Manager.Show("Utilisateur enregistré", Notification.Type.Success);
-			this.Close();
+			try
+			{
+				Access.InsertUser(new User() { Id = Access.NextUserId, Username = tbUsername.Text, Name = tbName.Text, Pass = tbPassword.Text, Role = cbxRole.SelectedItem.ToString() });
+				Manager.Show("Utilisateur enregistré", Notification.Type.Success);
+				this.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)

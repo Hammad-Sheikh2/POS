@@ -33,7 +33,14 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cartBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.panelDetails = new System.Windows.Forms.Panel();
+			this.btnReceiveCreditPmt = new System.Windows.Forms.LinkLabel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.rbPayment = new System.Windows.Forms.RadioButton();
@@ -57,18 +64,11 @@
 			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.btnReceiveCreditPmt = new System.Windows.Forms.LinkLabel();
-			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.shapeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cartBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).BeginInit();
 			this.panelDetails.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dg
@@ -117,6 +117,47 @@
 			this.dg.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellEndEdit);
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
 			// 
+			// productNameDataGridViewTextBoxColumn
+			// 
+			this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+			this.productNameDataGridViewTextBoxColumn.HeaderText = "Nom du produit";
+			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// shapeDataGridViewTextBoxColumn
+			// 
+			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
+			this.shapeDataGridViewTextBoxColumn.HeaderText = "Forme";
+			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
+			this.shapeDataGridViewTextBoxColumn.ReadOnly = true;
+			this.shapeDataGridViewTextBoxColumn.Width = 150;
+			// 
+			// unitPriceDataGridViewTextBoxColumn
+			// 
+			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Prix unitaire";
+			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+			this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// quantityDataGridViewTextBoxColumn
+			// 
+			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité ";
+			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+			// 
+			// totalDataGridViewTextBoxColumn
+			// 
+			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+			this.totalDataGridViewTextBoxColumn.Width = 150;
+			// 
+			// cartBindingSource
+			// 
+			this.cartBindingSource.DataSource = typeof(POS.Classes.Cart);
+			// 
 			// panelDetails
 			// 
 			this.panelDetails.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -142,6 +183,17 @@
 			this.panelDetails.Name = "panelDetails";
 			this.panelDetails.Size = new System.Drawing.Size(1035, 89);
 			this.panelDetails.TabIndex = 2;
+			// 
+			// btnReceiveCreditPmt
+			// 
+			this.btnReceiveCreditPmt.AutoSize = true;
+			this.btnReceiveCreditPmt.Location = new System.Drawing.Point(479, 63);
+			this.btnReceiveCreditPmt.Name = "btnReceiveCreditPmt";
+			this.btnReceiveCreditPmt.Size = new System.Drawing.Size(150, 13);
+			this.btnReceiveCreditPmt.TabIndex = 111;
+			this.btnReceiveCreditPmt.TabStop = true;
+			this.btnReceiveCreditPmt.Text = "recevoir un paiement de crédit";
+			this.btnReceiveCreditPmt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnReceiveCreditPmt_LinkClicked);
 			// 
 			// label5
 			// 
@@ -280,6 +332,7 @@
 			this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
 			this.tbTotal.Location = new System.Drawing.Point(872, 3);
 			this.tbTotal.Name = "tbTotal";
+			this.tbTotal.ReadOnly = true;
 			this.tbTotal.Size = new System.Drawing.Size(160, 33);
 			this.tbTotal.TabIndex = 100;
 			// 
@@ -387,58 +440,6 @@
 			this.bunifuElipse3.ElipseRadius = 5;
 			this.bunifuElipse3.TargetControl = this.panel1;
 			// 
-			// btnReceiveCreditPmt
-			// 
-			this.btnReceiveCreditPmt.AutoSize = true;
-			this.btnReceiveCreditPmt.Location = new System.Drawing.Point(479, 63);
-			this.btnReceiveCreditPmt.Name = "btnReceiveCreditPmt";
-			this.btnReceiveCreditPmt.Size = new System.Drawing.Size(150, 13);
-			this.btnReceiveCreditPmt.TabIndex = 111;
-			this.btnReceiveCreditPmt.TabStop = true;
-			this.btnReceiveCreditPmt.Text = "recevoir un paiement de crédit";
-			this.btnReceiveCreditPmt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnReceiveCreditPmt_LinkClicked);
-			// 
-			// productNameDataGridViewTextBoxColumn
-			// 
-			this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.HeaderText = "Nom du produit";
-			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-			this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// shapeDataGridViewTextBoxColumn
-			// 
-			this.shapeDataGridViewTextBoxColumn.DataPropertyName = "Shape";
-			this.shapeDataGridViewTextBoxColumn.HeaderText = "Forme";
-			this.shapeDataGridViewTextBoxColumn.Name = "shapeDataGridViewTextBoxColumn";
-			this.shapeDataGridViewTextBoxColumn.ReadOnly = true;
-			this.shapeDataGridViewTextBoxColumn.Width = 150;
-			// 
-			// unitPriceDataGridViewTextBoxColumn
-			// 
-			this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-			this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Prix unitaire";
-			this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-			this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// quantityDataGridViewTextBoxColumn
-			// 
-			this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-			this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité ";
-			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-			// 
-			// totalDataGridViewTextBoxColumn
-			// 
-			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-			this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-			this.totalDataGridViewTextBoxColumn.Width = 150;
-			// 
-			// cartBindingSource
-			// 
-			this.cartBindingSource.DataSource = typeof(POS.Classes.Cart);
-			// 
 			// UC_SellingWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,12 +450,12 @@
 			this.Name = "UC_SellingWindow";
 			this.Size = new System.Drawing.Size(1103, 563);
 			((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).EndInit();
 			this.panelDetails.ResumeLayout(false);
 			this.panelDetails.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.cartBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}

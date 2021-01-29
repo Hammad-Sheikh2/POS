@@ -47,7 +47,11 @@ namespace POS.Forms.Customers
 
 		private void FormCashByCustomer_Load(object sender, EventArgs e)
 		{
-			invoiceBindingSource.DataSource = Access.GetInvoicesCashByCustomers(Id);
+			try
+			{
+				invoiceBindingSource.DataSource = Access.GetInvoicesCashByCustomers(Id);
+			}
+			catch (Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 		}
 	}
 }

@@ -58,13 +58,20 @@ namespace POS.Forms
 			else
 				error.SetError(btnAddCategory, "");
 
-			if (!Access.IsDuplicate($"SELECT Value FROM Categories WHERE Value = '{tbCategory.Text}'"))
+			try
 			{
-				Access.InsertCategory(tbCategory.Text);
-				Manager.Show("Catégorie ajoutée", Notification.Type.Success);
+				if (!Access.IsDuplicate($"SELECT Value FROM Categories WHERE Value = '{tbCategory.Text}'"))
+				{
+					Access.InsertCategory(tbCategory.Text);
+					Manager.Show("Catégorie ajoutée", Notification.Type.Success);
+				}
+				else
+					Manager.Show("Existe déjà", Notification.Type.Error);
 			}
-			else
-				Manager.Show("Existe déjà", Notification.Type.Error);
+			catch (System.Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void btnAddShelf_Click(object sender, System.EventArgs e)
@@ -77,13 +84,17 @@ namespace POS.Forms
 			else
 				error.SetError(btnAddShelf, "");
 
-			if (!Access.IsDuplicate($"SELECT Value FROM ShelfNumbers WHERE Value = '{tbShelf.Text}'"))
+			try
 			{
-				Access.InsertShelfNumber(tbShelf.Text);
-				Manager.Show("Étagère ajoutée", Notification.Type.Success);
+				if (!Access.IsDuplicate($"SELECT Value FROM ShelfNumbers WHERE Value = '{tbShelf.Text}'"))
+				{
+					Access.InsertShelfNumber(tbShelf.Text);
+					Manager.Show("Étagère ajoutée", Notification.Type.Success);
+				}
+				else
+					Manager.Show("Existe déjà", Notification.Type.Error);
 			}
-			else
-				Manager.Show("Existe déjà", Notification.Type.Error);
+			catch (System.Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 		}
 
 		private void btnAddWeight_Click(object sender, System.EventArgs e)
@@ -96,13 +107,17 @@ namespace POS.Forms
 			else
 				error.SetError(btnAddWeight, "");
 
-			if (!Access.IsDuplicate($"SELECT Value FROM Weights WHERE Value = '{tbWeight.Text}'"))
+			try
 			{
-				Access.InsertWeight(tbWeight.Text);
-				Manager.Show("poids ajouté", Notification.Type.Success);
+				if (!Access.IsDuplicate($"SELECT Value FROM Weights WHERE Value = '{tbWeight.Text}'"))
+				{
+					Access.InsertWeight(tbWeight.Text);
+					Manager.Show("poids ajouté", Notification.Type.Success);
+				}
+				else
+					Manager.Show("Existe déjà", Notification.Type.Error);
 			}
-			else
-				Manager.Show("Existe déjà", Notification.Type.Error);
+			catch (System.Exception ex) { MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
 		}
 	}

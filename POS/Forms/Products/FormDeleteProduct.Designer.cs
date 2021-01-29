@@ -46,7 +46,7 @@
 			this.btnDelete.Rotation = 0D;
 			this.btnDelete.Size = new System.Drawing.Size(229, 26);
 			this.btnDelete.TabIndex = 119;
-			this.btnDelete.Text = "Delete";
+			this.btnDelete.Text = "Supprimer";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
@@ -60,7 +60,7 @@
 			this.cbxFilter.Name = "cbxFilter";
 			this.cbxFilter.Size = new System.Drawing.Size(229, 26);
 			this.cbxFilter.TabIndex = 118;
-			this.cbxFilter.Text = "Search by Id";
+			this.cbxFilter.Text = "Recherche par Id";
 			this.cbxFilter.SelectedIndexChanged += new System.EventHandler(this.cbxFilter_SelectedIndexChanged);
 			// 
 			// tbSearch
@@ -72,7 +72,7 @@
 			this.tbSearch.Name = "tbSearch";
 			this.tbSearch.Size = new System.Drawing.Size(229, 26);
 			this.tbSearch.TabIndex = 117;
-			this.tbSearch.Text = "Search by Name";
+			this.tbSearch.Text = "Recherche par nom";
 			this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
 			this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
 			// 
@@ -88,8 +88,10 @@
 			this.MaximumSize = new System.Drawing.Size(301, 180);
 			this.MinimumSize = new System.Drawing.Size(301, 180);
 			this.Name = "FormDeleteProduct";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Delete Product";
+			this.Text = "supprimer le produit";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

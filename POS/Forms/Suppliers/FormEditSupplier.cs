@@ -132,10 +132,18 @@ namespace POS.Forms.Suppliers
 			try
 			{
 				Reload();
-				if (Valid())
+				try
 				{
-					Access.UpdateSupplier(sup);
-					Manager.Show("Fournisseur mis à jour", Notification.Type.Success);
+					if (Valid())
+					{
+						Access.UpdateSupplier(sup);
+						Manager.Show("Fournisseur mis à jour", Notification.Type.Success);
+						this.Close();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 			catch (Exception ex)
@@ -148,8 +156,16 @@ namespace POS.Forms.Suppliers
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				sup = Access.GetSupplier(tbSearch.Text);
-				Display();
+				try
+				{
+					sup = Access.GetSupplier(tbSearch.Text);
+					Display();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				}
 			}
 		}
 

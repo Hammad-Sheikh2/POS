@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelSearch = new System.Windows.Forms.Panel();
 			this.btnCash = new FontAwesome.Sharp.IconButton();
 			this.btnCredit = new FontAwesome.Sharp.IconButton();
@@ -48,15 +48,6 @@
 			this.cbxDefinedPeriod = new System.Windows.Forms.ComboBox();
 			this.tbDays = new System.Windows.Forms.TextBox();
 			this.dg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.tbLeft = new System.Windows.Forms.TextBox();
-			this.tbPaid = new System.Windows.Forms.TextBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.tbTotal = new System.Windows.Forms.TextBox();
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shiftIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +58,15 @@
 			this.paidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.thresholdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.leftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.tbLeft = new System.Windows.Forms.TextBox();
+			this.tbPaid = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.tbTotal = new System.Windows.Forms.TextBox();
+			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.panelSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
@@ -270,22 +270,22 @@
 			// 
 			// dg
 			// 
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.dg.AutoGenerateColumns = false;
 			this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dg.BackgroundColor = System.Drawing.Color.Silver;
 			this.dg.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -299,14 +299,14 @@
             this.thresholdDataGridViewTextBoxColumn,
             this.leftDataGridViewTextBoxColumn});
 			this.dg.DataSource = this.invoiceBindingSource;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dg.DefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dg.DefaultCellStyle = dataGridViewCellStyle3;
 			this.dg.DoubleBuffered = true;
 			this.dg.EnableHeadersVisualStyles = false;
 			this.dg.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
@@ -317,7 +317,69 @@
 			this.dg.RowHeadersVisible = false;
 			this.dg.Size = new System.Drawing.Size(1035, 359);
 			this.dg.TabIndex = 17;
+			this.dg.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_ColumnHeaderMouseClick);
 			this.dg.Paint += new System.Windows.Forms.PaintEventHandler(this.dg_Paint);
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			// 
+			// userIdDataGridViewTextBoxColumn
+			// 
+			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+			this.userIdDataGridViewTextBoxColumn.HeaderText = "Id d\'utilisateur";
+			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+			// 
+			// shiftIdDataGridViewTextBoxColumn
+			// 
+			this.shiftIdDataGridViewTextBoxColumn.DataPropertyName = "ShiftId";
+			this.shiftIdDataGridViewTextBoxColumn.HeaderText = "Id du poste";
+			this.shiftIdDataGridViewTextBoxColumn.Name = "shiftIdDataGridViewTextBoxColumn";
+			// 
+			// customerIdDataGridViewTextBoxColumn
+			// 
+			this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
+			this.customerIdDataGridViewTextBoxColumn.HeaderText = "Id Client";
+			this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+			// 
+			// creditDataGridViewCheckBoxColumn
+			// 
+			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
+			this.creditDataGridViewCheckBoxColumn.HeaderText = "Crédit";
+			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
+			// 
+			// invoiceDateDataGridViewTextBoxColumn
+			// 
+			this.invoiceDateDataGridViewTextBoxColumn.DataPropertyName = "InvoiceDate";
+			this.invoiceDateDataGridViewTextBoxColumn.HeaderText = "Date";
+			this.invoiceDateDataGridViewTextBoxColumn.Name = "invoiceDateDataGridViewTextBoxColumn";
+			// 
+			// totalDataGridViewTextBoxColumn
+			// 
+			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+			// 
+			// paidDataGridViewTextBoxColumn
+			// 
+			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
+			this.paidDataGridViewTextBoxColumn.HeaderText = "Payé";
+			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
+			// 
+			// thresholdDataGridViewTextBoxColumn
+			// 
+			this.thresholdDataGridViewTextBoxColumn.DataPropertyName = "Threshold";
+			this.thresholdDataGridViewTextBoxColumn.HeaderText = "Threshold";
+			this.thresholdDataGridViewTextBoxColumn.Name = "thresholdDataGridViewTextBoxColumn";
+			this.thresholdDataGridViewTextBoxColumn.Visible = false;
+			// 
+			// leftDataGridViewTextBoxColumn
+			// 
+			this.leftDataGridViewTextBoxColumn.DataPropertyName = "Left";
+			this.leftDataGridViewTextBoxColumn.HeaderText = "Left";
+			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
 			// 
 			// invoiceBindingSource
 			// 
@@ -388,67 +450,6 @@
 			// 
 			this.bunifuElipse2.ElipseRadius = 5;
 			this.bunifuElipse2.TargetControl = this.dg;
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			// 
-			// userIdDataGridViewTextBoxColumn
-			// 
-			this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-			this.userIdDataGridViewTextBoxColumn.HeaderText = "Id d\'utilisateur";
-			this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-			// 
-			// shiftIdDataGridViewTextBoxColumn
-			// 
-			this.shiftIdDataGridViewTextBoxColumn.DataPropertyName = "ShiftId";
-			this.shiftIdDataGridViewTextBoxColumn.HeaderText = "Id du poste";
-			this.shiftIdDataGridViewTextBoxColumn.Name = "shiftIdDataGridViewTextBoxColumn";
-			// 
-			// customerIdDataGridViewTextBoxColumn
-			// 
-			this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
-			this.customerIdDataGridViewTextBoxColumn.HeaderText = "Id Client";
-			this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
-			// 
-			// creditDataGridViewCheckBoxColumn
-			// 
-			this.creditDataGridViewCheckBoxColumn.DataPropertyName = "Credit";
-			this.creditDataGridViewCheckBoxColumn.HeaderText = "Crédit";
-			this.creditDataGridViewCheckBoxColumn.Name = "creditDataGridViewCheckBoxColumn";
-			// 
-			// invoiceDateDataGridViewTextBoxColumn
-			// 
-			this.invoiceDateDataGridViewTextBoxColumn.DataPropertyName = "InvoiceDate";
-			this.invoiceDateDataGridViewTextBoxColumn.HeaderText = "Date";
-			this.invoiceDateDataGridViewTextBoxColumn.Name = "invoiceDateDataGridViewTextBoxColumn";
-			// 
-			// totalDataGridViewTextBoxColumn
-			// 
-			this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-			this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-			this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-			// 
-			// paidDataGridViewTextBoxColumn
-			// 
-			this.paidDataGridViewTextBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewTextBoxColumn.HeaderText = "Payé";
-			this.paidDataGridViewTextBoxColumn.Name = "paidDataGridViewTextBoxColumn";
-			// 
-			// thresholdDataGridViewTextBoxColumn
-			// 
-			this.thresholdDataGridViewTextBoxColumn.DataPropertyName = "Threshold";
-			this.thresholdDataGridViewTextBoxColumn.HeaderText = "Threshold";
-			this.thresholdDataGridViewTextBoxColumn.Name = "thresholdDataGridViewTextBoxColumn";
-			this.thresholdDataGridViewTextBoxColumn.Visible = false;
-			// 
-			// leftDataGridViewTextBoxColumn
-			// 
-			this.leftDataGridViewTextBoxColumn.DataPropertyName = "Left";
-			this.leftDataGridViewTextBoxColumn.HeaderText = "Left";
-			this.leftDataGridViewTextBoxColumn.Name = "leftDataGridViewTextBoxColumn";
 			// 
 			// UC_Invoices
 			// 
